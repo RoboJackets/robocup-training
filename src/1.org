@@ -1,0 +1,21 @@
+
+#+TITLE: RoboCup 2016 Training 1
+#+AUTHOR: Jay Kamat
+#+EMAIL: jaygkamat@gmail.com
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: none
+#+REVEAL_PLUGINS: (notes pdf)
+#+REVEAL_HLEVEL: 10
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil
+# #+EXCLUDE_TAGS: docs
+
+
+* Test
+** Another test
+- one
+- two
+** Extra docs                                                         :docs:
+- You have
+- to
+- feed me
