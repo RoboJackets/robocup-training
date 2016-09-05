@@ -1,0 +1,8 @@
+* robocup-training
+RoboCup Software Training (Created in 2016)
+
+
+* Slides
+[[https://robojackets.github.io/robocup-training/slides/1][Training Meeting 1]]
+
+* Docs

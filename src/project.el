@@ -10,7 +10,7 @@
      ("rc-docs"
        :base-directory "."
        :publishing-directory "../docs/"
-       :publishing-function org-md-publish-to-md
+       :publishing-function org-gfm-publish-to-gfm
        :exclude-tags ("slides")
        )))
 
