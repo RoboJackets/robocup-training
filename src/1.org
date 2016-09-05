@@ -7,7 +7,7 @@
 #+REVEAL_TRANS: none
 #+REVEAL_PLUGINS: (notes pdf)
 #+REVEAL_HLEVEL: 1
-#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 * Download VM Image
 - [[https://mega.nz/#!kgFCyC5Y!lETW_2hufOsqxEOUrnjVFD538FvI3qXBLXWiBm9X_xI][Download Link]] (http://bit.ly/2c61Fkx)
