@@ -8,10 +8,11 @@
       :publishing-function org-reveal-publish-to-reveal
       :exclude-tags ("docs"))
      ("rc-docs"
-      :base-directory "."
-      :publishing-directory "../docs/"
-      :publishing-function org-md-publish-to-md
-      )))
+       :base-directory "."
+       :publishing-directory "../docs/"
+       :publishing-function org-md-publish-to-md
+       :exclude-tags ("slides")
+       )))
 
 (defun my-org-publish ()
   (interactive)

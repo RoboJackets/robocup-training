@@ -30,17 +30,229 @@
 </section>
 
 <section>
-<section id="slide-orgheadline2">
-<h2 id="orgheadline2">Test</h2>
-<div class="outline-text-2" id="text-orgheadline2">
-</div></section>
+<section id="slide-orgheadline1">
+<h2 id="orgheadline1">Download VM Image</h2>
+<ul>
+<li><a href="https://mega.nz/#!kgFCyC5Y!lETW_2hufOsqxEOUrnjVFD538FvI3qXBLXWiBm9X_xI">Download Link</a> (<a href="http://bit.ly/2c61Fkx">http://bit.ly/2c61Fkx</a>)</li>
+<li>Today we will be setting you up to develop RoboCup Software</li>
+
+</ul>
+</section>
 </section>
 <section>
-<section id="slide-orgheadline1">
-<h3 id="orgheadline1">Another test</h3>
+<section id="slide-orgheadline2">
+<h2 id="orgheadline2">Introductions</h2>
 <ul>
-<li>one</li>
-<li>two</li>
+<li>Name</li>
+<li>Major/How Many Years at Tech</li>
+<li>What makes you excited about RoboCup Software?</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline3">
+<h2 id="orgheadline3">Communication</h2>
+<ul>
+<li>Email List</li>
+<li>Gitter (badge on our repo)</li>
+<li>Docs Site (link on our repo)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline4">
+<h2 id="orgheadline4">Developing RoboCup</h2>
+<ul>
+<li>Running on Ubuntu 16.04</li>
+<li>Recommended:
+<ul>
+<li>Install our VM</li>
+<li>This comes with all dependencies already installed.</li>
+
+</ul></li>
+<li>Supported:
+<ul>
+<li>Install on your pre-existing 16.04 Installation (dual boot/VM)</li>
+<li>Anyone doing this?</li>
+
+</ul></li>
+<li>Unsupported, needs a maintainer:
+<ul>
+<li>Mac OS</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">Create a GitHub Account</h2>
+<ul>
+<li><a href="https://github.com/join%0A"><a href="https://github.com/join">https://github.com/join</a></a></li>
+<li>Please include <i>at least</i> your real first name on github</li>
+
+</ul>
+
+
+<div class="figure">
+<p><a href="https://i.imgur.com/0cdXQXW.png"><img src="https://i.imgur.com/0cdXQXW.png" alt="0cdXQXW.png" /></a>
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline6">
+<h2 id="orgheadline6">Fork Our Repo</h2>
+<ul>
+<li>RoboJackets/robocup-software (<a href="http://bit.ly/1L70JbB">http://bit.ly/1L70JbB</a>)</li>
+
+</ul>
+
+
+<div class="figure">
+<p><a href="https://i.imgur.com/kYzz2oh.png"><img src="https://i.imgur.com/kYzz2oh.png" alt="kYzz2oh.png" /></a>
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">RoboCup VM Setup</h2>
+<ul>
+<li><a href="https://github.com/RoboJackets/robojackets-images/blob/master/robocup/USAGE.org">Link to Guide</a> (<a href="http://bit.ly/2chLRLd">http://bit.ly/2chLRLd</a>)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">PostInstall Configuration</h2>
+<div class="outline-text-2" id="text-orgheadline12">
+</div></section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">Git Config</h3>
+<ul>
+<li><p>
+These commands set up git to attribute your changes to you.
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-shell">git config --global user.name <span style="color: #15968D;">"Your Name"</span>
+git config --global user.email <span style="color: #15968D;">"your@email.here"</span>
+</pre>
+</div></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Adding Remotes</h3>
+<ul>
+<li>These commands set you up to push to your fork by default, and still be able to receive updates.</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #598249;">cd</span> ~/robocup-software
+git remote add rj https://github.com/RoboJackets/robocup-software.git
+git remote set-url origin https://github.com/&lt;YOUR_GH_USERNAME&gt;/robocup-software.git
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">You can find the link in the last command under the 'clone or download' green button on your FORK</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Build RoboCup Software</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #598249;">cd</span> ~/robocup-software
+make
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Try running robocup-software by running this:</span>
+make run-sim
+</pre>
+</div>
+
+</section>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11">Staying Updated</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell">git pull rj master
+git push origin master
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline15">
+<h2 id="orgheadline15">Soccer Tutorial</h2>
+<ul>
+<li>'Soccer' is our main program.</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">Helpful Build Commands</h3>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">make</td>
+<td class="org-left">Compiles rc-software</td>
+</tr>
+
+<tr>
+<td class="org-left">make run</td>
+<td class="org-left">Run Soccer with no simulator</td>
+</tr>
+
+<tr>
+<td class="org-left">make run-sim</td>
+<td class="org-left">Run Soccer with a simulator</td>
+</tr>
+
+<tr>
+<td class="org-left">make debug</td>
+<td class="org-left">Run Soccer in a debugger</td>
+</tr>
+
+<tr>
+<td class="org-left">make debug-sim</td>
+<td class="org-left">Run Soccer in a debugger + simulator</td>
+</tr>
+</tbody>
+</table>
+
+</section>
+<section id="slide-orgheadline14">
+<h3 id="orgheadline14">Let's Run Some Plays!</h3>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline16">
+<h2 id="orgheadline16">Wrapping Up</h2>
+<ul>
+<li>Any Questions?</li>
+<li>What went well?</li>
+<li>What went poorly?</li>
 
 </ul>
 </section>
