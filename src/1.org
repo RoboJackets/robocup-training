@@ -110,11 +110,9 @@
 
 *** Credentials
 
-   |---------+----------|
    | User    | Password |
    |---------+----------|
    | vagrant | vagrant  |
-   |---------+----------|
 
    The sudo password is =vagrant=.
 
