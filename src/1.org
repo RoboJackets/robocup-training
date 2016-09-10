@@ -37,12 +37,12 @@
 - [[https://github.com/join%0A][https://github.com/join]]
 - Please include /at least/ your real first name on github
 
-[[https://i.imgur.com/0cdXQXW.png]]
+[[file:https://i.imgur.com/0cdXQXW.png]]
 * Fork Our Repo
 
 - RoboJackets/robocup-software (http://bit.ly/1L70JbB)
 
-[[https://i.imgur.com/kYzz2oh.png]]
+[[file:https://i.imgur.com/kYzz2oh.png]]
 
 * RoboCup VM Setup
 
@@ -79,17 +79,17 @@
 
  1. Go to =File->Import Appliance=
 
-      [[http://i.imgur.com/keQmMy4.png]]
+      [[file:https://i.imgur.com/keQmMy4.png]]
 
  2. Select the =.box= file you extracted earlier
 
-      [[http://i.imgur.com/3S2Pgt3.png]]
+      [[file:https://i.imgur.com/3S2Pgt3.png]]
 
  3. Increase the Amount of Memory and CPU's
 
       Increase the Memory/CPU to your computer's specs. Don't allocate too much memory/cpus!
 
-      [[http://i.imgur.com/P8Adm2a.png]]
+      [[file:https://i.imgur.com/P8Adm2a.png]]
 
  4. Hit =Import=!
 
@@ -101,11 +101,11 @@
 
       If you do not have virtualization, virtualbox may not allow you to turn on 3D Acceleration
 
-      [[http://i.imgur.com/YzmNmcM.png]]
+      [[file:https://i.imgur.com/YzmNmcM.png]]
 
  3. Turn *OFF* =Remote Display=
 
-      [[http://i.imgur.com/cvigW2G.png]]
+      [[file:https://i.imgur.com/cvigW2G.png]]
 
 *** Boot your new VM
 
@@ -178,7 +178,7 @@
 ** Let's Run Some Plays!                                            :slides:
 ** In Depth Tutorial                                                  :docs:
 *** Soccer Image
-[[https://i.imgur.com/vgDnpjo.png]]
+[[file:https://i.imgur.com/vgDnpjo.png]]
 
 - To start this tutorial, run ~make run-sim~ in the root of your project.
 
