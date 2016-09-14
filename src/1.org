@@ -9,6 +9,7 @@
 #+REVEAL_HLEVEL: 1
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
+
 # Export section for md
 * Training Summary 1 {#t20161}                                         :docs:
 
