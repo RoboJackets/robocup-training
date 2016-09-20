@@ -3,6 +3,7 @@ RoboCup Software Training (Created in 2016)
 
 
 * Slides
-[[https://robojackets.github.io/robocup-training/slides/1][Training Meeting 1]]
+1. [[https://robojackets.github.io/robocup-training/slides/1][Training Meeting 1]]
+2. [[https://robojackets.github.io/robocup-training/slides/2][Skills, Tactics, Plays - Intro]]
 
 * Docs

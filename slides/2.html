@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Skills, Tactics, Plays - Intro</title>
+<meta name="author" content="(Jay Kamat)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Intro</h1>
+</section>
+
+<section>
+<section id="slide-orgheadline5">
+<h2 id="orgheadline5">Python Overview</h2>
+<div class="outline-text-2" id="text-orgheadline5">
+</div></section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Using Python</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell">$ python3
+Python 3.5.2+ (default, Sep 10 2016, 10:24:58)
+[GCC 6.2.0 20160901] on linux
+Type <span style="color: #15968D;">"help"</span>, <span style="color: #15968D;">"copyright"</span>, <span style="color: #15968D;">"credits"</span> or <span style="color: #15968D;">"license"</span> for more information.
+&gt;&gt;&gt; print(<span style="color: #15968D;">"Hello RoboCup!"</span>)
+Hello RoboCup!
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Basic Syntax</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Hello world</span>
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"Hello World!"</span>)
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Set a variable</span>
+<span style="color: #2F7BDE;">myinteger</span> = 1
+<span style="color: #2F7BDE;">mydouble</span> = 1.0
+<span style="color: #2F7BDE;">mystr</span> = <span style="color: #15968D;">"one"</span>
+
+<span style="color: #598249;">print</span>(myinteger)
+<span style="color: #598249;">print</span>(mydouble)
+<span style="color: #598249;">print</span>(mystr)
+</pre>
+</div>
+
+<pre class="example">
+Hello World!
+1
+1.0
+one
+</pre>
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">Functions</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> a + b
+
+<span style="color: #598249;">print</span>(func1(2, 4))
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Lambda Expressions ('advanced' topic)</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">secret_func</span>():
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> <span style="color: #15968D;">"RoboCup!"</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">welcome</span>(target):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> <span style="color: #15968D;">"Welcome to "</span> + target()
+
+<span style="color: #598249;">print</span>(welcome(secret_func))
+<span style="color: #598249;">print</span>(welcome(<span style="color: #598249;">lambda</span>: <span style="color: #15968D;">"RoboJackets!"</span>))
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Lambda with arguments</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">print(welcome(lambda arg1, arg2: "RoboJackets!"))</span>
+</pre>
+</div>
+
+<pre class="example">
+6
+Welcome to RoboCup!
+Welcome to RoboJackets!
+</pre>
+
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Object Oriented Python</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #B68800;">BaseClass</span>():
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">globalVar</span> = 1
+
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Constructor</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
+        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing a Base"</span>)
+        <span style="color: #598249;">self</span>.localVar = 2
+
+<span style="color: #598249;">class</span> <span style="color: #B68800;">ChildClass</span>(BaseClass):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
+        <span style="color: #598249;">super</span>().__init__() <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">call superclass constructor</span>
+        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing Child"</span>)
+        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.localVar))
+
+<span style="color: #2F7BDE;">a</span> = BaseClass()
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"---"</span>)
+<span style="color: #2F7BDE;">a</span> = ChildClass()
+</pre>
+</div>
+
+<pre class="example">
+Initializing a Base
+---
+Initializing a Base
+Initializing Child
+Our local var is: 2
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10">State Machines</h2>
+<div class="outline-text-2" id="text-orgheadline10">
+</div></section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">What is it?</h3>
+<ul>
+<li>A state machine is a series of states</li>
+<li>You can transition between them</li>
+<li>A state could have multiple transition</li>
+<li>A state transition only occurs if a condition is fulfilled</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Move</h3>
+
+<div class="figure">
+<p><img src="http:/i.imgur.com/gmIcPGq.png" alt="gmIcPGq.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">Pass Receive</h3>
+
+<div class="figure">
+<p><img src="http:/i.imgur.com/HAhoMC1.png" alt="HAhoMC1.png" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Passing</h3>
+
+<div class="figure">
+<p><img src="http:/i.imgur.com/OhWnSwT.png" alt="OhWnSwT.png" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline14">
+<h2 id="orgheadline14">Plays, Tactics, Skills</h2>
+<div class="outline-text-2" id="text-orgheadline14">
+</div></section>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11">Skill</h3>
+</section>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Plays</h3>
+</section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">Tactics</h3>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>

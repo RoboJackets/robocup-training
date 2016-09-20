@@ -1,0 +1,104 @@
+#+TITLE: Skills, Tactics, Plays - Intro
+#+AUTHOR: Jay Kamat
+#+EMAIL: jaygkamat@gmail.com
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: none
+#+REVEAL_PLUGINS: (notes pdf)
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
+
+# Export section for md
+* Training Summary 1 {#t20162}                                         :docs:
+* Python Overview
+** Using Python
+#+BEGIN_SRC shell
+$ python3
+Python 3.5.2+ (default, Sep 10 2016, 10:24:58)
+[GCC 6.2.0 20160901] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print("Hello RoboCup!")
+Hello RoboCup!
+#+END_SRC
+** Basic Syntax
+#+BEGIN_SRC python :exports both :results output :cache yes
+  # Hello world
+  print("Hello World!")
+
+  # Set a variable
+  myinteger = 1
+  mydouble = 1.0
+  mystr = "one"
+
+  print(myinteger)
+  print(mydouble)
+  print(mystr)
+#+END_SRC
+
+#+RESULTS[e489be2aa6424fd489bf44e6633bdeefe5bebcac]:
+: Hello World!
+: 1
+: 1.0
+: one
+** Functions
+#+BEGIN_SRC python :exports both :results output :cache yes
+  def func1(a, b):
+      return a + b
+
+  print(func1(2, 4))
+
+  # Lambda Expressions ('advanced' topic)
+  def secret_func():
+      return "RoboCup!"
+  def welcome(target):
+      return "Welcome to " + target()
+
+  print(welcome(secret_func))
+  print(welcome(lambda: "RoboJackets!"))
+  # Lambda with arguments
+  # print(welcome(lambda arg1, arg2: "RoboJackets!"))
+#+END_SRC
+
+#+RESULTS[a218e7c68935997484fc27aef176998c92a2de9a]:
+: 6
+: Welcome to RoboCup!
+: Welcome to RoboJackets!
+
+** Object Oriented Python
+#+BEGIN_SRC python :exports both :results output :cache yes
+  class BaseClass():
+      globalVar = 1
+
+      # Constructor
+      def __init__(self):
+          print("Initializing a Base")
+          self.localVar = 2
+
+  class ChildClass(BaseClass):
+      def __init__(self):
+          super().__init__() # call superclass constructor
+          print("Initializing Child")
+          print("Our local var is: " + str(self.localVar))
+
+  a = BaseClass()
+  print("---")
+  a = ChildClass()
+#+END_SRC
+
+#+RESULTS[b8367e07071fb704e551a0af8a8f7364a986b327]:
+* State Machines
+** What is it?
+- A state machine is a series of states
+- You can transition between them
+- A state could have multiple transition
+- A state transition only occurs if a condition is fulfilled
+** Move
+[[file:http:/i.imgur.com/gmIcPGq.png]]
+** Pass Receive
+[[file:http:/i.imgur.com/HAhoMC1.png]]
+** Passing
+[[file:http:/i.imgur.com/OhWnSwT.png]]
+* Plays, Tactics, Skills
+** Skill
+** Plays
+** Tactics
