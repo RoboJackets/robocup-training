@@ -124,14 +124,6 @@ Welcome to RoboJackets!
 <span style="color: #2F7BDE;">a</span> = ChildClass()
 </pre>
 </div>
-
-<pre class="example">
-Initializing a Base
----
-Initializing a Base
-Initializing Child
-Our local var is: 2
-</pre>
 </section>
 </section>
 <section>
@@ -177,16 +169,63 @@ Our local var is: 2
 <section>
 <section id="slide-orgheadline14">
 <h2 id="orgheadline14">Plays, Tactics, Skills</h2>
-<div class="outline-text-2" id="text-orgheadline14">
-</div></section>
+<ul>
+<li>A Basic Unit in our AI</li>
+<li>Only one Play can run at a time</li>
+
+</ul>
+</section>
 <section id="slide-orgheadline11">
 <h3 id="orgheadline11">Skill</h3>
+<ul>
+<li>Involves only <i>one</i> robot</li>
+<li>Extremely basic building blocks</li>
+<li>Examples
+<ul>
+<li>Move</li>
+<li>Kick</li>
+<li>Face a direction</li>
+<li>Capture the ball</li>
+
+</ul></li>
+<li>Located in <code>soccer/gameplay/skills/</code></li>
+
+</ul>
 </section>
 <section id="slide-orgheadline12">
 <h3 id="orgheadline12">Plays</h3>
+<ul>
+<li>Involves multiple robots</li>
+<li>Contains skills</li>
+<li>Can contain unique behavior (but usually not)</li>
+<li>Examples
+<ul>
+<li>Pass</li>
+<li>Defend</li>
+<li>Line Up</li>
+
+</ul></li>
+<li>Located in <code>soccer/gameplay/tactics/</code></li>
+
+</ul>
 </section>
 <section id="slide-orgheadline13">
 <h3 id="orgheadline13">Tactics</h3>
+<ul>
+<li>Only one can run</li>
+<li>Contains tactics</li>
+<li>Examples
+<ul>
+<li>Basic122 (basic offense)</li>
+<li>Two side attack (basic offense)</li>
+<li>Stopped Play</li>
+<li>Line Up</li>
+<li>Corner Kick</li>
+
+</ul></li>
+<li>Located in <code>soccer/gameplay/plays/**/</code></li>
+
+</ul>
 </section>
 </section>
 </div>
