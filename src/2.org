@@ -86,12 +86,21 @@ Hello RoboCup!
 #+END_SRC
 
 #+RESULTS[b8367e07071fb704e551a0af8a8f7364a986b327]:
+** Additional Python Resources                                         :docs:
+- [[http://lightbot.com/hocflash.html][lightbot]] - A Introduction to Programming Logic
+- [[https://wiki.python.org/moin/BeginnersGuide/NonProgrammers][Python Beginner Hub]]
+- [[https://learnxinyminutes.com/docs/python/][Python Syntax Overview]]
+- [[http://thepythonguru.com/][A intro to python]]
 * State Machines
 ** What is it?
 - A state machine is a series of states
 - You can transition between them
 - A state could have multiple transition
 - A state transition only occurs if a condition is fulfilled
+*** Examples                                                         :docs:
+- A car engine is a state machine, each piston going between different internal states to move the car forward
+- A washing machine is a state machine, going between different states to cycle between wash, dry, etc.
+- [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Page on State Machines]]
 ** Move
 [[file:http:/i.imgur.com/gmIcPGq.png]]
 ** Pass Receive
@@ -110,7 +119,7 @@ Hello RoboCup!
   - Face a direction
   - Capture the ball
 - Located in =soccer/gameplay/skills/=
-** Plays
+** Tactics
 - Involves multiple robots
 - Contains skills
 - Can contain unique behavior (but usually not)
@@ -119,7 +128,7 @@ Hello RoboCup!
   - Defend
   - Line Up
 - Located in =soccer/gameplay/tactics/=
-** Tactics
+** Plays
 - Only one can run
 - Contains tactics
 - Examples
@@ -129,3 +138,7 @@ Hello RoboCup!
   - Line Up
   - Corner Kick
 - Located in =soccer/gameplay/plays/*/=
+*** Notes                                                            :docs:
+- Only plays are actually runnable in our model
+  - If you want to run a tactic, make a dummy play that runs that tactic on startup
+- For now, we'll only look at plays to keep things simple (maybe we'll get more complex later)
