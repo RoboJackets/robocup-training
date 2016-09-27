@@ -4,7 +4,8 @@
 #+EMAIL: jaygkamat@gmail.com
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_THEME: black
-#+REVEAL_TRANS: none
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: fast
 #+REVEAL_PLUGINS: (notes pdf)
 #+REVEAL_HLEVEL: 1
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
