@@ -86,7 +86,15 @@ Hello RoboCup!
   a = ChildClass()
 #+END_SRC
 
-#+RESULTS[b8367e07071fb704e551a0af8a8f7364a986b327]:
+#+RESULTS[0beb6f926bb8d56026537e5dc3c37e84d9d56a07]:
+: Initializing a Base
+: ---
+: Initializing a Base
+: Initializing Child
+: Our local var is: 2
+
+
+
 ** Additional Python Resources                                         :docs:
 - [[http://lightbot.com/hocflash.html][lightbot]] - A Introduction to Programming Logic
 - [[https://wiki.python.org/moin/BeginnersGuide/NonProgrammers][Python Beginner Hub]]
