@@ -143,3 +143,10 @@ Hello RoboCup!
 - Only plays are actually runnable in our model
   - If you want to run a tactic, make a dummy play that runs that tactic on startup
 - For now, we'll only look at plays to keep things simple (maybe we'll get more complex later)
+* Basic Plays and State Machines
+- Every Play is a State Machine as well!
+- Plays use State Machines to tell them what to do
+- This is a good thing, since we can have very complex behavior in a play
+** Defining States
+** Defining Transitions
+** Defining Actions to Take In A State
