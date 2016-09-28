@@ -11,7 +11,7 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Training Summary 1 {#t20161}                                         :docs:
+* Training Summary 2 {#t20161}                                         :docs:
 
 * Download VM Image
 - [[https://mega.nz/#!kgFCyC5Y!lETW_2hufOsqxEOUrnjVFD538FvI3qXBLXWiBm9X_xI][Download Link]] (http://bit.ly/2c61Fkx)

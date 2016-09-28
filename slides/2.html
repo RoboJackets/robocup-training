@@ -198,7 +198,7 @@ Our local var is: 2
 <div class="outline-text-2" id="text-orgheadline12">
 </div></section>
 <section id="slide-orgheadline8">
-<h3 id="orgheadline8">What is it?</h3>
+<h3 id="orgheadline8">What are they?</h3>
 <ul>
 <li>A state machine is a series of states</li>
 <li>You can transition between them</li>
@@ -306,12 +306,97 @@ Our local var is: 2
 </section>
 <section id="slide-orgheadline17">
 <h3 id="orgheadline17">Defining States</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">First create a state Enum (An enum is just a group of names)</span>
+<span style="color: #598249;">class</span> <span style="color: #B68800;">OurState</span>(enum.Enum):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">start</span> = 0
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">processing</span> = 0
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">terminated</span> = 0
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Then, register your states in our state machine class</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">You must be in a play/tactic/skill for this to work</span>
+<span style="color: #598249;">self</span>.add_state(PlayName.OurState.start,
+               <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">This is the superclass of our state. Most of the time,</span>
+               <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">this is 'running' (see below)</span>
+               behavior.Behavior.State.start)
+
+<span style="color: #598249;">self</span>.add_state(PlayName.OurState.processing,
+               behavior.Behavior.State.running)
+
+<span style="color: #598249;">self</span>.add_state(PlayName.OurState.terminated,
+               behavior.Behavior.State.completed)
+</pre>
+</div>
 </section>
 <section id="slide-orgheadline18">
 <h3 id="orgheadline18">Defining Transitions</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">self</span>.add_transition(
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Start state for this transition</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   behavior.Behavior.State.start,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">End state for this transition</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   PlayName.OurState.processing,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Condition for this transition (Replace 'True' with a conditional)</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">lambda</span>: <span style="color: #15968D;">True</span>,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Documentation String</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #15968D;">'immediately'</span>)
+</pre>
+</div>
 </section>
 <section id="slide-orgheadline19">
 <h3 id="orgheadline19">Defining Actions to Take In A State</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Assuming we have the PlayName.OurState.processing state</span>
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken when entering this state</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_processing</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"We have begun our processing"</span>)
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken every frame we are in the processing state</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_processing</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Ongoing"</span>)
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken when we exit the processing state</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_processing</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Completed!"</span>)
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline23">
+<h2 id="orgheadline23">Your Assignment</h2>
+<ul>
+<li>Create a play that prints out which half of the field the ball is currently in</li>
+<li>EX: Print out "TopHalf" when in the top half of the field, and "BottomHalf" otherwise.</li>
+<li>Use state machines to print this out ONLY ON A TRANSITION. (Don't simply print out every frame)</li>
+<li>Extra Credit: Can you come up with another cool thing to do with state machines?</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline21">
+<h3 id="orgheadline21">Tips</h3>
+<ul>
+<li>The field coordinates start at 0, 0; Which is our Goal.</li>
+<li>Field Size Docs: (<a href="http://bit.ly/2cLsUBL"><a href="http://bit.ly/2cLsUBL">http://bit.ly/2cLsUBL</a></a>)</li>
+<li>Ball Position Docs: (<a href="http://bit.ly/2damxXA"><a href="http://bit.ly/2damxXA">http://bit.ly/2damxXA</a></a>)</li>
+<li>Move the template starter from <code>soccer/gameplay/plays/skel/which_half.py</code> to <code>soccer/gameplay/plays/testing</code></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline22">
+<h3 id="orgheadline22">Useful Tools</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Gets the y position of the ball</span>
+main.ball().pos.y
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Gets the field length in meters</span>
+constants.Field.Length
+</pre>
+</div>
 </section>
 </section>
 </div>
