@@ -144,7 +144,7 @@ Hello RoboCup!
 - A washing machine is a state machine, going between different states to cycle between wash, dry, etc.
 - [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Page on State Machines]]
 ** Move
-[[file:http:/i.imgur.com/gmIcPGq.png]]
+[[file:http://i.imgur.com/gmIcPGq.png]]
 *** Details                                                          :docs:
 - Every Play starts in a 'start' state
 - Most plays will instantly transition into a running state (in this case ~behavior::running~)
@@ -155,13 +155,13 @@ Hello RoboCup!
   - They are used to determine whether a state can be killed or not, or if it is waiting for something
   - Most of the action will be done in a subclass of ~bheavior::running~ or ~behavior::running~ itself if you have a simple class.
 ** Pass Receive
-[[file:http:/i.imgur.com/HAhoMC1.png]]
+[[file:http://i.imgur.com/HAhoMC1.png]]
 *** Details                                                          :docs:
 - This example is a bit more complicated, as we have multiple ~running~ states
 - Each one of these substates are classified as running by our machinery, since they subclass behavior::running
 - A brief explanation is: if we are running, and the ball is ever kicked, immediately receive, but if we have some time, try to align yourself properly at the designated receive coordiate.
 ** Passing
-[[file:http:/i.imgur.com/OhWnSwT.png]]
+[[file:http://i.imgur.com/OhWnSwT.png]]
 *** Details                                                          :docs:
 - Here we have more running substates
 - A pass is fairly linear, as it has preparing -> kicking -> receiving states
