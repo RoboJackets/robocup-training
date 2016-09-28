@@ -30,9 +30,9 @@
 </section>
 
 <section>
-<section id="slide-orgheadline5">
-<h2 id="orgheadline5">Python Overview</h2>
-<div class="outline-text-2" id="text-orgheadline5">
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">Python Overview</h2>
+<div class="outline-text-2" id="text-orgheadline7">
 </div></section>
 <section id="slide-orgheadline1">
 <h3 id="orgheadline1">Using Python</h3>
@@ -73,7 +73,65 @@ one
 </pre>
 </section>
 <section id="slide-orgheadline3">
-<h3 id="orgheadline3">Functions</h3>
+<h3 id="orgheadline3">IF Statements and Conditionals</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm going to print out"</span>)
+<span style="color: #598249;">if</span> <span style="color: #15968D;">False</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm never going to run =("</span>)
+
+<span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is Great!"</span>)
+<span style="color: #598249;">else</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup Sucks!!!!"</span>)
+
+<span style="color: #2F7BDE;">a</span> = 5
+<span style="color: #598249;">if</span> a &gt; 2:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was greater than 2!"</span>)
+<span style="color: #598249;">if</span> a &gt; 2 <span style="color: #598249;">and</span> a &lt; 10:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was &gt; 2 and &lt; 5"</span>)
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 3"</span>)
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 9"</span> <span style="color: #598249;">if</span> a &lt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 9"</span>)
+</pre>
+</div>
+
+<pre class="example">
+I'm going to print out
+RoboCup is Great!
+A was greater than 2!
+A was &gt; 2 and &lt; 5
+A is greater than 3
+A is less than 9
+</pre>
+
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Loops and range()</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #2F7BDE;">a</span> = 10
+<span style="color: #598249;">while</span> a &gt; 0:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(a, end=<span style="color: #15968D;">" "</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">a</span> = a - 1
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
+
+<span style="color: #598249;">print</span>(<span style="color: #598249;">list</span>(<span style="color: #598249;">range</span>(10)))
+<span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(10):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(i * i, end=<span style="color: #15968D;">" "</span>)
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
+</pre>
+</div>
+
+<pre class="example">
+10 9 8 7 6 5 4 3 2 1
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+0 1 4 9 16 25 36 49 64 81
+</pre>
+
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
@@ -101,8 +159,8 @@ Welcome to RoboJackets!
 </pre>
 
 </section>
-<section id="slide-orgheadline4">
-<h3 id="orgheadline4">Object Oriented Python</h3>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Object Oriented Python</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #B68800;">BaseClass</span>():
@@ -135,12 +193,12 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-orgheadline10">
-<h2 id="orgheadline10">State Machines</h2>
-<div class="outline-text-2" id="text-orgheadline10">
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">State Machines</h2>
+<div class="outline-text-2" id="text-orgheadline12">
 </div></section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6">What is it?</h3>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">What is it?</h3>
 <ul>
 <li>A state machine is a series of states</li>
 <li>You can transition between them</li>
@@ -149,24 +207,24 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7">Move</h3>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Move</h3>
 
 <div class="figure">
 <p><img src="http:/i.imgur.com/gmIcPGq.png" alt="gmIcPGq.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgheadline8">
-<h3 id="orgheadline8">Pass Receive</h3>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Pass Receive</h3>
 
 <div class="figure">
 <p><img src="http:/i.imgur.com/HAhoMC1.png" alt="HAhoMC1.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgheadline9">
-<h3 id="orgheadline9">Passing</h3>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11">Passing</h3>
 
 <div class="figure">
 <p><img src="http:/i.imgur.com/OhWnSwT.png" alt="OhWnSwT.png" />
@@ -175,16 +233,16 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-orgheadline14">
-<h2 id="orgheadline14">Plays, Tactics, Skills</h2>
+<section id="slide-orgheadline16">
+<h2 id="orgheadline16">Plays, Tactics, Skills</h2>
 <ul>
 <li>A Basic Unit in our AI</li>
 <li>Only one Play can run at a time</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline11">
-<h3 id="orgheadline11">Skill</h3>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">Skill</h3>
 <ul>
 <li>Involves only <i>one</i> robot</li>
 <li>Extremely basic building blocks</li>
@@ -200,8 +258,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline12">
-<h3 id="orgheadline12">Tactics</h3>
+<section id="slide-orgheadline14">
+<h3 id="orgheadline14">Tactics</h3>
 <ul>
 <li>Involves multiple robots</li>
 <li>Contains skills</li>
@@ -217,8 +275,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline13">
-<h3 id="orgheadline13">Plays</h3>
+<section id="slide-orgheadline15">
+<h3 id="orgheadline15">Plays</h3>
 <ul>
 <li>Only one can run</li>
 <li>Contains tactics</li>
@@ -237,8 +295,8 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-orgheadline18">
-<h2 id="orgheadline18">Basic Plays and State Machines</h2>
+<section id="slide-orgheadline20">
+<h2 id="orgheadline20">Basic Plays and State Machines</h2>
 <ul>
 <li>Every Play is a State Machine as well!</li>
 <li>Plays use State Machines to tell them what to do</li>
@@ -246,14 +304,14 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline15">
-<h3 id="orgheadline15">Defining States</h3>
-</section>
-<section id="slide-orgheadline16">
-<h3 id="orgheadline16">Defining Transitions</h3>
-</section>
 <section id="slide-orgheadline17">
-<h3 id="orgheadline17">Defining Actions to Take In A State</h3>
+<h3 id="orgheadline17">Defining States</h3>
+</section>
+<section id="slide-orgheadline18">
+<h3 id="orgheadline18">Defining Transitions</h3>
+</section>
+<section id="slide-orgheadline19">
+<h3 id="orgheadline19">Defining Actions to Take In A State</h3>
 </section>
 </section>
 </div>

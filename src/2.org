@@ -41,6 +41,39 @@ Hello RoboCup!
 : 1
 : 1.0
 : one
+** IF Statements and Conditionals
+#+BEGIN_SRC python :exports both :results output :cache yes
+  if True:
+      print("I'm going to print out")
+  if False:
+      print("I'm never going to run =(")
+
+  if True:
+      print("RoboCup is Great!")
+  else:
+      print("RoboCup Sucks!!!!")
+
+  a = 5
+  if a > 2:
+      print("A was greater than 2!")
+  if a > 2 and a < 10:
+      print("A was > 2 and < 5")
+  print("A is greater than 3" if a > 3 else "A is less than 3")
+  print("A is greater than 9" if a < 3 else "A is less than 9")
+#+END_SRC
+** Loops and range()
+#+BEGIN_SRC python :exports both :results output :cache yes
+  a = 10
+  while a > 0:
+      print(a, end=" ")
+      a = a - 1
+  print("")
+
+  print(list(range(10)))
+  for i in range(10):
+      print(i * i, end=" ")
+  print("")
+#+END_SRC
 ** Functions
 #+BEGIN_SRC python :exports both :results output :cache yes
   def func1(a, b):

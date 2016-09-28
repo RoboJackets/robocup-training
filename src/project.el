@@ -18,3 +18,6 @@
 (defun my-org-publish ()
   (interactive)
   (org-publish-all))
+
+
+(setq org-babel-python-command "python3")
