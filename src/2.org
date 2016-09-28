@@ -10,7 +10,7 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Training Summary 1 {#t20162}                                         :docs:
+* Training Summary 2 {#t20162}                                         :docs:
 * Python Overview
 ** Using Python
 #+BEGIN_SRC shell
