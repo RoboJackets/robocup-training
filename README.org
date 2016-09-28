@@ -1,9 +1,11 @@
-* robocup-training
+* RoboCup Training
 RoboCup Software Training (Created in 2016)
 
+To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Press ~?~ for help!
 
 * Slides
 1. [[https://robojackets.github.io/robocup-training/slides/1][Training Meeting 1]]
 2. [[https://robojackets.github.io/robocup-training/slides/2][Skills, Tactics, Plays - Intro]]
 
 * Docs
+1. [[file:~/Code/robocup-software/api_docs/html/t20161.html][Training Docs 1]]
