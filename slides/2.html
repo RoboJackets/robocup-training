@@ -165,7 +165,6 @@ Welcome to RoboJackets!
 
 <pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #B68800;">BaseClass</span>():
 <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">globalVar</span> = 1
-
 <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Constructor</span>
 <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
         <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing a Base"</span>)
@@ -177,6 +176,8 @@ Welcome to RoboJackets!
         <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing Child"</span>)
         <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.localVar))
 
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">When defining class methods, pass 'self' as the first arg.</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Self refers to the current class instance.</span>
 <span style="color: #2F7BDE;">a</span> = BaseClass()
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"---"</span>)
 <span style="color: #2F7BDE;">a</span> = ChildClass()
@@ -384,6 +385,7 @@ Our local var is: 2
 <li>Field Size Docs: (<a href="http://bit.ly/2cLsUBL"><a href="http://bit.ly/2cLsUBL">http://bit.ly/2cLsUBL</a></a>)</li>
 <li>Ball Position Docs: (<a href="http://bit.ly/2damxXA"><a href="http://bit.ly/2damxXA">http://bit.ly/2damxXA</a></a>)</li>
 <li>Move the template starter from <code>soccer/gameplay/plays/skel/which_half.py</code> to <code>soccer/gameplay/plays/testing</code></li>
+<li>Start by just printing the Y coordinate of the ball and work up from there</li>
 
 </ul>
 </section>

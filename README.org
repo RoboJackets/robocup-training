@@ -5,7 +5,7 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 
 * Slides
 1. [[https://robojackets.github.io/robocup-training/slides/1][Training Meeting 1]]
-2. [[https://robojackets.github.io/robocup-training/slides/2][Skills, Tactics, Plays - Intro]]
+# 2. [[https://robojackets.github.io/robocup-training/slides/2][Skills, Tactics, Plays - Intro]]
 
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20161.html][Training Docs 1]]

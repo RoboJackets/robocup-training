@@ -102,7 +102,6 @@ Hello RoboCup!
 #+BEGIN_SRC python :exports both :results output :cache yes
   class BaseClass():
       globalVar = 1
-
       # Constructor
       def __init__(self):
           print("Initializing a Base")
@@ -114,6 +113,8 @@ Hello RoboCup!
           print("Initializing Child")
           print("Our local var is: " + str(self.localVar))
 
+  # When defining class methods, pass 'self' as the first arg.
+  # Self refers to the current class instance.
   a = BaseClass()
   print("---")
   a = ChildClass()
@@ -125,8 +126,6 @@ Hello RoboCup!
 : Initializing a Base
 : Initializing Child
 : Our local var is: 2
-
-
 
 ** Additional Python Resources                                         :docs:
 - [[http://lightbot.com/hocflash.html][lightbot]] - A Introduction to Programming Logic
@@ -167,6 +166,12 @@ Hello RoboCup!
 - A pass is fairly linear, as it has preparing -> kicking -> receiving states
 - However, if we 'timeout' in the preparing or kicking states, we fail the current behavior
   - This can happen if our robot is ever stuck
+** Additional Information on State Machines                           :docs:
+- While you /do not/ need to know advanced state machine ideas, you need to be comfortable working with and parsing existing state machines from a diagram or from our code.
+- [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Article]]
+- [[http://blog.markshead.com/869/state-machines-computer-science/][A quick block post about state machines]]
+- [[https://engineering.shopify.com/17488160-why-developers-should-be-force-fed-state-machines][You might be using state machines in a hacky way already...]]
+- [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/fsm.py][Our Current State Machine Implementation]]
 * Plays, Tactics, Skills
 - A Basic Unit in our AI
 - Only one Play can run at a time
@@ -266,6 +271,7 @@ Hello RoboCup!
 - Field Size Docs: ([[http://bit.ly/2cLsUBL][http://bit.ly/2cLsUBL]])
 - Ball Position Docs: ([[http://bit.ly/2damxXA][http://bit.ly/2damxXA]])
 - Move the template starter from ~soccer/gameplay/plays/skel/which_half.py~ to ~soccer/gameplay/plays/testing~
+- Start by just printing the Y coordinate of the ball and work up from there
 ** Useful Tools
 #+BEGIN_SRC python
   # Gets the y position of the ball
