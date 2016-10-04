@@ -158,7 +158,7 @@ Hello RoboCup!
 *** Details                                                          :docs:
 - This example is a bit more complicated, as we have multiple ~running~ states
 - Each one of these substates are classified as running by our machinery, since they subclass behavior::running
-- A brief explanation is: if we are running, and the ball is ever kicked, immediately receive, but if we have some time, try to align yourself properly at the designated receive coordiate.
+- A brief explanation is: if we are running, and the ball is ever kicked, immediately receive, but if we have some time, try to align yourself properly at the designated receive coordinate.
 ** Passing
 [[file:http://i.imgur.com/OhWnSwT.png]]
 *** Details                                                          :docs:
