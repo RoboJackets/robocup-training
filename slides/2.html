@@ -312,8 +312,8 @@ Our local var is: 2
 <pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">First create a state Enum (An enum is just a group of names)</span>
 <span style="color: #598249;">class</span> <span style="color: #B68800;">OurState</span>(enum.Enum):
 <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">start</span> = 0
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">processing</span> = 0
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">terminated</span> = 0
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">processing</span> = 1
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">terminated</span> = 2
 
 <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Then, register your states in our state machine class</span>
 <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">You must be in a play/tactic/skill for this to work</span>
