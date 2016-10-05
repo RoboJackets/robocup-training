@@ -282,3 +282,5 @@ Hello RoboCup!
 ** Exercise Details                                                   :docs:
 - [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/plays/skel/which_half.py][Link to Starter File]]
 - Ask on [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/plays/skel/which_half.py][gitter]] for help and answers!
+** Answers                                                            :docs:
+- [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/plays/testing/which_half.py][Which Half Answers]]
