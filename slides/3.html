@@ -33,7 +33,11 @@
 <section id="slide-orgheadline1">
 <h2 id="orgheadline1">Questions about Plays?</h2>
 <ul>
-<li>Last meeting was pretty dense</li>
+<li>Last meeting was pretty dense
+<ul>
+<li>We <i>NEED</i> to have 1 on 1 time with each of you, so it is <i>your</i> responsibility to waive us over if you're stuck!</li>
+
+</ul></li>
 <li>Topics Covered:
 <ul>
 <li>Python</li>
@@ -41,13 +45,14 @@
 <li>Play/Skill/Tactic Structure</li>
 
 </ul></li>
+<li>And today, we're going into&#x2026;</li>
 
 </ul>
 </section>
 </section>
 <section>
 <section id="slide-orgheadline5">
-<h2 id="orgheadline5">Subbehaviors</h2>
+<h2 id="orgheadline5">Subbehaviors!</h2>
 <ul>
 <li>A Behavior is a generic name for any skill, play, or tactic.</li>
 <li>Last meeting we learned about Plays/Skills/Tactics
@@ -94,7 +99,7 @@
 </div>
 </section>
 <section id="slide-orgheadline4">
-<h3 id="orgheadline4"><i>Behavior</i> Tree!</h3>
+<h3 id="orgheadline4"><i>Behavior</i> Tree! (cont.)</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -150,12 +155,28 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline11">
-<h2 id="orgheadline11">Real Examples</h2>
-<div class="outline-text-2" id="text-orgheadline11">
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">Real Examples</h2>
+<div class="outline-text-2" id="text-orgheadline12">
 </div></section>
 <section id="slide-orgheadline10">
-<h3 id="orgheadline10">Line Up Tactic</h3>
+<h3 id="orgheadline10">CoordinatedPass Tactic</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">receiver</span> = skills.pass_receive.PassReceive()
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">receiver.receive_point</span> = <span style="color: #598249;">self</span>.receive_point
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">self</span>.add_subbehavior(receiver,
+                         <span style="color: #15968D;">'receiver'</span>,
+                         required=<span style="color: #598249;">self</span>.receiver_required)
+
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_running</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'receiver'</span>)
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11">Line Up Tactic</h3>
 <ul>
 <li>First State Machine is set up, then:</li>
 
@@ -177,16 +198,101 @@
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_running</span>(<span style="color: #598249;">self</span>):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>  <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
-           <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
-           <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i))<span style="color: #2F7BDE;">.pos</span> = pt
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
+        <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
+        <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i))<span style="color: #2F7BDE;">.pos</span> = pt
 </pre>
 </div>
 </section>
 </section>
 <section>
 <section id="slide-orgheadline13">
-<h2 id="orgheadline13">Assignment</h2>
+<h2 id="orgheadline13">RoboCup Pro Tip</h2>
+<ul>
+<li>Find some code doing something like what you want</li>
+<li>Tweak it until it works</li>
+<li>It's less effective than working everything out, but it's great for beginners!</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline19">
+<h2 id="orgheadline19">How do I get MY Robot?!?</h2>
+<div class="outline-text-2" id="text-orgheadline19">
+</div></section>
+<section id="slide-orgheadline14">
+<h3 id="orgheadline14">Dynamic Assignment</h3>
+<ul>
+<li>Our role assignment system picks the best robot for the task</li>
+<li>You define your constraints, and we'll give you a robot if we can!</li>
+<li>It's also some more black magic&#x2026;</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline18">
+<h3 id="orgheadline18">But I want Robot X!</h3>
+<ul>
+<li>Override Role Requirements to add your constraints!</li>
+<li>This next section is Extra Credit&#x2026;
+<ul>
+<li>And it's a massive oversimplification</li>
+<li>See <code>role_assignment.py</code> for more information.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline15">
+<h4 id="orgheadline15">Get the closest robot</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">From Move</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Destination Shape is used for distances to points or segments</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">reqs.destination_shape</span> = <span style="color: #598249;">self</span>.pos
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> reqs
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline16">
+<h4 id="orgheadline16">Get the robot with all the hardware</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">reqs.require_kicking</span> = <span style="color: #15968D;">True</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">try to be near the ball</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">if</span> main.ball().valid:
+        <span style="color: #2F7BDE;">reqs.destination_shape</span> = main.ball().pos
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> reqs
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline17">
+<h4 id="orgheadline17">I really, really, want MY Robot!</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">From Goalie</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">This iteration is needed if we have</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">subbehaviors we want to have applied as well.</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">for</span> req <span style="color: #598249;">in</span> role_assignment \
+        .iterate_role_requirements_tree_leaves(reqs):
+
+        req.required_shell_id \
+            = <span style="color: #598249;">self</span>.shell_id <span style="color: #598249;">if</span> <span style="color: #598249;">self</span>.shell_id != <span style="color: #15968D;">None</span> <span style="color: #598249;">else</span> -1
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> reqs
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline21">
+<h2 id="orgheadline21">Assignment</h2>
 <ul>
 <li>Create a binary clock play</li>
 <li>Display the current minute in binary on the field
@@ -197,8 +303,8 @@
 
 </ul>
 </section>
-<section id="slide-orgheadline12">
-<h3 id="orgheadline12">Tips</h3>
+<section id="slide-orgheadline20">
+<h3 id="orgheadline20">Tips</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">import</span> time
@@ -210,7 +316,7 @@
 </div>
 
 <pre class="example">
-010100
+001111
 </pre>
 </section>
 </section>

@@ -10,16 +10,18 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Training Summary 3 {#t20163}                                         :docs:
+* Skills, Tactics, Plays - 2 {#t20163}                                 :docs:
 * Questions about Plays?
 - Last meeting was pretty dense
+  - We /NEED/ to have 1 on 1 time with each of you, so it is /your/ responsibility to waive us over if you're stuck!
 - Topics Covered:
   - Python
   - State Machines
   - Play/Skill/Tactic Structure
+- And today, we're going into...
 ** Additional Information                                             :docs:
 - See the previous slide deck and docs for more information, they should be a pretty comprehensive overview of our play system.
-* Subbehaviors
+* Subbehaviors!
 - A Behavior is a generic name for any skill, play, or tactic.
 - Last meeting we learned about Plays/Skills/Tactics
   - How do we put them together?
@@ -46,7 +48,14 @@ Basic122::running
         endVelocity(0, 0)
         face(0.160718, 9.15305)
 #+END_SRC
-** /Behavior/ Tree!
+
+*** Details                                                          :docs:
+- Here we have a tree of all the behaviors running
+- We have a basic122 play running
+- It is running 2 Marks, and a PivotKick in this frame
+- The marks are directly running robot commands, like move, and face.
+- The PivotKick is running a capture skill, which is running robot commands, like face, move, etc.
+** /Behavior/ Tree! (cont.)
 #+BEGIN_SRC text
 Basic122::running
     Defense::defending
@@ -62,6 +71,11 @@ Basic122::running
                 move(0.290916, 0.14)
                 endVelocity(0, 0)
 #+END_SRC
+
+*** Details                                                          :docs:
+- Pretty much same thing here
+- We've got a Defense tactic running, with SubmissiveDefender and Goalie Skills
+- These skills actually run robot commands.
 * How do I use subbehaviors?
 ** Adding Subbehaviors
 #+BEGIN_SRC python
@@ -81,6 +95,18 @@ self.remove_all_subbehaviors()
 a_subbheavior = self.subbehavior_with_name('string name')
 #+END_SRC
 * Real Examples
+** CoordinatedPass Tactic
+#+BEGIN_SRC python
+  def on_enter_running(self):
+      receiver = skills.pass_receive.PassReceive()
+      receiver.receive_point = self.receive_point
+      self.add_subbehavior(receiver,
+                           'receiver',
+                           required=self.receiver_required)
+
+  def on_exit_running(self):
+      self.remove_subbehavior('receiver')
+#+END_SRC
 ** Line Up Tactic
 - First State Machine is set up, then:
 #+BEGIN_SRC python
@@ -96,10 +122,59 @@ a_subbheavior = self.subbehavior_with_name('string name')
 #+END_SRC
 
 #+BEGIN_SRC python
- def execute_running(self):
-        for i in range(6):
-            pt = self._line.get_pt(0) + (self.diff * float(i))
-            self.subbehavior_with_name("robot" + str(i)).pos = pt
+  def execute_running(self):
+      for i in range(6):
+          pt = self._line.get_pt(0) + (self.diff * float(i))
+          self.subbehavior_with_name("robot" + str(i)).pos = pt
+#+END_SRC
+* RoboCup Pro Tip
+- Find some code doing something like what you want
+- Tweak it until it works
+- It's less effective than working everything out, but it's great for beginners!
+* How do I get MY Robot?!?
+** Dynamic Assignment
+- Our role assignment system picks the best robot for the task
+- You define your constraints, and we'll give you a robot if we can!
+- It's also some black magic...
+** But I want Robot X!
+- Override Role Requirements to add your constraints!
+- This next section is Extra Credit...
+  - And it's a massive oversimplification
+  - See ~role_assignment.py~ for more information.
+*** Get the closest robot
+#+BEGIN_SRC python
+  # From Move
+  def role_requirements(self):
+      reqs = super().role_requirements()
+      # Destination Shape is used for distances to points or segments
+      reqs.destination_shape = self.pos
+      return reqs
+#+END_SRC
+*** Get the robot with all the hardware
+#+BEGIN_SRC python
+  def role_requirements(self):
+      reqs = super().role_requirements()
+      reqs.require_kicking = True
+      # try to be near the ball
+      if main.ball().valid:
+          reqs.destination_shape = main.ball().pos
+      return reqs
+
+#+END_SRC
+*** I really, really, want MY Robot!
+#+BEGIN_SRC python
+  # From Goalie
+  def role_requirements(self):
+      reqs = super().role_requirements()
+
+      # This iteration is needed if we have
+      # subbehaviors we want to have applied as well.
+      for req in role_assignment \
+          .iterate_role_requirements_tree_leaves(reqs):
+
+          req.required_shell_id \
+              = self.shell_id if self.shell_id != None else -1
+      return reqs
 #+END_SRC
 * Assignment
 - Create a binary clock play
@@ -112,6 +187,8 @@ mins =  time.localtime().tm_min
 binary = format(mins, '06b')
 print(binary)
 # Index with binary[0-6]
+# THIS INDEX IS A CHARACTER VALUE, NOT AN INT
+# USE == '1', not == 1
 #+END_SRC
 
 #+RESULTS[2cdccf696e363d1f51ce50c0b895bf17a58a9b55]:

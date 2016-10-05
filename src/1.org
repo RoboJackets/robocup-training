@@ -122,11 +122,12 @@
 
 *** Testing
 
- - To test out your new RoboCup VM, open a terminal (use the search in the top left), and type these two commands
-     #+BEGIN_SRC shell
-     cd ~/robocup-software
-     make run-sim
-     #+END_SRC
+To test out your new RoboCup VM, open a terminal (use the search in the top left), and type these two commands
+
+#+BEGIN_SRC shell
+cd ~/robocup-software
+make run-sim
+#+END_SRC
 
 *** You Made It!
 
