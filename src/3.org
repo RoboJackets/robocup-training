@@ -180,6 +180,8 @@ a_subbheavior = self.subbehavior_with_name('string name')
 - Create a binary clock play
 - Display the current minute in binary on the field
   - Use a robot to represent a 1, and lack of a robot to represent a 0
+- Starter code is in ~soccer/gameplay/plays/skel/binary_clock.py~.
+- Move it to ~soccer/gameplay/plays/training~ to begin.
 ** Tips
 #+BEGIN_SRC python :exports both :results output :cache yes
 import time
