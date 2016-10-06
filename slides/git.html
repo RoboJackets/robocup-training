@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Beginner Git</title>
+<meta name="author" content="(Jay Kamat)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Beginner Git</h1>
+</section>
+
+<section>
+<section id="slide-orgheadline3">
+<h2 id="orgheadline3">Git</h2>
+<blockquote nil>
+<p>
+The Stupid Content Tracker
+</p>
+</blockquote>
+<ul>
+<li><code>git</code> is <i>NOT</i> GitHub.</li>
+<li>GitHub is 'server git'</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1">Why <code>git</code> over another VCS?</h3>
+<ul>
+<li>Branching and Merging</li>
+<li><b><i>FAST</i></b></li>
+<li>Powerful, and Flexible</li>
+<li>Free (as in freedom, and as in beer)</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Why <code>git</code> over another client?</h3>
+<ul>
+<li><code>git</code> is the 1st party front-end</li>
+<li><code>git</code> is the way it was designed to be experienced.</li>
+<li>Learning <code>git</code> is the easiest way to understand what's going on.</li>
+<li><code>git</code> gives you ultimate, uninhibited access to your repository.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline9">
+<h2 id="orgheadline9">Basic Git Commands</h2>
+<ul>
+<li>Follow along on your own computer!</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Creating a <code>git</code> Repo</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Create a folder named 'repo'</span>
+mkdir repo
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Move inside 'repo'</span>
+<span style="color: #598249;">cd</span> repo
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Create a git repository where we are</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">(created inside the repo folder)</span>
+
+git init
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Initialized empty Git repository in /tmp/repo/.git/</span>
+git status
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; On branch master</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Initial commit</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; nothing to commit (create/copy files and use "git add" to track)</span>
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Use cd .. to move up a directory</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Adding <i>Content</i></h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Create a file called file.txt with some text in it.</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Example:</span>
+<span style="color: #598249;">echo</span> <span style="color: #15968D;">"this is a line to be stored into git"</span> &gt; file.txt
+git status
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Untracked files:</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;   (use "git add &lt;file&gt;..." to include in what will be committed)</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;     file.txt</span>
+git add file.txt
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Changes to be committed:</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;   (use "git rm --cached &lt;file&gt;..." to unstage)</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;         new file:   file.txt</span>
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">This message should reflect the change. We'll come back to this.</span>
+git commit -m <span style="color: #15968D;">"Added a small amount of content"</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Staging Area</h3>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/lSuhwGr.jpg" alt="lSuhwGr.jpg" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Viewing History</h3>
+<ul>
+<li><code>git</code> versions are 'hashes'
+<ul>
+<li>Something like: <code>cbbd8d9a5e...</code></li>
+<li>You don't need the full hash to refer to a commit
+<ul>
+<li>Only use ~6 chars from the front.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Show the latest commit</span>
+git show
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Show all commits (use q to quit)</span>
+git log
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">Git History</h3>
+<ul>
+<li>Every git version is linked to it's previous versions:</li>
+<li><code>v1 &lt;- v2 &lt;- v3 &lt;- v4</code></li>
+<li>Every version is linked to the previous version</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline16">
+<h2 id="orgheadline16">Git Branching</h2>
+<ul>
+<li>We'll discuss what we're doing in a bit</li>
+<li>Let's create a new feature, but we know it's going to be buggy
+<ul>
+<li>Let's create it in an isolated environment, a branch!</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Create a feature branch</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Create a myfeature branch</span>
+git branch myfeature
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Move to myfeature branch</span>
+git checkout myfeature
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Let's find out where we are</span>
+git status
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; On branch myfeature</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; nothing to commit, working tree clean</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline11">
+<h3 id="orgheadline11">Add a new 'feature'</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #598249;">echo</span> <span style="color: #15968D;">"My new feature!"</span> &gt;&gt; file.txt
+git add file.txt
+git commit -m <span style="color: #15968D;">'My new feature is very cool, but buggy!'</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">There's a bug in the released version!</h3>
+<ul>
+<li>Let's patch the version everyone is on, the master release!</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Switch back to the master branch</span>
+git checkout master
+git status
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Look at the contents of file.txt at this point!</span>
+
+<span style="color: #598249;">echo</span> <span style="color: #15968D;">"My critical bugfix!"</span> &gt;&gt; file.txt
+git add file.txt
+git commit -m <span style="color: #15968D;">"Critical bugfix number 1!"</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">What just happened?</h3>
+<ul>
+<li>We first created our test file, which is our 'release version'</li>
+<li>Then we created a feature branch, and made some 'buggy changes'</li>
+<li>We then realized we need to fix a bug in the 'release version'
+<ul>
+<li>We switched back to release, and 'fixed the bug'</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline14">
+<h3 id="orgheadline14">Let's take a closer look</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">A much nicer git log that will visualize our history</span>
+git log --oneline --graph --all
+
+git show &lt;commit hash&gt;
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline15">
+<h3 id="orgheadline15">Merging</h3>
+<ul>
+<li>Brings divergent branches together</li>
+<li>Let's release our feature by putting it into the master branch</li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">We want to merge INTO master</span>
+git checkout master
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Merge myfeature into master</span>
+git merge myfeature
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Auto-merging file.txt</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; CONFLICT (content): Merge conflict in file.txt</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Automatic merge failed; fix conflicts and then commit the result.</span>
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">That's not good!</span>
+git status
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Edit file.txt to remove &gt;&gt;&gt; &lt;&lt;&lt; and ===</span>
+git add file.txt
+git commit <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Just save whatever pops up</span>
+git status
+</pre>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>
