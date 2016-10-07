@@ -82,7 +82,7 @@ The Stupid Content Tracker
 
 #+END_SRC
 ** Staging Area
-[[file:https://i.imgur.com/lSuhwGr.jpg]]
+[[file:http://i.imgur.com/4nql3LO.jpg]]
 ** Viewing History
 - ~git~ versions are 'hashes'
   - Something like: =cbbd8d9a5e...=
