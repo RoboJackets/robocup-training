@@ -448,6 +448,28 @@ git diff myrelease
 # Use git push --tags to push your tags as well.
 ```
 
+## `git clean`
+
+-   Use `git clean -f` to remove all *unstaged* files from your repo.
+    -   THIS WILL REMOVE FILES ON YOUR FILESYSTEM.
+
+# We Only Scratched The Surface
+
+-   `git rebase`
+-   `git revert`
+-   `git submodule`
+-   `git subtree`
+-   `git reflog`
+-   `git blame`
+-   `git stash`
+-   `git grep`
+-   `git cherry-pick`
+-   `git bisect`
+-   `git apply`
+-   `git merge-base`
+-   `git archive`
+-   `git am`
+
 # Additional Resources
 
 -   `man git`
