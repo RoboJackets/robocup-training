@@ -153,7 +153,11 @@ git log
 <ul>
 <li>Every git version is linked to it's previous versions:</li>
 <li><code>v1 &lt;- v2 &lt;- v3 &lt;- v4</code></li>
-<li>Every version is linked to the previous version</li>
+<li>A version can have multiple previous versions
+<ul>
+<li>Let's demonstrate this in&#x2026;</li>
+
+</ul></li>
 
 </ul>
 </section>
@@ -265,6 +269,99 @@ git status
 git add file.txt
 git commit <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Just save whatever pops up</span>
 git status
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline21">
+<h2 id="orgheadline21">Git Remotes</h2>
+<ul>
+<li>How do we share our code with others?</li>
+<li>Branching is great for me, but what if I want to let my friends work on a branch?</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline17">
+<h3 id="orgheadline17">Let's Play With Remotes</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">let's start in a common state</span>
+git checkout master
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">let's make a copy for 'our friend to have'</span>
+<span style="color: #598249;">cd</span> ..
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Clone from the repo folder to the repo2 folder</span>
+git clone repo/ repo2/
+<span style="color: #598249;">cd</span> repo2
+git status
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; On branch master</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Your branch is up-to-date with 'origin/master'.</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; nothing to commit, working tree clean</span>
+git log --oneline --abbrev --graph --all
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">*   8f12721 Merge branch 'myfeature'</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">|\</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">| * 2716a3b Add a new feature</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">* | 625aaf5 Critical bugfix</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">|/</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">* cbbd8d9 one small change</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline18">
+<h3 id="orgheadline18">Let's Make a Change On 'our computer'</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Move into 'our repo'</span>
+<span style="color: #598249;">cd</span> ../repo
+git status
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Edit file.txt with our changes</span>
+<span style="color: #598249;">echo</span> <span style="color: #15968D;">"A change I made on my computer"</span> &gt;&gt; file.txt
+
+git add file.txt
+git commit -m <span style="color: #15968D;">'Added files from my computer.'</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline19">
+<h3 id="orgheadline19">Let's Give This Change To Our Friend</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Pull new changes from repo's master into repo2's master</span>
+<span style="color: #598249;">cd</span> ../repo2
+git pull ../repo master
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; From ../repo</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;  * branch            master     -&gt; FETCH_HEAD</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Updating 8f12721..2b05fa9</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Fast-forward</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;  file.txt | 1 +</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;  1 file changed, 1 insertion(+)</span>
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline20">
+<h3 id="orgheadline20">Shortcuts to make remotes faster</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Add a shortcut to interact with ../repo2</span>
+<span style="color: #598249;">cd</span> ../repo
+git remote add repo2 ../repo2
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">same as git pull ../repo2 master</span>
+git pull repo2 master
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; From ../repo2</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt;  * branch            master     -&gt; FETCH_HEAD</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; Already up-to-date.</span>
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">List existing remotes</span>
+git remote -v
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; repo2       ../repo2 (fetch)</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">&gt; repo2       ../repo2 (push)</span>
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">man git-remote for more options, like</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">git remote set-url repo2 ../repo2</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">git remote rm repo2</span>
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">git remote show repo2</span>
 </pre>
 </div>
 </section>

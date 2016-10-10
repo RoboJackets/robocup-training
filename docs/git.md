@@ -102,7 +102,8 @@ git log
 
 -   Every git version is linked to it's previous versions:
 -   `v1 <- v2 <- v3 <- v4`
--   Every version is linked to the previous version
+-   A version can have multiple previous versions
+    -   Let's demonstrate this in&#x2026;
 
 # Git Branching
 
@@ -184,4 +185,84 @@ git status
 git add file.txt
 git commit # Just save whatever pops up
 git status
+```
+
+# Git Remotes
+
+-   How do we share our code with others?
+-   Branching is great for me, but what if I want to let my friends work on a branch?
+
+## Let's Play With Remotes
+
+```shell
+# let's start in a common state
+git checkout master
+
+# let's make a copy for 'our friend to have'
+cd ..
+# Clone from the repo folder to the repo2 folder
+git clone repo/ repo2/
+cd repo2
+git status
+# > On branch master
+# > Your branch is up-to-date with 'origin/master'.
+# > nothing to commit, working tree clean
+git log --oneline --abbrev --graph --all
+# *   8f12721 Merge branch 'myfeature'
+# |\
+# | * 2716a3b Add a new feature
+# * | 625aaf5 Critical bugfix
+# |/
+# * cbbd8d9 one small change
+```
+
+## Let's Make a Change On 'our computer'
+
+```shell
+# Move into 'our repo'
+cd ../repo
+git status
+
+# Edit file.txt with our changes
+echo "A change I made on my computer" >> file.txt
+
+git add file.txt
+git commit -m 'Added files from my computer.'
+```
+
+## Let's Give This Change To Our Friend
+
+```shell
+# Pull new changes from repo's master into repo2's master
+cd ../repo2
+git pull ../repo master
+# > From ../repo
+# >  * branch            master     -> FETCH_HEAD
+# > Updating 8f12721..2b05fa9
+# > Fast-forward
+# >  file.txt | 1 +
+# >  1 file changed, 1 insertion(+)
+```
+
+## Shortcuts to make remotes faster
+
+```shell
+# Add a shortcut to interact with ../repo2
+cd ../repo
+git remote add repo2 ../repo2
+# same as git pull ../repo2 master
+git pull repo2 master
+# > From ../repo2
+# >  * branch            master     -> FETCH_HEAD
+# > Already up-to-date.
+
+# List existing remotes
+git remote -v
+# > repo2       ../repo2 (fetch)
+# > repo2       ../repo2 (push)
+
+# man git-remote for more options, like
+# git remote set-url repo2 ../repo2
+# git remote rm repo2
+# git remote show repo2
 ```
