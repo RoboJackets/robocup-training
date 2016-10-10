@@ -15,7 +15,7 @@
 -   Have a text editor installed and be comfortable using it!
     -   Gui or terminal does not matter.
 
-# Git
+# `git`
 
 > The Stupid Content Tracker
 
@@ -36,9 +36,27 @@
 -   Learning `git` is the easiest way to understand what's going on.
 -   `git` gives you ultimate, uninhibited access to your repository.
 
-# Basic Git Commands
+## `git` Vocabulary
+
+| Name       | Definition                           |
+|---------- |------------------------------------ |
+| commit     | version                              |
+| repository | collection of files to track         |
+| branch     | a quick copy of your code to work on |
+| remote     | any other git repository             |
+| SHA/Hash   | Turns code into a random string      |
+
+# Basic `git` Commands
 
 -   Follow along on your own computer!
+
+## Setting Up Git
+
+```shell
+# Let's git attribute your changes to you!
+git config --global user.name "Jay Kamat"
+git config --global user.email "jaygkamat@gmail.com"
+```
 
 ## Creating a `git` Repo
 
@@ -98,14 +116,14 @@ git show
 git log
 ```
 
-## Git History
+## `git` History
 
 -   Every git version is linked to it's previous versions:
 -   `v1 <- v2 <- v3 <- v4`
 -   A version can have multiple previous versions
     -   Let's demonstrate this in&#x2026;
 
-# Git Branching
+# `git` Branching
 
 -   We'll discuss what we're doing in a bit
 -   Let's create a new feature, but we know it's going to be buggy
@@ -187,7 +205,7 @@ git commit # Just save whatever pops up
 git status
 ```
 
-# Git Remotes
+# `git` Remotes
 
 -   How do we share our code with others?
 -   Branching is great for me, but what if I want to let my friends work on a branch?
@@ -266,3 +284,173 @@ git remote -v
 # git remote rm repo2
 # git remote show repo2
 ```
+
+## A note about `git fetch`
+
+-   `git fetch` updates what we see in a remote without changing our files.
+-   `git pull` updates our files with changes
+-   `git fetch` stores those changes made without touching our state.
+
+# `git` refs
+
+-   `git` has a suite of commands for interacting with history.
+    -   To use them, you will need to understand refs
+-   A ref is anything that identifies a commit&#x2026;
+
+## Examples of Refs
+
+1.  A Commit Hash (eg: `cbbd8d9a5e1c64f84`)
+    -   You can shorten with the first few chars
+2.  Special: `HEAD`
+    -   A Ref to the commit your repository is currently on
+3.  Branch Names
+    -   `master`, `myfeature`
+4.  Remotes
+    -   <remote>/<branch>
+    -   `repo2/master`, `origin/master`
+5.  Tags
+    -   Aliases you can give to commits
+
+## Ref Modifiers
+
+-   Using `HEAD` as an example.
+-   `HEAD~`; One commit before `HEAD`
+-   `HEAD~~`; Two commits before `HEAD`
+-   `HEAD~3`; Three commits before `HEAD`
+-   `HEAD^<N>`; Choose the <Nth> parent if we're on a merge.
+
+## Using Refs
+
+```shell
+# Show's the current commit, same as git show
+git show HEAD
+
+# Shows the commit that's one old
+git show HEAD~
+
+# Shows the commit thats two commits older than repo2's master
+git show repo2/master~~
+```
+
+## Quickly See Files in a Ref
+
+```shell
+git checkout <ref>
+
+# Does nothing, HEAD is our current ref
+git checkout HEAD
+
+# See the commit before head
+git checkout HEAD~
+# Warning about detached HEAD
+
+# checkout to 2 commits before the remote's master branch.
+git checkout repo2/master~~
+
+# We also use checkout to switch branches (we can edit safely now)
+git checkout master
+```
+
+## Change Where a Branch 'Points To'
+
+```shell
+# Git reset has many uses
+# Run git status yourself!
+
+# Move our branch to the previous commit, but don't change our files.
+# Any diff is staged
+git reset --soft HEAD~
+# Go back to where we were
+git pull repo2 master
+
+# Move our branch to the previous commit, and change our files
+# No diff is present (since we change files)
+git reset --hard HEAD~
+git pull repo2 master
+
+# Like git reset --soft, but don't stage our files either.
+git reset --mixed HEAD~
+git pull repo2 master
+# Complaint about unstaged files
+
+# HEAD is the default if no ref is supplied
+# This resets our files to head, trashing our 'unstaged work'
+git reset --hard
+git pull repo2 master
+```
+
+## Find the Diff Between Two Commits
+
+```shell
+# Finds the difference between one commit ago and the current commit
+git diff HEAD~ HEAD
+
+# Finds the difference between myfeature and master
+git diff myfeature master
+
+# Show unstaged changes
+git diff
+
+# Show only staged changes
+git diff --staged
+```
+
+# Neat Tricks
+
+## Quickly Make a Branch
+
+```shell
+git checkout -b mynewbranch
+
+# Same as
+git branch mynewbranch
+git checkout mynewbranch
+```
+
+## Let Git Remember Your Remotes
+
+```shell
+git checkout master
+
+# Right now you will need to always do
+git push repo2 master
+
+# If you run:
+git push -u repo2 master
+# Once, you can do
+git push
+
+# from now on, git will remember the remote and branch
+# that you've paired with your local branch!
+```
+
+## Git Aliases
+
+```shell
+git config --global alias.s "status"
+
+git s
+# is now the same as
+git status
+```
+
+## Tagging
+
+```shell
+git tag myrelease
+
+# now you can do
+git checkout myrelease
+git reset --hard myrelease
+git diff myrelease
+
+# where myrelease refrences the commit you were on.
+# Use git push --tags to push your tags as well.
+```
+
+# Additional Resources
+
+-   `man git`
+-   `man git-command`
+    -   eg: `man git-status`
+-   [Online `git` Tutorial](https://git-scm.com/doc)
