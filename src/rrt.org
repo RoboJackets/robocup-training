@@ -16,12 +16,11 @@
 * Plan for today
 - Learn about our path planning system
 - Download, compile, and run our RRT repository
-
-* What is Path Planning
+* High Level Overview
+[[file:https://i.imgur.com/4Y3wCJH.jpg]]
+** What is Path Planning
 - Our robots need to know how to get from a start point to an end point
-[[file:https://docs.google.com/drawings/d/1_l8-LYyQ6hD5gnGM4YBZN7ZSJxnPZsh7NkKnQ0e3aFU/edit]]
 - Our path-planning algorithm of choice is the RRT (Rapidly-Exploring Random Tree)
-
 * How the RRT works
 
 ** How the RRT works
@@ -35,7 +34,6 @@
 5. Repeat 2-4 until a node is created at our destination.
     The series of connected nodes from root to destination forms the path that the robot will follow
 7. Smooth out path with overlaid B&eacute;zier curve
-
 * Bi-RRT
 - We execute two RRTs, one rooted at the start node and the other at the end node
 
