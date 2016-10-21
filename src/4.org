@@ -1,0 +1,61 @@
+#+TITLE: Skills, Tactics, Plays - Advanced
+#+AUTHOR: Jay Kamat
+#+EMAIL: jaygkamat@gmail.com
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: fast
+#+REVEAL_PLUGINS: (notes pdf)
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
+
+# Export section for md
+* Skills, Tactics, Plays - 3 {#t20163}                                 :docs:
+* Communications Recap
+- Gitter
+- robocup-training repo
+* Questions about Plays?
+- We're going to slow down a bit after last meeting
+  - We're going to catch up everyone who's behind, and give you a chance to work on something real if you're ahead!
+- Topics Covered:
+  - Subbehaviors
+  - Role Requirements
+  - Creating Plays
+** Additional Information                                             :docs:
+- See the previous slide deck and docs for more information, they should be a pretty comprehensive overview of our play system.
+* Misc Plays Information
+** Do we have any Subbehaviors?
+#+BEGIN_SRC python
+  # Returns True if we have any subbehaivors
+  self.has_subbehaviors()
+#+END_SRC
+** Get all Subbehaviors
+#+BEGIN_SRC python
+  # Returns an array of all subbehaviors
+  self.all_subbehaviors()
+#+END_SRC
+** Is a Subbehaivor Done?
+- Done = our completed or failed states
+#+BEGIN_SRC python
+  self.subbehavior_with_name('mybehavior').is_done_running()
+#+END_SRC
+** Docs                                                               :docs:
+- [[https://robojackets.github.io/robocup-software/classgameplay_1_1behavior_1_1_behavior.html][These are docs for this section. Check subclass docs as well!]]
+* CoordinatedPass Overview
+- Coordinated Pass is a complicated tactic with a lot of different features
+- It is used everywhere, and it isn't terribly complicated
+** TODO INSERT COORDINATED PASS DIAGRAM HERE
+** Go through Coordinated Pass
+** Overview                                                           :docs:
+- We went through everything in coordinated pass, which is located [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/tactics/coordinated_pass.py][here]].
+- Using what we learnt in previous sections, this should be fairly self explanitory.
+- For a high level overview, check out the [[https://robojackets.github.io/robocup-software/classgameplay_1_1tactics_1_1coordinated__pass_1_1_coordinated_pass.html][coordinated pass]] docs page.
+* Assignment
+- Create a Triangle Pass Play
+- Round up 3 Robots in a Triangle, and pass between them.
+- Starter code is in ~soccer/gameplay/plays/skel/binary_clock.py~ (same as last time).
+- Move it to ~soccer/gameplay/plays/training/triangle_pass.py~ to begin.
+** Tips
+1. Use Move Skills to move your robots to the triangle initially
+2. Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle
+3. At a bare minimum, I would make setup and passing states. You may want to have a state for every side of the triangle (or not).
