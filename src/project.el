@@ -13,7 +13,8 @@
          :publishing-directory ,(concat proj-base "../docs/")
          :publishing-function org-gfm-publish-to-gfm
          :exclude-tags ("slides")
-         ))))
+         ))
+    org-reveal-root "https://cdn.jsdelivr.net/reveal.js/3.0.0/"))
 
 (defun my-org-publish ()
   (interactive)

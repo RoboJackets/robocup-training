@@ -1,7 +1,6 @@
 #+TITLE: Skills, Tactics, Plays - Beginner
 #+AUTHOR: Jay Kamat
 #+EMAIL: jaygkamat@gmail.com
-#+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: linear
 #+REVEAL_SPEED: fast
@@ -82,8 +81,13 @@ Basic122::running
   self.add_subbehavior(skill_object,
                        "Name of Subbehavior",
                        required=False or True
-                       priority=10) # A lower number is higher priority
+                       priority=10) # A higher number is higher priority
 #+END_SRC
+
+*** Details                                                          :docs:
+- For more docs on this entire section see [[https://robojackets.github.io/robocup-software/classgameplay_1_1single__robot__composite__behavior_1_1_single_robot_composite_behavior.html][this link.]]
+- These subbehaviors show up in the behavior tree when you run your program.
+- This can be extremely useful when debugging state transitions or subbehavior assignments.
 ** Removing Subbehaviors
 #+BEGIN_SRC python
 self.remove_subbehavior('string name')
@@ -180,6 +184,8 @@ a_subbheavior = self.subbehavior_with_name('string name')
 - Create a binary clock play
 - Display the current minute in binary on the field
   - Use a robot to represent a 1, and lack of a robot to represent a 0
+- Starter code is in ~soccer/gameplay/plays/skel/binary_clock.py~.
+- Move it to ~soccer/gameplay/plays/training~ to begin.
 ** Tips
 #+BEGIN_SRC python :exports both :results output :cache yes
 import time
