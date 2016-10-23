@@ -1,8 +1,6 @@
-
 #+TITLE: Path Planning
 #+AUTHOR: Josh Ting
 #+EMAIL: joshting25@gmail.com
-#+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: linear
 #+REVEAL_SPEED: fast
@@ -35,7 +33,7 @@
 ** How the RRT works
 5. Repeat 2-4 until a node is created at our destination.
     The series of connected nodes from root to destination forms the path that the robot will follow
-7. Smooth out path with overlaid B&eacute;zier curve
+7. Smooth out path with overlaid Bézier curve
 
 * Sounds really inefficient
 - Why waste computation time branching out in random directions?
@@ -89,7 +87,7 @@ make
 - Increasing Goal Bias
   - Random branching has tendency to branch directly towards goal instead
 - Increasing Waypoint Bias
-  - Random branching has tendency to branch towards B&eacute;zier curve waypoints of previous paths
+  - Random branching has tendency to branch towards Bézier curve waypoints of previous paths
 - Goal Bias + Waypoing Bias must sum to at most 1.0
 
 ** Adaptive Stepsize Control

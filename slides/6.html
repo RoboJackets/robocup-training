@@ -37,24 +37,29 @@
 <li>Download, compile, and run our RRT repository</li>
 
 </ul>
+
 </section>
 </section>
 <section>
-<section id="slide-orgheadline3">
-<h2 id="orgheadline3">High Level Overview</h2>
+<section id="slide-orgheadline2">
+<h2 id="orgheadline2">High Level Overview</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/4Y3wCJH.jpg" alt="4Y3wCJH.jpg" />
 </p>
 </div>
+
 </section>
-<section id="slide-orgheadline2">
-<h3 id="orgheadline2">What is Path Planning</h3>
+</section>
+<section>
+<section id="slide-orgheadline3">
+<h2 id="orgheadline3">What is Path Planning</h2>
 <ul>
 <li>Our robots need to know how to get from a start point to an end point</li>
 <li>Our path-planning algorithm of choice is the RRT (Rapidly-Exploring Random Tree)</li>
 
 </ul>
+
 </section>
 </section>
 <section>
@@ -72,25 +77,15 @@
 
 </ol>
 
-
 </section>
 <section id="slide-orgheadline5">
 <h3 id="orgheadline5">How the RRT works</h3>
 <ol>
 <li>Repeat 2-4 until a node is created at our destination.
 The series of connected nodes from root to destination forms the path that the robot will follow</li>
-<li>Smooth out path with overlaid B&amp;eacute;zier curve</li>
+<li>Smooth out path with overlaid Bézier curve</li>
 
 </ol>
-</section>
-</section>
-<section>
-<section id="slide-orgheadline7">
-<h2 id="orgheadline7">Bi-RRT</h2>
-<ul>
-<li>We execute two RRTs, one rooted at the start node and the other at the end node</li>
-
-</ul>
 
 </section>
 </section>
@@ -105,10 +100,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-</section>
-<section>
-<section id="slide-orgheadline9">
-<h2 id="orgheadline9">Advantages of RRT</h2>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Advantages of RRT</h3>
 <ul>
 <li>Specialized for continuous configuration spaces</li>
 <li>Can handle kinodynamic constraints</li>
@@ -119,8 +112,42 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">Repository Code</h2>
+<ul>
+<li>rrt-viewer</li>
+<li>rrt</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">rrt-viewer</h3>
+<ul>
+<li>Displays window for running RRT</li>
+<li>Uses QT for graphics</li>
+
+</ul>
+
+</section>
 <section id="slide-orgheadline10">
-<h2 id="orgheadline10">Download RRT</h2>
+<h3 id="orgheadline10">rrt</h3>
+<ul>
+<li>Contains RRT implementation</li>
+<li>Defines state space</li>
+<li>Bi-RRT
+<ul>
+<li>We execute two RRTs, one rooted at the start node and the other at the end node</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">Download RRT</h2>
 <ul>
 <li>Our rrt repository is located at <a href="http://github.com/RoboJackets/rrt">http://github.com/RoboJackets/rrt</a></li>
 <li>On your terminal, type in:</li>
@@ -139,8 +166,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgheadline11">
-<h2 id="orgheadline11">Compile and run RRT</h2>
+<section id="slide-orgheadline13">
+<h2 id="orgheadline13">Compile and run RRT</h2>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #598249;">cd</span> rrt
@@ -153,25 +180,25 @@ make
 </section>
 </section>
 <section>
-<section id="slide-orgheadline12">
-<h2 id="orgheadline12">How to use RRT</h2>
+<section id="slide-orgheadline14">
+<h2 id="orgheadline14">How to use RRT</h2>
 <ul>
 <li>Drag start and end points to desired locations</li>
 <li>Drag around the plane space to draw and remove obstacles</li>
-<li>Click run to run until the rrt finds a valid path, or step to execute a single rrt iteration</li>
-<li>Click reset once to delete the tree, twice to delete the previously calculated path</li>
+<li>Click "run" to run until the rrt finds a valid path, or "step" to execute a single rrt iteration</li>
+<li>Click "reset" once to delete the tree, twice to delete the previously calculated path</li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-orgheadline15">
-<h2 id="orgheadline15">Tweaking parameters</h2>
-<div class="outline-text-2" id="text-orgheadline15">
+<section id="slide-orgheadline17">
+<h2 id="orgheadline17">Tweaking parameters</h2>
+<div class="outline-text-2" id="text-orgheadline17">
 </div></section>
-<section id="slide-orgheadline13">
-<h3 id="orgheadline13">Biases</h3>
+<section id="slide-orgheadline15">
+<h3 id="orgheadline15">Biases</h3>
 <ul>
 <li>Increasing Goal Bias
 <ul>
@@ -180,7 +207,7 @@ make
 </ul></li>
 <li>Increasing Waypoint Bias
 <ul>
-<li>Random branching has tendency to branch towards B&amp;eacute;zier curve waypoints of previous paths</li>
+<li>Random branching has tendency to branch towards Bézier curve waypoints of previous paths</li>
 
 </ul></li>
 <li>Goal Bias + Waypoing Bias must sum to at most 1.0</li>
@@ -188,8 +215,8 @@ make
 </ul>
 
 </section>
-<section id="slide-orgheadline14">
-<h3 id="orgheadline14">Adaptive Stepsize Control</h3>
+<section id="slide-orgheadline16">
+<h3 id="orgheadline16">Adaptive Stepsize Control</h3>
 <ul>
 <li>Stepsize now dynamically changes based on whether there are obstacles nearby</li>
 <li>Requires extra computation time to locate nearby obstacles</li>
@@ -197,6 +224,12 @@ make
 <li>Obstacle-light environments benefit the most from this enhancement</li>
 
 </ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline18">
+<h2 id="orgheadline18">Any questions?</h2>
 </section>
 </section>
 </div>
