@@ -1,7 +1,6 @@
 #+TITLE: Beginner Git
 #+AUTHOR: Jay Kamat
 #+EMAIL: jaygkamat@gmail.com
-#+REVEAL_ROOT: https://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: linear
 #+REVEAL_SPEED: fast

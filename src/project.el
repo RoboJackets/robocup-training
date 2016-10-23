@@ -13,7 +13,8 @@
          :publishing-directory ,(concat proj-base "../docs/")
          :publishing-function org-gfm-publish-to-gfm
          :exclude-tags ("slides")
-         ))))
+         ))
+    org-reveal-root "http://lab.hakim.se/reveal-js/"))
 
 (defun my-org-publish ()
   (interactive)
