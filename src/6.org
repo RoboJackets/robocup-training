@@ -11,7 +11,7 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Path Planning {#t2016r}                                         :docs:
+* Path Planning {#t20166}                                         :docs:
 
 * Plan for today
 - Learn about our path planning system
@@ -42,7 +42,7 @@
 - What advantages could there be in random branching?
 - Why not use a less computationally intense algorithm like A*?
 
-* Advantages of RRT
+** Advantages of RRT
 - Specialized for continuous configuration spaces
 - Can handle kinodynamic constraints
 - Algorithm can be modified for various needs and preferences
