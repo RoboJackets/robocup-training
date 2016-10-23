@@ -51,11 +51,11 @@
 - rrt-viewer
 - rrt
 
-* rrt-viewer
+** rrt-viewer
 - Displays window for running RRT
 - Uses QT for graphics
 
-* rrt
+** rrt
 - Contains RRT implementation
 - Defines state space
 - Bi-RRT
@@ -80,8 +80,8 @@ make
 * How to use RRT
 - Drag start and end points to desired locations
 - Drag around the plane space to draw and remove obstacles
-- Click run to run until the rrt finds a valid path, or step to execute a single rrt iteration
-- Click reset once to delete the tree, twice to delete the previously calculated path
+- Click "run" to run until the rrt finds a valid path, or "step" to execute a single rrt iteration
+- Click "reset" once to delete the tree, twice to delete the previously calculated path
 
 * Tweaking parameters
 
