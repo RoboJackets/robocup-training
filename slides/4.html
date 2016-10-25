@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Skills, Tactics, Plays - Advanced</title>
+<title>Skills, Tactics, Plays - Overview</title>
 <meta name="author" content="(Jay Kamat)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -26,15 +26,20 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Advanced</h1>
+<section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Overview</h1>
 </section>
 
 <section>
 <section id="slide-orgheadline1">
 <h2 id="orgheadline1">Communications Recap</h2>
 <ul>
-<li>Gitter</li>
-<li>robocup-training repo</li>
+<li><a href="https://gitter.im/RoboJackets/robocup-software">Gitter</a></li>
+<li><a href="https://github.com/RoboJackets//robocup-training">RoboCup Training Repo</a>
+<ul>
+<li>Slides</li>
+<li>Docs</li>
+
+</ul></li>
 
 </ul>
 </section>
@@ -46,6 +51,8 @@
 <li>We're going to slow down a bit after last meeting
 <ul>
 <li>We're going to catch up everyone who's behind, and give you a chance to work on something real if you're ahead!</li>
+<li><b>Plays are not the only area in RoboCup</b></li>
+<li>They are a very high impact thing to cover though.</li>
 
 </ul></li>
 <li>Topics Covered:
@@ -60,12 +67,17 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline6">
-<h2 id="orgheadline6">Misc Plays Information</h2>
-<div class="outline-text-2" id="text-orgheadline6">
-</div></section>
 <section id="slide-orgheadline3">
-<h3 id="orgheadline3">Do we have any Subbehaviors?</h3>
+<h2 id="orgheadline3">Solution to Binary Clock</h2>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">Misc Plays Information</h2>
+<div class="outline-text-2" id="text-orgheadline7">
+</div></section>
+<section id="slide-orgheadline4">
+<h3 id="orgheadline4">Do we have any Subbehaviors?</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Returns True if we have any subbehaivors</span>
@@ -73,8 +85,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-orgheadline4">
-<h3 id="orgheadline4">Get all Subbehaviors</h3>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Get all Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Returns an array of all subbehaviors</span>
@@ -82,8 +94,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-orgheadline5">
-<h3 id="orgheadline5">Is a Subbehaivor Done?</h3>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Is a Subbehaivor Done?</h3>
 <ul>
 <li>Done = our completed or failed states</li>
 
@@ -96,24 +108,69 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline9">
-<h2 id="orgheadline9">CoordinatedPass Overview</h2>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10">CoordinatedPass Overview</h2>
 <ul>
 <li>Coordinated Pass is a complicated tactic with a lot of different features</li>
 <li>It is used everywhere, and it isn't terribly complicated</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline7">
-<h3 id="orgheadline7"><span class="todo TODO">TODO</span> INSERT COORDINATED PASS DIAGRAM HERE</h3>
-</section>
 <section id="slide-orgheadline8">
-<h3 id="orgheadline8">Go through Coordinated Pass</h3>
+<h3 id="orgheadline8">Coordinated Pass Behavior Diagram</h3>
+
+<div class="figure">
+<p><a href="https://i.imgur.com/undefined.png"><img src="https://i.imgur.com/Det1VDj.png" alt="Det1VDj.png" /></a>
+</p>
+</div>
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Let's Look at Code!</h3>
+<ul>
+<li><a href="https://github.com/RoboJackets/robocup-software/blob/720645581718e52bc174275843fd7d114edf0543/soccer/gameplay/tactics/coordinated_pass.py">Coordinated Pass</a></li>
+
+</ul>
 </section>
 </section>
 <section>
+<section id="slide-orgheadline15">
+<h2 id="orgheadline15">Wrapping Up</h2>
+<div class="outline-text-2" id="text-orgheadline15">
+</div></section>
 <section id="slide-orgheadline11">
-<h2 id="orgheadline11">Assignment</h2>
+<h3 id="orgheadline11">Play Ideas?</h3>
+<ul>
+<li>Offense, Defense, Etc.</li>
+<li>Great Place for Beginners to Start</li>
+<li>(side note: Anyone can begin contributing now if you wish)
+<ul>
+<li>We <code>&lt;3</code> contributions!</li>
+<li>Recommend starting with intro issues, then moving on to beginner.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline12">
+<h3 id="orgheadline12">Future Meeting Possibilities</h3>
+<ul>
+<li><i>Joint Meeting with Electrical, Intro To Firmware</i></li>
+<li><i>RRT Path Planning in RoboCup (Maybe a bit of Motion Control)</i></li>
+<li>Soccer C++ Internals</li>
+<li>QT Tutorial (develop soccer's UI!)</li>
+<li>Contribution Quickstart Meeting
+<ul>
+<li>Submitting a PR</li>
+<li>Some Git</li>
+<li>Build Systems/CI?</li>
+
+</ul></li>
+<li>What do you guys want to learn?</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">Assignment</h3>
 <ul>
 <li>Create a Triangle Pass Play</li>
 <li>Round up 3 Robots in a Triangle, and pass between them.</li>
@@ -122,8 +179,8 @@
 
 </ul>
 </section>
-<section id="slide-orgheadline10">
-<h3 id="orgheadline10">Tips</h3>
+<section id="slide-orgheadline14">
+<h3 id="orgheadline14">Tips</h3>
 <ol>
 <li>Use Move Skills to move your robots to the triangle initially</li>
 <li>Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle</li>

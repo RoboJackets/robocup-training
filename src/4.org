@@ -1,4 +1,4 @@
-#+TITLE: Skills, Tactics, Plays - Advanced
+#+TITLE: Skills, Tactics, Plays - Overview
 #+AUTHOR: Jay Kamat
 #+EMAIL: jaygkamat@gmail.com
 #+REVEAL_THEME: black
@@ -9,19 +9,26 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Skills, Tactics, Plays - 3 {#t20163}                                 :docs:
+* Skills, Tactics, Plays - Overview {#t20164}                          :docs:
 * Communications Recap
-- Gitter
-- robocup-training repo
+- [[https://gitter.im/RoboJackets/robocup-software][Gitter]]
+- [[https://github.com/RoboJackets//robocup-training][RoboCup Training Repo]]
+  - Slides
+  - Docs
 * Questions about Plays?
 - We're going to slow down a bit after last meeting
   - We're going to catch up everyone who's behind, and give you a chance to work on something real if you're ahead!
+  - *Plays are not the only area in RoboCup*
+  - They are a very high impact thing to cover though.
 - Topics Covered:
   - Subbehaviors
   - Role Requirements
   - Creating Plays
 ** Additional Information                                             :docs:
 - See the previous slide deck and docs for more information, they should be a pretty comprehensive overview of our play system.
+* Solution to Binary Clock
+** Solution Links                                                     :docs:
+- [[https://github.com/RoboJackets/robocup-software/blob/720645581718e52bc174275843fd7d114edf0543/soccer/gameplay/plays/training/binary_clock.py][Binary Clock Soltuion File]]
 * Misc Plays Information
 ** Do we have any Subbehaviors?
 #+BEGIN_SRC python
@@ -43,13 +50,32 @@
 * CoordinatedPass Overview
 - Coordinated Pass is a complicated tactic with a lot of different features
 - It is used everywhere, and it isn't terribly complicated
-** TODO INSERT COORDINATED PASS DIAGRAM HERE
-** Go through Coordinated Pass
+** Coordinated Pass Behavior Diagram
+[[https://i.imgur.com/undefined.png][file:https://i.imgur.com/Det1VDj.png]]
+** Let's Look at Code!
+- [[https://github.com/RoboJackets/robocup-software/blob/720645581718e52bc174275843fd7d114edf0543/soccer/gameplay/tactics/coordinated_pass.py][Coordinated Pass]]
 ** Overview                                                           :docs:
 - We went through everything in coordinated pass, which is located [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/tactics/coordinated_pass.py][here]].
 - Using what we learnt in previous sections, this should be fairly self explanitory.
 - For a high level overview, check out the [[https://robojackets.github.io/robocup-software/classgameplay_1_1tactics_1_1coordinated__pass_1_1_coordinated_pass.html][coordinated pass]] docs page.
-* Assignment
+* Wrapping Up
+** Play Ideas?
+- Offense, Defense, Etc.
+- Great Place for Beginners to Start
+- (side note: Anyone can begin contributing now if you wish)
+  - We ~<3~ contributions!
+  - Recommend starting with intro issues, then moving on to beginner.
+** Future Meeting Possibilities
+- /Joint Meeting with Electrical, Intro To Firmware/
+- /RRT Path Planning in RoboCup (Maybe a bit of Motion Control)/
+- Soccer C++ Internals
+- QT Tutorial (develop soccer's UI!)
+- Contribution Quickstart Meeting
+  - Submitting a PR
+  - Some Git
+  - Build Systems/CI?
+- What do you guys want to learn?
+** Assignment
 - Create a Triangle Pass Play
 - Round up 3 Robots in a Triangle, and pass between them.
 - Starter code is in ~soccer/gameplay/plays/skel/binary_clock.py~ (same as last time).
