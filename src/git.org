@@ -93,7 +93,7 @@ The Stupid Content Tracker
   git commit -m "Added a small amount of content"
 #+END_SRC
 ** Staging Area
-[[file:http://i.imgur.com/4nql3LO.jpg]]
+[[file:https://i.imgur.com/4nql3LO.jpg]]
 ** Viewing History
 - ~git~ versions are 'hashes'
   - Something like: =cbbd8d9a5e...=

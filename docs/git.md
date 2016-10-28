@@ -99,7 +99,7 @@ git commit -m "Added a small amount of content"
 
 ## Staging Area
 
-![img](http://i.imgur.com/4nql3LO.jpg)
+![img](https://i.imgur.com/4nql3LO.jpg)
 
 ## Viewing History
 
