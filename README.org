@@ -8,6 +8,7 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 2. [[https://robojackets.github.io/robocup-training/slides/2][Plays - 1]]
 3. [[https://robojackets.github.io/robocup-training/slides/3][Plays - 2]]
 4. [[https://robojackets.github.io/robocup-training/slides/4][Plays - 3]]
+5. [[https://robojackets.github.io/robocup-training/slides/git][Supplemental Git]]
 
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20161.html][Training Docs 1]]
