@@ -683,6 +683,38 @@ git diff myrelease
 </ul>
 </section>
 </section>
+<section>
+<section id="slide-orgheadline42">
+<h2 id="orgheadline42">BONUS: GitHub</h2>
+<div class="outline-text-2" id="text-orgheadline42">
+</div></section>
+<section id="slide-orgheadline40">
+<h3 id="orgheadline40">GitHub is just another remote!</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell">git clone &lt;repo url&gt;
+
+<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Git will automatically add a remote for you called 'origin'</span>
+git remote -v
+
+git pull origin master
+git push origin master
+git show origin/master
+</pre>
+</div>
+</section>
+<section id="slide-orgheadline41">
+<h3 id="orgheadline41">Pull Request</h3>
+<ul>
+<li>A PR is a request for a maintainer to pull code into a repo you don't have access to</li>
+<li>First fork the repo (this is a clone from a github repo to a github repo you have write access to)</li>
+<li>Then clone your fork (you will now be able to commit/push to this fork)</li>
+<li>Submit a PR from your fork into the target repo</li>
+<li>Once accepted, the maintainer pulls code from your github fork to the main github repo.</li>
+
+</ul>
+</section>
+</section>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>

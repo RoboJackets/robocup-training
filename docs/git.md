@@ -476,3 +476,26 @@ git diff myrelease
 -   `man git-command`
     -   eg: `man git-status`
 -   [Online `git` Tutorial](https://git-scm.com/doc)
+
+# BONUS: GitHub
+
+## GitHub is just another remote!
+
+```shell
+git clone <repo url>
+
+# Git will automatically add a remote for you called 'origin'
+git remote -v
+
+git pull origin master
+git push origin master
+git show origin/master
+```
+
+## Pull Request
+
+-   A PR is a request for a maintainer to pull code into a repo you don't have access to
+-   First fork the repo (this is a clone from a github repo to a github repo you have write access to)
+-   Then clone your fork (you will now be able to commit/push to this fork)
+-   Submit a PR from your fork into the target repo
+-   Once accepted, the maintainer pulls code from your github fork to the main github repo.
