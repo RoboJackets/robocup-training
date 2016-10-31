@@ -23,14 +23,10 @@
 - Our path-planning algorithm of choice is the RRT (Rapidly-Exploring Random Tree)
 
 * How the RRT works
-
-#+REVEAL: split
 1. Start building our tree by placing a root node at the destination
 2. Randomly select some coordinate in the position space
 3. Identify existing node in the tree that is nearest to that coordinate
 4. Add new node in tree branching from nearest node to random coordinate
-
-#+REVEAL: split
 5. Repeat 2-4 until a node is created at our destination.
     The series of connected nodes from root to destination forms the path that the robot will follow
 6. Smooth out path with overlaid Bézier curve
