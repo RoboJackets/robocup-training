@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Firmware Overview</title>
+<meta name="author" content="(Evan Peterson)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Firmware Overview</h1>
+</section>
+
+
+<section>
+<section id="slide-orgheadline1">
+<h2 id="orgheadline1">Initialization</h2>
+<ul>
+<li>Initialize Kicker(attiny) and FPGA using binary files stored on MBED
+<ul>
+<li>Compilation for these files is separate from firmware MBED runs</li>
+
+</ul></li>
+<li>Initialize any other devices (radio, MPU, etc.)</li>
+<li>Start threads</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline4">
+<h2 id="orgheadline4">RTOS (Threads)</h2>
+<ul>
+<li>Threads allow us to run multiple segments of code in "parallel"</li>
+<li>MBED only has one core so only one thread executed at once</li>
+<li>RTOS is used to control the running of these threads</li>
+<li>Threads can be running, ready (in queue to be run), or waiting (for some event like a timer or interrupt)</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="https://developer.mbed.org/media/uploads/emilmont/xthreadstatus.png.pagespeed.ic.c21fE5uss-.jpg" alt="xthreadstatus.png.pagespeed.ic.c21fE5uss-.jpg" height="25%," width="25%" />
+</p>
+</div>
+</section>
+<section id="slide-orgheadline2">
+<h3 id="orgheadline2">Main</h3>
+<ul>
+<li>Watchdog (reset MBED if it doesn't go back to main in certain time)</li>
+<li>Control LEDs (neopixel &amp; LEDs connected to IO Expander)</li>
+<li>Respond to buttons/switches(rotary selector &amp; dip switch)</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline3">
+<h3 id="orgheadline3">Other threads</h3>
+<ul>
+<li>Console
+<ul>
+<li>Read and write to serial for the console</li>
+<li>Commands for console defined in commands.cpp</li>
+
+</ul></li>
+<li>Controller
+<ul>
+<li>Send duty cycles to FPGA to control motor speeds</li>
+
+</ul></li>
+<li>Radio
+<ul>
+<li>Two RX threads, one TX thread (see Radio section)</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline7">
+<h2 id="orgheadline7">Radio</h2>
+<ul>
+<li>How commands are sent to robot (motor speeds, kick, etc.)</li>
+<li>How information is sent back to the base station (various robot statuses)</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">CommLink</h3>
+<ul>
+<li>Used as hardware abstraction layer to communicate from higher level firmware to radio hardware (through drivers)</li>
+<li>What we use to call functions to get/send data through radio</li>
+<li>Other radio drivers (cc1201 and decawave) are derived from this in order to implement the specific hardware communication</li>
+<li>Runs RX thread waiting for radio interrupts</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">CommModule</h3>
+<ul>
+<li>Used to handle packets being sent and received with radio</li>
+<li>RX/TX queues (as threads) waiting for other threads to put packets in the queue that are ready to be sent or have been received and need to be processed</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline8">
+<h2 id="orgheadline8">Shared SPI</h2>
+<ul>
+<li>Allows MBED (master) to communicate with multiple devices through same pins</li>
+<li>Devices (slaves) currently used are radio, kicker (ATtiny), and FPGA</li>
+<li>This ensures multiple threads aren't trying to communicate on these shared lines all at once</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline9">
+<h2 id="orgheadline9">Hardfault Handler</h2>
+<ul>
+<li>Written in assembly to call function when the mbed hard faults (crashes)</li>
+<li>Used to print out information to console useful for debugging</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline10">
+<h2 id="orgheadline10">FPGA (verilog)</h2>
+<ul>
+<li>FPGA is programming logic gates which allows for many parallel operations</li>
+<li>Reads in hall sensors for motors
+<ul>
+<li>Used to determine which phase to power to keeps motors running</li>
+
+</ul></li>
+<li>Gets encoder values for how fast motor is spinning
+<ul>
+<li>Given number of encoder steps passed in period of time</li>
+<li>This value can be read by MBED over SPI</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>Powers correct phases for motors (by sending signals to motor drivers)
+<ul>
+<li>Powers the next phase after the current phase given by hall sensors</li>
+<li>Powers the motors using the duty cycle sent from the MBED
+<ul>
+<li>Adjusting the duty cycle allows us to control motor speeds</li>
+
+</ul></li>
+
+</ul></li>
+<li>Acts as SPI slave to receive motor speeds from MBED and has second SPI communication where it acts as SPI master to communicate with motor drivers</li>
+<li>Pin configurations found in robocup.ucf</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">Base Station</h2>
+<ul>
+<li>MBED with only radio connected</li>
+<li>Uses MBED serial lines to communicate with computer running soccer</li>
+<li>Commands are sent from soccer to base station then to each robot</li>
+<li>Base station recieves replies back from robots then sends this to soccer</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>
