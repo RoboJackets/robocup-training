@@ -10,6 +10,8 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 
+# Export section for md
+* Firmware {#t2016firmware}                                            :docs:
 * Initialization
     - Initialize Kicker(attiny) and FPGA using binary files stored on MBED
       - Compilation for these files is separate from firmware MBED runs
