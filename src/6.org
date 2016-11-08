@@ -10,7 +10,6 @@
 
 # Export section for md
 * Path Planning {#t20166}                                         :docs:
-
 * Plan for today
 - Learn about our path planning system
 - Download, compile, and run our RRT repository
