@@ -12,6 +12,7 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 6. [[https://docs.google.com/presentation/d/1R09U6kv0Wfb2M8SpftlejmmaZf71egNhxJDRfQNXxxU/edit?usp=sharing][Firmware Part 1]]
 7. [[https://robojackets.github.io/robocup-training/slides/firmware][Firmware Part 2]]
 8. [[https://robojackets.github.io/robocup-training/slides/6][RRT/PathPlanning]]
+9. [[https://robojackets.github.io/robocup-training/slides/7][QT/Cmake]]
 
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20161.html][Training Docs 1]]
