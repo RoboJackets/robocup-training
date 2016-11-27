@@ -1,0 +1,12 @@
+#+TITLE: Contribution Overview
+#+AUTHOR: Jay Kamat
+#+EMAIL: jaygkamat@gmail.com
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: fast
+#+REVEAL_PLUGINS: (notes pdf)
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
+
+# Export section for md
+* Contribution Overview {#t20168}                                      :docs:
