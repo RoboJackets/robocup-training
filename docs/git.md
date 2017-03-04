@@ -555,7 +555,7 @@ git show origin/master
 
 ## Example
 
-![img](http://i.imgur.com/Ed8hRhA.png)
+![img](https://i.imgur.com/Ed8hRhA.png)
 
 
 # BONUS: Commit Messages
@@ -576,7 +576,7 @@ git commit
 
 ## Commit Message Conventions
 
-![img](https:/imgs.xkcd.com/comics/git_commit.png)
+![img](https://imgs.xkcd.com/comics/git_commit.png)
 
 
 ## Commit Message Conventions

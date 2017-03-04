@@ -435,7 +435,7 @@ git show origin/master
 - For example, you might want to have your code pulled into a feature branch, instead of master
 - The '~base~' is the branch you want to merge into (usually master)
 ** Example
-[[file:http://i.imgur.com/Ed8hRhA.png]]
+[[file:https://i.imgur.com/Ed8hRhA.png]]
 * BONUS: Commit Messages
 ** ~git~ commit
 #+BEGIN_SRC shell
@@ -448,7 +448,7 @@ git commit
 # Add your commit message, save, and quit the editor
 #+END_SRC
 ** Commit Message Conventions
-[[file:https:/imgs.xkcd.com/comics/git_commit.png]]
+[[file:https://imgs.xkcd.com/comics/git_commit.png]]
 ** Commit Message Conventions
 1. Separate body and subject with a blank line
 2. Subject line should not be more than 50 chars
