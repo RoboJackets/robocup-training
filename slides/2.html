@@ -28,14 +28,13 @@
 <div class="slides">
 <section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Intro</h1>
 </section>
-
 <section>
-<section id="slide-orgheadline7">
-<h2 id="orgheadline7">Python Overview</h2>
-<div class="outline-text-2" id="text-orgheadline7">
+<section id="slide-org367b4b8">
+<h2 id="org367b4b8">Python Overview</h2>
+<div class="outline-text-2" id="text-org367b4b8">
 </div></section>
-<section id="slide-orgheadline1">
-<h3 id="orgheadline1">Using Python</h3>
+<section id="slide-orgd86b67c">
+<h3 id="orgd86b67c">Using Python</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">$ python3
@@ -47,159 +46,124 @@ Hello RoboCup!
 </pre>
 </div>
 </section>
-<section id="slide-orgheadline2">
-<h3 id="orgheadline2">Basic Syntax</h3>
+<section id="slide-orgeb88921">
+<h3 id="orgeb88921">Basic Syntax</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Hello world</span>
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"Hello World!"</span>)
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Hello world</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Hello World!"</span>)
 
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Set a variable</span>
-<span style="color: #2F7BDE;">myinteger</span> = 1
-<span style="color: #2F7BDE;">mydouble</span> = 1.0
-<span style="color: #2F7BDE;">mystr</span> = <span style="color: #15968D;">"one"</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Set a variable</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">myinteger</span> = 1
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">mydouble</span> = 1.0
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">mystr</span> = <span style="color: #15968D;">"one"</span>
 
-<span style="color: #598249;">print</span>(myinteger)
-<span style="color: #598249;">print</span>(mydouble)
-<span style="color: #598249;">print</span>(mystr)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(myinteger)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(mydouble)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(mystr)
 </pre>
 </div>
-
-<pre class="example">
-Hello World!
-1
-1.0
-one
-</pre>
-</section>
-<section id="slide-orgheadline3">
-<h3 id="orgheadline3">IF Statements and Conditionals</h3>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm going to print out"</span>)
-<span style="color: #598249;">if</span> <span style="color: #15968D;">False</span>:
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm never going to run =("</span>)
-
-<span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is Great!"</span>)
-<span style="color: #598249;">else</span>:
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup Sucks!!!!"</span>)
-
-<span style="color: #2F7BDE;">a</span> = 5
-<span style="color: #598249;">if</span> a &gt; 2:
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was greater than 2!"</span>)
-<span style="color: #598249;">if</span> a &gt; 2 <span style="color: #598249;">and</span> a &lt; 10:
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was &gt; 2 and &lt; 5"</span>)
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 3"</span>)
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 9"</span> <span style="color: #598249;">if</span> a &lt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 9"</span>)
-</pre>
-</div>
-
-<pre class="example">
-I'm going to print out
-RoboCup is Great!
-A was greater than 2!
-A was &gt; 2 and &lt; 5
-A is greater than 3
-A is less than 9
-</pre>
 
 </section>
-<section id="slide-orgheadline4">
-<h3 id="orgheadline4">Loops and range()</h3>
+<section id="slide-org0a56193">
+<h3 id="org0a56193">IF Statements and Conditionals</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #2F7BDE;">a</span> = 10
-<span style="color: #598249;">while</span> a &gt; 0:
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(a, end=<span style="color: #15968D;">" "</span>)
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">a</span> = a - 1
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm going to print out"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">if</span> <span style="color: #15968D;">False</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm never going to run =("</span>)
 
-<span style="color: #598249;">print</span>(<span style="color: #598249;">list</span>(<span style="color: #598249;">range</span>(10)))
-<span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(10):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(i * i, end=<span style="color: #15968D;">" "</span>)
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is Great!"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">else</span>:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup Sucks!!!!"</span>)
+
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">a</span> = 5
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">if</span> a &gt; 2:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was greater than 2!"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">if</span> a &gt; 2 <span style="color: #598249;">and</span> a &lt; 10:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was &gt; 2 and &lt; 5"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 3"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 9"</span> <span style="color: #598249;">if</span> a &lt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 9"</span>)
 </pre>
 </div>
-
-<pre class="example">
-10 9 8 7 6 5 4 3 2 1
-[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-0 1 4 9 16 25 36 49 64 81
-</pre>
 
 </section>
-<section id="slide-orgheadline5">
-<h3 id="orgheadline5">Functions</h3>
+<section id="slide-orgf05751e">
+<h3 id="orgf05751e">Loops and range()</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> a + b
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">a</span> = 10
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">while</span> a &gt; 0:
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(a, end=<span style="color: #15968D;">" "</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">a</span> = a - 1
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
 
-<span style="color: #598249;">print</span>(func1(2, 4))
-
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Lambda Expressions ('advanced' topic)</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">secret_func</span>():
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> <span style="color: #15968D;">"RoboCup!"</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">welcome</span>(target):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">return</span> <span style="color: #15968D;">"Welcome to "</span> + target()
-
-<span style="color: #598249;">print</span>(welcome(secret_func))
-<span style="color: #598249;">print</span>(welcome(<span style="color: #598249;">lambda</span>: <span style="color: #15968D;">"RoboJackets!"</span>))
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Lambda with arguments</span>
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">print(welcome(lambda arg1, arg2: "RoboJackets!"))</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #598249;">list</span>(<span style="color: #598249;">range</span>(10)))
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(10):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(i * i, end=<span style="color: #15968D;">" "</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
 </pre>
 </div>
-
-<pre class="example">
-6
-Welcome to RoboCup!
-Welcome to RoboJackets!
-</pre>
 
 </section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6">Object Oriented Python</h3>
+<section id="slide-orgd38b48a">
+<h3 id="orgd38b48a">Functions</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #B68800;">BaseClass</span>():
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">globalVar</span> = 1
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Constructor</span>
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
-        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing a Base"</span>)
-        <span style="color: #598249;">self</span>.localVar = 2
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">return</span> a + b
 
-<span style="color: #598249;">class</span> <span style="color: #B68800;">ChildClass</span>(BaseClass):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
-        <span style="color: #598249;">super</span>().__init__() <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">call superclass constructor</span>
-        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing Child"</span>)
-        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.localVar))
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(func1(2, 4))
 
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">When defining class methods, pass 'self' as the first arg.</span>
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Self refers to the current class instance.</span>
-<span style="color: #2F7BDE;">a</span> = BaseClass()
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"---"</span>)
-<span style="color: #2F7BDE;">a</span> = ChildClass()
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Lambda Expressions ('advanced' topic)</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">secret_func</span>():
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">return</span> <span style="color: #15968D;">"RoboCup!"</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">welcome</span>(target):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">return</span> <span style="color: #15968D;">"Welcome to "</span> + target()
+
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(welcome(secret_func))
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(welcome(<span style="color: #598249;">lambda</span>: <span style="color: #15968D;">"RoboJackets!"</span>))
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Lambda with arguments</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">print(welcome(lambda arg1, arg2: "RoboJackets!"))</span>
 </pre>
 </div>
 
-<pre class="example">
-Initializing a Base
----
-Initializing a Base
-Initializing Child
-Our local var is: 2
+</section>
+<section id="slide-org98fbb51">
+<h3 id="org98fbb51">Object Oriented Python</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">class</span> <span style="color: #B68800;">BaseClass</span>():
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">globalVar</span> = 1
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Constructor</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing a Base"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">self</span>.localVar = 2
+
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">class</span> <span style="color: #B68800;">ChildClass</span>(BaseClass):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">super</span>().__init__() <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">call superclass constructor</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing Child"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.localVar))
+
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">When defining class methods, pass 'self' as the first arg.</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Self refers to the current class instance.</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">a</span> = BaseClass()
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"---"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">a</span> = ChildClass()
 </pre>
+</div>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline12">
-<h2 id="orgheadline12">State Machines</h2>
-<div class="outline-text-2" id="text-orgheadline12">
+<section id="slide-org8f757a8">
+<h2 id="org8f757a8">State Machines</h2>
+<div class="outline-text-2" id="text-org8f757a8">
 </div></section>
-<section id="slide-orgheadline8">
-<h3 id="orgheadline8">What are they?</h3>
+<section id="slide-org5bdc58f">
+<h3 id="org5bdc58f">What are they?</h3>
 <ul>
 <li>A state machine is a series of states</li>
 <li>You can transition between them</li>
@@ -208,24 +172,24 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline9">
-<h3 id="orgheadline9">Move</h3>
+<section id="slide-orgacdffcc">
+<h3 id="orgacdffcc">Move</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/gmIcPGq.png" alt="gmIcPGq.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgheadline10">
-<h3 id="orgheadline10">Pass Receive</h3>
+<section id="slide-orgbf2196b">
+<h3 id="orgbf2196b">Pass Receive</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/HAhoMC1.png" alt="HAhoMC1.png" />
 </p>
 </div>
 </section>
-<section id="slide-orgheadline11">
-<h3 id="orgheadline11">Passing</h3>
+<section id="slide-orgc6f7a11">
+<h3 id="orgc6f7a11">Passing</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/OhWnSwT.png" alt="OhWnSwT.png" />
@@ -234,16 +198,16 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-orgheadline16">
-<h2 id="orgheadline16">Plays, Tactics, Skills</h2>
+<section id="slide-orgb141ce2">
+<h2 id="orgb141ce2">Plays, Tactics, Skills</h2>
 <ul>
 <li>A Basic Unit in our AI</li>
 <li>Only one Play can run at a time</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline13">
-<h3 id="orgheadline13">Skill</h3>
+<section id="slide-org6f72c67">
+<h3 id="org6f72c67">Skill</h3>
 <ul>
 <li>Involves only <i>one</i> robot</li>
 <li>Extremely basic building blocks</li>
@@ -259,8 +223,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline14">
-<h3 id="orgheadline14">Tactics</h3>
+<section id="slide-orgc8bdf55">
+<h3 id="orgc8bdf55">Tactics</h3>
 <ul>
 <li>Involves multiple robots</li>
 <li>Contains skills</li>
@@ -276,8 +240,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline15">
-<h3 id="orgheadline15">Plays</h3>
+<section id="slide-org15fbae3">
+<h3 id="org15fbae3">Plays</h3>
 <ul>
 <li>Only one can run</li>
 <li>Contains tactics</li>
@@ -296,8 +260,8 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-orgheadline20">
-<h2 id="orgheadline20">Basic Plays and State Machines</h2>
+<section id="slide-orgc893a94">
+<h2 id="orgc893a94">Basic Plays and State Machines</h2>
 <ul>
 <li>Every Play is a State Machine as well!</li>
 <li>Plays use State Machines to tell them what to do</li>
@@ -305,71 +269,71 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline17">
-<h3 id="orgheadline17">Defining States</h3>
+<section id="slide-org81d2225">
+<h3 id="org81d2225">Defining States</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">First create a state Enum (An enum is just a group of names)</span>
-<span style="color: #598249;">class</span> <span style="color: #B68800;">OurState</span>(enum.Enum):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">start</span> = 0
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">processing</span> = 1
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #2F7BDE;">terminated</span> = 2
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">First create a state Enum (An enum is just a group of names)</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">class</span> <span style="color: #B68800;">OurState</span>(enum.Enum):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">start</span> = 0
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">processing</span> = 1
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #2F7BDE;">terminated</span> = 2
 
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Then, register your states in our state machine class</span>
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">You must be in a play/tactic/skill for this to work</span>
-<span style="color: #598249;">self</span>.add_state(PlayName.OurState.start,
-               <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">This is the superclass of our state. Most of the time,</span>
-               <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">this is 'running' (see below)</span>
-               behavior.Behavior.State.start)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Then, register your states in our state machine class</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">You must be in a play/tactic/skill for this to work</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">self</span>.add_state(PlayName.OurState.start,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">This is the superclass of our state. Most of the time,</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">this is 'running' (see below)</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>behavior.Behavior.State.start)
 
-<span style="color: #598249;">self</span>.add_state(PlayName.OurState.processing,
-               behavior.Behavior.State.running)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">self</span>.add_state(PlayName.OurState.processing,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>behavior.Behavior.State.running)
 
-<span style="color: #598249;">self</span>.add_state(PlayName.OurState.terminated,
-               behavior.Behavior.State.completed)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">self</span>.add_state(PlayName.OurState.terminated,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span>behavior.Behavior.State.completed)
 </pre>
 </div>
 </section>
-<section id="slide-orgheadline18">
-<h3 id="orgheadline18">Defining Transitions</h3>
+<section id="slide-org56f0be8">
+<h3 id="org56f0be8">Defining Transitions</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">self</span>.add_transition(
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Start state for this transition</span>
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   behavior.Behavior.State.start,
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">End state for this transition</span>
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   PlayName.OurState.processing,
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Condition for this transition (Replace 'True' with a conditional)</span>
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">lambda</span>: <span style="color: #15968D;">True</span>,
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Documentation String</span>
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #15968D;">'immediately'</span>)
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">self</span>.add_transition(
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Start state for this transition</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> behavior.Behavior.State.start,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">End state for this transition</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> PlayName.OurState.processing,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Condition for this transition (Replace 'True' with a conditional)</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">lambda</span>: <span style="color: #15968D;">True</span>,
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Documentation String</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #15968D;">'immediately'</span>)
 </pre>
 </div>
 </section>
-<section id="slide-orgheadline19">
-<h3 id="orgheadline19">Defining Actions to Take In A State</h3>
+<section id="slide-org9f400c0">
+<h3 id="org9f400c0">Defining Actions to Take In A State</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Assuming we have the PlayName.OurState.processing state</span>
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Assuming we have the PlayName.OurState.processing state</span>
 
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken when entering this state</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_processing</span>(<span style="color: #598249;">self</span>):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"We have begun our processing"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken when entering this state</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_processing</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"We have begun our processing"</span>)
 
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken every frame we are in the processing state</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_processing</span>(<span style="color: #598249;">self</span>):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Ongoing"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken every frame we are in the processing state</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_processing</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Ongoing"</span>)
 
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken when we exit the processing state</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_processing</span>(<span style="color: #598249;">self</span>):
-<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Completed!"</span>)
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Action taken when we exit the processing state</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_processing</span>(<span style="color: #598249;">self</span>):
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span>   <span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Completed!"</span>)
 </pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orgheadline23">
-<h2 id="orgheadline23">Your Assignment</h2>
+<section id="slide-orge5053a8">
+<h2 id="orge5053a8">Your Assignment</h2>
 <ul>
 <li>Create a play that prints out which half of the field the ball is currently in</li>
 <li>EX: Print out "TopHalf" when in the top half of the field, and "BottomHalf" otherwise.</li>
@@ -378,8 +342,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline21">
-<h3 id="orgheadline21">Tips</h3>
+<section id="slide-org1eb42e4">
+<h3 id="org1eb42e4">Tips</h3>
 <ul>
 <li>The field coordinates start at 0, 0; Which is our Goal.</li>
 <li>Field Size Docs: (<a href="http://bit.ly/2cLsUBL"><a href="http://bit.ly/2cLsUBL">http://bit.ly/2cLsUBL</a></a>)</li>
@@ -389,14 +353,14 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgheadline22">
-<h3 id="orgheadline22">Useful Tools</h3>
+<section id="slide-org5d7eae3">
+<h3 id="org5d7eae3">Useful Tools</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Gets the y position of the ball</span>
-main.ball().pos.y
-<span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Gets the field length in meters</span>
-constants.Field.Length
+<pre  class="src src-python"><span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Gets the y position of the ball</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> main.ball().pos.y
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> <span style="color: #5e6263; font-style: italic;"># </span><span style="color: #5e6263; font-style: italic;">Gets the field length in meters</span>
+<span style="color: #5e6263; background-color: #2e2e2e;"> </span> constants.Field.Length
 </pre>
 </div>
 </section>
@@ -419,6 +383,7 @@ slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
 overview: true,
+margin: 0.22,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none

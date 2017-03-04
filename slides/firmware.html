@@ -28,11 +28,9 @@
 <div class="slides">
 <section id="sec-title-slide"><h1 class="title">Firmware Overview</h1>
 </section>
-
-
 <section>
-<section id="slide-orgheadline1">
-<h2 id="orgheadline1">Initialization</h2>
+<section id="slide-org2188f06">
+<h2 id="org2188f06">Initialization</h2>
 <ul>
 <li>Initialize Kicker(attiny) and FPGA using binary files stored on MBED
 <ul>
@@ -46,8 +44,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline4">
-<h2 id="orgheadline4">RTOS (Threads)</h2>
+<section id="slide-orgf79baab">
+<h2 id="orgf79baab">RTOS (Threads)</h2>
 <ul>
 <li>Threads allow us to run multiple segments of code in "parallel"</li>
 <li>MBED only has one core so only one thread executed at once</li>
@@ -61,8 +59,8 @@
 </p>
 </div>
 </section>
-<section id="slide-orgheadline2">
-<h3 id="orgheadline2">Main</h3>
+<section id="slide-org95604f5">
+<h3 id="org95604f5">Main</h3>
 <ul>
 <li>Watchdog (reset MBED if it doesn't go back to main in certain time)</li>
 <li>Control LEDs (neopixel &amp; LEDs connected to IO Expander)</li>
@@ -70,8 +68,8 @@
 
 </ul>
 </section>
-<section id="slide-orgheadline3">
-<h3 id="orgheadline3">Other threads</h3>
+<section id="slide-org8de8076">
+<h3 id="org8de8076">Other threads</h3>
 <ul>
 <li>Console
 <ul>
@@ -94,16 +92,16 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline7">
-<h2 id="orgheadline7">Radio</h2>
+<section id="slide-org41d2994">
+<h2 id="org41d2994">Radio</h2>
 <ul>
 <li>How commands are sent to robot (motor speeds, kick, etc.)</li>
 <li>How information is sent back to the base station (various robot statuses)</li>
 
 </ul>
 </section>
-<section id="slide-orgheadline5">
-<h3 id="orgheadline5">CommLink</h3>
+<section id="slide-orge03bcde">
+<h3 id="orge03bcde">CommLink</h3>
 <ul>
 <li>Used as hardware abstraction layer to communicate from higher level firmware to radio hardware (through drivers)</li>
 <li>What we use to call functions to get/send data through radio</li>
@@ -112,8 +110,8 @@
 
 </ul>
 </section>
-<section id="slide-orgheadline6">
-<h3 id="orgheadline6">CommModule</h3>
+<section id="slide-orgeac6066">
+<h3 id="orgeac6066">CommModule</h3>
 <ul>
 <li>Used to handle packets being sent and received with radio</li>
 <li>RX/TX queues (as threads) waiting for other threads to put packets in the queue that are ready to be sent or have been received and need to be processed</li>
@@ -122,8 +120,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline8">
-<h2 id="orgheadline8">Shared SPI</h2>
+<section id="slide-org4fcb8dc">
+<h2 id="org4fcb8dc">Shared SPI</h2>
 <ul>
 <li>Allows MBED (master) to communicate with multiple devices through same pins</li>
 <li>Devices (slaves) currently used are radio, kicker (ATtiny), and FPGA</li>
@@ -133,8 +131,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline9">
-<h2 id="orgheadline9">Hardfault Handler</h2>
+<section id="slide-org978fa73">
+<h2 id="org978fa73">Hardfault Handler</h2>
 <ul>
 <li>Written in assembly to call function when the mbed hard faults (crashes)</li>
 <li>Used to print out information to console useful for debugging</li>
@@ -144,8 +142,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline10">
-<h2 id="orgheadline10">FPGA (verilog)</h2>
+<section id="slide-org07baf17">
+<h2 id="org07baf17">FPGA (verilog)</h2>
 <ul>
 <li>FPGA is programming logic gates which allows for many parallel operations</li>
 <li>Reads in hall sensors for motors
@@ -162,7 +160,7 @@
 
 </ul>
 </section>
-<section>
+<section >
 <ul>
 <li>Powers correct phases for motors (by sending signals to motor drivers)
 <ul>
@@ -181,8 +179,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgheadline11">
-<h2 id="orgheadline11">Base Station</h2>
+<section id="slide-org6109566">
+<h2 id="org6109566">Base Station</h2>
 <ul>
 <li>MBED with only radio connected</li>
 <li>Uses MBED serial lines to communicate with computer running soccer</li>
@@ -210,6 +208,7 @@ slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
 overview: true,
+margin: 0.22,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none

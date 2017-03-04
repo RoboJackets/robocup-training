@@ -23,3 +23,5 @@
 
 
 (setq org-babel-python-command "python3")
+;; Make indentation actually matter in org src blocks
+(setq org-src-preserve-indentation t)
