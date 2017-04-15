@@ -14,6 +14,7 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 8. [[https://robojackets.github.io/robocup-training/slides/6][RRT/PathPlanning]]
 9. [[https://robojackets.github.io/robocup-training/slides/7][QT/Cmake]]
 10. [[https://robojackets.github.io/robocup-training/slides/8][Basic Contribution Overview]]
+10. [[https://robojackets.github.io/robocup-training/slides/pathplanning][PathPlanning Overview]]
 
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20161.html][Training Docs 1]]
@@ -25,17 +26,4 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 7. [[https://robojackets.github.io/robocup-software/t20166.html][RRT/PathPlanning]]
 8. [[https://robojackets.github.io/robocup-software/t20167.html][QT/CMake]]
 9. [[https://robojackets.github.io/robocup-software/t20168.html][Basic Contribution Overview]]
-* Intro Issues 2016
-1. [[https://github.com/RoboJackets/robocup-software/issues/754][Relative Logs Directory]]
-2. [[https://github.com/RoboJackets/robocup-software/issues/764][Relative Playbook Loading]]
-3. [[https://github.com/RoboJackets/robocup-software/issues/796][Protobuf Version Warnings (in robocup-common)]]
-4. [[https://github.com/RoboJackets/robocup-software/issues/824][No Brackets in Team Name]]
-5. [[https://github.com/RoboJackets/robocup-software/issues/825][StyleSheet for 'Red Card' broken with custom QT styles]]
-6. [[https://github.com/RoboJackets/robocup-software/issues/826][Default Playbooks overhaul]]
-7. [[https://github.com/RoboJackets/robocup-software/issues/827][Documentation of Keyboard Shortcuts in Soccer]]
-8. [[https://github.com/RoboJackets/robocup-software/issues/828][Python bindings double initialize warnings]]
-9. [[https://github.com/RoboJackets/robocup-software/issues/829][Rename Hall Faults to Motor Faults]]
-10. [[https://github.com/RoboJackets/robocup-software/issues/830][Make repeated_line_up easy to specify a percentage of the field to traverse]]
-11. [[https://github.com/RoboJackets/rrt/issues/44][Update screenshot of RRT Viewer]]
-12. [[https://github.com/RoboJackets/rrt/issues/49][Fix adding obstacles before first kick]]
-13. [[https://github.com/RoboJackets/robocup-firmware/issues/21][Fix ninja build warnings in firmware]]
+9. [[https://robojackets.github.io/robocup-software/t2016p.html][PathPlanning Overview]]
