@@ -102,7 +102,7 @@
 
 ## STOx's Planner
 
-![img](http://i.imgur.com/Ea040em.png)
+![img](https://i.imgur.com/Ea040em.png)
 
 
 ## STOx's Planner
@@ -122,7 +122,7 @@
 
 # BFS
 
-![img](http://www.how2examples.com/artificial-intelligence/images/Breadth-First-Search.gif)
+![img](https://i.imgur.com/FYNyt8T.gif)
 
 
 # Dijkstra's algorithm
@@ -160,17 +160,17 @@
 
 ## Path Network
 
-![img](http://i.imgur.com/lM67O8P.png)
+![img](https://i.imgur.com/lM67O8P.png)
 
 
 # Navigation Mesh
 
-![img](http://i.imgur.com/uoD7ARv.png)
+![img](https://i.imgur.com/uoD7ARv.png)
 
 
 # Navigation Mesh
 
-![img](http://i.imgur.com/ADl3xa3.png)
+![img](https://i.imgur.com/ADl3xa3.png)
 
 
 # Navigation Mesh
@@ -193,14 +193,14 @@
 
 -   For each polygon in the nav mesh, place a path node in its center
 
-![img](http://i.imgur.com/BQ2I4lH.png)
+![img](https://i.imgur.com/BQ2I4lH.png)
 
 
 # Generating a path network from a nav mesh
 
 -   Alternatively, place a path node at midpoint of each edge between two adjacent polygons
 
-![img](http://i.imgur.com/EyNSpgk.png)
+![img](https://i.imgur.com/EyNSpgk.png)
 
 
 # Any questions?

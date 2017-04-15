@@ -90,7 +90,7 @@
   - Recurse!
 
 ** STOx's Planner
-[[file:http://i.imgur.com/Ea040em.png]]
+[[file:https://i.imgur.com/Ea040em.png]]
 
 ** STOx's Planner
 - Very fast when obstacle count is low
@@ -104,7 +104,7 @@
   - Generalized breadth-first search
 
 * BFS
-[[file:http://www.how2examples.com/artificial-intelligence/images/Breadth-First-Search.gif]]
+[[file:https://i.imgur.com/FYNyt8T.gif]]
 
 * Dijkstra's algorithm
 - Like BFS, but acknowledges costs with each edge
@@ -131,13 +131,13 @@
 - Invisible network of waypoints
 - Obstacles represented as polygons
 ** Path Network
-[[file:http://i.imgur.com/lM67O8P.png]]
+[[file:https://i.imgur.com/lM67O8P.png]]
 
 * Navigation Mesh
-[[file:http://i.imgur.com/uoD7ARv.png]]
+[[file:https://i.imgur.com/uoD7ARv.png]]
 
 * Navigation Mesh
-[[file:http://i.imgur.com/ADl3xa3.png]]
+[[file:https://i.imgur.com/ADl3xa3.png]]
 
 * Navigation Mesh
 - For each point
@@ -153,10 +153,10 @@
 
 * Generating a path network from a nav mesh
 - For each polygon in the nav mesh, place a path node in its center
-[[file:http://i.imgur.com/BQ2I4lH.png]]
+[[file:https://i.imgur.com/BQ2I4lH.png]]
 
 * Generating a path network from a nav mesh
 - Alternatively, place a path node at midpoint of each edge between two adjacent polygons
-[[file:http://i.imgur.com/EyNSpgk.png]]
+[[file:https://i.imgur.com/EyNSpgk.png]]
 
 * Any questions?
