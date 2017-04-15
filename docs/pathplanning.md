@@ -100,12 +100,12 @@
     -   Recurse!
 
 
-# STOx's Planner
+## STOx's Planner
 
 ![img](http:/i.imgur.com/Ea040em.png)
 
 
-# STOx's Planner
+## STOx's Planner
 
 -   Very fast when obstacle count is low
 -   Not very flexible
@@ -122,7 +122,7 @@
 
 # BFS
 
-![img](https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif)
+![img](http://www.how2examples.com/artificial-intelligence/images/Breadth-First-Search.gif)
 
 
 # Dijkstra's algorithm
@@ -147,10 +147,60 @@
 # Dynamic A\* Search
 
 -   Searching backwards from goal to start
+-   At each iteration, evaluate current node and propagate changes to its neighbors
 -   Efficient replanning and backtracking
 
 
 # Path Network
+
+-   Transform continuous space into discrete space
+-   Invisible network of waypoints
+-   Obstacles represented as polygons
+
+
+## Path Network
+
+![img](http://i.imgur.com/lM67O8P.png)
+
+
+# Navigation Mesh
+
+![img](http://i.imgur.com/uoD7ARv.png)
+
+
+# Navigation Mesh
+
+![img](http://i.imgur.com/ADl3xa3.png)
+
+
+# Navigation Mesh
+
+-   For each point
+    -   Pick two other points
+    -   See if they form a triangle through traversable space
+    -   See if the triangle does not cross an existing triangle in the mesh
+    -   If yes, add triangle to nav mesh
+
+
+# Navigation Mesh
+
+-   For any 2 triangles with a shared edge
+    -   If the merged polygon is convex, replace them with the new polygon
+-   Repeat for higher order polygons
+
+
+# Generating a path network from a nav mesh
+
+-   For each polygon in the nav mesh, place a path node in its center
+
+![img](http://i.imgur.com/BQ2I4lH.png)
+
+
+# Generating a path network from a nav mesh
+
+-   Alternatively, place a path node at midpoint of each edge between two adjacent polygons
+
+![img](http://i.imgur.com/EyNSpgk.png)
 
 
 # Any questions?

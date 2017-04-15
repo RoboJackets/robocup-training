@@ -26,7 +26,7 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Path Planning</h1>
+<section id="sec-title-slide"><h1 class="title">Path Planning</h1><h2 class="author">Josh Ting</h2>
 </section>
 <section>
 <section id="slide-orgdc51f92">
@@ -179,8 +179,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgc136266">
-<h2 id="orgc136266">STOx's Planner</h2>
+<section id="slide-org6c07b7b">
+<h2 id="org6c07b7b">STOx's Planner</h2>
 <ul>
 <li>Generate a straight line from the start state to end state</li>
 <li>As long as the path intersects an obstacle:
@@ -194,10 +194,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-</section>
-<section>
-<section id="slide-orge6ceec1">
-<h2 id="orge6ceec1">STOx's Planner</h2>
+<section id="slide-org64e04b8">
+<h3 id="org64e04b8">STOx's Planner</h3>
 
 <div class="figure">
 <p><img src="http:/i.imgur.com/Ea040em.png" alt="Ea040em.png" />
@@ -205,10 +203,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-</section>
-<section>
-<section id="slide-org44c7838">
-<h2 id="org44c7838">STOx's Planner</h2>
+<section id="slide-org62982fd">
+<h3 id="org62982fd">STOx's Planner</h3>
 <ul>
 <li>Very fast when obstacle count is low</li>
 <li>Not very flexible</li>
@@ -218,8 +214,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org069010c">
-<h2 id="org069010c">A*</h2>
+<section id="slide-org0359a46">
+<h2 id="org0359a46">A*</h2>
 <ul>
 <li>Search space
 <ul>
@@ -242,7 +238,7 @@ The series of connected nodes from root to destination forms the path that the r
 <h2 id="orgd71bdc3">BFS</h2>
 
 <div class="figure">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif" alt="Animated_BFS.gif" />
+<p><img src="http://www.how2examples.com/artificial-intelligence/images/Breadth-First-Search.gif" alt="Breadth-First-Search.gif" />
 </p>
 </div>
 
@@ -267,8 +263,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org42569fb">
-<h2 id="org42569fb">A*</h2>
+<section id="slide-org30cf1e5">
+<h2 id="org30cf1e5">A*</h2>
 <ul>
 <li>Like Dijkstra's but with a heuristic function h(n)</li>
 <li>Cost function f(n) = g(n) + h(n)
@@ -288,6 +284,7 @@ The series of connected nodes from root to destination forms the path that the r
 <h2 id="org660d8a2">Dynamic A* Search</h2>
 <ul>
 <li>Searching backwards from goal to start</li>
+<li>At each iteration, evaluate current node and propagate changes to its neighbors</li>
 <li>Efficient replanning and backtracking</li>
 
 </ul>
@@ -295,8 +292,106 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
+<section id="slide-org2995075">
+<h2 id="org2995075">Path Network</h2>
+<ul>
+<li>Transform continuous space into discrete space</li>
+<li>Invisible network of waypoints</li>
+<li>Obstacles represented as polygons</li>
+
+</ul>
+</section>
 <section id="slide-org29b9614">
-<h2 id="org29b9614">Path Network</h2>
+<h3 id="org29b9614">Path Network</h3>
+
+<div class="figure">
+<p><img src="http://i.imgur.com/lM67O8P.png" alt="lM67O8P.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgda1e5d4">
+<h2 id="orgda1e5d4">Navigation Mesh</h2>
+
+<div class="figure">
+<p><img src="http://i.imgur.com/uoD7ARv.png" alt="uoD7ARv.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org1782a19">
+<h2 id="org1782a19">Navigation Mesh</h2>
+
+<div class="figure">
+<p><img src="http://i.imgur.com/ADl3xa3.png" alt="ADl3xa3.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf06cb59">
+<h2 id="orgf06cb59">Navigation Mesh</h2>
+<ul>
+<li>For each point
+<ul>
+<li>Pick two other points</li>
+<li>See if they form a triangle through traversable space</li>
+<li>See if the triangle does not cross an existing triangle in the mesh</li>
+<li>If yes, add triangle to nav mesh</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org91044eb">
+<h2 id="org91044eb">Navigation Mesh</h2>
+<ul>
+<li>For any 2 triangles with a shared edge
+<ul>
+<li>If the merged polygon is convex, replace them with the new polygon</li>
+
+</ul></li>
+<li>Repeat for higher order polygons</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org84680fd">
+<h2 id="org84680fd">Generating a path network from a nav mesh</h2>
+<ul>
+<li>For each polygon in the nav mesh, place a path node in its center</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="http://i.imgur.com/BQ2I4lH.png" alt="BQ2I4lH.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org7898038">
+<h2 id="org7898038">Generating a path network from a nav mesh</h2>
+<ul>
+<li>Alternatively, place a path node at midpoint of each edge between two adjacent polygons</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="http://i.imgur.com/EyNSpgk.png" alt="EyNSpgk.png" />
+</p>
+</div>
 
 </section>
 </section>

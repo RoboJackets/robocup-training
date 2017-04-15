@@ -6,7 +6,7 @@
 #+REVEAL_SPEED: fast
 #+REVEAL_PLUGINS: (notes pdf)
 #+REVEAL_HLEVEL: 1
-#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:joshhting
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil
 
 # Export section for md
 * Path Planning {#t2016p}                                         :docs:
@@ -104,7 +104,7 @@
   - Generalized breadth-first search
 
 * BFS
-[[file:www.how2examples.com/artificial-intelligence/images/Breadth-First-Search.gif]]
+[[file:http://www.how2examples.com/artificial-intelligence/images/Breadth-First-Search.gif]]
 
 * Dijkstra's algorithm
 - Like BFS, but acknowledges costs with each edge
@@ -130,6 +130,7 @@
 - Transform continuous space into discrete space
 - Invisible network of waypoints
 - Obstacles represented as polygons
+** Path Network
 [[file:http://i.imgur.com/lM67O8P.png]]
 
 * Navigation Mesh
