@@ -16,6 +16,7 @@
 - RoboCup uses an RRT (Rapidly-Exploring Random Tree)
 - IGVC uses A*
 - STOx's Planner
+- D*
 - Path network generation
 
 * RRT
@@ -126,7 +127,7 @@
 - Searching backwards from goal to start
 - Efficient replanning and backtracking
 
-* D*
+** D*
 - At each iteration, evaluate current node and propagate changes to its descendants
 - When a new obstacle is detected, all affected points are put back into the priority queue of "unvisited" nodes
 - For each affected point:
