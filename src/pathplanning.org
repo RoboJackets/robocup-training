@@ -90,7 +90,7 @@
   - Recurse!
 
 ** STOx's Planner
-[[file:http:/i.imgur.com/Ea040em.png]]
+[[file:http://i.imgur.com/Ea040em.png]]
 
 ** STOx's Planner
 - Very fast when obstacle count is low

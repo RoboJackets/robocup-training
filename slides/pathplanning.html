@@ -179,8 +179,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org6c07b7b">
-<h2 id="org6c07b7b">STOx's Planner</h2>
+<section id="slide-orgb8dddc6">
+<h2 id="orgb8dddc6">STOx's Planner</h2>
 <ul>
 <li>Generate a straight line from the start state to end state</li>
 <li>As long as the path intersects an obstacle:
@@ -194,17 +194,17 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org64e04b8">
-<h3 id="org64e04b8">STOx's Planner</h3>
+<section id="slide-org6c07b7b">
+<h3 id="org6c07b7b">STOx's Planner</h3>
 
 <div class="figure">
-<p><img src="http:/i.imgur.com/Ea040em.png" alt="Ea040em.png" />
+<p><img src="http://i.imgur.com/Ea040em.png" alt="Ea040em.png" />
 </p>
 </div>
 
 </section>
-<section id="slide-org62982fd">
-<h3 id="org62982fd">STOx's Planner</h3>
+<section id="slide-orgd896703">
+<h3 id="orgd896703">STOx's Planner</h3>
 <ul>
 <li>Very fast when obstacle count is low</li>
 <li>Not very flexible</li>
@@ -214,8 +214,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org0359a46">
-<h2 id="org0359a46">A*</h2>
+<section id="slide-org30cf1e5">
+<h2 id="org30cf1e5">A*</h2>
 <ul>
 <li>Search space
 <ul>
@@ -263,8 +263,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org30cf1e5">
-<h2 id="org30cf1e5">A*</h2>
+<section id="slide-orgab4b5a3">
+<h2 id="orgab4b5a3">A*</h2>
 <ul>
 <li>Like Dijkstra's but with a heuristic function h(n)</li>
 <li>Cost function f(n) = g(n) + h(n)
@@ -292,8 +292,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org2995075">
-<h2 id="org2995075">Path Network</h2>
+<section id="slide-org92f12a4">
+<h2 id="org92f12a4">Path Network</h2>
 <ul>
 <li>Transform continuous space into discrete space</li>
 <li>Invisible network of waypoints</li>
@@ -301,8 +301,8 @@ The series of connected nodes from root to destination forms the path that the r
 
 </ul>
 </section>
-<section id="slide-org29b9614">
-<h3 id="org29b9614">Path Network</h3>
+<section id="slide-org2995075">
+<h3 id="org2995075">Path Network</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/lM67O8P.png" alt="lM67O8P.png" />
@@ -312,8 +312,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgda1e5d4">
-<h2 id="orgda1e5d4">Navigation Mesh</h2>
+<section id="slide-org91044eb">
+<h2 id="org91044eb">Navigation Mesh</h2>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/uoD7ARv.png" alt="uoD7ARv.png" />
@@ -323,8 +323,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org1782a19">
-<h2 id="org1782a19">Navigation Mesh</h2>
+<section id="slide-orgb3ca605">
+<h2 id="orgb3ca605">Navigation Mesh</h2>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/ADl3xa3.png" alt="ADl3xa3.png" />
@@ -334,8 +334,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgf06cb59">
-<h2 id="orgf06cb59">Navigation Mesh</h2>
+<section id="slide-org6729b2b">
+<h2 id="org6729b2b">Navigation Mesh</h2>
 <ul>
 <li>For each point
 <ul>
@@ -351,8 +351,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org91044eb">
-<h2 id="org91044eb">Navigation Mesh</h2>
+<section id="slide-org5b5fd04">
+<h2 id="org5b5fd04">Navigation Mesh</h2>
 <ul>
 <li>For any 2 triangles with a shared edge
 <ul>
@@ -366,8 +366,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org84680fd">
-<h2 id="org84680fd">Generating a path network from a nav mesh</h2>
+<section id="slide-org7898038">
+<h2 id="org7898038">Generating a path network from a nav mesh</h2>
 <ul>
 <li>For each polygon in the nav mesh, place a path node in its center</li>
 
@@ -381,8 +381,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org7898038">
-<h2 id="org7898038">Generating a path network from a nav mesh</h2>
+<section id="slide-org5a64ec4">
+<h2 id="org5a64ec4">Generating a path network from a nav mesh</h2>
 <ul>
 <li>Alternatively, place a path node at midpoint of each edge between two adjacent polygons</li>
 

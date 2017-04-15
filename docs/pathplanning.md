@@ -102,7 +102,7 @@
 
 ## STOx's Planner
 
-![img](http:/i.imgur.com/Ea040em.png)
+![img](http://i.imgur.com/Ea040em.png)
 
 
 ## STOx's Planner
