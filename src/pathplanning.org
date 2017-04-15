@@ -37,14 +37,14 @@
 - Bézier curve B(t)
 - The t in the function for a linear Bézier curve can be thought of as describing how far B(t) is from P0 to P1
 - For example, when t=0.25, B(t) is one quarter of the way from point P0 to P1. As t varies from 0 to 1, B(t) describes a straight line from P0 to P1
-[[file:https://en.wikipedia.org/wiki/File:B%C3%A9zier_1_big.gif]]
+[[file:https://upload.wikimedia.org/wikipedia/commons/0/00/B%C3%A9zier_1_big.gif]]
 
 ** Quadratic curve
 - For quadratic Bézier curves one can construct intermediate points Q0 and Q1 such that as t increases from 0 to 1
   - Point Q0(t) varies from P0 to P1 and describes a linear Bézier curve.
   - Point Q1(t) varies from P1 to P2 and describes a linear Bézier curve.
   - Point B(t) is interpolated linearly between Q0(t) to Q1(t) and describes a quadratic Bézier curve.
-[[file:https://en.wikipedia.org/wiki/B%C3%A9zier_curve#/media/File:B%C3%A9zier_2_big.gif]]
+[[file:https://upload.wikimedia.org/wikipedia/commons/3/3d/B%C3%A9zier_2_big.gif]]
 # This can be applied to higher and higher orders of magnitude.
 
 * Sounds really inefficient
@@ -90,7 +90,7 @@
   - Recurse!
 
 * STOx's Planner
-http://imgur.com/Ea040em
+[[file:http:/i.imgur.com/Ea040em.png]]
 
 * STOx's Planner
 - Very fast when obstacle count is low
@@ -104,7 +104,7 @@ http://imgur.com/Ea040em
   - Generalized breadth-first search
 
 * BFS
-[[file:https://en.wikipedia.org/wiki/Breadth-first_search#/media/File:Animated_BFS.gif]]
+[[file:https://upload.wikimedia.org/wikipedia/commons/4/46/Animated_BFS.gif]]
 
 * Dijkstra's algorithm
 - Like BFS, but acknowledges costs with each edge
