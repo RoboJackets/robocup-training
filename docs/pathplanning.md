@@ -7,6 +7,7 @@
 -   RoboCup uses an RRT (Rapidly-Exploring Random Tree)
 -   IGVC uses A\*
 -   STOx's Planner
+-   D\*
 -   Path network generation
 
 
@@ -146,9 +147,18 @@
 
 # Dynamic A\* Search
 
+-   What if edge weights change during execution?
 -   Searching backwards from goal to start
--   At each iteration, evaluate current node and propagate changes to its neighbors
 -   Efficient replanning and backtracking
+
+
+## D\*
+
+-   At each iteration, evaluate current node and propagate changes to its descendants
+-   When a new obstacle is detected, all affected points are put back into the priority queue of "unvisited" nodes
+-   For each affected point:
+    -   If node cost can be reduced, update its backpointer
+    -   Propagate change in cost to neighbors
 
 
 # Path Network
@@ -168,12 +178,12 @@
 ![img](https://i.imgur.com/uoD7ARv.png)
 
 
-# Navigation Mesh
+## Navigation Mesh
 
 ![img](https://i.imgur.com/ADl3xa3.png)
 
 
-# Navigation Mesh
+## Navigation Mesh
 
 -   For each point
     -   Pick two other points
@@ -182,7 +192,7 @@
     -   If yes, add triangle to nav mesh
 
 
-# Navigation Mesh
+## Navigation Mesh
 
 -   For any 2 triangles with a shared edge
     -   If the merged polygon is convex, replace them with the new polygon
@@ -196,7 +206,7 @@
 ![img](https://i.imgur.com/BQ2I4lH.png)
 
 
-# Generating a path network from a nav mesh
+## Generating a path network from a nav mesh
 
 -   Alternatively, place a path node at midpoint of each edge between two adjacent polygons
 

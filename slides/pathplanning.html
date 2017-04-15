@@ -36,6 +36,7 @@
 <li>RoboCup uses an RRT (Rapidly-Exploring Random Tree)</li>
 <li>IGVC uses A*</li>
 <li>STOx's Planner</li>
+<li>D*</li>
 <li>Path network generation</li>
 
 </ul>
@@ -179,8 +180,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgc178596">
-<h2 id="orgc178596">STOx's Planner</h2>
+<section id="slide-orgdf0090f">
+<h2 id="orgdf0090f">STOx's Planner</h2>
 <ul>
 <li>Generate a straight line from the start state to end state</li>
 <li>As long as the path intersects an obstacle:
@@ -194,8 +195,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org3571cb7">
-<h3 id="org3571cb7">STOx's Planner</h3>
+<section id="slide-org717b5f5">
+<h3 id="org717b5f5">STOx's Planner</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/Ea040em.png" alt="Ea040em.png" />
@@ -203,8 +204,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-<section id="slide-org00ed33c">
-<h3 id="org00ed33c">STOx's Planner</h3>
+<section id="slide-orgebab521">
+<h3 id="orgebab521">STOx's Planner</h3>
 <ul>
 <li>Very fast when obstacle count is low</li>
 <li>Not very flexible</li>
@@ -214,8 +215,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org5e9df2b">
-<h2 id="org5e9df2b">A*</h2>
+<section id="slide-orgbc65ca9">
+<h2 id="orgbc65ca9">A*</h2>
 <ul>
 <li>Search space
 <ul>
@@ -263,8 +264,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org4ca4631">
-<h2 id="org4ca4631">A*</h2>
+<section id="slide-org07d0a7d">
+<h2 id="org07d0a7d">A*</h2>
 <ul>
 <li>Like Dijkstra's but with a heuristic function h(n)</li>
 <li>Cost function f(n) = g(n) + h(n)
@@ -283,26 +284,42 @@ The series of connected nodes from root to destination forms the path that the r
 <section id="slide-org660d8a2">
 <h2 id="org660d8a2">Dynamic A* Search</h2>
 <ul>
+<li>What if edge weights change during execution?</li>
 <li>Searching backwards from goal to start</li>
-<li>At each iteration, evaluate current node and propagate changes to its neighbors</li>
 <li>Efficient replanning and backtracking</li>
+
+</ul>
+
+</section>
+<section id="slide-org12090ee">
+<h3 id="org12090ee">D*</h3>
+<ul>
+<li>At each iteration, evaluate current node and propagate changes to its descendants</li>
+<li>When a new obstacle is detected, all affected points are put back into the priority queue of "unvisited" nodes</li>
+<li>For each affected point:
+<ul>
+<li>If node cost can be reduced, update its backpointer</li>
+<li>Propagate change in cost to neighbors</li>
+
+</ul></li>
 
 </ul>
 
 </section>
 </section>
 <section>
-<section id="slide-org86334d6">
-<h2 id="org86334d6">Path Network</h2>
+<section id="slide-orgee360b0">
+<h2 id="orgee360b0">Path Network</h2>
 <ul>
 <li>Transform continuous space into discrete space</li>
 <li>Invisible network of waypoints</li>
 <li>Obstacles represented as polygons</li>
 
 </ul>
+
 </section>
-<section id="slide-org09dbe02">
-<h3 id="org09dbe02">Path Network</h3>
+<section id="slide-org02eec93">
+<h3 id="org02eec93">Path Network</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/lM67O8P.png" alt="lM67O8P.png" />
@@ -312,8 +329,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org83642ba">
-<h2 id="org83642ba">Navigation Mesh</h2>
+<section id="slide-orgffbf148">
+<h2 id="orgffbf148">Navigation Mesh</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/uoD7ARv.png" alt="uoD7ARv.png" />
@@ -321,10 +338,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-</section>
-<section>
-<section id="slide-orgf2cd096">
-<h2 id="orgf2cd096">Navigation Mesh</h2>
+<section id="slide-orgee567eb">
+<h3 id="orgee567eb">Navigation Mesh</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/ADl3xa3.png" alt="ADl3xa3.png" />
@@ -332,10 +347,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-</section>
-<section>
-<section id="slide-orgf6b29f5">
-<h2 id="orgf6b29f5">Navigation Mesh</h2>
+<section id="slide-org469efa3">
+<h3 id="org469efa3">Navigation Mesh</h3>
 <ul>
 <li>For each point
 <ul>
@@ -349,10 +362,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-</section>
-<section>
-<section id="slide-org9f9540a">
-<h2 id="org9f9540a">Navigation Mesh</h2>
+<section id="slide-org94cf956">
+<h3 id="org94cf956">Navigation Mesh</h3>
 <ul>
 <li>For any 2 triangles with a shared edge
 <ul>
@@ -366,8 +377,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org4e53b05">
-<h2 id="org4e53b05">Generating a path network from a nav mesh</h2>
+<section id="slide-org820c0b7">
+<h2 id="org820c0b7">Generating a path network from a nav mesh</h2>
 <ul>
 <li>For each polygon in the nav mesh, place a path node in its center</li>
 
@@ -379,10 +390,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-</section>
-<section>
-<section id="slide-org2f0c902">
-<h2 id="org2f0c902">Generating a path network from a nav mesh</h2>
+<section id="slide-org83e6deb">
+<h3 id="org83e6deb">Generating a path network from a nav mesh</h3>
 <ul>
 <li>Alternatively, place a path node at midpoint of each edge between two adjacent polygons</li>
 
@@ -418,7 +427,7 @@ slideNumber: 'c',
 rollingLinks: false,
 keyboard: true,
 overview: true,
-margin: 0.22,
+margin: 0.10,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
