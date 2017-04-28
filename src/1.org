@@ -17,11 +17,12 @@
 * Introductions
 - Name
 - Major/How Many Years at Tech
-- What makes you excited about RoboCup Software?
+- Programming experience
 * Communication
 - Email List
 - Gitter (badge on our repo)
 - Docs Site (link on our repo)
+- Slack (robojackets.slack.com)
 * Developing RoboCup
 - Running on Ubuntu 16.04
 - Recommended:
@@ -221,10 +222,16 @@ While in this section, try looking at the behavior tree while different plays ru
 
 | Method | Address                                        |
 |--------+------------------------------------------------|
-| Email  | [[mailto:jaygkamat@gmail.com][jaygkamat@gmail.com]]                            |
-| Jabber | jayk@fysh.in                                   |
-| Github | [[https://github.com/jgkamat][https://github.com/jgkamat]]                     |
+| Email  | [[mailto:josh.ting@gatech.edu][josh.ting@gatech.edu]]                            |
+| Github | [[https://github.com/joshhting][https://github.com/joshhting]]                     |
 | Gitter | [[https://gitter.im/RoboJackets/robocup-software][https://gitter.im/RoboJackets/robocup-software]] |
+
+# | Method | Address                                        |
+# |--------+------------------------------------------------|
+# | Email  | [[mailto:jaygkamat@gmail.com][jaygkamat@gmail.com]]                            |
+# | Jabber | jayk@fysh.in                                   |
+# | Github | [[https://github.com/jgkamat][https://github.com/jgkamat]]                     |
+# | Gitter | [[https://gitter.im/RoboJackets/robocup-software][https://gitter.im/RoboJackets/robocup-software]] |
 
 ** Links
 
