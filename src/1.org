@@ -14,14 +14,18 @@
 * Download VM Image
 - [[https://mega.nz/#!kgFCyC5Y!lETW_2hufOsqxEOUrnjVFD538FvI3qXBLXWiBm9X_xI][Download Link]] (http://bit.ly/2c61Fkx)
 - Today we will be setting you up to develop RoboCup Software
+
 * Introductions
 - Name
 - Major/How Many Years at Tech
-- What makes you excited about RoboCup Software?
+- Programming experience
+
 * Communication
 - Email List
 - Gitter (badge on our repo)
 - Docs Site (link on our repo)
+- Slack (robojackets.slack.com)
+
 * Developing RoboCup
 - Running on Ubuntu 16.04
 - Recommended:
@@ -32,11 +36,13 @@
   - Anyone doing this?
 - Unsupported, needs a maintainer:
   - Mac OS
+
 * Create a GitHub Account
 - [[https://github.com/join%0A][https://github.com/join]]
 - Please include /at least/ your real first name on github
 
 [[file:https://i.imgur.com/0cdXQXW.png]]
+
 * Fork Our Repo
 
 - RoboJackets/robocup-software (http://bit.ly/1L70JbB)
@@ -130,7 +136,9 @@ make run-sim
 *** You Made It!
 
 - Have a great time contributing to the largest and most prestigious undergraduate, student-run, autonomous soccer codebase at Georgia Tech.
+
 * PostInstall Configuration
+
 ** Git Config
 - These commands set up git to attribute your changes to you.
 
@@ -138,6 +146,7 @@ make run-sim
     git config --global user.name "Your Name"
     git config --global user.email "your@email.here"
   #+END_SRC
+
 ** Adding Remotes
 - These commands set you up to push to your fork by default, and still be able to receive updates.
 
@@ -145,10 +154,12 @@ make run-sim
   cd ~/robocup-software
   git remote add rj https://github.com/RoboJackets/robocup-software.git
   git remote set-url origin https://github.com/<YOUR_GH_USERNAME>/robocup-software.git
+  git remote -v
 
   # You can find the link in the last command under the 'clone or download'
   # green button on your FORK
 #+END_SRC
+
 ** Build RoboCup Software
 #+BEGIN_SRC shell
   cd ~/robocup-software
@@ -163,9 +174,11 @@ make run-sim
   git pull rj master
   git push origin master
 #+END_SRC
+
 * Soccer Tutorial
 
 - 'Soccer' is our main program.
+
 ** Helpful Build Commands
 | Command        | Description                          |
 |----------------+--------------------------------------|
@@ -176,7 +189,9 @@ make run-sim
 | make debug-sim | Run Soccer in a debugger + simulator |
 
 ** Let's Run Some Plays!                                            :slides:
+
 ** In Depth Tutorial                                                  :docs:
+
 *** Soccer Image
 [[file:https://i.imgur.com/vgDnpjo.png]]
 
@@ -213,17 +228,18 @@ While in this section, try looking at the behavior tree while different plays ru
 *** Additional Notes
 
 - Soccer is a very complicated program, but thankfully it is fairly intuitive. Play around with it and see what different options do!
+
 * Wrapping Up                                                        :slides:
 - Any Questions?
 - What went well?
 - What went poorly?
+
 ** Contact Me!
 
 | Method | Address                                        |
 |--------+------------------------------------------------|
-| Email  | [[mailto:jaygkamat@gmail.com][jaygkamat@gmail.com]]                            |
-| Jabber | jayk@fysh.in                                   |
-| Github | [[https://github.com/jgkamat][https://github.com/jgkamat]]                     |
+| Email  | [[mailto:josh.ting@gatech.edu][josh.ting@gatech.edu]]                            |
+| Github | [[https://github.com/joshhting][https://github.com/joshhting]]                     |
 | Gitter | [[https://gitter.im/RoboJackets/robocup-software][https://gitter.im/RoboJackets/robocup-software]] |
 
 ** Links
@@ -231,6 +247,7 @@ While in this section, try looking at the behavior tree while different plays ru
 - [[https://github.com/RoboJackets/robocup-software]]
 - [[https://github.com/RoboJackets/robocup-firmware]]
 - [[https://github.com/RoboJackets/robocup-common]]
+- [[https://github.com/RoboJackets/rrt]]
 - [[https://robojackets.github.io/robocup-software/]]
 - [[https://robojackets.github.io/robocup-firmware/]]
 - [[https://github.com/RoboJackets/robocup-training]]
