@@ -66,3 +66,7 @@
   - The Pull Request will automatically be updated
 ** Congrats!
 - Pick another issue to work on, or create a new issue!
+
+* Life Cycle of an Issue/Pull Request
+
+[[file:http://i.imgur.com/ePEpalu.png]]
