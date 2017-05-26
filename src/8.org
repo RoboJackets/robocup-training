@@ -69,4 +69,4 @@
 
 * Life Cycle of an Issue/Pull Request
 
-[[file:http://i.imgur.com/ePEpalu.png]]
+[[file:https://i.imgur.com/ePEpalu.png]]
