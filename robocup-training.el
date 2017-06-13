@@ -35,7 +35,7 @@
     '(font-lock-string-face        ((t (:foreground "#15968D"))))
     '(font-lock-type-face		       ((t (:foreground "#598249"))))
     '(font-lock-variable-name-face ((t (:foreground "#2F7BDE"))))
-    '(font-lock-warning-face       ((t (:foreground "#bd3832")))))
+    '(font-lock-warning-face       ((t (:foreground "#bd3832" :weight bold)))))
 
   (setq htmlize-use-rgb-map 'force)
   (require 'htmlize))
@@ -69,10 +69,14 @@ Also provides a script to run to publish this project."
 ;; Make indentation actually matter in org src blocks
 (setq org-src-preserve-indentation t)
 
-;; Don't ask for evaluation
-(defun my-org-confirm-babel-evaluate (lang body)
-  (not (string= lang "python")))
-(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+(when noninteractive
+  ;; Don't ask for evaluation
+  (defun my-org-confirm-babel-evaluate (lang body)
+    "Stop org mode from complaining about python.
+LANG language input
+BODY code body"
+    (not (string= lang "python")))
+  (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate))
 
 (provide 'robocup-training)
 
