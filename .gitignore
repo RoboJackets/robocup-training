@@ -4,3 +4,6 @@
 # Packaging
 .cask
 dist
+
+# build
+html/
