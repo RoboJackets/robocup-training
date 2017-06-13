@@ -16,6 +16,6 @@ jobs:
       - deploy:
           name: Deploy to github
           command: |
-            if [ "${CIRCLE_BRANCH}" == "jay/cask" ]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
             cd html && git add . && git commit -m "Autoupdate html sources" || true && git push https://$GH_TOKEN@github.com/RoboJackets/robocup-training gh-pages || true
             fi
