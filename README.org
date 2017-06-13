@@ -1,4 +1,4 @@
-* RoboCup Training
+* RoboCup Training [[https://circleci.com/gh/RoboJackets/robocup-training][file:https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield]]
 RoboCup Software Training (Created in 2016)
 
 To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Press ~?~ for help!
