@@ -12,5 +12,4 @@
  (depends-on "ox-gfm")
  ;; ox-reveal must be installed first to trigger installing org before org is loaded
  ;; Cask installs last entry first.
- (depends-on "ox-reveal")
- )
+ (depends-on "ox-reveal"))
