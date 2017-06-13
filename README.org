@@ -1,0 +1,5 @@
+* RoboCup Training
+RoboCup Software Training (Created in 2016)
+
+This is the generated branch of html files to serve, do not commit to it manually.
+
