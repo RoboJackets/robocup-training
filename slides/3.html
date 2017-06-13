@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Skills, Tactics, Plays - Beginner</title>
+<meta name="author" content="(Jay Kamat)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Beginner</h1>
+</section>
+<section>
+<section id="slide-orgc3ca988">
+<h2 id="orgc3ca988">Questions about Plays?</h2>
+<ul>
+<li>Last meeting was pretty dense
+<ul>
+<li>We <i>NEED</i> to have 1 on 1 time with each of you, so it is <i>your</i> responsibility to waive us over if you're stuck!</li>
+
+</ul></li>
+<li>Topics Covered:
+<ul>
+<li>Python</li>
+<li>State Machines</li>
+<li>Play/Skill/Tactic Structure</li>
+
+</ul></li>
+<li>And today, we're going into&#x2026;</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgf2e68fd">
+<h2 id="orgf2e68fd">Subbehaviors!</h2>
+<ul>
+<li>A Behavior is a generic name for any skill, play, or tactic.</li>
+<li>Last meeting we learned about Plays/Skills/Tactics
+<ul>
+<li>How do we put them together?</li>
+
+</ul></li>
+<li>Subbehaviors allow you to reuse our behaviors in many plays.
+<ul>
+<li>Example: We have <i>one</i> move play, used by kicker tactics, passing tactics, goalie, etc.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org13ae3e8">
+<h3 id="org13ae3e8">Examples of Subbehaviors</h3>
+<ul>
+<li>Offense Play contains Passing Tactics, and Move Skills</li>
+<li>Passing Tactic Contains Move and Kick Skills</li>
+
+</ul>
+</section>
+<section id="slide-orga71e4e0">
+<h3 id="orga71e4e0"><i>Behavior</i> Tree!</h3>
+<div class="org-src-container">
+
+<pre  class="src src-text">Basic122::running
+    Mark::running[robot=4]
+        move(0.767296, 6.51286)
+        endVelocity(0, 0)
+        face(0.160718, 9.15305)
+    PivotKick::capturing
+        Capture::course_approach[robot=2]
+            face(0.160718, 9.15305)
+            avoidBall(-1)
+            move(0.176939, 9.114)
+            endVelocity(0, 0)
+    Mark::running[robot=1]
+        move(-0.829012, 6.03814)
+        endVelocity(0, 0)
+        face(0.160718, 9.15305)
+</pre>
+</div>
+</section>
+<section id="slide-orgfc9a849">
+<h3 id="orgfc9a849"><i>Behavior</i> Tree! (cont.)</h3>
+<div class="org-src-container">
+
+<pre  class="src src-text">Basic122::running
+    Defense::defending
+        SubmissiveDefender::marking
+            Move::completed[robot=5]
+                face(0.160718, 9.15305)
+        SubmissiveDefender::marking
+            Move::completed[robot=3]
+                face(0.160718, 9.15305)
+        SubmissiveGoalie::block
+            Move::running[robot=0]
+                face(0.160718, 9.15305)
+                move(0.290916, 0.14)
+                endVelocity(0, 0)
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgee749ad">
+<h2 id="orgee749ad">How do I use subbehaviors?</h2>
+<div class="outline-text-2" id="text-orgee749ad">
+</div></section>
+<section id="slide-orgcc30e5b">
+<h3 id="orgcc30e5b">Adding Subbehaviors</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #598249;">self</span>.add_subbehavior(skill_object,
+                       <span style="color: #15968D;">"Name of Subbehavior"</span>,
+                       required=<span style="color: #15968D;">False</span> <span style="color: #598249;">or</span> <span style="color: #15968D;">True</span>
+                       priority=10) <span style="color: #5e6263;"># </span><span style="color: #5e6263;">A higher number is higher priority</span>
+</pre>
+</div>
+</section>
+<section id="slide-org8e8c618">
+<h3 id="org8e8c618">Removing Subbehaviors</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
+
+<span style="color: #598249;">self</span>.remove_all_subbehaviors()
+</pre>
+</div>
+</section>
+<section id="slide-orgf179e6c">
+<h3 id="orgf179e6c">Getting Subbehavior Plays</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org2b5648b">
+<h2 id="org2b5648b">Real Examples</h2>
+<div class="outline-text-2" id="text-org2b5648b">
+</div></section>
+<section id="slide-org2795920">
+<h3 id="org2795920">CoordinatedPass Tactic</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
+      <span style="color: #2F7BDE;">receiver</span> = skills.pass_receive.PassReceive()
+      <span style="color: #2F7BDE;">receiver.receive_point</span> = <span style="color: #598249;">self</span>.receive_point
+      <span style="color: #598249;">self</span>.add_subbehavior(receiver,
+                           <span style="color: #15968D;">'receiver'</span>,
+                           required=<span style="color: #598249;">self</span>.receiver_required)
+
+  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_running</span>(<span style="color: #598249;">self</span>):
+      <span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'receiver'</span>)
+</pre>
+</div>
+</section>
+<section id="slide-orgabc8462">
+<h3 id="orgabc8462">Line Up Tactic</h3>
+<ul>
+<li>First State Machine is set up, then:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Triggered whenever the line changes</span>
+  <span style="color: #598249;">self</span>.remove_all_subbehaviors()
+  <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
+      <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
+      <span style="color: #598249;">self</span>.add_subbehavior(
+          skills.move.Move(pt),
+          name=<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i),
+          required=<span style="color: #15968D;">False</span>,
+          priority=6 - i)
+</pre>
+</div>
+
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_running</span>(<span style="color: #598249;">self</span>):
+      <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
+          <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
+          <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i))<span style="color: #2F7BDE;">.pos</span> = pt
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org3be5142">
+<h2 id="org3be5142">RoboCup Pro Tip</h2>
+<ul>
+<li>Find some code doing something like what you want</li>
+<li>Tweak it until it works</li>
+<li>It's less effective than working everything out, but it's great for beginners!</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org884ef3f">
+<h2 id="org884ef3f">How do I get MY Robot?!?</h2>
+<div class="outline-text-2" id="text-org884ef3f">
+</div></section>
+<section id="slide-org4e492d7">
+<h3 id="org4e492d7">Dynamic Assignment</h3>
+<ul>
+<li>Our role assignment system picks the best robot for the task</li>
+<li>You define your constraints, and we'll give you a robot if we can!</li>
+<li>It's also some black magic&#x2026;</li>
+
+</ul>
+</section>
+<section id="slide-orgfeb0a1e">
+<h3 id="orgfeb0a1e">But I want Robot X!</h3>
+<ul>
+<li>Override Role Requirements to add your constraints!</li>
+<li>This next section is Extra Credit&#x2026;
+<ul>
+<li>And it's a massive oversimplification</li>
+<li>See <code>role_assignment.py</code> for more information.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orga128b1d">
+<h4 id="orga128b1d">Get the closest robot</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
+  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+      <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Destination Shape is used for distances to points or segments</span>
+      <span style="color: #2F7BDE;">reqs.destination_shape</span> = <span style="color: #598249;">self</span>.pos
+      <span style="color: #598249;">return</span> reqs
+</pre>
+</div>
+</section>
+<section id="slide-org0c8e96e">
+<h4 id="org0c8e96e">Get the robot with all the hardware</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+      <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+      <span style="color: #2F7BDE;">reqs.require_kicking</span> = <span style="color: #15968D;">True</span>
+      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">try to be near the ball</span>
+      <span style="color: #598249;">if</span> main.ball().valid:
+          <span style="color: #2F7BDE;">reqs.destination_shape</span> = main.ball().pos
+      <span style="color: #598249;">return</span> reqs
+
+</pre>
+</div>
+</section>
+<section id="slide-org72ba5c4">
+<h4 id="org72ba5c4">I really, really, want MY Robot!</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
+  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+      <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+
+      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">This iteration is needed if we have</span>
+      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">subbehaviors we want to have applied as well.</span>
+      <span style="color: #598249;">for</span> req <span style="color: #598249;">in</span> role_assignment \
+          .iterate_role_requirements_tree_leaves(reqs):
+
+          req.required_shell_id \
+              = <span style="color: #598249;">self</span>.shell_id <span style="color: #598249;">if</span> <span style="color: #598249;">self</span>.shell_id != <span style="color: #15968D;">None</span> <span style="color: #598249;">else</span> -1
+      <span style="color: #598249;">return</span> reqs
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgd947c02">
+<h2 id="orgd947c02">Assignment</h2>
+<ul>
+<li>Create a binary clock play</li>
+<li>Display the current minute in binary on the field
+<ul>
+<li>Use a robot to represent a 1, and lack of a robot to represent a 0</li>
+
+</ul></li>
+<li>Starter code is in <code>soccer/gameplay/plays/skel/binary_clock.py</code>.</li>
+<li>Move it to <code>soccer/gameplay/plays/training</code> to begin.</li>
+
+</ul>
+</section>
+<section id="slide-orgb9d3a06">
+<h3 id="orgb9d3a06">Tips</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">import</span> time
+<span style="color: #2F7BDE;">mins</span> =  time.localtime().tm_min
+<span style="color: #2F7BDE;">binary</span> = <span style="color: #598249;">format</span>(mins, <span style="color: #15968D;">'06b'</span>)
+<span style="color: #598249;">print</span>(binary)
+<span style="color: #5e6263;"># </span><span style="color: #5e6263;">Index with binary[0-6]</span>
+<span style="color: #5e6263;"># </span><span style="color: #5e6263;">THIS INDEX IS A CHARACTER VALUE, NOT AN INT</span>
+<span style="color: #5e6263;"># </span><span style="color: #5e6263;">USE == '1', not == 1</span>
+</pre>
+</div>
+
+<pre class="example">
+011010
+
+</pre>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.22,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>

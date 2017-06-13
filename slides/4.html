@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Skills, Tactics, Plays - Overview</title>
+<meta name="author" content="(Jay Kamat)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Overview</h1>
+</section>
+<section>
+<section id="slide-org3db4033">
+<h2 id="org3db4033">Communications Recap</h2>
+<ul>
+<li><a href="https://gitter.im/RoboJackets/robocup-software">Gitter</a></li>
+<li><a href="https://github.com/RoboJackets//robocup-training">RoboCup Training Repo</a>
+<ul>
+<li>Slides</li>
+<li>Docs</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org850e858">
+<h2 id="org850e858">Questions about Plays?</h2>
+<ul>
+<li>We're going to slow down a bit after last meeting
+<ul>
+<li>We're going to catch up everyone who's behind, and give you a chance to work on something real if you're ahead!</li>
+<li><b>Plays are not the only area in RoboCup</b></li>
+<li>They are a very high impact thing to cover though.</li>
+
+</ul></li>
+<li>Topics Covered:
+<ul>
+<li>Subbehaviors</li>
+<li>Role Requirements</li>
+<li>Creating Plays</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgeb01521">
+<h2 id="orgeb01521">Solution to Binary Clock</h2>
+</section>
+</section>
+<section>
+<section id="slide-org7f6c742">
+<h2 id="org7f6c742">Misc Plays Information</h2>
+<div class="outline-text-2" id="text-org7f6c742">
+</div></section>
+<section id="slide-org1c86b8f">
+<h3 id="org1c86b8f">Do we have any Subbehaviors?</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Returns True if we have any subbehaivors</span>
+  <span style="color: #598249;">self</span>.has_subbehaviors()
+</pre>
+</div>
+</section>
+<section id="slide-org288dd82">
+<h3 id="org288dd82">Get all Subbehaviors</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Returns an array of all subbehaviors</span>
+  <span style="color: #598249;">self</span>.all_subbehaviors()
+</pre>
+</div>
+</section>
+<section id="slide-org5470baa">
+<h3 id="org5470baa">Is a Subbehaivor Done?</h3>
+<ul>
+<li>Done = our completed or failed states</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-python">  <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'mybehavior'</span>).is_done_running()
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgf7b5929">
+<h2 id="orgf7b5929">CoordinatedPass Overview</h2>
+<ul>
+<li>Coordinated Pass is a complicated tactic with a lot of different features</li>
+<li>It is used everywhere, and it isn't terribly complicated</li>
+
+</ul>
+</section>
+<section id="slide-org70179c8">
+<h3 id="org70179c8">Coordinated Pass Behavior Diagram</h3>
+
+<div class="figure">
+<p><a href="https://i.imgur.com/undefined.png"><img src="https://i.imgur.com/Det1VDj.png" alt="Det1VDj.png" /></a>
+</p>
+</div>
+</section>
+<section id="slide-orgf508bc1">
+<h3 id="orgf508bc1">Let's Look at Code!</h3>
+<ul>
+<li><a href="https://github.com/RoboJackets/robocup-software/blob/720645581718e52bc174275843fd7d114edf0543/soccer/gameplay/tactics/coordinated_pass.py">Coordinated Pass</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orga25e926">
+<h2 id="orga25e926">Wrapping Up</h2>
+<div class="outline-text-2" id="text-orga25e926">
+</div></section>
+<section id="slide-org2fa4ee4">
+<h3 id="org2fa4ee4">Play Ideas?</h3>
+<ul>
+<li>Offense, Defense, Etc.</li>
+<li>Great Place for Beginners to Start</li>
+<li>(side note: Anyone can begin contributing now if you wish)
+<ul>
+<li>We <code>&lt;3</code> contributions!</li>
+<li>Recommend starting with intro issues, then moving on to beginner.</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgec402cd">
+<h3 id="orgec402cd">Future Meeting Possibilities</h3>
+<ul>
+<li><i>Joint Meeting with Electrical, Intro To Firmware</i></li>
+<li><i>RRT Path Planning in RoboCup (Maybe a bit of Motion Control)</i></li>
+<li>Soccer C++ Internals</li>
+<li>QT Tutorial (develop soccer's UI!)</li>
+<li>Contribution Quickstart Meeting
+<ul>
+<li>Submitting a PR</li>
+<li>Some Git</li>
+<li>Build Systems/CI?</li>
+
+</ul></li>
+<li>What do you guys want to learn?</li>
+
+</ul>
+</section>
+<section id="slide-org32a6869">
+<h3 id="org32a6869">Assignment</h3>
+<ul>
+<li>Create a Triangle Pass Play</li>
+<li>Round up 3 Robots in a Triangle, and pass between them.</li>
+<li>Starter code is in <code>soccer/gameplay/plays/skel/binary_clock.py</code> (same as last time).</li>
+<li>Move it to <code>soccer/gameplay/plays/training/triangle_pass.py</code> to begin.</li>
+
+</ul>
+</section>
+<section id="slide-org53b33a0">
+<h3 id="org53b33a0">Tips</h3>
+<ol>
+<li>Use Move Skills to move your robots to the triangle initially</li>
+<li>Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle</li>
+<li>At a bare minimum, I would make setup and passing states. You may want to have a state for every side of the triangle (or not).</li>
+
+</ol>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.22,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>
