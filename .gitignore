@@ -1,0 +1,9 @@
+# Compiled
+*.elc
+
+# Packaging
+.cask
+dist
+
+# build
+html/
