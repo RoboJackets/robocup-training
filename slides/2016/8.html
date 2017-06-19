@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Contribution Overview</title>
+<meta name="author" content="(Jay Kamat)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Contribution Overview</h1>
+</section>
+<section>
+<section id="slide-org75ea9f4">
+<h2 id="org75ea9f4">Our Repositories</h2>
+<ul>
+<li>RoboJackets/robocup-software
+<ul>
+<li>Our main software stack</li>
+
+</ul></li>
+<li>RoboJackets/robocup-firmware
+<ul>
+<li>Firmware for robots</li>
+<li>Firmware for base station</li>
+
+</ul></li>
+<li>RoboJackets/robocup-common
+<ul>
+<li>Libraries needed for both firmware and software</li>
+<li>Ex: Geometry, time libraries.</li>
+
+</ul></li>
+<li>RoboJackets/rrt
+<ul>
+<li>Path planning</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org50f7761">
+<h2 id="org50f7761">Overview Picture</h2>
+
+<div class="figure">
+<p><img src="https://cloud.githubusercontent.com/assets/4349709/11414363/8936f22e-93c2-11e5-9324-5c9055b1a4e4.jpg" alt="8936f22e-93c2-11e5-9324-5c9055b1a4e4.jpg" />
+</p>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org532876a">
+<h2 id="org532876a">Overview Of a Contribution</h2>
+<div class="outline-text-2" id="text-org532876a">
+</div></section>
+<section id="slide-org0d48bb3">
+<h3 id="org0d48bb3">Find an Issue</h3>
+<ul>
+<li>Can be on any of our repos</li>
+<li><b>Comment on the issue, let us know you're working on it</b></li>
+<li>We'll provide feedback, help you out to get started</li>
+
+</ul>
+</section>
+<section id="slide-org3bba1aa">
+<h3 id="org3bba1aa">Fork the repo, make a branch</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Fork the repo</span>
+
+  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Clone your fork</span>
+  git clone &lt;your fork URL&gt;
+
+  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Checkout a new branch</span>
+  git checkout -b my-feature
+</pre>
+</div>
+</section>
+<section id="slide-org0887ec7">
+<h3 id="org0887ec7">Make your changes</h3>
+<ul>
+<li><b>Let us know if you get stuck</b></li>
+<li>Use documentation, stack overflow, google, etc</li>
+<li>Test out your solution thoroughly</li>
+
+</ul>
+</section>
+<section id="slide-org0cfb428">
+<h3 id="org0cfb428">Add your changes to git</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Stage all files in the current directory '.'</span>
+  git add .
+
+  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Make sure files you want saved are 'green'</span>
+  git status
+
+  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Try to give a good status message!</span>
+  git commit -m <span style="color: #15968D;">"Fixed my issue!"</span>
+</pre>
+</div>
+</section>
+<section id="slide-org1312f44">
+<h3 id="org1312f44">Push your changes up to your fork</h3>
+<div class="org-src-container">
+
+<pre  class="src src-shell">  git push -u origin &lt;branch name&gt;
+</pre>
+</div>
+
+<ul>
+<li>Create a pull request on GitHub from your fork</li>
+
+</ul>
+</section>
+<section id="slide-org5710d08">
+<h3 id="org5710d08">Fix issues brought up</h3>
+<ul>
+<li>We'll review your changes, and give feedback on improvements that can be made.</li>
+<li>Repeat the commit and push steps to revise your pull request.
+<ul>
+<li>The Pull Request will automatically be updated</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgf8b56c0">
+<h3 id="orgf8b56c0">Congrats!</h3>
+<ul>
+<li>Pick another issue to work on, or create a new issue!</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.22,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>

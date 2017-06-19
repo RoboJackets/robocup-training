@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Path Planning</title>
+<meta name="author" content="(Josh Ting)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Path Planning</h1><h2 class="author">Josh Ting</h2>
+</section>
+<section>
+<section id="slide-orgee8d289">
+<h2 id="orgee8d289">What is Path Planning</h2>
+<ul>
+<li>Our robots need to know how to get from a start point to an end point</li>
+<li>RoboCup uses an RRT (Rapidly-Exploring Random Tree)</li>
+<li>IGVC uses A*</li>
+<li>STOx's Planner</li>
+<li>D*</li>
+<li>Path network generation</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb46bc9b">
+<h2 id="orgb46bc9b">RRT</h2>
+<ul>
+<li>Continuous search space</li>
+<li>Randomly extend a space-filling tree throughout the search space until we connect the start and goal states</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf08df6c">
+<h2 id="orgf08df6c">How the RRT works</h2>
+<ol>
+<li>Start building our tree by placing a root node at the goal state</li>
+<li>Randomly select some coordinate in the position space</li>
+<li>Identify existing node in the tree that is nearest to that coordinate</li>
+<li>Add new node in tree branching from nearest node to random coordinate</li>
+<li>Repeat 2-4 until a node is created at our destination.
+The series of connected nodes from root to destination forms the path that the robot will follow</li>
+<li>Smooth out path with overlaid Bézier curve</li>
+
+</ol>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc65b5b5">
+<h2 id="orgc65b5b5">How to construct a Bézier curve</h2>
+<div class="outline-text-2" id="text-orgc65b5b5">
+</div></section>
+<section id="slide-org2842a55">
+<h3 id="org2842a55">Linear curve</h3>
+<ul>
+<li>Bézier curve B(t)</li>
+<li>The t in the function for a linear Bézier curve can be thought of as describing how far B(t) is from P0 to P1</li>
+<li>For example, when t=0.25, B(t) is one quarter of the way from point P0 to P1. As t varies from 0 to 1, B(t) describes a straight line from P0 to P1</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/B%C3%A9zier_1_big.gif" alt="B%C3%A9zier_1_big.gif" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgd4c2af8">
+<h3 id="orgd4c2af8">Quadratic curve</h3>
+<ul>
+<li>For quadratic Bézier curves one can construct intermediate points Q0 and Q1 such that as t increases from 0 to 1
+<ul>
+<li>Point Q0(t) varies from P0 to P1 and describes a linear Bézier curve.</li>
+<li>Point Q1(t) varies from P1 to P2 and describes a linear Bézier curve.</li>
+<li>Point B(t) is interpolated linearly between Q0(t) to Q1(t) and describes a quadratic Bézier curve.</li>
+
+</ul></li>
+
+</ul>
+
+<div class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/B%C3%A9zier_2_big.gif" alt="B%C3%A9zier_2_big.gif" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org0d20db0">
+<h2 id="org0d20db0">Sounds really inefficient</h2>
+<ul>
+<li>Why waste computation time branching out in random directions?</li>
+<li>What advantages could there be in random branching?</li>
+<li>Why not use a less computationally intense algorithm like A*?</li>
+
+</ul>
+
+</section>
+<section id="slide-org0086c33">
+<h3 id="org0086c33">Advantages of RRT</h3>
+<ul>
+<li>Specialized for continuous configuration spaces</li>
+<li>Fast</li>
+<li>Can handle kinodynamic constraints</li>
+<li>Algorithm can be modified for various needs and preferences</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf2e2c78">
+<h2 id="orgf2e2c78">RoboCup Modifications</h2>
+<div class="outline-text-2" id="text-orgf2e2c78">
+</div></section>
+<section id="slide-org75bbec6">
+<h3 id="org75bbec6">Biases</h3>
+<ul>
+<li>Goal Bias
+<ul>
+<li>Random branching has tendency to branch directly towards goal instead</li>
+
+</ul></li>
+<li>Waypoint Bias
+<ul>
+<li>Random branching has tendency to branch towards Bézier curve waypoints of previous paths</li>
+
+</ul></li>
+<li>Goal Bias + Waypoint Bias must sum to at most 1.0</li>
+
+</ul>
+
+</section>
+<section id="slide-org225ea59">
+<h3 id="org225ea59">Adaptive Stepsize Control</h3>
+<ul>
+<li>Stepsize now dynamically changes based on whether there are obstacles nearby</li>
+<li>Requires extra computation time to locate nearby obstacles</li>
+<li>Having larger stepsizes when possible reduces total iteration count, which reduces computation time</li>
+<li>Obstacle-light environments benefit the most from this enhancement</li>
+
+</ul>
+
+</section>
+<section id="slide-org99b362b">
+<h3 id="org99b362b">k-d Trees</h3>
+<ul>
+<li>Finding the node in the RRT to extend from is computationally expensive</li>
+<li>Binary tree that attempts to maintain balance</li>
+<li>Partitions the state space evenly based on the number of nodes in each partition</li>
+<li>The branch that each node is stored under is determined by comparing that node to the median of the node in that subtree</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf73f116">
+<h2 id="orgf73f116">STOx's Planner</h2>
+<ul>
+<li>Generate a straight line from the start state to end state</li>
+<li>As long as the path intersects an obstacle:
+<ul>
+<li>Generate a subgoal state next to the obstacle</li>
+<li>Now divided into two smaller subproblems</li>
+<li>Recurse!</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-org6b47fe3">
+<h3 id="org6b47fe3">STOx's Planner</h3>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/Ea040em.png" alt="Ea040em.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgc8a5480">
+<h3 id="orgc8a5480">STOx's Planner</h3>
+<ul>
+<li>Very fast when obstacle count is low</li>
+<li>Not very flexible</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd61665d">
+<h2 id="orgd61665d">A*</h2>
+<ul>
+<li>Search space
+<ul>
+<li>Discrete network of nodes</li>
+<li>Traversable edges between nodes</li>
+
+</ul></li>
+<li>Generalized Dijkstra's algorithm
+<ul>
+<li>Generalized breadth-first search</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org9be417a">
+<h2 id="org9be417a">BFS</h2>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/FYNyt8T.gif" alt="FYNyt8T.gif" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org449279f">
+<h2 id="org449279f">Dijkstra's algorithm</h2>
+<ul>
+<li>Like BFS, but acknowledges costs with each edge</li>
+<li>Associates each edge with a distance cost, and assigns each node with a tentative distance cost</li>
+
+</ul>
+
+<ul>
+<li>At each iteration, update the distance to the nodes neighboring the current node</li>
+<li>Select the unvisited node with the smallest tentative distance at the next iteration</li>
+<li>BFS is Dijkstra's algorithm with equal edge weights</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0ac8f76">
+<h2 id="org0ac8f76">A*</h2>
+<ul>
+<li>Like Dijkstra's but with a heuristic function h(n)</li>
+<li>Cost function f(n) = g(n) + h(n)
+<ul>
+<li>g(n): cost of path from start to n</li>
+<li>h(n): estimate cost of cheapest path from n to goal</li>
+
+</ul></li>
+<li>Heuristic must be admissible (no overestimating)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgdc0c0d8">
+<h2 id="orgdc0c0d8">Dynamic A* Search</h2>
+<ul>
+<li>What if edge weights change during execution?</li>
+<li>Searching backwards from goal to start</li>
+<li>Efficient replanning and backtracking</li>
+
+</ul>
+
+</section>
+<section id="slide-org42341c1">
+<h3 id="org42341c1">D*</h3>
+<ul>
+<li>At each iteration, evaluate current node and propagate changes to its descendants</li>
+<li>When a new obstacle is detected, all affected points are put back into the priority queue of "unvisited" nodes</li>
+<li>For each affected point:
+<ul>
+<li>If node cost can be reduced, update its backpointer</li>
+<li>Propagate change in cost to neighbors</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org63625da">
+<h2 id="org63625da">Path Network</h2>
+<ul>
+<li>Transform continuous space into discrete space</li>
+<li>Invisible network of waypoints</li>
+<li>Obstacles represented as polygons</li>
+
+</ul>
+
+</section>
+<section id="slide-org8c0bff5">
+<h3 id="org8c0bff5">Path Network</h3>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/lM67O8P.png" alt="lM67O8P.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org7607a4d">
+<h2 id="org7607a4d">Navigation Mesh</h2>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/uoD7ARv.png" alt="uoD7ARv.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgd952b66">
+<h3 id="orgd952b66">Navigation Mesh</h3>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/ADl3xa3.png" alt="ADl3xa3.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orga65951c">
+<h3 id="orga65951c">Navigation Mesh</h3>
+<ul>
+<li>For each point
+<ul>
+<li>Pick two other points</li>
+<li>See if they form a triangle through traversable space</li>
+<li>See if the triangle does not cross an existing triangle in the mesh</li>
+<li>If yes, add triangle to nav mesh</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-org7a0400a">
+<h3 id="org7a0400a">Navigation Mesh</h3>
+<ul>
+<li>For any 2 triangles with a shared edge
+<ul>
+<li>If the merged polygon is convex, replace them with the new polygon</li>
+
+</ul></li>
+<li>Repeat for higher order polygons</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgd383647">
+<h2 id="orgd383647">Generating a path network from a nav mesh</h2>
+<ul>
+<li>For each polygon in the nav mesh, place a path node in its center</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/BQ2I4lH.png" alt="BQ2I4lH.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-orgf51395c">
+<h3 id="orgf51395c">Generating a path network from a nav mesh</h3>
+<ul>
+<li>Alternatively, place a path node at midpoint of each edge between two adjacent polygons</li>
+
+</ul>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/EyNSpgk.png" alt="EyNSpgk.png" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org6b204be">
+<h2 id="org6b204be">Any questions?</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.22,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>
