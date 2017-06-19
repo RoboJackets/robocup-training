@@ -1,15 +1,15 @@
-- [**2016 Slide Archive**](#org6db9884)
-- [RoboCup Training [<https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield>](https://circleci.com/gh/RoboJackets/robocup-training)](#org30970e7)
-- [Slides](#org1983a87)
-- [Docs (TODO, update links)](#orgc0e1a43)
+- [**2016 Slide Archive**](#orgd521a6f)
+- [RoboCup Training [<https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield>](https://circleci.com/gh/RoboJackets/robocup-training)](#orgc6bce90)
+- [Slides](#orga8043c1)
+- [Docs (TODO, update links)](#org828f8df)
 
 
-<a id="org6db9884"></a>
+<a id="orgd521a6f"></a>
 
 # **2016 Slide Archive**
 
 
-<a id="org30970e7"></a>
+<a id="orgc6bce90"></a>
 
 # RoboCup Training [<https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield>](https://circleci.com/gh/RoboJackets/robocup-training)
 
@@ -18,7 +18,7 @@ RoboCup Software Training (Created in 2016)
 To Navigate Slides, Press `space` for going forward and `p` for going back. Press `?` for help!
 
 
-<a id="org1983a87"></a>
+<a id="orga8043c1"></a>
 
 # Slides
 
@@ -35,7 +35,7 @@ To Navigate Slides, Press `space` for going forward and `p` for going back. Pres
 11. [PathPlanning Overview](https://robojackets.github.io/robocup-training/slides/2016/pathplanning)
 
 
-<a id="orgc0e1a43"></a>
+<a id="org828f8df"></a>
 
 # Docs (TODO, update links)
 

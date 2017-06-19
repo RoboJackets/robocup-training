@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Path Planning</h1><h2 class="author">Josh Ting</h2>
 </section>
 <section>
-<section id="slide-orgee8d289">
-<h2 id="orgee8d289">What is Path Planning</h2>
+<section id="slide-orga14ae15">
+<h2 id="orga14ae15">What is Path Planning</h2>
 <ul>
 <li>Our robots need to know how to get from a start point to an end point</li>
 <li>RoboCup uses an RRT (Rapidly-Exploring Random Tree)</li>
@@ -44,8 +44,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgb46bc9b">
-<h2 id="orgb46bc9b">RRT</h2>
+<section id="slide-org9b8a8c7">
+<h2 id="org9b8a8c7">RRT</h2>
 <ul>
 <li>Continuous search space</li>
 <li>Randomly extend a space-filling tree throughout the search space until we connect the start and goal states</li>
@@ -55,8 +55,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgf08df6c">
-<h2 id="orgf08df6c">How the RRT works</h2>
+<section id="slide-org2bc2893">
+<h2 id="org2bc2893">How the RRT works</h2>
 <ol>
 <li>Start building our tree by placing a root node at the goal state</li>
 <li>Randomly select some coordinate in the position space</li>
@@ -71,12 +71,12 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgc65b5b5">
-<h2 id="orgc65b5b5">How to construct a Bézier curve</h2>
-<div class="outline-text-2" id="text-orgc65b5b5">
+<section id="slide-org448df17">
+<h2 id="org448df17">How to construct a Bézier curve</h2>
+<div class="outline-text-2" id="text-org448df17">
 </div></section>
-<section id="slide-org2842a55">
-<h3 id="org2842a55">Linear curve</h3>
+<section id="slide-orga5e4e60">
+<h3 id="orga5e4e60">Linear curve</h3>
 <ul>
 <li>Bézier curve B(t)</li>
 <li>The t in the function for a linear Bézier curve can be thought of as describing how far B(t) is from P0 to P1</li>
@@ -90,8 +90,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-<section id="slide-orgd4c2af8">
-<h3 id="orgd4c2af8">Quadratic curve</h3>
+<section id="slide-orgdd174d0">
+<h3 id="orgdd174d0">Quadratic curve</h3>
 <ul>
 <li>For quadratic Bézier curves one can construct intermediate points Q0 and Q1 such that as t increases from 0 to 1
 <ul>
@@ -111,8 +111,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org0d20db0">
-<h2 id="org0d20db0">Sounds really inefficient</h2>
+<section id="slide-org43a786f">
+<h2 id="org43a786f">Sounds really inefficient</h2>
 <ul>
 <li>Why waste computation time branching out in random directions?</li>
 <li>What advantages could there be in random branching?</li>
@@ -121,8 +121,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org0086c33">
-<h3 id="org0086c33">Advantages of RRT</h3>
+<section id="slide-orgbf06b27">
+<h3 id="orgbf06b27">Advantages of RRT</h3>
 <ul>
 <li>Specialized for continuous configuration spaces</li>
 <li>Fast</li>
@@ -134,12 +134,12 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgf2e2c78">
-<h2 id="orgf2e2c78">RoboCup Modifications</h2>
-<div class="outline-text-2" id="text-orgf2e2c78">
+<section id="slide-org994ff56">
+<h2 id="org994ff56">RoboCup Modifications</h2>
+<div class="outline-text-2" id="text-org994ff56">
 </div></section>
-<section id="slide-org75bbec6">
-<h3 id="org75bbec6">Biases</h3>
+<section id="slide-orgb54c544">
+<h3 id="orgb54c544">Biases</h3>
 <ul>
 <li>Goal Bias
 <ul>
@@ -156,8 +156,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org225ea59">
-<h3 id="org225ea59">Adaptive Stepsize Control</h3>
+<section id="slide-org6e0711f">
+<h3 id="org6e0711f">Adaptive Stepsize Control</h3>
 <ul>
 <li>Stepsize now dynamically changes based on whether there are obstacles nearby</li>
 <li>Requires extra computation time to locate nearby obstacles</li>
@@ -167,8 +167,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org99b362b">
-<h3 id="org99b362b">k-d Trees</h3>
+<section id="slide-org42a6610">
+<h3 id="org42a6610">k-d Trees</h3>
 <ul>
 <li>Finding the node in the RRT to extend from is computationally expensive</li>
 <li>Binary tree that attempts to maintain balance</li>
@@ -180,8 +180,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgf73f116">
-<h2 id="orgf73f116">STOx's Planner</h2>
+<section id="slide-org79ffed4">
+<h2 id="org79ffed4">STOx's Planner</h2>
 <ul>
 <li>Generate a straight line from the start state to end state</li>
 <li>As long as the path intersects an obstacle:
@@ -195,8 +195,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org6b47fe3">
-<h3 id="org6b47fe3">STOx's Planner</h3>
+<section id="slide-orge9fbea4">
+<h3 id="orge9fbea4">STOx's Planner</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/Ea040em.png" alt="Ea040em.png" />
@@ -204,8 +204,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-<section id="slide-orgc8a5480">
-<h3 id="orgc8a5480">STOx's Planner</h3>
+<section id="slide-org6a363e4">
+<h3 id="org6a363e4">STOx's Planner</h3>
 <ul>
 <li>Very fast when obstacle count is low</li>
 <li>Not very flexible</li>
@@ -215,8 +215,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgd61665d">
-<h2 id="orgd61665d">A*</h2>
+<section id="slide-org46ad71d">
+<h2 id="org46ad71d">A*</h2>
 <ul>
 <li>Search space
 <ul>
@@ -235,8 +235,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org9be417a">
-<h2 id="org9be417a">BFS</h2>
+<section id="slide-orga67baa2">
+<h2 id="orga67baa2">BFS</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/FYNyt8T.gif" alt="FYNyt8T.gif" />
@@ -246,8 +246,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org449279f">
-<h2 id="org449279f">Dijkstra's algorithm</h2>
+<section id="slide-orgddf2a32">
+<h2 id="orgddf2a32">Dijkstra's algorithm</h2>
 <ul>
 <li>Like BFS, but acknowledges costs with each edge</li>
 <li>Associates each edge with a distance cost, and assigns each node with a tentative distance cost</li>
@@ -264,8 +264,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org0ac8f76">
-<h2 id="org0ac8f76">A*</h2>
+<section id="slide-org2b6daba">
+<h2 id="org2b6daba">A*</h2>
 <ul>
 <li>Like Dijkstra's but with a heuristic function h(n)</li>
 <li>Cost function f(n) = g(n) + h(n)
@@ -281,8 +281,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgdc0c0d8">
-<h2 id="orgdc0c0d8">Dynamic A* Search</h2>
+<section id="slide-org4e28935">
+<h2 id="org4e28935">Dynamic A* Search</h2>
 <ul>
 <li>What if edge weights change during execution?</li>
 <li>Searching backwards from goal to start</li>
@@ -291,8 +291,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org42341c1">
-<h3 id="org42341c1">D*</h3>
+<section id="slide-orgf8ed0d8">
+<h3 id="orgf8ed0d8">D*</h3>
 <ul>
 <li>At each iteration, evaluate current node and propagate changes to its descendants</li>
 <li>When a new obstacle is detected, all affected points are put back into the priority queue of "unvisited" nodes</li>
@@ -308,8 +308,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org63625da">
-<h2 id="org63625da">Path Network</h2>
+<section id="slide-org6978bcd">
+<h2 id="org6978bcd">Path Network</h2>
 <ul>
 <li>Transform continuous space into discrete space</li>
 <li>Invisible network of waypoints</li>
@@ -318,8 +318,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org8c0bff5">
-<h3 id="org8c0bff5">Path Network</h3>
+<section id="slide-org58d4311">
+<h3 id="org58d4311">Path Network</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/lM67O8P.png" alt="lM67O8P.png" />
@@ -329,8 +329,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org7607a4d">
-<h2 id="org7607a4d">Navigation Mesh</h2>
+<section id="slide-orgda10817">
+<h2 id="orgda10817">Navigation Mesh</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/uoD7ARv.png" alt="uoD7ARv.png" />
@@ -338,8 +338,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-<section id="slide-orgd952b66">
-<h3 id="orgd952b66">Navigation Mesh</h3>
+<section id="slide-org48d4b3d">
+<h3 id="org48d4b3d">Navigation Mesh</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/ADl3xa3.png" alt="ADl3xa3.png" />
@@ -347,8 +347,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-<section id="slide-orga65951c">
-<h3 id="orga65951c">Navigation Mesh</h3>
+<section id="slide-orgb8e8ec3">
+<h3 id="orgb8e8ec3">Navigation Mesh</h3>
 <ul>
 <li>For each point
 <ul>
@@ -362,8 +362,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org7a0400a">
-<h3 id="org7a0400a">Navigation Mesh</h3>
+<section id="slide-org3f26267">
+<h3 id="org3f26267">Navigation Mesh</h3>
 <ul>
 <li>For any 2 triangles with a shared edge
 <ul>
@@ -377,8 +377,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgd383647">
-<h2 id="orgd383647">Generating a path network from a nav mesh</h2>
+<section id="slide-orge2ea3c3">
+<h2 id="orge2ea3c3">Generating a path network from a nav mesh</h2>
 <ul>
 <li>For each polygon in the nav mesh, place a path node in its center</li>
 
@@ -390,8 +390,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-<section id="slide-orgf51395c">
-<h3 id="orgf51395c">Generating a path network from a nav mesh</h3>
+<section id="slide-org04c2701">
+<h3 id="org04c2701">Generating a path network from a nav mesh</h3>
 <ul>
 <li>Alternatively, place a path node at midpoint of each edge between two adjacent polygons</li>
 
@@ -405,8 +405,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org6b204be">
-<h2 id="org6b204be">Any questions?</h2>
+<section id="slide-org29fe3fd">
+<h2 id="org29fe3fd">Any questions?</h2>
 </section>
 </section>
 </div>
