@@ -223,6 +223,7 @@ While in this section, try looking at the behavior tree while different plays ru
 |--------+------------------------------------------------|
 | Email  | [[mailto:jaygkamat@gmail.com][jaygkamat@gmail.com]]                            |
 | Jabber | jayk@fysh.in                                   |
+| Matrix | jgkamat:matrix.org                             |
 | Github | [[https://github.com/jgkamat][https://github.com/jgkamat]]                     |
 | Gitter | [[https://gitter.im/RoboJackets/robocup-software][https://gitter.im/RoboJackets/robocup-software]] |
 

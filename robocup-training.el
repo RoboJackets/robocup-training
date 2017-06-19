@@ -43,11 +43,13 @@
 (let ((proj-base (file-name-directory load-file-name)))
   (setq org-publish-project-alist
     `(("rc-slides"
+        :recursive t
         :base-directory ,(concat proj-base "./src")
         :publishing-directory ,(concat proj-base "/html/slides/")
         :publishing-function org-reveal-publish-to-reveal
         :exclude-tags ("docs"))
        ("rc-docs"
+         :recursive t
          :base-directory ,(concat proj-base "./src")
          :publishing-directory ,(concat proj-base "/html/docs/")
          :publishing-function org-gfm-publish-to-gfm

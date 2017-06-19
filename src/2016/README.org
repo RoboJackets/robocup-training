@@ -6,17 +6,17 @@ RoboCup Software Training (Created in 2016)
 To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Press ~?~ for help!
 
 * Slides
-1. [[https://robojackets.github.io/robocup-training/2016/slides/1][Training Meeting 1]]
-2. [[https://robojackets.github.io/robocup-training/2016/slides/2][Plays - 1]]
-3. [[https://robojackets.github.io/robocup-training/2016/slides/3][Plays - 2]]
-4. [[https://robojackets.github.io/robocup-training/2016/slides/4][Plays - 3]]
-5. [[https://robojackets.github.io/robocup-training/2016/slides/git][Supplemental Git]]
+1. [[https://robojackets.github.io/robocup-training/slides/2016/1][Training Meeting 1]]
+2. [[https://robojackets.github.io/robocup-training/slides/2016/2][Plays - 1]]
+3. [[https://robojackets.github.io/robocup-training/slides/2016/3][Plays - 2]]
+4. [[https://robojackets.github.io/robocup-training/slides/2016/4][Plays - 3]]
+5. [[https://robojackets.github.io/robocup-training/slides/2016/git][Supplemental Git]]
 6. [[https://docs.google.com/presentation/d/1R09U6kv0Wfb2M8SpftlejmmaZf71egNhxJDRfQNXxxU/edit?usp=sharing][Firmware Part 1]]
-7. [[https://robojackets.github.io/robocup-training/2016/slides/firmware][Firmware Part 2]]
-8. [[https://robojackets.github.io/robocup-training/2016/slides/6][RRT/PathPlanning]]
-9. [[https://robojackets.github.io/robocup-training/2016/slides/7][QT/Cmake]]
-10. [[https://robojackets.github.io/robocup-training/2016/slides/8][Basic Contribution Overview]]
-10. [[https://robojackets.github.io/robocup-training/2016/slides/pathplanning][PathPlanning Overview]]
+7. [[https://robojackets.github.io/robocup-training/slides/2016/firmware][Firmware Part 2]]
+8. [[https://robojackets.github.io/robocup-training/slides/2016/6][RRT/PathPlanning]]
+9. [[https://robojackets.github.io/robocup-training/slides/2016/7][QT/Cmake]]
+10. [[https://robojackets.github.io/robocup-training/slides/2016/8][Basic Contribution Overview]]
+10. [[https://robojackets.github.io/robocup-training/slides/2016/pathplanning][PathPlanning Overview]]
 
 * Docs (TODO, update links)
 1. [[https://robojackets.github.io/robocup-software/t20161.html][Training Docs 1]]
