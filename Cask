@@ -9,6 +9,7 @@
 (development
  (depends-on "ert-runner")
  (depends-on "htmlize")
+ (depends-on "f")
  (depends-on "ox-gfm")
  ;; ox-reveal must be installed first to trigger installing org before org is loaded
  ;; Cask installs last entry first.

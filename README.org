@@ -9,6 +9,18 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20161.html][Training Docs 1]]
 
+* Building
+
+robocup-training is built with [[http://orgmode.org/][org-mode]] and [[https://github.com/cask/cask][cask]]
+
+** Building Slides
+
+#+BEGIN_SRC sh
+  cask install
+  make
+
+  # output goes in ./html
+#+END_SRC
 * Old Slides
 
 1. [[file:src/2016][2016 Slides]]

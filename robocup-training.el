@@ -5,7 +5,7 @@
 ;; Version: 1.0
 ;; Keywords: robocup,training,revealjs
 ;; URL: https://github.com/RoboJackets/robocup-training
-;; Package-Requires: ((emacs "25.0") (ox-gfm) (htmlize) (ox-reveal))
+;; Package-Requires: ((emacs "25.0") (f) (ox-gfm) (htmlize) (ox-reveal))
 ;;; Commentary:
 ;;; Creates and builds org project files for robocup training.
 
@@ -14,10 +14,11 @@
 (require 'ox-reveal)
 (require 'ox-publish)
 (require 'ox-gfm)
+(require 'f)
 
 ;;; Code:
 
-;; Force htmlize to activate even in nogui mode:
+;; Force htmlize to activate even in -nw
 ;; https://stackoverflow.com/questions/3591337/emacs-htmlize-in-batch-mode
 ;; http://sebastien.kirche.free.fr/emacs_stuff/elisp/my-htmlize.el
 ;; Get fancy colors! (but this will screw up your native emacs install)
@@ -40,36 +41,48 @@
   (setq htmlize-use-rgb-map 'force)
   (require 'htmlize))
 
+;;;; Project Definition
+
 (let ((proj-base (file-name-directory load-file-name)))
   (setq org-publish-project-alist
     `(("rc-slides"
         :recursive t
-        :base-directory ,(concat proj-base "./src")
-        :publishing-directory ,(concat proj-base "/html/slides/")
+        :base-directory ,(f-join proj-base "src")
+        :publishing-directory ,(f-join proj-base "html" "slides")
         :publishing-function org-reveal-publish-to-reveal
+        :with-toc nil
+        :with-timestamps nil
+        :time-stamp-file nil
+        :with-tags nil
+        :with-author nil
+        :with-date nil
+        :with-todo-keywords nil
+         :section-numbers nil
+        :reveal-plugins "(notes pdf)"
+        :reveal-speed "fast"
+        :reveal-trans "linear"
+        :reveal-theme "dark"
+        :reveal-hlevel "1"
         :exclude-tags ("docs"))
        ("rc-docs"
          :recursive t
-         :base-directory ,(concat proj-base "./src")
-         :publishing-directory ,(concat proj-base "/html/docs/")
+         :with-toc nil
+         :with-tags nil
+         :with-author nil
+         :with-date nil
+         :with-todo-keywords nil
+         :section-numbers nil
+         :base-directory ,(f-join proj-base "src")
+         :publishing-directory ,(f-join proj-base "html" "docs")
          :publishing-function org-gfm-publish-to-gfm
          :exclude-tags ("slides")))
     org-reveal-root "https://cdn.jsdelivr.net/reveal.js/3.0.0/"
     org-reveal-margin "0.22"))
 
-
-(defun my-org-publish ()
-  "Overwrite's my (jay's) personal publishing file to publish everything.
-Also provides a script to run to publish this project."
-  (interactive)
-  ;; Don't make backup files when generating (cask)
-  (let ((make-backup-files nil))
-    (org-publish-all t)))
+;;;; Org Babel Configuration
 
 (require 'ob-python)
 (setq org-babel-python-command "python3")
-;; Make indentation actually matter in org src blocks
-(setq org-src-preserve-indentation t)
 
 (when noninteractive
   ;; Don't ask for evaluation
