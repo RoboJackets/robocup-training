@@ -58,7 +58,7 @@
         :with-author nil
         :with-date nil
         :with-todo-keywords nil
-         :section-numbers nil
+        :section-numbers nil
         :reveal-plugins "(notes pdf)"
         :reveal-speed "fast"
         :reveal-trans "linear"
@@ -98,6 +98,20 @@
           (not (f-hidden? file))
           (equal (f-ext file) "org")))
       t)))
+
+
+;; TODO find out how to print tabulated-list entries non-interactively
+(defun rc-org-lint ()
+  "Run org-lint on project."
+  (dolist (file (rc-generate-project-files))
+    (with-temp-buffer
+      (insert-file-contents file)
+      (org-mode)
+      (let ((result (org-lint)))
+        (when result
+          (print (concat "File: " file))
+          (print result))))))
+
 (defun my-org-publish ()
   "Overwrite's my (jay's) personal publishing file to publish everything.
  Also provides a script to run to publish this project."
