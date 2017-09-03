@@ -43,7 +43,8 @@
 
 ;;;; Project Definition
 
-(let ((proj-base (file-name-directory load-file-name)))
+(defconst +rc-proj-root+ (file-name-directory load-file-name))
+(let ((proj-base +rc-proj-root+))
   (setq org-publish-project-alist
     `(("rc-slides"
         :recursive t
@@ -78,6 +79,32 @@
          :exclude-tags ("slides")))
     org-reveal-root "https://cdn.jsdelivr.net/reveal.js/3.0.0/"
     org-reveal-margin "0.22"))
+
+;;;; Project File Picker
+
+(defun rc-generate-project-files (&optional relative)
+  "Generate org files in current project.
+ RELATIVE path that files should be relative to"
+  (mapcar
+    ;; Make paths relative
+    (if relative
+      (lambda (file) (f-relative file relative))
+      (lambda (file) file))
+    (f-files
+      ;; Get all non-hidden org files from root (that aren't an overview)
+      +rc-proj-root+
+      (lambda (file)
+        (and
+          (not (f-hidden? file))
+          (equal (f-ext file) "org")))
+      t)))
+(defun my-org-publish ()
+  "Overwrite's my (jay's) personal publishing file to publish everything.
+ Also provides a script to run to publish this project."
+  (interactive)
+  ;; Don't make backup files when generating (cask)
+  (let ((make-backup-files nil))
+    (org-publish-all t)))
 
 ;;;; Org Babel Configuration
 
