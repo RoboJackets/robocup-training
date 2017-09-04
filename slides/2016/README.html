@@ -9,7 +9,7 @@
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/dark.css" id="theme"/>
 
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -26,30 +26,17 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h2 class="author">root</h2><p class="date">Created: 2017-06-19 Mon 02:09</p>
-</section>
-<section id="table-of-contents">
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#/slide-orga5c9b52">1. <b>2016 Slide Archive</b></a></li>
-<li><a href="#/slide-org63c41c8">2. RoboCup Training </a></li>
-<li><a href="#/slide-org548cb37">3. Slides</a></li>
-<li><a href="#/slide-org332bff3">4. Docs (TODO, update links)</a></li>
-</ul>
-</div>
-</div>
+<section id="sec-title-slide">
 </section>
 <section>
-<section id="slide-orga5c9b52">
-<h2 id="orga5c9b52"><span class="section-number-2">1</span> <b>2016 Slide Archive</b></h2>
+<section id="slide-orgb6c7883">
+<h2 id="orgb6c7883"><b>2016 Slide Archive</b></h2>
 
 </section>
 </section>
 <section>
-<section id="slide-org63c41c8">
-<h2 id="org63c41c8"><span class="section-number-2">2</span> RoboCup Training <a href="https://circleci.com/gh/RoboJackets/robocup-training"><a href="https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield">https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield</a></a></h2>
+<section id="slide-org040768a">
+<h2 id="org040768a">RoboCup Training <a href="https://circleci.com/gh/RoboJackets/robocup-training"><a href="https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield">https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield</a></a></h2>
 <p>
 RoboCup Software Training (Created in 2016)
 </p>
@@ -61,8 +48,8 @@ To Navigate Slides, Press <code>space</code> for going forward and <code>p</code
 </section>
 </section>
 <section>
-<section id="slide-org548cb37">
-<h2 id="org548cb37"><span class="section-number-2">3</span> Slides</h2>
+<section id="slide-org2de6527">
+<h2 id="org2de6527">Slides</h2>
 <ol>
 <li><a href="https://robojackets.github.io/robocup-training/slides/2016/1">Training Meeting 1</a></li>
 <li><a href="https://robojackets.github.io/robocup-training/slides/2016/2">Plays - 1</a></li>
@@ -81,8 +68,8 @@ To Navigate Slides, Press <code>space</code> for going forward and <code>p</code
 </section>
 </section>
 <section>
-<section id="slide-org332bff3">
-<h2 id="org332bff3"><span class="section-number-2">4</span> Docs (TODO, update links)</h2>
+<section id="slide-orgc7b5fb5">
+<h2 id="orgc7b5fb5">Docs (TODO, update links)</h2>
 <ol>
 <li><a href="https://robojackets.github.io/robocup-software/t20161.html">Training Docs 1</a></li>
 <li><a href="https://robojackets.github.io/robocup-software/t20162.html">Plays - 1</a></li>
@@ -119,8 +106,8 @@ overview: true,
 margin: 0.22,
 
 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'default',
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server
@@ -129,11 +116,8 @@ multiplex: {
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
- { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
 });
 </script>
 </body>

@@ -1,15 +1,5 @@
-- [**2016 Slide Archive**](#org10c667f)
-- [RoboCup Training [<https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield>](https://circleci.com/gh/RoboJackets/robocup-training)](#orgaf78584)
-- [Slides](#org2fa4fd5)
-- [Docs (TODO, update links)](#orgd770797)
-
-
-<a id="org10c667f"></a>
-
 # **2016 Slide Archive**
 
-
-<a id="orgaf78584"></a>
 
 # RoboCup Training [<https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield>](https://circleci.com/gh/RoboJackets/robocup-training)
 
@@ -17,8 +7,6 @@ RoboCup Software Training (Created in 2016)
 
 To Navigate Slides, Press `space` for going forward and `p` for going back. Press `?` for help!
 
-
-<a id="org2fa4fd5"></a>
 
 # Slides
 
@@ -34,8 +22,6 @@ To Navigate Slides, Press `space` for going forward and `p` for going back. Pres
 10. [Basic Contribution Overview](https://robojackets.github.io/robocup-training/slides/2016/8)
 11. [PathPlanning Overview](https://robojackets.github.io/robocup-training/slides/2016/pathplanning)
 
-
-<a id="orgd770797"></a>
 
 # Docs (TODO, update links)
 

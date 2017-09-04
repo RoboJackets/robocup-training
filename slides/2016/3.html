@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Beginner</h1>
 </section>
 <section>
-<section id="slide-org2080d54">
-<h2 id="org2080d54">Questions about Plays?</h2>
+<section id="slide-org5e3d671">
+<h2 id="org5e3d671">Questions about Plays?</h2>
 <ul>
 <li>Last meeting was pretty dense
 <ul>
@@ -50,8 +50,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org2192d03">
-<h2 id="org2192d03">Subbehaviors!</h2>
+<section id="slide-org61ce8af">
+<h2 id="org61ce8af">Subbehaviors!</h2>
 <ul>
 <li>A Behavior is a generic name for any skill, play, or tactic.</li>
 <li>Last meeting we learned about Plays/Skills/Tactics
@@ -67,16 +67,16 @@
 
 </ul>
 </section>
-<section id="slide-org1c93e0c">
-<h3 id="org1c93e0c">Examples of Subbehaviors</h3>
+<section id="slide-orga936d89">
+<h3 id="orga936d89">Examples of Subbehaviors</h3>
 <ul>
 <li>Offense Play contains Passing Tactics, and Move Skills</li>
 <li>Passing Tactic Contains Move and Kick Skills</li>
 
 </ul>
 </section>
-<section id="slide-orgf766ebb">
-<h3 id="orgf766ebb"><i>Behavior</i> Tree!</h3>
+<section id="slide-org97b4c9e">
+<h3 id="org97b4c9e"><i>Behavior</i> Tree!</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -97,8 +97,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org37e2662">
-<h3 id="org37e2662"><i>Behavior</i> Tree! (cont.)</h3>
+<section id="slide-org3f07a30">
+<h3 id="org3f07a30"><i>Behavior</i> Tree! (cont.)</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -119,23 +119,23 @@
 </section>
 </section>
 <section>
-<section id="slide-org51c5085">
-<h2 id="org51c5085">How do I use subbehaviors?</h2>
-<div class="outline-text-2" id="text-org51c5085">
+<section id="slide-orge494a42">
+<h2 id="orge494a42">How do I use subbehaviors?</h2>
+<div class="outline-text-2" id="text-orge494a42">
 </div></section>
-<section id="slide-org420d8c5">
-<h3 id="org420d8c5">Adding Subbehaviors</h3>
+<section id="slide-org891c788">
+<h3 id="org891c788">Adding Subbehaviors</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python">  <span style="color: #598249;">self</span>.add_subbehavior(skill_object,
-                       <span style="color: #15968D;">"Name of Subbehavior"</span>,
-                       required=<span style="color: #15968D;">False</span> <span style="color: #598249;">or</span> <span style="color: #15968D;">True</span>
-                       priority=10) <span style="color: #5e6263;"># </span><span style="color: #5e6263;">A higher number is higher priority</span>
+<pre  class="src src-python"><span style="color: #598249;">self</span>.add_subbehavior(skill_object,
+                     <span style="color: #15968D;">"Name of Subbehavior"</span>,
+                     required=<span style="color: #15968D;">False</span> <span style="color: #598249;">or</span> <span style="color: #15968D;">True</span>
+                     priority=10) <span style="color: #5e6263;"># </span><span style="color: #5e6263;">A higher number is higher priority</span>
 </pre>
 </div>
 </section>
-<section id="slide-org501fd31">
-<h3 id="org501fd31">Removing Subbehaviors</h3>
+<section id="slide-orgfac6ae3">
+<h3 id="orgfac6ae3">Removing Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
@@ -144,8 +144,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org2ad3f5c">
-<h3 id="org2ad3f5c">Getting Subbehavior Plays</h3>
+<section id="slide-orgd14c055">
+<h3 id="orgd14c055">Getting Subbehavior Plays</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
@@ -154,59 +154,59 @@
 </section>
 </section>
 <section>
-<section id="slide-org075355b">
-<h2 id="org075355b">Real Examples</h2>
-<div class="outline-text-2" id="text-org075355b">
+<section id="slide-org96faadb">
+<h2 id="org96faadb">Real Examples</h2>
+<div class="outline-text-2" id="text-org96faadb">
 </div></section>
-<section id="slide-orgb90eb83">
-<h3 id="orgb90eb83">CoordinatedPass Tactic</h3>
+<section id="slide-org7b04056">
+<h3 id="org7b04056">CoordinatedPass Tactic</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python">  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
-      <span style="color: #2F7BDE;">receiver</span> = skills.pass_receive.PassReceive()
-      <span style="color: #2F7BDE;">receiver.receive_point</span> = <span style="color: #598249;">self</span>.receive_point
-      <span style="color: #598249;">self</span>.add_subbehavior(receiver,
-                           <span style="color: #15968D;">'receiver'</span>,
-                           required=<span style="color: #598249;">self</span>.receiver_required)
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #2F7BDE;">receiver</span> = skills.pass_receive.PassReceive()
+    <span style="color: #2F7BDE;">receiver.receive_point</span> = <span style="color: #598249;">self</span>.receive_point
+    <span style="color: #598249;">self</span>.add_subbehavior(receiver,
+                         <span style="color: #15968D;">'receiver'</span>,
+                         required=<span style="color: #598249;">self</span>.receiver_required)
 
-  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_running</span>(<span style="color: #598249;">self</span>):
-      <span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'receiver'</span>)
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_running</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'receiver'</span>)
 </pre>
 </div>
 </section>
-<section id="slide-org195c439">
-<h3 id="org195c439">Line Up Tactic</h3>
+<section id="slide-org4104477">
+<h3 id="org4104477">Line Up Tactic</h3>
 <ul>
 <li>First State Machine is set up, then:</li>
 
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Triggered whenever the line changes</span>
-  <span style="color: #598249;">self</span>.remove_all_subbehaviors()
-  <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
-      <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
-      <span style="color: #598249;">self</span>.add_subbehavior(
-          skills.move.Move(pt),
-          name=<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i),
-          required=<span style="color: #15968D;">False</span>,
-          priority=6 - i)
+<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Triggered whenever the line changes</span>
+<span style="color: #598249;">self</span>.remove_all_subbehaviors()
+<span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
+    <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
+    <span style="color: #598249;">self</span>.add_subbehavior(
+        skills.move.Move(pt),
+        name=<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i),
+        required=<span style="color: #15968D;">False</span>,
+        priority=6 - i)
 </pre>
 </div>
 
 <div class="org-src-container">
 
-<pre  class="src src-python">  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_running</span>(<span style="color: #598249;">self</span>):
-      <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
-          <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
-          <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i))<span style="color: #2F7BDE;">.pos</span> = pt
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_running</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
+        <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
+        <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i))<span style="color: #2F7BDE;">.pos</span> = pt
 </pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org189c802">
-<h2 id="org189c802">RoboCup Pro Tip</h2>
+<section id="slide-orgcf445b7">
+<h2 id="orgcf445b7">RoboCup Pro Tip</h2>
 <ul>
 <li>Find some code doing something like what you want</li>
 <li>Tweak it until it works</li>
@@ -216,12 +216,12 @@
 </section>
 </section>
 <section>
-<section id="slide-orgde222a8">
-<h2 id="orgde222a8">How do I get MY Robot?!?</h2>
-<div class="outline-text-2" id="text-orgde222a8">
+<section id="slide-org9489321">
+<h2 id="org9489321">How do I get MY Robot?!?</h2>
+<div class="outline-text-2" id="text-org9489321">
 </div></section>
-<section id="slide-org736d4b3">
-<h3 id="org736d4b3">Dynamic Assignment</h3>
+<section id="slide-org9bdc61e">
+<h3 id="org9bdc61e">Dynamic Assignment</h3>
 <ul>
 <li>Our role assignment system picks the best robot for the task</li>
 <li>You define your constraints, and we'll give you a robot if we can!</li>
@@ -229,8 +229,8 @@
 
 </ul>
 </section>
-<section id="slide-orgdcf599e">
-<h3 id="orgdcf599e">But I want Robot X!</h3>
+<section id="slide-org13379c6">
+<h3 id="org13379c6">But I want Robot X!</h3>
 <ul>
 <li>Override Role Requirements to add your constraints!</li>
 <li>This next section is Extra Credit&#x2026;
@@ -242,57 +242,57 @@
 
 </ul>
 </section>
-<section id="slide-orge8a9ac3">
-<h4 id="orge8a9ac3">Get the closest robot</h4>
+<section id="slide-orgc901dea">
+<h4 id="orgc901dea">Get the closest robot</h4>
 <div class="org-src-container">
 
-<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
-  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
-      <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
-      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Destination Shape is used for distances to points or segments</span>
-      <span style="color: #2F7BDE;">reqs.destination_shape</span> = <span style="color: #598249;">self</span>.pos
-      <span style="color: #598249;">return</span> reqs
+<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Destination Shape is used for distances to points or segments</span>
+    <span style="color: #2F7BDE;">reqs.destination_shape</span> = <span style="color: #598249;">self</span>.pos
+    <span style="color: #598249;">return</span> reqs
 </pre>
 </div>
 </section>
-<section id="slide-org3a40097">
-<h4 id="org3a40097">Get the robot with all the hardware</h4>
+<section id="slide-orgc63494a">
+<h4 id="orgc63494a">Get the robot with all the hardware</h4>
 <div class="org-src-container">
 
-<pre  class="src src-python">  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
-      <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
-      <span style="color: #2F7BDE;">reqs.require_kicking</span> = <span style="color: #15968D;">True</span>
-      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">try to be near the ball</span>
-      <span style="color: #598249;">if</span> main.ball().valid:
-          <span style="color: #2F7BDE;">reqs.destination_shape</span> = main.ball().pos
-      <span style="color: #598249;">return</span> reqs
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+    <span style="color: #2F7BDE;">reqs.require_kicking</span> = <span style="color: #15968D;">True</span>
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">try to be near the ball</span>
+    <span style="color: #598249;">if</span> main.ball().valid:
+        <span style="color: #2F7BDE;">reqs.destination_shape</span> = main.ball().pos
+    <span style="color: #598249;">return</span> reqs
 
 </pre>
 </div>
 </section>
-<section id="slide-org7a53759">
-<h4 id="org7a53759">I really, really, want MY Robot!</h4>
+<section id="slide-org9c28c35">
+<h4 id="org9c28c35">I really, really, want MY Robot!</h4>
 <div class="org-src-container">
 
-<pre  class="src src-python">  <span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
-  <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
-      <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
 
-      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">This iteration is needed if we have</span>
-      <span style="color: #5e6263;"># </span><span style="color: #5e6263;">subbehaviors we want to have applied as well.</span>
-      <span style="color: #598249;">for</span> req <span style="color: #598249;">in</span> role_assignment \
-          .iterate_role_requirements_tree_leaves(reqs):
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">This iteration is needed if we have</span>
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">subbehaviors we want to have applied as well.</span>
+    <span style="color: #598249;">for</span> req <span style="color: #598249;">in</span> role_assignment \
+        .iterate_role_requirements_tree_leaves(reqs):
 
-          req.required_shell_id \
-              = <span style="color: #598249;">self</span>.shell_id <span style="color: #598249;">if</span> <span style="color: #598249;">self</span>.shell_id != <span style="color: #15968D;">None</span> <span style="color: #598249;">else</span> -1
-      <span style="color: #598249;">return</span> reqs
+        req.required_shell_id \
+            = <span style="color: #598249;">self</span>.shell_id <span style="color: #598249;">if</span> <span style="color: #598249;">self</span>.shell_id != <span style="color: #15968D;">None</span> <span style="color: #598249;">else</span> -1
+    <span style="color: #598249;">return</span> reqs
 </pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org5bfb5aa">
-<h2 id="org5bfb5aa">Assignment</h2>
+<section id="slide-orgf627e8f">
+<h2 id="orgf627e8f">Assignment</h2>
 <ul>
 <li>Create a binary clock play</li>
 <li>Display the current minute in binary on the field
@@ -305,8 +305,8 @@
 
 </ul>
 </section>
-<section id="slide-orgdc0868d">
-<h3 id="orgdc0868d">Tips</h3>
+<section id="slide-org937c807">
+<h3 id="org937c807">Tips</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">import</span> time
@@ -318,11 +318,6 @@
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">USE == '1', not == 1</span>
 </pre>
 </div>
-
-<pre class="example">
-001001
-
-</pre>
 </section>
 </section>
 </div>

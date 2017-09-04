@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Path Planning</h1>
 </section>
 <section>
-<section id="slide-org2dff5a0">
-<h2 id="org2dff5a0">Plan for today</h2>
+<section id="slide-orgf7a973a">
+<h2 id="orgf7a973a">Plan for today</h2>
 <ul>
 <li>Learn about our path planning system</li>
 <li>Download, compile, and run our RRT repository</li>
@@ -40,8 +40,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org2c0d7c3">
-<h2 id="org2c0d7c3">High Level Overview</h2>
+<section id="slide-org99436c2">
+<h2 id="org99436c2">High Level Overview</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/4Y3wCJH.jpg" alt="4Y3wCJH.jpg" />
@@ -51,8 +51,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgf531056">
-<h2 id="orgf531056">What is Path Planning</h2>
+<section id="slide-org3ff2a52">
+<h2 id="org3ff2a52">What is Path Planning</h2>
 <ul>
 <li>Our robots need to know how to get from a start point to an end point</li>
 <li>Our path-planning algorithm of choice is the RRT (Rapidly-Exploring Random Tree)</li>
@@ -62,8 +62,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org72d7d39">
-<h2 id="org72d7d39">How the RRT works</h2>
+<section id="slide-orgb4eed3b">
+<h2 id="orgb4eed3b">How the RRT works</h2>
 <ol>
 <li>Start building our tree by placing a root node at the destination</li>
 <li>Randomly select some coordinate in the position space</li>
@@ -78,8 +78,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgea4b763">
-<h2 id="orgea4b763">Sounds really inefficient</h2>
+<section id="slide-org710141d">
+<h2 id="org710141d">Sounds really inefficient</h2>
 <ul>
 <li>Why waste computation time branching out in random directions?</li>
 <li>What advantages could there be in random branching?</li>
@@ -88,8 +88,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-orgbf82330">
-<h3 id="orgbf82330">Advantages of RRT</h3>
+<section id="slide-org2ec2bfa">
+<h3 id="org2ec2bfa">Advantages of RRT</h3>
 <ul>
 <li>Specialized for continuous configuration spaces</li>
 <li>Can handle kinodynamic constraints</li>
@@ -100,8 +100,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org2e48465">
-<h2 id="org2e48465">Repository Code</h2>
+<section id="slide-orgd5df738">
+<h2 id="orgd5df738">Repository Code</h2>
 <ul>
 <li>rrt-viewer</li>
 <li>rrt</li>
@@ -109,8 +109,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org6902eb5">
-<h3 id="org6902eb5">rrt-viewer</h3>
+<section id="slide-org6e89a7b">
+<h3 id="org6e89a7b">rrt-viewer</h3>
 <ul>
 <li>Displays window for running RRT</li>
 <li>Uses QT for graphics</li>
@@ -118,8 +118,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org325d7c9">
-<h3 id="org325d7c9">rrt</h3>
+<section id="slide-orgd420d7c">
+<h3 id="orgd420d7c">rrt</h3>
 <ul>
 <li>Contains RRT implementation</li>
 <li>Defines state space</li>
@@ -134,8 +134,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org42d2b4f">
-<h2 id="org42d2b4f">Download RRT</h2>
+<section id="slide-org9022ee5">
+<h2 id="org9022ee5">Download RRT</h2>
 <ul>
 <li>Our rrt repository is located at <a href="http://github.com/RoboJackets/rrt">http://github.com/RoboJackets/rrt</a></li>
 <li>On your terminal, type in:</li>
@@ -154,8 +154,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org84b97dd">
-<h2 id="org84b97dd">Compile and run RRT</h2>
+<section id="slide-orgb862531">
+<h2 id="orgb862531">Compile and run RRT</h2>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #598249;">cd</span> rrt
@@ -168,8 +168,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-org0df329c">
-<h2 id="org0df329c">How to use RRT</h2>
+<section id="slide-orgf9d4d4b">
+<h2 id="orgf9d4d4b">How to use RRT</h2>
 <ul>
 <li>Drag start and end points to desired locations</li>
 <li>Drag around the plane space to draw and remove obstacles</li>
@@ -181,12 +181,12 @@ make
 </section>
 </section>
 <section>
-<section id="slide-orgf3d9f87">
-<h2 id="orgf3d9f87">Tweaking parameters</h2>
-<div class="outline-text-2" id="text-orgf3d9f87">
+<section id="slide-orgf578dfe">
+<h2 id="orgf578dfe">Tweaking parameters</h2>
+<div class="outline-text-2" id="text-orgf578dfe">
 </div></section>
-<section id="slide-orgcf7e58d">
-<h3 id="orgcf7e58d">Biases</h3>
+<section id="slide-orgbe3ab71">
+<h3 id="orgbe3ab71">Biases</h3>
 <ul>
 <li>Increasing Goal Bias
 <ul>
@@ -203,8 +203,8 @@ make
 </ul>
 
 </section>
-<section id="slide-org85e258e">
-<h3 id="org85e258e">Adaptive Stepsize Control</h3>
+<section id="slide-org300617e">
+<h3 id="org300617e">Adaptive Stepsize Control</h3>
 <ul>
 <li>Stepsize now dynamically changes based on whether there are obstacles nearby</li>
 <li>Requires extra computation time to locate nearby obstacles</li>
@@ -216,8 +216,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-orgbfc4900">
-<h2 id="orgbfc4900">Any questions?</h2>
+<section id="slide-orgaf61cb2">
+<h2 id="orgaf61cb2">Any questions?</h2>
 </section>
 </section>
 </div>

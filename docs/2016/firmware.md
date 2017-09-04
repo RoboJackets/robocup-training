@@ -16,7 +16,7 @@
 -   RTOS is used to control the running of these threads
 -   Threads can be running, ready (in queue to be run), or waiting (for some event like a timer or interrupt)
 
-![img](//developer.mbed.org/media/uploads/emilmont/xthreadstatus.png.pagespeed.ic.c21fE5uss-.jpg)
+![img](https://developer.mbed.org/media/uploads/emilmont/xthreadstatus.png.pagespeed.ic.c21fE5uss-.jpg)
 
 
 ## Main
