@@ -1,7 +1,7 @@
 # **2016 Slide Archive**
 
 
-# RoboCup Training [<https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield>](https://circleci.com/gh/RoboJackets/robocup-training)
+# RoboCup Training [file:https://circleci.com/gh/RoboJackets/robocup-training.svg?style=shield](https://circleci.com/gh/RoboJackets/robocup-training)
 
 RoboCup Software Training (Created in 2016)
 
