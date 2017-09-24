@@ -1,24 +1,18 @@
 #+TITLE: Skills, Tactics, Plays - Intro
 #+AUTHOR: Jay Kamat
 #+EMAIL: jaygkamat@gmail.com
-#+REVEAL_THEME: black
-#+REVEAL_TRANS: linear
-#+REVEAL_SPEED: fast
-#+REVEAL_PLUGINS: (notes pdf)
-#+REVEAL_HLEVEL: 1
-#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Skills, Tactics, Plays - 1 {#t20162}                                 :docs:
+* Skills, Tactics, Plays - 1 {#t20172}                                 :docs:
 * Python Overview
 ** Using Python
 #+BEGIN_SRC shell
-$ python3
-Python 3.5.2+ (default, Sep 10 2016, 10:24:58)
-[GCC 6.2.0 20160901] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> print("Hello RoboCup!")
-Hello RoboCup!
+  $ python3
+  Python 3.5.3 (default, Jan 19 2017, 14:11:04)
+  [GCC 6.3.0 20170118] on linux
+  Type "help", "copyright", "credits" or "license" for more information.
+  >>> print("Hello RoboCup!")
+  Hello RoboCup!
 #+END_SRC
 ** Basic Syntax
 #+BEGIN_SRC python :exports both :results output :cache yes
@@ -43,23 +37,32 @@ Hello RoboCup!
 ** IF Statements and Conditionals
 #+BEGIN_SRC python :exports both :results output :cache yes
   if True:
-      print("I'm going to print out")
+      print("RoboCup is the Best!")
   if False:
-      print("I'm never going to run =(")
+      print("IGVC is the Best...")
 
   if True:
       print("RoboCup is Great!")
   else:
-      print("RoboCup Sucks!!!!")
+      print("IGVC is Great...")
 
   a = 5
   if a > 2:
       print("A was greater than 2!")
   if a > 2 and a < 10:
-      print("A was > 2 and < 5")
+      print("A was > 2 and < 10")
   print("A is greater than 3" if a > 3 else "A is less than 3")
-  print("A is greater than 9" if a < 3 else "A is less than 9")
+  print("A is greater than 9" if a > 9 else "A is less than 9")
 #+END_SRC
+
+#+RESULTS[bd799ab625a59ed63cb49f882591e36520f1f803]:
+: RoboCup is the Best!
+: RoboCup is Great!
+: A was greater than 2!
+: A was > 2 and < 10
+: A is greater than 3
+: A is less than 9
+
 ** Loops and range()
 #+BEGIN_SRC python :exports both :results output :cache yes
   a = 10
@@ -104,13 +107,13 @@ Hello RoboCup!
       # Constructor
       def __init__(self):
           print("Initializing a Base")
-          self.localVar = 2
+          self.local_var = 2
 
   class ChildClass(BaseClass):
       def __init__(self):
           super().__init__() # call superclass constructor
           print("Initializing Child")
-          print("Our local var is: " + str(self.localVar))
+          print("Our local var is: " + str(self.local_var))
 
   # When defining class methods, pass 'self' as the first arg.
   # Self refers to the current class instance.
@@ -119,7 +122,7 @@ Hello RoboCup!
   a = ChildClass()
 #+END_SRC
 
-#+RESULTS[0beb6f926bb8d56026537e5dc3c37e84d9d56a07]:
+#+RESULTS[aa87c5fe22ac017cb1320e3c85d8277e6259e135]:
 : Initializing a Base
 : ---
 : Initializing a Base
