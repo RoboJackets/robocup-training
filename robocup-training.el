@@ -62,7 +62,7 @@
         :reveal-plugins "(notes pdf)"
         :reveal-speed "fast"
         :reveal-trans "linear"
-        :reveal-theme "dark"
+        :reveal-theme "black"
         :reveal-hlevel "1"
         :exclude-tags ("docs"))
        ("rc-docs"
