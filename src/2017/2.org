@@ -37,31 +37,33 @@
 ** IF Statements and Conditionals
 #+BEGIN_SRC python :exports both :results output :cache yes
   if True:
-      print("RoboCup is the Best!")
+      print("RoboCup is great!")
   if False:
-      print("IGVC is the Best...")
+      print("IGVC is great...")
 
   if True:
-      print("RoboCup is Great!")
+      print("RoboCup is the best!")
+  elif True:
+      print("RoboRacing is the best...")
   else:
-      print("IGVC is Great...")
+      print("IGVC is the best...")
 
   a = 5
   if a > 2:
-      print("A was greater than 2!")
+      print("a is greater than 2!")
   if a > 2 and a < 10:
-      print("A was > 2 and < 10")
-  print("A is greater than 3" if a > 3 else "A is less than 3")
-  print("A is greater than 9" if a > 9 else "A is less than 9")
+      print("a is > 2 and < 10")
+  print("a is greater than 3" if a > 3 else "a is less than 3")
+  print("a is greater than 9" if a > 9 else "a is less than 9")
 #+END_SRC
 
 #+RESULTS[bd799ab625a59ed63cb49f882591e36520f1f803]:
 : RoboCup is the Best!
 : RoboCup is Great!
-: A was greater than 2!
-: A was > 2 and < 10
-: A is greater than 3
-: A is less than 9
+: a is greater than 2!
+: a is > 2 and < 10
+: a is greater than 3
+: a is less than 9
 
 ** Loops and range()
 #+BEGIN_SRC python :exports both :results output :cache yes
@@ -134,7 +136,9 @@
 - [[https://wiki.python.org/moin/BeginnersGuide/NonProgrammers][Python Beginner Hub]]
 - [[https://learnxinyminutes.com/docs/python/][Python Syntax Overview]]
 - [[http://thepythonguru.com/][A intro to python]]
+
 * State Machines
+
 ** What are they?
 - A state machine is a series of states
 - You can transition between them
@@ -144,6 +148,10 @@
 - A car engine is a state machine, each piston going between different internal states to move the car forward
 - A washing machine is a state machine, going between different states to cycle between wash, dry, etc.
 - [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Page on State Machines]]
+
+** Elevator
+[[file:https://i.imgur.com/KPv5sSk.png]]
+
 ** Move
 [[file:http://i.imgur.com/gmIcPGq.png]]
 *** Details                                                          :docs:
