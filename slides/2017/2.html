@@ -29,26 +29,26 @@
 <section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Intro</h1>
 </section>
 <section>
-<section id="slide-org33f62ed">
-<h2 id="org33f62ed">Python Overview</h2>
-<div class="outline-text-2" id="text-org33f62ed">
+<section id="slide-org98fc3bd">
+<h2 id="org98fc3bd">Python Overview</h2>
+<div class="outline-text-2" id="text-org98fc3bd">
 </div>
 </section>
-<section id="slide-org4a206a9">
-<h3 id="org4a206a9">Using Python</h3>
+<section id="slide-org0a670bc">
+<h3 id="org0a670bc">Using Python</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">$ python3
-Python 3.5.2+ (default, Sep 10 2016, 10:24:58)
-[GCC 6.2.0 20160901] on linux
+Python 3.5.3 (default, Jan 19 2017, 14:11:04)
+[GCC 6.3.0 20170118] on linux
 Type <span style="color: #15968D;">"help"</span>, <span style="color: #15968D;">"copyright"</span>, <span style="color: #15968D;">"credits"</span> or <span style="color: #15968D;">"license"</span> for more information.
 &gt;&gt;&gt; print(<span style="color: #15968D;">"Hello RoboCup!"</span>)
 Hello RoboCup!
 </pre>
 </div>
 </section>
-<section id="slide-orge857599">
-<h3 id="orge857599">Basic Syntax</h3>
+<section id="slide-org2d881d8">
+<h3 id="org2d881d8">Basic Syntax</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Hello world</span>
@@ -66,33 +66,35 @@ Hello RoboCup!
 </div>
 
 </section>
-<section id="slide-org0a352d9">
-<h3 id="org0a352d9">IF Statements and Conditionals</h3>
+<section id="slide-orge1b6834">
+<h3 id="orge1b6834">IF Statements and Conditionals</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm going to print out"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is great!"</span>)
 <span style="color: #598249;">if</span> <span style="color: #15968D;">False</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm never going to run =("</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"IGVC is great..."</span>)
 
 <span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is Great!"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is the best!"</span>)
+<span style="color: #598249;">elif</span> <span style="color: #15968D;">True</span>:
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboRacing is the best..."</span>)
 <span style="color: #598249;">else</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup Sucks!!!!"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"IGVC is the best..."</span>)
 
 <span style="color: #2F7BDE;">a</span> = 5
 <span style="color: #598249;">if</span> a &gt; 2:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was greater than 2!"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 2!"</span>)
 <span style="color: #598249;">if</span> a &gt; 2 <span style="color: #598249;">and</span> a &lt; 10:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was &gt; 2 and &lt; 5"</span>)
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 3"</span>)
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 9"</span> <span style="color: #598249;">if</span> a &lt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 9"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is &gt; 2 and &lt; 10"</span>)
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 3"</span>)
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 9"</span> <span style="color: #598249;">if</span> a &gt; 9 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 9"</span>)
 </pre>
 </div>
 
 </section>
-<section id="slide-orge20266c">
-<h3 id="orge20266c">Loops and range()</h3>
+<section id="slide-orgc7d7110">
+<h3 id="orgc7d7110">Loops and range()</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #2F7BDE;">a</span> = 10
@@ -109,8 +111,8 @@ Hello RoboCup!
 </div>
 
 </section>
-<section id="slide-org2424d25">
-<h3 id="org2424d25">Functions</h3>
+<section id="slide-orgcc7bc9e">
+<h3 id="orgcc7bc9e">Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
@@ -139,8 +141,8 @@ Welcome to RoboJackets!
 </pre>
 
 </section>
-<section id="slide-orgdad92ba">
-<h3 id="orgdad92ba">Object Oriented Python</h3>
+<section id="slide-org8546078">
+<h3 id="org8546078">Object Oriented Python</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #598249;">BaseClass</span>():
@@ -148,13 +150,13 @@ Welcome to RoboJackets!
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Constructor</span>
     <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
         <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing a Base"</span>)
-        <span style="color: #598249;">self</span>.localVar = 2
+        <span style="color: #598249;">self</span>.local_var = 2
 
 <span style="color: #598249;">class</span> <span style="color: #598249;">ChildClass</span>(BaseClass):
     <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
         <span style="color: #598249;">super</span>().__init__() <span style="color: #5e6263;"># </span><span style="color: #5e6263;">call superclass constructor</span>
         <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing Child"</span>)
-        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.localVar))
+        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.local_var))
 
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">When defining class methods, pass 'self' as the first arg.</span>
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Self refers to the current class instance.</span>
@@ -163,16 +165,26 @@ Welcome to RoboJackets!
 <span style="color: #2F7BDE;">a</span> = ChildClass()
 </pre>
 </div>
+
+<pre class="example">
+Initializing a Base
+---
+Initializing a Base
+Initializing Child
+Our local var is: 2
+
+</pre>
+
 </section>
 </section>
 <section>
-<section id="slide-orgfa54ba4">
-<h2 id="orgfa54ba4">State Machines</h2>
-<div class="outline-text-2" id="text-orgfa54ba4">
+<section id="slide-orgad44454">
+<h2 id="orgad44454">State Machines</h2>
+<div class="outline-text-2" id="text-orgad44454">
 </div>
 </section>
-<section id="slide-org7e84aad">
-<h3 id="org7e84aad">What are they?</h3>
+<section id="slide-org44e210d">
+<h3 id="org44e210d">What are they?</h3>
 <ul>
 <li>A state machine is a series of states</li>
 <li>You can transition between them</li>
@@ -180,25 +192,35 @@ Welcome to RoboJackets!
 <li>A state transition only occurs if a condition is fulfilled</li>
 
 </ul>
+
 </section>
-<section id="slide-org76797e2">
-<h3 id="org76797e2">Move</h3>
+<section id="slide-orgbc4477a">
+<h3 id="orgbc4477a">Elevator</h3>
+
+<div class="figure">
+<p><img src="https://i.imgur.com/KPv5sSk.png" alt="KPv5sSk.png" />
+</p>
+</div>
+
+</section>
+<section id="slide-org8c8334e">
+<h3 id="org8c8334e">Move</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/gmIcPGq.png" alt="gmIcPGq.png" />
 </p>
 </div>
 </section>
-<section id="slide-org77f9412">
-<h3 id="org77f9412">Pass Receive</h3>
+<section id="slide-orga971d1a">
+<h3 id="orga971d1a">Pass Receive</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/HAhoMC1.png" alt="HAhoMC1.png" />
 </p>
 </div>
 </section>
-<section id="slide-orge9a051c">
-<h3 id="orge9a051c">Passing</h3>
+<section id="slide-org1d02500">
+<h3 id="org1d02500">Passing</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/OhWnSwT.png" alt="OhWnSwT.png" />
@@ -207,16 +229,16 @@ Welcome to RoboJackets!
 </section>
 </section>
 <section>
-<section id="slide-org52ccc9a">
-<h2 id="org52ccc9a">Plays, Tactics, Skills</h2>
+<section id="slide-org7bec3f0">
+<h2 id="org7bec3f0">Plays, Tactics, Skills</h2>
 <ul>
 <li>A Basic Unit in our AI</li>
 <li>Only one Play can run at a time</li>
 
 </ul>
 </section>
-<section id="slide-org0f38044">
-<h3 id="org0f38044">Skill</h3>
+<section id="slide-org7924e6b">
+<h3 id="org7924e6b">Skill</h3>
 <ul>
 <li>Involves only <i>one</i> robot</li>
 <li>Extremely basic building blocks</li>
@@ -232,8 +254,8 @@ Welcome to RoboJackets!
 
 </ul>
 </section>
-<section id="slide-org997cdd2">
-<h3 id="org997cdd2">Tactics</h3>
+<section id="slide-org4b5b229">
+<h3 id="org4b5b229">Tactics</h3>
 <ul>
 <li>Involves multiple robots</li>
 <li>Contains skills</li>
@@ -249,8 +271,8 @@ Welcome to RoboJackets!
 
 </ul>
 </section>
-<section id="slide-org9b9db79">
-<h3 id="org9b9db79">Plays</h3>
+<section id="slide-orgbf44fda">
+<h3 id="orgbf44fda">Plays</h3>
 <ul>
 <li>Only one can run</li>
 <li>Contains tactics</li>
@@ -269,8 +291,8 @@ Welcome to RoboJackets!
 </section>
 </section>
 <section>
-<section id="slide-orgb095de5">
-<h2 id="orgb095de5">Basic Plays and State Machines</h2>
+<section id="slide-org29cf82a">
+<h2 id="org29cf82a">Basic Plays and State Machines</h2>
 <ul>
 <li>Every Play is a State Machine as well!</li>
 <li>Plays use State Machines to tell them what to do</li>
@@ -278,8 +300,8 @@ Welcome to RoboJackets!
 
 </ul>
 </section>
-<section id="slide-orge9f1a58">
-<h3 id="orge9f1a58">Defining States</h3>
+<section id="slide-org70dec54">
+<h3 id="org70dec54">Defining States</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">First create a state Enum (An enum is just a group of names)</span>
@@ -304,8 +326,8 @@ Welcome to RoboJackets!
 </pre>
 </div>
 </section>
-<section id="slide-org36142e4">
-<h3 id="org36142e4">Defining Transitions</h3>
+<section id="slide-org2aa3c1e">
+<h3 id="org2aa3c1e">Defining Transitions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.add_transition(
@@ -320,8 +342,8 @@ Welcome to RoboJackets!
 </pre>
 </div>
 </section>
-<section id="slide-org04f2159">
-<h3 id="org04f2159">Defining Actions to Take In A State</h3>
+<section id="slide-orgabe2c57">
+<h3 id="orgabe2c57">Defining Actions to Take In A State</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Assuming we have the PlayName.OurState.processing state</span>
@@ -342,8 +364,8 @@ Welcome to RoboJackets!
 </section>
 </section>
 <section>
-<section id="slide-org3cff124">
-<h2 id="org3cff124">Your Assignment</h2>
+<section id="slide-org7c7b525">
+<h2 id="org7c7b525">Your Assignment</h2>
 <ul>
 <li>Create a play that prints out which half of the field the ball is currently in</li>
 <li>EX: Print out "TopHalf" when in the top half of the field, and "BottomHalf" otherwise.</li>
@@ -352,8 +374,8 @@ Welcome to RoboJackets!
 
 </ul>
 </section>
-<section id="slide-org50a88d9">
-<h3 id="org50a88d9">Tips</h3>
+<section id="slide-orgf189889">
+<h3 id="orgf189889">Tips</h3>
 <ul>
 <li>The field coordinates start at 0, 0; Which is our Goal.</li>
 <li>Field Size Docs: (<a href="http://bit.ly/2cLsUBL">http://bit.ly/2cLsUBL</a>)</li>
@@ -363,8 +385,8 @@ Welcome to RoboJackets!
 
 </ul>
 </section>
-<section id="slide-org9c83f41">
-<h3 id="org9c83f41">Useful Tools</h3>
+<section id="slide-orgd53900a">
+<h3 id="orgd53900a">Useful Tools</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Gets the y position of the ball</span>
@@ -387,7 +409,7 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: true,
+history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: false,
