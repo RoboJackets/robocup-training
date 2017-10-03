@@ -1,5 +1,5 @@
 
-#+TITLE: RoboCup 2016 Training 1
+#+TITLE: RoboCup 2017 Training 1
 #+AUTHOR: Jay Kamat
 #+EMAIL: jaygkamat@gmail.com
 #+REVEAL_THEME: black
