@@ -3,7 +3,7 @@
 #+EMAIL: jaygkamat@gmail.com
 
 # Export section for md
-* Skills, Tactics, Plays - 1 {#t20172}                                 :docs:
+* Skills, Tactics, Plays {#t20172}                                 :docs:
 * Python Overview
 ** Using Python
 #+BEGIN_SRC shell
