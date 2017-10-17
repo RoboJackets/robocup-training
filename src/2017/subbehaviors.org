@@ -86,6 +86,7 @@ Basic122::running
                        required=False or True
                        priority=10) # A higher number is higher priority
 #+END_SRC
+- If adding a ~complex behavior~ or ~single robot complex behavior~, don't pass in values for ~required~ or ~priority~
 
 *** Details                                                          :docs:
 - For more docs on this entire section see [[https://robojackets.github.io/robocup-software/classgameplay_1_1single__robot__composite__behavior_1_1_single_robot_composite_behavior.html][this link.]]
@@ -141,7 +142,7 @@ a_subbheavior = self.subbehavior_with_name('string name')
 
 * Assignment
 - Create a Triangle Pass Play
-- Round up 3 Robots in a triangle, and pass between them.
+- Move 3 Robots into a triangle formation, and pass between them.
 - Starter code is in ~soccer/gameplay/plays/skel/triangle_pass.py~ (same as last time).
 - Move it to ~soccer/gameplay/plays/training/triangle_pass.py~ to begin.
 ** Tips
