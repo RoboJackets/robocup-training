@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Skills, Tactics, Plays - Beginner</title>
-<meta name="author" content="(Jay Kamat)"/>
+<title>Subbehaviors</title>
+<meta name="author" content="(Jay Kamat, Josh Ting)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
@@ -26,22 +26,28 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Beginner</h1>
+<section id="sec-title-slide"><h1 class="title">Subbehaviors</h1>
 </section>
 <section>
-<section id="slide-orgd5e7838">
-<h2 id="orgd5e7838">Questions about Plays?</h2>
+<section id="slide-orgd1beb7a">
+<h2 id="orgd1beb7a">Questions about Plays?</h2>
 <ul>
-<li>Last meeting was pretty dense
-<ul>
-<li>We <i>NEED</i> to have 1 on 1 time with each of you, so it is <i>your</i> responsibility to waive us over if you're stuck!</li>
-
-</ul></li>
 <li>Topics Covered:
 <ul>
 <li>Python</li>
 <li>State Machines</li>
-<li>Play/Skill/Tactic Structure</li>
+<li>Play/Tactic/Skill Structure</li>
+
+</ul></li>
+<li>Last meeting was pretty dense
+<ul>
+<li>RoboCup is complicated</li>
+<li>If you got it, great</li>
+<li>If you didn't, great
+<ul>
+<li>We need you to ask questions when you don't understand something</li>
+
+</ul></li>
 
 </ul></li>
 <li>And today, we're going into&#x2026;</li>
@@ -50,11 +56,11 @@
 </section>
 </section>
 <section>
-<section id="slide-org0b72823">
-<h2 id="org0b72823">Subbehaviors!</h2>
+<section id="slide-org4adecf7">
+<h2 id="org4adecf7">Subbehaviors!</h2>
 <ul>
-<li>A Behavior is a generic name for any skill, play, or tactic.</li>
-<li>Last meeting we learned about Plays/Skills/Tactics
+<li>A behavior is a generic name for any skill, play, or tactic.</li>
+<li>Last meeting we learned about Plays/Tactics/Skills
 <ul>
 <li>How do we put them together?</li>
 
@@ -67,16 +73,16 @@
 
 </ul>
 </section>
-<section id="slide-org7206c84">
-<h3 id="org7206c84">Examples of Subbehaviors</h3>
+<section id="slide-org46f1acf">
+<h3 id="org46f1acf">Examples of Subbehaviors</h3>
 <ul>
 <li>Offense Play contains Passing Tactics, and Move Skills</li>
 <li>Passing Tactic Contains Move and Kick Skills</li>
 
 </ul>
 </section>
-<section id="slide-org3ea78a4">
-<h3 id="org3ea78a4"><i>Behavior</i> Tree!</h3>
+<section id="slide-orgf24af29">
+<h3 id="orgf24af29"><i>Behavior</i> Tree!</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -97,8 +103,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org53b2add">
-<h3 id="org53b2add"><i>Behavior</i> Tree! (cont.)</h3>
+<section id="slide-org1932883">
+<h3 id="org1932883"><i>Behavior</i> Tree! (cont.)</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -119,13 +125,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org925954f">
-<h2 id="org925954f">How do I use subbehaviors?</h2>
-<div class="outline-text-2" id="text-org925954f">
+<section id="slide-orgc1f6505">
+<h2 id="orgc1f6505">How do I use subbehaviors?</h2>
+<div class="outline-text-2" id="text-orgc1f6505">
 </div>
 </section>
-<section id="slide-orge7ece13">
-<h3 id="orge7ece13">Adding Subbehaviors</h3>
+<section id="slide-orgc68ac73">
+<h3 id="orgc68ac73">Adding Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.add_subbehavior(skill_object,
@@ -134,9 +140,13 @@
                      priority=10) <span style="color: #5e6263;"># </span><span style="color: #5e6263;">A higher number is higher priority</span>
 </pre>
 </div>
+<ul>
+<li>If adding a <code>complex behavior</code> or <code>single robot complex behavior</code>, don't pass in values for <code>required</code> or <code>priority</code></li>
+
+</ul>
 </section>
-<section id="slide-orge661b5b">
-<h3 id="orge661b5b">Removing Subbehaviors</h3>
+<section id="slide-orgba2a569">
+<h3 id="orgba2a569">Removing Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
@@ -145,8 +155,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org0807dd9">
-<h3 id="org0807dd9">Getting Subbehavior Plays</h3>
+<section id="slide-org72cfe21">
+<h3 id="org72cfe21">Getting Subbehavior Plays</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
@@ -155,13 +165,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org2e9452c">
-<h2 id="org2e9452c">Real Examples</h2>
-<div class="outline-text-2" id="text-org2e9452c">
+<section id="slide-org4c9350b">
+<h2 id="org4c9350b">Real Examples</h2>
+<div class="outline-text-2" id="text-org4c9350b">
 </div>
 </section>
-<section id="slide-orgd405dbe">
-<h3 id="orgd405dbe">CoordinatedPass Tactic</h3>
+<section id="slide-org8317694">
+<h3 id="org8317694">CoordinatedPass Tactic</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
@@ -176,8 +186,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-orgf08f73d">
-<h3 id="orgf08f73d">Line Up Tactic</h3>
+<section id="slide-orgf766a9a">
+<h3 id="orgf766a9a">Line Up Tactic</h3>
 <ul>
 <li>First State Machine is set up, then:</li>
 
@@ -207,120 +217,36 @@
 </section>
 </section>
 <section>
-<section id="slide-org74ae214">
-<h2 id="org74ae214">RoboCup Pro Tip</h2>
+<section id="slide-org4e89138">
+<h2 id="org4e89138">RoboCup Pro Tip</h2>
 <ul>
 <li>Find some code doing something like what you want</li>
 <li>Tweak it until it works</li>
 <li>It's less effective than working everything out, but it's great for beginners!</li>
 
 </ul>
+
 </section>
 </section>
 <section>
-<section id="slide-org49ac6ca">
-<h2 id="org49ac6ca">How do I get MY Robot?!?</h2>
-<div class="outline-text-2" id="text-org49ac6ca">
-</div>
-</section>
-<section id="slide-orgb62ba0a">
-<h3 id="orgb62ba0a">Dynamic Assignment</h3>
+<section id="slide-orgf9a84bd">
+<h2 id="orgf9a84bd">Assignment</h2>
 <ul>
-<li>Our role assignment system picks the best robot for the task</li>
-<li>You define your constraints, and we'll give you a robot if we can!</li>
-<li>It's also some black magic&#x2026;</li>
+<li>Create a Triangle Pass Play</li>
+<li>Move 3 Robots into a triangle formation, and pass between them.</li>
+<li>Starter code is in <code>soccer/gameplay/plays/skel/triangle_pass.py</code> (same as last time).</li>
+<li>Move it to <code>soccer/gameplay/plays/training/triangle_pass.py</code> to begin.</li>
 
 </ul>
 </section>
-<section id="slide-org9f1461d">
-<h3 id="org9f1461d">But I want Robot X!</h3>
-<ul>
-<li>Override Role Requirements to add your constraints!</li>
-<li>This next section is Extra Credit&#x2026;
-<ul>
-<li>And it's a massive oversimplification</li>
-<li>See <code>role_assignment.py</code> for more information.</li>
+<section id="slide-orgfd48604">
+<h3 id="orgfd48604">Tips</h3>
+<ol>
+<li>Use Move Skills to move your robots to the triangle initially</li>
+<li>Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle</li>
+<li>At a bare minimum, I would make setup and passing states. You may want to have a state for every side of the triangle (or not).</li>
 
-</ul></li>
-
-</ul>
-</section>
-<section id="slide-orgdeac0a2">
-<h4 id="orgdeac0a2">Get the closest robot</h4>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
-    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Destination Shape is used for distances to points or segments</span>
-    <span style="color: #2F7BDE;">reqs.destination_shape</span> = <span style="color: #598249;">self</span>.pos
-    <span style="color: #598249;">return</span> reqs
-</pre>
-</div>
-</section>
-<section id="slide-org308a0f5">
-<h4 id="org308a0f5">Get the robot with all the hardware</h4>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
-    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
-    <span style="color: #2F7BDE;">reqs.require_kicking</span> = <span style="color: #15968D;">True</span>
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">try to be near the ball</span>
-    <span style="color: #598249;">if</span> main.ball().valid:
-        <span style="color: #2F7BDE;">reqs.destination_shape</span> = main.ball().pos
-    <span style="color: #598249;">return</span> reqs
-
-</pre>
-</div>
-</section>
-<section id="slide-orgde946d5">
-<h4 id="orgde946d5">I really, really, want MY Robot!</h4>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
-    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
-
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">This iteration is needed if we have</span>
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">subbehaviors we want to have applied as well.</span>
-    <span style="color: #598249;">for</span> req <span style="color: #598249;">in</span> role_assignment \
-        .iterate_role_requirements_tree_leaves(reqs):
-
-        req.required_shell_id \
-            = <span style="color: #598249;">self</span>.shell_id <span style="color: #598249;">if</span> <span style="color: #598249;">self</span>.shell_id != <span style="color: #15968D;">None</span> <span style="color: #598249;">else</span> -1
-    <span style="color: #598249;">return</span> reqs
-</pre>
-</div>
-</section>
-</section>
-<section>
-<section id="slide-org0fdd9b7">
-<h2 id="org0fdd9b7">Assignment</h2>
-<ul>
-<li>Create a binary clock play</li>
-<li>Display the current minute in binary on the field
-<ul>
-<li>Use a robot to represent a 1, and lack of a robot to represent a 0</li>
-
-</ul></li>
-<li>Starter code is in <code>soccer/gameplay/plays/skel/binary_clock.py</code>.</li>
-<li>Move it to <code>soccer/gameplay/plays/training</code> to begin.</li>
-
-</ul>
-</section>
-<section id="slide-orga364ba2">
-<h3 id="orga364ba2">Tips</h3>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #598249;">import</span> time
-<span style="color: #2F7BDE;">mins</span> =  time.localtime().tm_min
-<span style="color: #2F7BDE;">binary</span> = <span style="color: #598249;">format</span>(mins, <span style="color: #15968D;">'06b'</span>)
-<span style="color: #598249;">print</span>(binary)
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">Index with binary[0-6]</span>
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">THIS INDEX IS A CHARACTER VALUE, NOT AN INT</span>
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">USE == '1', not == 1</span>
-</pre>
-</div>
+</ol>
 </section>
 </section>
 </div>
