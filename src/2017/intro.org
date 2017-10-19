@@ -12,7 +12,7 @@
 # Export section for md
 * Training Summary 1 {#t20171}                                         :docs:
 * Download VM Image
-- [[https://mega.nz/#!kgFCyC5Y!lETW_2hufOsqxEOUrnjVFD538FvI3qXBLXWiBm9X_xI][Download Link]] (http://bit.ly/2c61Fkx)
+- [[https://mega.nz/#!958GxYrB!CIVIHgDFbNXLgfjgxrVmWa8ZkVOvhaXRP_x48-dUO8s][Download Link]] (http://bit.ly/2yul2Qv)
 - Today we will be setting you up to develop RoboCup Software
 
 * Introductions
