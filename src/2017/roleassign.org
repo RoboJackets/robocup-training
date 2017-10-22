@@ -43,6 +43,7 @@
 #+BEGIN_SRC python
   # From Move
   def role_requirements(self):
+      #Always call super first, otherwise parents might override your constraints!
       reqs = super().role_requirements()
       # Destination Shape is used for distances to points or segments
       reqs.destination_shape = self.pos
@@ -77,6 +78,30 @@
       return reqs
 #+END_SRC
 
+** But how does it choose the robot?
+- Actually Black Magic
+- A peek behind the curtain
+#+BEGIN_SRC python
+class RoleRequirements:
+    def __init__(self):
+        self.destination_shape = None      #Distance from destination
+        self.has_ball = False
+        self.chipper_preference_weight = 0 #importance of chipper
+        self.required_shell_id = None
+        self.previous_shell_id = None      #controls switching of robots
+        self.required = False              #Can't be dropped, causes assignment failure if too many
+        self.priority = 0                  #Higher is more important
+        self.require_kicking = False
+        self.robot_change_cost = 1.0
+#+END_SRC
+- Every behavior adds one of these
+
+- Constraints you add modify the cost of that behavior for a specific robot
+#+BEGIN_SRC python
+if req.destination_shape != None:
+   cost += req.position_cost_multiplier * req.destination_shape.dist_to(robot.pos)
+#+END_SRC
+
 ** Docs                                                               :docs:
 - [[https://robojackets.github.io/robocup-software/classgameplay_1_1behavior_1_1_behavior.html][These are docs for this section. Check subclass docs as well!]]
 
@@ -109,5 +134,10 @@
 * Assignment
 - Implement role assignment in Triangle Pass
 - If you missed last meeting, just do Triangle Pass instead
+
+** Reccomended Requirements
+- Closest robots to center-field
+- Closest robots to sideline
+- Closest robots to ball
 
 ** Tips
