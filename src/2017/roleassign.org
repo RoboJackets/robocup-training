@@ -1,0 +1,113 @@
+#+TITLE: Skills, Tactics, Plays - Overview
+#+AUTHOR: Jay Kamat
+#+EMAIL: jaygkamat@gmail.com
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: fast
+#+REVEAL_PLUGINS: (notes pdf)
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
+
+# Export section for md
+* Role Assignment {#t20164}                          :docs:
+* Communications Recap
+- [[https://gitter.im/RoboJackets/robocup-software][Gitter]]
+- [[https://github.com/RoboJackets//robocup-training][RoboCup Training Repo]]
+  - Slides
+  - Docs
+
+* Questions about Plays?
+- We're going to slow down a bit after last meeting
+  - *Plays are not the only area in RoboCup*
+  - They are a very high impact thing to cover though.
+- Topics Covered:
+  - Subbehaviors
+  - Creating Plays
+
+** Additional Information                                             :docs:
+- See the previous slide deck and docs for more information, they should be a pretty comprehensive overview of our play system.
+
+* How do I get a specific robot?
+
+** Dynamic Assignment
+- Our role assignment system picks the best robot for the task
+- You define your constraints, and we'll give you a robot if we can!
+- It's also some black magic...
+
+** But I want Robot X!
+- Override Role Requirements to add your constraints!
+- This next section is a massive oversimplification
+- See ~role_assignment.py~ for more information.
+
+*** Get the closest robot
+#+BEGIN_SRC python
+  # From Move
+  def role_requirements(self):
+      reqs = super().role_requirements()
+      # Destination Shape is used for distances to points or segments
+      reqs.destination_shape = self.pos
+      return reqs
+#+END_SRC
+
+*** Get the robot with all the hardware
+#+BEGIN_SRC python
+  def role_requirements(self):
+      reqs = super().role_requirements()
+      reqs.require_kicking = True
+      # try to be near the ball
+      if main.ball().valid:
+          reqs.destination_shape = main.ball().pos
+      return reqs
+
+#+END_SRC
+
+*** I really, really, want MY Robot!
+#+BEGIN_SRC python
+  # From Goalie
+  def role_requirements(self):
+      reqs = super().role_requirements()
+
+      # This iteration is needed if we have
+      # subbehaviors we want to have applied as well.
+      for req in role_assignment \
+          .iterate_role_requirements_tree_leaves(reqs):
+
+          req.required_shell_id \
+              = self.shell_id if self.shell_id != None else -1
+      return reqs
+#+END_SRC
+
+** Docs                                                               :docs:
+- [[https://robojackets.github.io/robocup-software/classgameplay_1_1behavior_1_1_behavior.html][These are docs for this section. Check subclass docs as well!]]
+
+* Capture Overview
+- Capture is a complicated behavior that utilizes role assignment
+
+** Let's Look at Code!
+- [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py]]
+
+* Wrapping Up
+
+** Play Ideas?
+- Offense, Defense, Etc.
+- Great Place for Beginners to Start
+- (side note: Anyone can begin contributing now if you wish)
+  - We ~<3~ contributions!
+  - Recommend starting with intro issues, then moving on to beginner.
+
+** Future Meeting Possibilities
+- /Joint Meeting with Electrical, Intro To Firmware/
+- /RRT Path Planning in RoboCup (Maybe a bit of Motion Control)/
+- Soccer C++ Internals
+- QT Tutorial (develop soccer's UI!)
+- Contribution Quickstart Meeting
+  - Submitting a PR
+  - Some Git
+  - Build Systems/CI?
+- What do you guys want to learn?
+
+* Assignment
+- Implement role assignment in Triangle Pass
+- If you missed last meeting, just do Triangle Pass instead
+
+** Tips
