@@ -112,25 +112,6 @@ if req.destination_shape != None:
 - [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py]]
 
 * Wrapping Up
-
-** Play Ideas?
-- Offense, Defense, Etc.
-- Great Place for Beginners to Start
-- (side note: Anyone can begin contributing now if you wish)
-  - We ~<3~ contributions!
-  - Recommend starting with intro issues, then moving on to beginner.
-
-** Future Meeting Possibilities
-- /Joint Meeting with Electrical, Intro To Firmware/
-- /RRT Path Planning in RoboCup (Maybe a bit of Motion Control)/
-- Soccer C++ Internals
-- QT Tutorial (develop soccer's UI!)
-- Contribution Quickstart Meeting
-  - Submitting a PR
-  - Some Git
-  - Build Systems/CI?
-- What do you guys want to learn?
-
 * Assignment
 - Implement role assignment in Triangle Pass
 - If you missed last meeting, just do Triangle Pass instead
@@ -141,3 +122,4 @@ if req.destination_shape != None:
 - Closest robots to ball
 
 ** Tips
+- Check out the skills and tactics behaviors for more examples
