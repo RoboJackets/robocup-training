@@ -9,7 +9,7 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Role Assignment {#t20164}                          :docs:
+* Role Assignment {#t20174}                          :docs:
 * Communications Recap
 - [[https://gitter.im/RoboJackets/robocup-software][Gitter]]
 - [[https://github.com/RoboJackets//robocup-training][RoboCup Training Repo]]
