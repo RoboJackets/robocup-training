@@ -116,7 +116,7 @@ if req.destination_shape != None:
 - Implement role assignment in Triangle Pass
 - If you missed last meeting, just do Triangle Pass instead
 
-** Reccomended Requirements
+** Recomended Requirements
 - Closest robots to center-field
 - Closest robots to sideline
 - Closest robots to ball
