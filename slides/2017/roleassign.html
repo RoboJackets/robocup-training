@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Skills, Tactics, Plays - Overview</title>
+<meta name="author" content="(Jay Kamat)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Overview</h1>
+</section>
+<section>
+<section id="slide-orgf910915">
+<h2 id="orgf910915">Communications Recap</h2>
+<ul>
+<li><a href="https://gitter.im/RoboJackets/robocup-software">Gitter</a></li>
+<li><a href="https://github.com/RoboJackets//robocup-training">RoboCup Training Repo</a>
+<ul>
+<li>Slides</li>
+<li>Docs</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org0869889">
+<h2 id="org0869889">Questions about Plays?</h2>
+<ul>
+<li>We're going to slow down a bit after last meeting
+<ul>
+<li><b>Plays are not the only area in RoboCup</b></li>
+<li>They are a very high impact thing to cover though.</li>
+
+</ul></li>
+<li>Topics Covered:
+<ul>
+<li>Subbehaviors</li>
+<li>Creating Plays</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orga3c1088">
+<h2 id="orga3c1088">How do I get a specific robot?</h2>
+<div class="outline-text-2" id="text-orga3c1088">
+</div>
+</section>
+<section id="slide-org0fc379b">
+<h3 id="org0fc379b">Dynamic Assignment</h3>
+<ul>
+<li>Our role assignment system picks the best robot for the task</li>
+<li>You define your constraints, and we'll give you a robot if we can!</li>
+<li>It's also some black magic&#x2026;</li>
+
+</ul>
+
+</section>
+<section id="slide-org16d1d2d">
+<h3 id="org16d1d2d">But I want Robot X!</h3>
+<ul>
+<li>Override Role Requirements to add your constraints!</li>
+<li>This next section is a massive oversimplification</li>
+<li>See <code>role_assignment.py</code> for more information.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgb516b12">
+<h4 id="orgb516b12">Get the closest robot</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #5e6263;">#</span><span style="color: #5e6263;">Always call super first, otherwise parents might override your constraints!</span>
+    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Destination Shape is used for distances to points or segments</span>
+    <span style="color: #2F7BDE;">reqs.destination_shape</span> = <span style="color: #598249;">self</span>.pos
+    <span style="color: #598249;">return</span> reqs
+</pre>
+</div>
+
+</section>
+<section id="slide-org5fa99cb">
+<h4 id="org5fa99cb">Get the robot with all the hardware</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+    <span style="color: #2F7BDE;">reqs.require_kicking</span> = <span style="color: #15968D;">True</span>
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">try to be near the ball</span>
+    <span style="color: #598249;">if</span> main.ball().valid:
+        <span style="color: #2F7BDE;">reqs.destination_shape</span> = main.ball().pos
+    <span style="color: #598249;">return</span> reqs
+
+</pre>
+</div>
+
+</section>
+<section id="slide-org6b6e51f">
+<h4 id="org6b6e51f">I really, really, want MY Robot!</h4>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
+<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+    <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
+
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">This iteration is needed if we have</span>
+    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">subbehaviors we want to have applied as well.</span>
+    <span style="color: #598249;">for</span> req <span style="color: #598249;">in</span> role_assignment \
+        .iterate_role_requirements_tree_leaves(reqs):
+
+        req.required_shell_id \
+            = <span style="color: #598249;">self</span>.shell_id <span style="color: #598249;">if</span> <span style="color: #598249;">self</span>.shell_id != <span style="color: #15968D;">None</span> <span style="color: #598249;">else</span> -1
+    <span style="color: #598249;">return</span> reqs
+</pre>
+</div>
+
+</section>
+<section id="slide-orgafa8536">
+<h3 id="orgafa8536">But how does it choose the robot?</h3>
+<ul>
+<li>Actually Black Magic</li>
+<li>A peek behind the curtain</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #598249;">RoleRequirements</span>:
+    <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
+        <span style="color: #598249;">self</span>.destination_shape = <span style="color: #15968D;">None</span>      <span style="color: #5e6263;">#</span><span style="color: #5e6263;">Distance from destination</span>
+        <span style="color: #598249;">self</span>.has_ball = <span style="color: #15968D;">False</span>
+        <span style="color: #598249;">self</span>.chipper_preference_weight = 0 <span style="color: #5e6263;">#</span><span style="color: #5e6263;">importance of chipper</span>
+        <span style="color: #598249;">self</span>.required_shell_id = <span style="color: #15968D;">None</span>
+        <span style="color: #598249;">self</span>.previous_shell_id = <span style="color: #15968D;">None</span>      <span style="color: #5e6263;">#</span><span style="color: #5e6263;">controls switching of robots</span>
+        <span style="color: #598249;">self</span>.required = <span style="color: #15968D;">False</span>              <span style="color: #5e6263;">#</span><span style="color: #5e6263;">Can't be dropped, causes assignment failure if too many</span>
+        <span style="color: #598249;">self</span>.priority = 0                  <span style="color: #5e6263;">#</span><span style="color: #5e6263;">Higher is more important</span>
+        <span style="color: #598249;">self</span>.require_kicking = <span style="color: #15968D;">False</span>
+        <span style="color: #598249;">self</span>.robot_change_cost = 1.0
+</pre>
+</div>
+<ul>
+<li>Every behavior adds one of these</li>
+
+<li>Constraints you add modify the cost of that behavior for a specific robot</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">if</span> req.destination_shape != <span style="color: #15968D;">None</span>:
+   <span style="color: #2F7BDE;">cost</span> += req.position_cost_multiplier * req.destination_shape.dist_to(robot.pos)
+</pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org29c96cd">
+<h2 id="org29c96cd">Capture Overview</h2>
+<ul>
+<li>Capture is a complicated behavior that utilizes role assignment</li>
+
+</ul>
+
+</section>
+<section id="slide-org2a9e993">
+<h3 id="org2a9e993">Let's Look at Code!</h3>
+<ul>
+<li><a href="https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py">https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py</a></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org09c2381">
+<h2 id="org09c2381">Wrapping Up</h2>
+</section>
+</section>
+<section>
+<section id="slide-orga9f6a77">
+<h2 id="orga9f6a77">Assignment</h2>
+<ul>
+<li>Implement role assignment in Triangle Pass</li>
+<li>If you missed last meeting, just do Triangle Pass instead</li>
+
+</ul>
+
+</section>
+<section id="slide-org95c94c5">
+<h3 id="org95c94c5">Recomended Requirements</h3>
+<ul>
+<li>Closest robots to center-field</li>
+<li>Closest robots to sideline</li>
+<li>Closest robots to ball</li>
+
+</ul>
+
+</section>
+<section id="slide-orgfc6b5dc">
+<h3 id="orgfc6b5dc">Tips</h3>
+<ul>
+<li>Check out the skills and tactics behaviors for more examples</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.22,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>
