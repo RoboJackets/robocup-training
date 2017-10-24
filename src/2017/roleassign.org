@@ -1,5 +1,5 @@
-#+TITLE: Skills, Tactics, Plays - Overview
-#+AUTHOR: Jay Kamat
+#+TITLE: Role Assignment
+#+AUTHOR: Jay Kamat, Josh Ting, John Carnahan
 #+EMAIL: jaygkamat@gmail.com
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: linear
