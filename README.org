@@ -22,7 +22,7 @@ robocup-training is built with [[http://orgmode.org/][org-mode]] and [[https://g
 
 ** Installation Instructions
 #+BEGIN_SRC sh
-  # Install Emacss
+  # Install Emacs
   sudo add-apt-repository ppa:kelleyk/emacs
   sudo apt update
   sudo apt install emacs25
