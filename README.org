@@ -20,8 +20,7 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 
 robocup-training is built with [[http://orgmode.org/][org-mode]] and [[https://github.com/cask/cask][cask]]
 
-** Building Slides
-Installation Instructions
+** Installation Instructions
 #+BEGIN_SRC sh
   # Install Emacss
   sudo add-apt-repository ppa:kelleyk/emacs
@@ -31,13 +30,16 @@ Installation Instructions
   # Install cask 
   curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 
-  # Add Cask to $PATH
+  # Add Cask to $PATH and install
   export PATH="$HOME/.cask/bin:$PATH"
+  cask install  
+#+END_SRC
 
-  # Install cask
-  cask install
+** Building Slides
+
+To build slides from .org files use
+#+BEGIN_SRC sh
   
-  # Build Slides
   make
 
   # output goes in ./html
