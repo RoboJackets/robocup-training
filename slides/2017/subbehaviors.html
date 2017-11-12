@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Subbehaviors</h1>
 </section>
 <section>
-<section id="slide-org83b189c">
-<h2 id="org83b189c">Questions about Plays?</h2>
+<section id="slide-orgd6edfb2">
+<h2 id="orgd6edfb2">Questions about Plays?</h2>
 <ul>
 <li>Topics Covered:
 <ul>
@@ -56,8 +56,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orga2be7c8">
-<h2 id="orga2be7c8">Subbehaviors!</h2>
+<section id="slide-org37fd796">
+<h2 id="org37fd796">Subbehaviors!</h2>
 <ul>
 <li>A behavior is a generic name for any skill, play, or tactic.</li>
 <li>Last meeting we learned about Plays/Tactics/Skills
@@ -73,16 +73,16 @@
 
 </ul>
 </section>
-<section id="slide-orga16e6e1">
-<h3 id="orga16e6e1">Examples of Subbehaviors</h3>
+<section id="slide-org8c51214">
+<h3 id="org8c51214">Examples of Subbehaviors</h3>
 <ul>
 <li>Offense Play contains Passing Tactics, and Move Skills</li>
 <li>Passing Tactic Contains Move and Kick Skills</li>
 
 </ul>
 </section>
-<section id="slide-orgeaab249">
-<h3 id="orgeaab249"><i>Behavior</i> Tree!</h3>
+<section id="slide-orgc9d71eb">
+<h3 id="orgc9d71eb"><i>Behavior</i> Tree!</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -103,8 +103,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org179a9e9">
-<h3 id="org179a9e9"><i>Behavior</i> Tree! (cont.)</h3>
+<section id="slide-org64b98cc">
+<h3 id="org64b98cc"><i>Behavior</i> Tree! (cont.)</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -125,13 +125,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org652546f">
-<h2 id="org652546f">How do I use subbehaviors?</h2>
-<div class="outline-text-2" id="text-org652546f">
+<section id="slide-org5981f60">
+<h2 id="org5981f60">How do I use subbehaviors?</h2>
+<div class="outline-text-2" id="text-org5981f60">
 </div>
 </section>
-<section id="slide-org3330f9a">
-<h3 id="org3330f9a">Adding Subbehaviors</h3>
+<section id="slide-org5a8bf20">
+<h3 id="org5a8bf20">Adding Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.add_subbehavior(skill_object,
@@ -145,8 +145,8 @@
 
 </ul>
 </section>
-<section id="slide-org32f4365">
-<h3 id="org32f4365">Removing Subbehaviors</h3>
+<section id="slide-org4828b97">
+<h3 id="org4828b97">Removing Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
@@ -155,8 +155,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-orge0c19ec">
-<h3 id="orge0c19ec">Getting Subbehavior Plays</h3>
+<section id="slide-org817838f">
+<h3 id="org817838f">Getting Subbehavior Plays</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
@@ -165,13 +165,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org5a86f4e">
-<h2 id="org5a86f4e">Real Examples</h2>
-<div class="outline-text-2" id="text-org5a86f4e">
+<section id="slide-orga5911f4">
+<h2 id="orga5911f4">Real Examples</h2>
+<div class="outline-text-2" id="text-orga5911f4">
 </div>
 </section>
-<section id="slide-org1141150">
-<h3 id="org1141150">CoordinatedPass Tactic</h3>
+<section id="slide-org80875b1">
+<h3 id="org80875b1">CoordinatedPass Tactic</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
@@ -186,8 +186,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org1489612">
-<h3 id="org1489612">Line Up Tactic</h3>
+<section id="slide-orgc1006c0">
+<h3 id="orgc1006c0">Line Up Tactic</h3>
 <ul>
 <li>First State Machine is set up, then:</li>
 
@@ -217,8 +217,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org67770de">
-<h2 id="org67770de">RoboCup Pro Tip</h2>
+<section id="slide-orge9e3b31">
+<h2 id="orge9e3b31">RoboCup Pro Tip</h2>
 <ul>
 <li>Find some code doing something like what you want</li>
 <li>Tweak it until it works</li>
@@ -229,8 +229,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgf0c5fd2">
-<h2 id="orgf0c5fd2">Assignment</h2>
+<section id="slide-orgb68e782">
+<h2 id="orgb68e782">Assignment</h2>
 <ul>
 <li>Create a Triangle Pass Play</li>
 <li>Move 3 Robots into a triangle formation, and pass between them.</li>
@@ -239,8 +239,8 @@
 
 </ul>
 </section>
-<section id="slide-org12b0bb4">
-<h3 id="org12b0bb4">Tips</h3>
+<section id="slide-org4507869">
+<h3 id="org4507869">Tips</h3>
 <ol>
 <li>Use Move Skills to move your robots to the triangle initially</li>
 <li>Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle</li>
