@@ -1,6 +1,6 @@
 #+TITLE: Contribution Overview
-#+AUTHOR: Jay Kamat
-#+EMAIL: jaygkamat@gmail.com
+#+AUTHOR: Jay Kamat, Jason Chan
+#+EMAIL: jaygkamat@gmail.com, jason27chan@gmail.com
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: linear
 #+REVEAL_SPEED: fast
@@ -24,7 +24,7 @@
 * Big Picture 
 [[file:https://i.imgur.com/VAK4mLY.png]]
 ** Overview Picture
-[[file:https://cloud.githubusercontent.com/assets/4349709/11414363/8936f22e-93c2-11e5-9324-5c9055b1a4e4.jpg]]
+[[file:https://cloud.GitHubusercontent.com/assets/4349709/11414363/8936f22e-93c2-11e5-9324-5c9055b1a4e4.jpg]]
 * Overview Of a Contribution
 ** Find an Issue
 - Can be on any of our repos
@@ -64,22 +64,22 @@
 
 - Create a pull request on GitHub from your fork
 
-** Creating a pull request on Github
+** Creating a pull request on GitHub
 [[file: https://i.imgur.com/P3BBw6m.png]]
-- 1. Go to the specific robojackets repository
+- 1. Go to the specific RoboJackets repository
 - 2. Click on "Pull requests"
 - 3. Click on "New pull request"
 
-** Creating a pull request on Github
+** Creating a pull request on GitHub
 [[file: https://i.imgur.com/KxR8Wtz.png]]
 - 1. Click on compare across forks (So you can reference your fork)
 - 2. Select the fork and branch on which you're working.
 - 3. Click on "Create pull request"
 
-** Creating a pull request on Github
+** Creating a pull request on GitHub
 [[file: https://i.imgur.com/n2yxtKe.png]]
 
-** Creating a pull request on Github
+** Creating a pull request on GitHub
 - Write out a short description of what you fixed
   - Mention the issue number
 - Request someone to review your pull request
