@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Firmware Overview</h1>
 </section>
 <section>
-<section id="slide-org9731ddb">
-<h2 id="org9731ddb">Initialization</h2>
+<section id="slide-orgde5485c">
+<h2 id="orgde5485c">Initialization</h2>
 <ul>
 <li>Initialize Kicker(attiny) and FPGA using binary files stored on MBED
 <ul>
@@ -44,8 +44,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgb40e00c">
-<h2 id="orgb40e00c">RTOS (Threads)</h2>
+<section id="slide-orgf923593">
+<h2 id="orgf923593">RTOS (Threads)</h2>
 <ul>
 <li>Threads allow us to run multiple segments of code in "parallel"</li>
 <li>MBED only has one core so only one thread executed at once</li>
@@ -59,8 +59,8 @@
 </p>
 </div>
 </section>
-<section id="slide-org4a44201">
-<h3 id="org4a44201">Main</h3>
+<section id="slide-org3194b79">
+<h3 id="org3194b79">Main</h3>
 <ul>
 <li>Watchdog (reset MBED if it doesn't go back to main in certain time)</li>
 <li>Control LEDs (neopixel &amp; LEDs connected to IO Expander)</li>
@@ -68,8 +68,8 @@
 
 </ul>
 </section>
-<section id="slide-org4d6e193">
-<h3 id="org4d6e193">Other threads</h3>
+<section id="slide-orga67794a">
+<h3 id="orga67794a">Other threads</h3>
 <ul>
 <li>Console
 <ul>
@@ -92,16 +92,16 @@
 </section>
 </section>
 <section>
-<section id="slide-orgdc60afc">
-<h2 id="orgdc60afc">Radio</h2>
+<section id="slide-orga266b0b">
+<h2 id="orga266b0b">Radio</h2>
 <ul>
 <li>How commands are sent to robot (motor speeds, kick, etc.)</li>
 <li>How information is sent back to the base station (various robot statuses)</li>
 
 </ul>
 </section>
-<section id="slide-org55dbee7">
-<h3 id="org55dbee7">CommLink</h3>
+<section id="slide-org08799ec">
+<h3 id="org08799ec">CommLink</h3>
 <ul>
 <li>Used as hardware abstraction layer to communicate from higher level firmware to radio hardware (through drivers)</li>
 <li>What we use to call functions to get/send data through radio</li>
@@ -110,8 +110,8 @@
 
 </ul>
 </section>
-<section id="slide-org8eff007">
-<h3 id="org8eff007">CommModule</h3>
+<section id="slide-org96afffc">
+<h3 id="org96afffc">CommModule</h3>
 <ul>
 <li>Used to handle packets being sent and received with radio</li>
 <li>RX/TX queues (as threads) waiting for other threads to put packets in the queue that are ready to be sent or have been received and need to be processed</li>
@@ -120,8 +120,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd60ae64">
-<h2 id="orgd60ae64">Shared SPI</h2>
+<section id="slide-org5fd90b2">
+<h2 id="org5fd90b2">Shared SPI</h2>
 <ul>
 <li>Allows MBED (master) to communicate with multiple devices through same pins</li>
 <li>Devices (slaves) currently used are radio, kicker (ATtiny), and FPGA</li>
@@ -131,8 +131,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org0947efc">
-<h2 id="org0947efc">Hardfault Handler</h2>
+<section id="slide-org27c3aba">
+<h2 id="org27c3aba">Hardfault Handler</h2>
 <ul>
 <li>Written in assembly to call function when the mbed hard faults (crashes)</li>
 <li>Used to print out information to console useful for debugging</li>
@@ -142,8 +142,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgfa00c34">
-<h2 id="orgfa00c34">FPGA (verilog)</h2>
+<section id="slide-orgd29be71">
+<h2 id="orgd29be71">FPGA (verilog)</h2>
 <ul>
 <li>FPGA is programming logic gates which allows for many parallel operations</li>
 <li>Reads in hall sensors for motors
@@ -179,8 +179,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org0d3d0ed">
-<h2 id="org0d3d0ed">Base Station</h2>
+<section id="slide-org7800b77">
+<h2 id="org7800b77">Base Station</h2>
 <ul>
 <li>MBED with only radio connected</li>
 <li>Uses MBED serial lines to communicate with computer running soccer</li>

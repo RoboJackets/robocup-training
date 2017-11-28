@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Beginner</h1>
 </section>
 <section>
-<section id="slide-org96700df">
-<h2 id="org96700df">Questions about Plays?</h2>
+<section id="slide-org7de570b">
+<h2 id="org7de570b">Questions about Plays?</h2>
 <ul>
 <li>Last meeting was pretty dense
 <ul>
@@ -50,8 +50,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org44db9d2">
-<h2 id="org44db9d2">Subbehaviors!</h2>
+<section id="slide-org29e4bc0">
+<h2 id="org29e4bc0">Subbehaviors!</h2>
 <ul>
 <li>A Behavior is a generic name for any skill, play, or tactic.</li>
 <li>Last meeting we learned about Plays/Skills/Tactics
@@ -67,16 +67,16 @@
 
 </ul>
 </section>
-<section id="slide-orgbde4e56">
-<h3 id="orgbde4e56">Examples of Subbehaviors</h3>
+<section id="slide-org4aedd0f">
+<h3 id="org4aedd0f">Examples of Subbehaviors</h3>
 <ul>
 <li>Offense Play contains Passing Tactics, and Move Skills</li>
 <li>Passing Tactic Contains Move and Kick Skills</li>
 
 </ul>
 </section>
-<section id="slide-orgfa75f27">
-<h3 id="orgfa75f27"><i>Behavior</i> Tree!</h3>
+<section id="slide-org3e33229">
+<h3 id="org3e33229"><i>Behavior</i> Tree!</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -97,8 +97,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-orgce32406">
-<h3 id="orgce32406"><i>Behavior</i> Tree! (cont.)</h3>
+<section id="slide-org5cd2643">
+<h3 id="org5cd2643"><i>Behavior</i> Tree! (cont.)</h3>
 <div class="org-src-container">
 
 <pre  class="src src-text">Basic122::running
@@ -119,13 +119,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orgbe9bd24">
-<h2 id="orgbe9bd24">How do I use subbehaviors?</h2>
-<div class="outline-text-2" id="text-orgbe9bd24">
+<section id="slide-org423bebb">
+<h2 id="org423bebb">How do I use subbehaviors?</h2>
+<div class="outline-text-2" id="text-org423bebb">
 </div>
 </section>
-<section id="slide-org0103b04">
-<h3 id="org0103b04">Adding Subbehaviors</h3>
+<section id="slide-orga9fce34">
+<h3 id="orga9fce34">Adding Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.add_subbehavior(skill_object,
@@ -135,8 +135,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org0b67ed1">
-<h3 id="org0b67ed1">Removing Subbehaviors</h3>
+<section id="slide-org0402af2">
+<h3 id="org0402af2">Removing Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
@@ -145,8 +145,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org3523ea0">
-<h3 id="org3523ea0">Getting Subbehavior Plays</h3>
+<section id="slide-orgc9c20e6">
+<h3 id="orgc9c20e6">Getting Subbehavior Plays</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
@@ -155,13 +155,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orgb7d1325">
-<h2 id="orgb7d1325">Real Examples</h2>
-<div class="outline-text-2" id="text-orgb7d1325">
+<section id="slide-org41d90d6">
+<h2 id="org41d90d6">Real Examples</h2>
+<div class="outline-text-2" id="text-org41d90d6">
 </div>
 </section>
-<section id="slide-orge2ad865">
-<h3 id="orge2ad865">CoordinatedPass Tactic</h3>
+<section id="slide-orgdf25295">
+<h3 id="orgdf25295">CoordinatedPass Tactic</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
@@ -176,8 +176,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org9f65ed3">
-<h3 id="org9f65ed3">Line Up Tactic</h3>
+<section id="slide-org057a26c">
+<h3 id="org057a26c">Line Up Tactic</h3>
 <ul>
 <li>First State Machine is set up, then:</li>
 
@@ -207,8 +207,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org75279e6">
-<h2 id="org75279e6">RoboCup Pro Tip</h2>
+<section id="slide-orgec242ca">
+<h2 id="orgec242ca">RoboCup Pro Tip</h2>
 <ul>
 <li>Find some code doing something like what you want</li>
 <li>Tweak it until it works</li>
@@ -218,13 +218,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orge7c8833">
-<h2 id="orge7c8833">How do I get MY Robot?!?</h2>
-<div class="outline-text-2" id="text-orge7c8833">
+<section id="slide-orgb3ab3ee">
+<h2 id="orgb3ab3ee">How do I get MY Robot?!?</h2>
+<div class="outline-text-2" id="text-orgb3ab3ee">
 </div>
 </section>
-<section id="slide-org821a9c2">
-<h3 id="org821a9c2">Dynamic Assignment</h3>
+<section id="slide-org9a66821">
+<h3 id="org9a66821">Dynamic Assignment</h3>
 <ul>
 <li>Our role assignment system picks the best robot for the task</li>
 <li>You define your constraints, and we'll give you a robot if we can!</li>
@@ -232,8 +232,8 @@
 
 </ul>
 </section>
-<section id="slide-org644020f">
-<h3 id="org644020f">But I want Robot X!</h3>
+<section id="slide-org0c8c2f9">
+<h3 id="org0c8c2f9">But I want Robot X!</h3>
 <ul>
 <li>Override Role Requirements to add your constraints!</li>
 <li>This next section is Extra Credit&#x2026;
@@ -245,8 +245,8 @@
 
 </ul>
 </section>
-<section id="slide-org620e85f">
-<h4 id="org620e85f">Get the closest robot</h4>
+<section id="slide-org2cc2cec">
+<h4 id="org2cc2cec">Get the closest robot</h4>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
@@ -258,8 +258,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-org564e56f">
-<h4 id="org564e56f">Get the robot with all the hardware</h4>
+<section id="slide-org2d8e4e7">
+<h4 id="org2d8e4e7">Get the robot with all the hardware</h4>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
@@ -273,8 +273,8 @@
 </pre>
 </div>
 </section>
-<section id="slide-orgc751dd6">
-<h4 id="orgc751dd6">I really, really, want MY Robot!</h4>
+<section id="slide-orgd09fc21">
+<h4 id="orgd09fc21">I really, really, want MY Robot!</h4>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
@@ -294,8 +294,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgf529427">
-<h2 id="orgf529427">Assignment</h2>
+<section id="slide-org85c87d2">
+<h2 id="org85c87d2">Assignment</h2>
 <ul>
 <li>Create a binary clock play</li>
 <li>Display the current minute in binary on the field
@@ -308,8 +308,8 @@
 
 </ul>
 </section>
-<section id="slide-org7e03655">
-<h3 id="org7e03655">Tips</h3>
+<section id="slide-orgef8a910">
+<h3 id="orgef8a910">Tips</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">import</span> time
