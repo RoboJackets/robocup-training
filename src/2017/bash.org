@@ -1,0 +1,219 @@
+#+TITLE: Shell Scripting
+#+AUTHOR: Jay Kamat
+#+EMAIL: jaygkamat@gmail.com
+#+PROPERTY: header-args :results output
+
+# Export section for md
+* Shell Presentation {#t201710}                                        :docs:
+
+* Why Shell?
+- It's available everything
+- High level scripting language
+- Lots of build tooling and scripts are written in bash already
+- Very easy to interface with everything in existence
+** Why are you interested?                                          :slides:
+* Syntax
+There's a lot of things we need to know in parallel, no clear path to build up on.
+
+There's hundreds of features that you don't need to know, we'll cover the essentials.
+** Commands
+
+#+BEGIN_SRC bash
+  # Simple invocation
+  command arg1 arg2 arg3
+  # Quoting combines string arguments
+  command 'argument one' 'argument two'
+  echo 'Hello World!'
+#+END_SRC
+
+#+RESULTS:
+: Hello World!
+
+** Variables
+#+BEGIN_SRC bash :exports both
+  VAR="hello world"
+
+  # spaces:
+  # VARIABLE = "hello world" is invalid, treats VARIABLE as a command
+
+  echo simple: $VAR
+
+  # Exporting exposes variables to sub environments
+  export E_VAR="hello world"
+
+  bash -c 'echo non-exported: $VAR'
+  bash -c 'echo exported: $E_VAR'
+
+  # Use ${VAR} syntax to splice without spaces
+  echo ${VAR}s!
+
+  # Use ${VAR:-default} to get default values
+  echo ${NULL:-"error!"}
+#+END_SRC
+
+#+RESULTS:
+: simple: hello world
+: non-exported:
+: exported: hello world
+: hello worlds!
+: error!
+** Functions
+#+BEGIN_SRC bash :exports both
+  # Pass to functions with variables
+  func () {
+      echo "First Argument: $1"
+      echo "All Arguments: $@"
+  }
+
+  func one two three
+#+END_SRC
+
+#+RESULTS:
+: First Argument: one
+: All Arguments: one two three
+** Quoting
+#+BEGIN_SRC bash :exports both
+  VAR="foo bar baz"
+  GLOBBING="*"
+
+  func () {
+      echo "$1"
+  }
+
+  # No quoting
+  func $VAR
+  func $GLOBBING
+
+  # double quoting
+  func "$VAR"
+  func "$GLOBBING"
+
+  # Single quoting is literal
+  func '$VAR'
+
+  # Always double quote variables unless you know what you're doing!
+#+END_SRC
+
+#+RESULTS:
+: foo
+: bash.org
+: foo bar baz
+: *
+: $VAR
+** Exit Codes
+#+BEGIN_SRC bash :exports both
+  # Run a command
+  true
+  # Get exit code:
+  echo $?
+
+  false
+  echo $?
+
+  # 0 means successful, other means error
+#+END_SRC
+
+#+RESULTS:
+: 0
+: 1
+
+** Command Substitution
+#+BEGIN_SRC bash :exports both
+  VAR="$(echo foo bar baz)"
+  echo $VAR
+
+  # Capture output of program into a string
+
+  # Old syntax
+  echo `echo foo bar baz`
+#+END_SRC
+
+#+RESULTS:
+: foo bar baz
+: foo bar baz
+
+* Control Statements
+** If Statements
+#+BEGIN_SRC bash :exports both
+  if true; then
+      echo "True!"
+  fi
+
+  if false; then
+      echo "False?"
+  fi
+
+  # Using an exit code is not always what we want
+  VAR="foo"
+  if [ "$VAR" = "foo" ]; then
+      echo "equal!"
+  fi
+
+  if false; then
+      false
+  elif false; then
+      false
+  else
+      echo "running!"
+  fi
+#+END_SRC
+
+#+RESULTS:
+: True!
+: equal!
+: running!
+** Math
+#+BEGIN_SRC bash :exports both
+  # Original syntax
+  echo "$(expr 1 + 1)"
+
+  # Bash new syntax
+  echo "$((2 + 3))"
+#+END_SRC
+
+#+RESULTS:
+: 2
+: 5
+** Loops
+#+BEGIN_SRC bash :exports both
+  COUNTER=0
+  # [[ COUNTER < 4 ]] works too
+  while [ "$COUNTER" -lt 4 ]; do
+      COUNTER="$((COUNTER + 1))"
+      echo $COUNTER
+  done
+  echo
+  for i in $(seq 0 5 10); do
+      echo $i
+  done
+#+END_SRC
+
+#+RESULTS:
+: 1
+: 2
+: 3
+: 4
+:
+: 0
+: 5
+: 10
+* Interactive Bash
+Bash has many feature which make interactive use easier
+
+If you like vi, readline has a vi mode.
+
+** Readline (Emacs)
+| Keys    | Action                        |
+|---------+-------------------------------|
+| ~C-p/n~ | history                       |
+| ~M-f/b~ | cycling through arguments     |
+| ~C-a/e~ | beginning/end                 |
+| ~C-r~   | repeatedly for history search |
+** History Substitution
+| Identifier | Action                                 |
+|------------+----------------------------------------|
+| ~!!~       | previous command                       |
+| ~!$~       | last argument                          |
+| ~^foo^bar~ | last command, but replace foo with bar |
+| ~!foo~     | last command matching "foo"            |
+| ~!-2:2~    | second argument from two commands ago  |
