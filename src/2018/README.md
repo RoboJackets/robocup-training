@@ -16,13 +16,14 @@ Another important skill I would like to focus on is the ability to read code lik
 
 Teaching things:
 * If someone understands things, ask them to help people around them.
+* Ask people if they have questions, even if it's unprompted. 
 
 ## Meetings
 
 Because we have 6 meetings, we have to be very economical with our lessons. I would prefer to have very basic lessons that new members understand 100% than have harder lessons that they understand 50%. 
 
 ### Training Meeting 1: Installation and Getting Started
-The goal of this meeting is for installation, github, and getting to know us. If there's a way to speed up this process, I would love to, but it seems as if it always takes the whole time.
+The goal of this meeting is for installation, github, and getting to know us. I would love to speed up this process, but it seems as if it always takes the whole time.
 
 The only positive outcome that I can see is how we establish culture in this time period. This is our introduction, and be friendly meeting. 
 
