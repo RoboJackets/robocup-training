@@ -21,20 +21,29 @@ Also provide new members with reference sheet.
 Because we have 6 meetings, we have to be very economical with our lessons. I would prefer to have very basic lessons that new members understand 100% than have harder lessons that they understand 50%. 
 
 ### Training Meeting 1: Installation and Getting Started
-The goal of this meeting is for installation and getting to know us. If there's a way to speed up this process, I would love to, but it seems as if it always takes the whole time.
+The goal of this meeting is for installation, github, and getting to know us. If there's a way to speed up this process, I would love to, but it seems as if it always takes the whole time.
 
 The only positive outcome that I can see is how we establish culture in this time period. This is our introduction, and be friendly meeting. 
 
 Another idea is that this can be a meeting where teach them how to look up vocabulary. 
 
+Slide Changes: stay mostly the same
+
+Extension: Show Robocup Footage? cool linux things? Memes?
+
 ### Training Meeting 2: Basic Movement and Field Awareness
 
-### Training Meeting 3: Utilizing Skills and Tactics. 
+Slide Changes: We will not worry about state machines here. Focus just on moving the robot and understanding the boundaries of the field. 
 
-### Training Meeting 4:
+Extension: Add Tactics and Skills here. Triangle pass.?
 
-### Training Meeting 5:
+### Training Meeting 3: State Machines, Tactics, Skills 
 
-### Training Meeting 6:
+Slide Changes: State Machines. Some program that best exemplifies the differences in on_enter, running, and on_exit. 
 
-### Training Meeting 4: State Machines and 
+### Training Meeting 4: Behavior Tree and ______
+
+### Training Meeting 5: Make a play?
+
+### Training Meeting 6: Contributions
+
