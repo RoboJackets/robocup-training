@@ -14,7 +14,8 @@ This year, training will focus more on plays, and will go slower than in previou
 
 Another important skill I would like to focus on is the ability to read code like a textbook. This is most likely the largest codebase that the new members have seen, and like any high-level literature, it requires a higher vocabulary to understand. Because the vocabulary is located within the codebase, we will need to show them how to look up and understand vocabulary. 
 
-Also provide new members with reference sheet. 
+Teaching things:
+* If someone understands things, ask them to help people around them.
 
 ## Meetings
 
@@ -32,18 +33,41 @@ Slide Changes: stay mostly the same
 Extension: Show Robocup Footage? cool linux things? Memes?
 
 ### Training Meeting 2: Basic Movement and Field Awareness
+The goal of this meeting is for people to understand the robot skills around as well as field parameters. We will start with programming fundamentals. If we have time, we can introduce state machines using print statements.
+
+Learning Goals
+* How do we move a robot
+* What points correspond to different locations on a field
+	* Includes corners of the field, center, and goals
+* How does a robot capture a ball
+* How do we pass to another robot
+* How do we kick at the goal?
 
 Slide Changes: We will not worry about state machines here. Focus just on moving the robot and understanding the boundaries of the field. 
 
 Extension: Add Tactics and Skills here. Triangle pass.?
 
 ### Training Meeting 3: State Machines, Tactics, Skills 
+Learning Goals
+* Solidify everything from last meeting
+* How do the individual skills become a tactic
+* How do State Machines work? (basic)
 
-Slide Changes: State Machines. Some program that best exemplifies the differences in on_enter, running, and on_exit. 
+Slide Changes: State Machines. Mention Role Requirements but dont go into it. Implement a tactic or multiple tactics?
 
-### Training Meeting 4: Behavior Tree and ______
+Extension: Write a play. 
 
-### Training Meeting 5: Make a play?
+### Training Meeting 4: Write a play
+Learning Goals
+* Solidify State Machines
+* How to write a basic play
+
+### Training Meeting 5: Unknown
+Ideas:
+* Run plays against each other
+* RRT
+* Overview of other areas of robocup-software
+* "Literature" Lesson: How to read code you dont understand
 
 ### Training Meeting 6: Contributions
-
+Pretty much keep same. 
