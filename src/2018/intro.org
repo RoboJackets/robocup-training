@@ -1,7 +1,7 @@
 
 #+TITLE: RoboCup 2017 Training 1
-#+AUTHOR: Jay Kamat
-#+EMAIL: jaygkamat@gmail.com
+#+AUTHOR: Jay Kamat, Jason Chan
+#+EMAIL: jaygkamat@gmail.com, jason27chan@gmail.com
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: linear
 #+REVEAL_SPEED: fast
@@ -11,6 +11,11 @@
 
 # Export section for md
 * Training Summary 1 {#t20171}                                         :docs:
+* Meeting Goals
+- VM Installation and first make run-sim
+- Github Setup
+- Robocup Overview
+
 * Download VM Image
 - [[https://mega.nz/#!958GxYrB!CIVIHgDFbNXLgfjgxrVmWa8ZkVOvhaXRP_x48-dUO8s][Download Link]] (http://bit.ly/2yul2Qv)
 - Today we will be setting you up to develop RoboCup Software
@@ -19,6 +24,21 @@
 - Name
 - Major/How Many Years at Tech
 - Programming experience
+- What do you like best about Tech? 
+
+** Overview of Robocup
+- What is Robocup?
+- What is Robocup-SSL?
+- How do we approach Robocup-SSL?
+- [[https://youtu.be/LpTRn8PD7GA?t=11m53s][Example Robocup-SSL Game]]
+
+** How can you contribute to soccer?
+- Primary Issues
+  - Capturing a Ball
+- Secondary Issues
+  - More Plays
+  - Direct and Indirect Restarts
+  - Etc.
 
 * Communication
 - Email List
