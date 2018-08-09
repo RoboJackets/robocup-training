@@ -131,60 +131,20 @@
 : Initializing Child
 : Our local var is: 2
 
+** We can't teach a full year of programming in one hour. 
+- Take advantage of resources like [[https://www.codecademy.com/][codeacademy]] or [[https://www.lynda.com/]lynda](to which you have access using your Georgia Tech information.)
+- Programming is a language, and like every language, it takes time to become familiar with the syntax and vocabulary. 
+
 ** Additional Python Resources                                         :docs:
 - [[http://lightbot.com/hocflash.html][lightbot]] - A Introduction to Programming Logic
 - [[https://wiki.python.org/moin/BeginnersGuide/NonProgrammers][Python Beginner Hub]]
 - [[https://learnxinyminutes.com/docs/python/][Python Syntax Overview]]
 - [[http://thepythonguru.com/][A intro to python]]
 
-* State Machines
-
-** What are they?
-- A state machine is a series of states
-- You can transition between them
-- A state could have multiple transition
-- A state transition only occurs if a condition is fulfilled
-*** Examples                                                         :docs:
-- A car engine is a state machine, each piston going between different internal states to move the car forward
-- A washing machine is a state machine, going between different states to cycle between wash, dry, etc.
-- [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Page on State Machines]]
-
-** Elevator
-[[file:https://i.imgur.com/KPv5sSk.png]]
-
-** Move
-[[file:http://i.imgur.com/gmIcPGq.png]]
-*** Details                                                          :docs:
-- Every Play starts in a 'start' state
-- Most plays will instantly transition into a running state (in this case ~behavior::running~)
-- This particular play will go into ~behavior::completed~ once we reach a target position
-- However, if we are ever bumped out of place, we are put back into the running state (to continue moving)
-- Another thing to notice here is that every state here is a ~behavior::<thing>~ state.
-  - These states are created by the state machine machinery we have set up.
-  - They are used to determine whether a state can be killed or not, or if it is waiting for something
-  - Most of the action will be done in a subclass of ~bheavior::running~ or ~behavior::running~ itself if you have a simple class.
-** Pass Receive
-[[file:http://i.imgur.com/HAhoMC1.png]]
-*** Details                                                          :docs:
-- This example is a bit more complicated, as we have multiple ~running~ states
-- Each one of these substates are classified as running by our machinery, since they subclass behavior::running
-- A brief explanation is: if we are running, and the ball is ever kicked, immediately receive, but if we have some time, try to align yourself properly at the designated receive coordinate.
-** Passing
-[[file:http://i.imgur.com/OhWnSwT.png]]
-*** Details                                                          :docs:
-- Here we have more running substates
-- A pass is fairly linear, as it has preparing -> kicking -> receiving states
-- However, if we 'timeout' in the preparing or kicking states, we fail the current behavior
-  - This can happen if our robot is ever stuck
-** Additional Information on State Machines                           :docs:
-- While you /do not/ need to know advanced state machine ideas, you need to be comfortable working with and parsing existing state machines from a diagram or from our code.
-- [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Article]]
-- [[http://blog.markshead.com/869/state-machines-computer-science/][A quick block post about state machines]]
-- [[https://engineering.shopify.com/17488160-why-developers-should-be-force-fed-state-machines][You might be using state machines in a hacky way already...]]
-- [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/fsm.py][Our Current State Machine Implementation]]
 * Plays, Tactics, Skills
 - A Basic Unit in our AI
-- Only one Play can run at a time
+- Only one *Play* can run at a time
+- A *play* may utilize multiple *tactics*, which themselves may utilize multiple *skills*. 
 ** Skill
 - Involves only /one/ robot
 - Extremely basic building blocks
@@ -196,7 +156,7 @@
 - Located in =soccer/gameplay/skills/=
 ** Tactics
 - Involves multiple robots
-- Contains skills
+- Utilize skills
 - Can contain unique behavior (but usually not)
 - Examples
   - Pass
@@ -205,7 +165,7 @@
 - Located in =soccer/gameplay/tactics/=
 ** Plays
 - Only one can run
-- Contains tactics
+- Utilize tactics
 - Examples
   - Basic122 (basic offense)
   - Two side attack (basic offense)
