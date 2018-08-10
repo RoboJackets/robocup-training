@@ -1,6 +1,6 @@
 #+TITLE: Skills, Tactics, Plays - Intro
-#+AUTHOR: Jay Kamat
-#+EMAIL: jaygkamat@gmail.com
+#+AUTHOR: Jay Kamat, Jason Chan
+#+EMAIL: jaygkamat@gmail.com, jason27chan@gmail.com
 
 # Export section for md
 * Skills, Tactics, Plays {#t20172}                                 :docs:
@@ -184,12 +184,17 @@
 
 ** Assignments
 - Make a robot move to all of the locations marked by a red dot
+  - Add picture here
 - Make a robot capture a ball
 - Make a robot shoot on their goal using a line kick
 - Make a robot shoot on their goal using a pivot kick
 
+** Tactics Extension
+- Make robots do a coordinated pass
+
 ** Extension
-- Put something here
+- Tactics
+- Start State Machines
 
 ** Tips
 - The field coordinates start at 0, 0; Which is our Goal.
@@ -199,3 +204,6 @@
 - Start by just printing the Y coordinate of the ball and work up from there
 ** Exercise Details                                                   :docs:
 - Ask on [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/plays/skel/which_half.py][gitter]] for help and answers!
+
+** Answers
+- Add something here
