@@ -1,6 +1,6 @@
 #+TITLE: Subbehaviors
-#+AUTHOR: Jay Kamat, Josh Ting
-#+EMAIL: jaygkamat@gmail.com, joshting25@gmail.com
+#+AUTHOR: Jay Kamat, Josh Ting, Jason Chan
+#+EMAIL: jaygkamat@gmail.com, joshting25@gmail.com, jason27chan@gmail.com
 #+REVEAL_THEME: black
 #+REVEAL_TRANS: linear
 #+REVEAL_SPEED: fast
@@ -9,20 +9,73 @@
 #+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
 
 # Export section for md
-* Subbehaviors {#t20173}                                 :docs:
+* Subbehaviors {#t20183}                                 :docs:
 * Questions about Plays?
 - Topics Covered:
   - Python
-  - State Machines
   - Play/Tactic/Skill Structure
 - Last meeting was pretty dense
   - RoboCup is complicated
   - If you got it, great
   - If you didn't, great
-    - We need you to ask questions when you don't understand something
+    - Please ask questions when you don't understand something because we can guarantee someone else has the same question. 
 - And today, we're going into...
 ** Additional Information                                             :docs:
 - See the previous slide deck and docs for more information, they should be a pretty comprehensive overview of our play system.
+
+* State Machines
+
+** What are they?
+- A state machine is a series of states
+- You can transition between them
+- A state can transition to multiple other states
+- A state transition only occurs if a condition is fulfilled
+*** Examples                                                         :docs:
+- A washing machine is a state machine, going between different states to cycle between wash, dry, etc.
+- School are state machines, where you transition to different classes at certain times. 
+- [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Page on State Machines]]
+
+** Elevator
+[[file:https://i.imgur.com/KPv5sSk.png]]
+
+** Robocup Statemachines
+- Skills, tactics, and plays all have internal states.
+- We define those states using enums.
+  - default to start, running, complete
+- Each state has an on_enter, execute, and on_exit.
+  - on_enter and on_exit are run once at the beginning and end of the state respectively
+  - execute is run repetitively while we are in a state 
+
+* The lecture hall state machine
+- Let's say your lecture hall is a state 
+
+** When would we take out our notes?
+- on_enter
+- execute
+- on_exit
+
+** When would we take notes?
+- on_enter
+- execute
+- on_exit
+
+** When would we pack up?
+- on_enter
+- execute
+- on_exit
+
+** Where would we take out our phone?
+- on_enter
+- execute
+- on_exit
+
+** Additional Information on State Machines                           :docs:
+- While you /do not/ need to know advanced state machine ideas, you need to be comfortable working with and parsing existing state machines from a diagram or from our code.
+- [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Article]]
+- [[http://blog.markshead.com/869/state-machines-computer-science/][A quick block post about state machines]]
+- [[https://engineering.shopify.com/17488160-why-developers-should-be-force-fed-state-machines][You might be using state machines in a hacky way already...]]
+- [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/fsm.py][Our Current State Machine Implementation]]
+
 * Subbehaviors!
 - A behavior is a generic name for any skill, play, or tactic.
 - Last meeting we learned about Plays/Tactics/Skills

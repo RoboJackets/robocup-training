@@ -1,0 +1,29 @@
+#+TITLE: Plays
+#+AUTHOR: Jason Chan
+#+EMAIL: jason27chan@gmail.com
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: fast
+#+REVEAL_PLUGINS: (notes pdf)
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
+
+# Export section for md
+* Plays {#t20184}                                 :docs:
+
+* Let's write a play
+
+** Let's get started
+- Copy paste basic122 into a new file
+- Do something
+
+** Here are some play ideas
+- The best defense...
+	- No robots on defense. Every robot tries to capture the ball and pivot kick it into the goal.
+- Chicken
+	- 1 goalie. Every other robot is a submissive defender. 
+- Everybody loves Mark
+	- Every robot marks an enemy robot
+- or come up with your own!
+
+** FIGHT
