@@ -8,6 +8,7 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 1. [[https://robojackets.github.io/robocup-training/slides/2017/subbehaviors][Subbehaviors]]
 1. [[https://robojackets.github.io/robocup-training/slides/2017/roleassign][Role Assignment]]
 1. [[https://robojackets.github.io/robocup-training/slides/2017/pathplanning][Path Planning]]
+1. [[https://robojackets.github.io/robocup-training/slides/2017/contributions][Contributions]]
 
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20171.html][Training Docs 1]]
@@ -15,15 +16,32 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 1. [[https://robojackets.github.io/robocup-software/t20173.html][Subbehaviors]]
 1. [[https://robojackets.github.io/robocup-software/t20174.html][Role Assignment]]
 1. [[https://robojackets.github.io/robocup-software/t20175.html][Path Planning]]
+1. [[https://robojackets.github.io/robocup-software/t20176.html][Contributions]]
 
 * Building
 
 robocup-training is built with [[http://orgmode.org/][org-mode]] and [[https://github.com/cask/cask][cask]]
 
+** Installation Instructions
+#+BEGIN_SRC sh
+  # Install Emacs
+  sudo add-apt-repository ppa:kelleyk/emacs
+  sudo apt update
+  sudo apt install emacs25
+
+  # Install cask 
+  curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+
+  # Add Cask to $PATH and install
+  export PATH="$HOME/.cask/bin:$PATH"
+  cask install  
+#+END_SRC
+
 ** Building Slides
 
+To build slides from .org files use
 #+BEGIN_SRC sh
-  cask install
+  
   make
 
   # output goes in ./html
