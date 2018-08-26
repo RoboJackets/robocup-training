@@ -20,7 +20,7 @@ Teaching things:
 
 ## Meetings
 
-Because we have 6 meetings, we have to be very economical with our lessons. I would prefer to have very basic lessons that new members understand 100% than have harder lessons that they understand 50%. 
+I would prefer to have very basic lessons that new members understand 100% than have harder lessons that they understand 50%. 
 
 ### Training Meeting 1: Installation and Getting Started
 The goal of this meeting is for installation, github, and getting to know us. I would love to speed up this process, but it seems as if it always takes the whole time.
