@@ -46,8 +46,75 @@
   - on_enter and on_exit are run once at the beginning and end of the state respectively
   - execute is run repetitively while we are in a state 
 
+** Defining States in code layout
+#+BEGIN_SRC python
+  # First create a state Enum (An enum is just a group of names)
+  class OurState(enum.Enum):
+      start = 0
+      processing = 1
+      terminated = 2
+
+  # Then, register your states in our state machine class
+  # You must be in a play/tactic/skill for this to work
+  self.add_state(PlayName.OurState.start,
+                 # This is the superclass of our state. Most of the time,
+                 # this is 'running' (see below)
+                 behavior.Behavior.State.start)
+
+  self.add_state(PlayName.OurState.processing,
+                 behavior.Behavior.State.running)
+
+  self.add_state(PlayName.OurState.terminated,
+                 behavior.Behavior.State.completed)
+#+END_SRC
+
+** Defining States in code example
+#+BEGIN_SRC python
+  # This code is from our current iteration of capture.
+
+  # First create a state Enum (An enum is just a group of names)
+  class State(Enum):
+    course_approach = 1
+    fine_approach = 2
+    delay = 3
+
+  # Then, register your states in our state machine class
+  # You must be in a play/tactic/skill for this to work
+  self.add_state(Capture.State.course_approach,
+                 behavior.Behavior.State.running)
+  self.add_state(Capture.State.fine_approach,
+                 behavior.Behavior.State.running)
+  self.add_state(Capture.State.delay,
+                 behavior.Behavior.State.running)
+#+END_SRC
+
+
+** Defining Transitions Layout
+#+BEGIN_SRC python
+  self.add_transition(
+      Capture.State.course_approach,
+      Capture.State.fine_approach, lambda: (self.bot_in_front_of_ball(
+      ) or self.bot_near_ball(Capture.CourseApproachDist)) and main.ball(
+      ).valid, 'dist to ball < threshold')
+
+  self.add_transition(
+      Capture.State.fine_approach,
+      Capture.State.delay, lambda: evaluation.ball.robot_has_ball(self.robot), 
+      'has ball')
+
+  self.add_transition(
+      Capture.State.delay, 
+      behavior.Behavior.State.completed, 
+      lambda: time.time() - self.start_time > Capture.DelayTime and 
+      evaluation.ball.robot_has_ball(self.robot),
+      'delay before finish')
+#+END_SRC
+
 * The lecture hall state machine
 - Let's say your lecture hall is a state 
+
+** What would determine whether we transition into our lecture hall state?
+- 
 
 ** When would we take out our notes?
 - on_enter
