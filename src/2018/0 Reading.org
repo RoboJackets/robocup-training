@@ -1,0 +1,47 @@
+#+TITLE: Robocup Fundamentals
+#+AUTHOR: Jason Chan
+#+EMAIL: jason27chan@gmail.com
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: linear
+#+REVEAL_SPEED: fast
+#+REVEAL_PLUGINS: (notes pdf)
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: toc:nil timestamp:nil reveal_control:t num:nil reveal_history:t tags:nil author:nil
+
+# Export section for md
+* Reading {#t20185}                                 :docs:
+
+* Folders
+
+* Purpose
+- Computer science is a language. 
+- While you may be well-versed in this language, robocup-software is essentially a textbook that defines its own terminology
+- Thus, you have to know how to look up words that you don't know
+- This will be helpful in understanding the codebase and make contributions
+
+# Files to read through. Repeated Line Up, Basic122, Mark?
+* Tips
+- I will teach you how to read using sublime
+- While you can do this using other text editors, it's pretty easy with sublime
+
+* Setting up
+- On sublime, open robocup-software using the "open folder" option under file
+- This allows us to search through the entirety of robocup software using sublime tools
+
+* Search Tools
+- Control + Shift + F will search the entire project for the occurence of a term.
+- Control + P will search the entire project for the name of a file.
+- In the terminal, you can use git grep "<term>" to search the whole repository for the occurence of a term.
+
+* Let's read over some files together
+
+** Some questions to ask yourself
+- Do you know what the variables represent?
+	- Doesn't have to be exact
+	- Conceptual understanding is more important
+- Do you know what each method does?
+	- Conceptual Understanding
+- Do I understand everything that is language-specific?
+	- Ex. Ternary statements in python.
+	- Will be more problematic with C++. 
+
