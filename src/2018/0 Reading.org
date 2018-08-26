@@ -11,29 +11,87 @@
 # Export section for md
 * Reading {#t20185}                                 :docs:
 
-* Folders
+* Folder Explanation
+- *soccer*
+	- The main directory that we're working with
+- external
+	- Contains other repositories that we're working with
+	- Ex. RRT (used for path planner)
+- common
+	- Code that is "common" to both the software and firware of our robots
+	- Contains Geometry2d code. 
 
-* Purpose
+** Soccer Folders
+- *Gameplay*
+	- Contains our whole plays system 
+- Motion
+	- Self-explanatory
+	- Important. Faster robots are winning robots
+- Planning 
+	- Python side of our path planner
+
+** 
+Most of the time we'll be in robocup-software/soccer/gameplay
+
+* Literature Techniques
+
+** Purpose of Learning Literature Techniques
 - Computer science is a language. 
 - While you may be well-versed in this language, robocup-software is essentially a textbook that defines its own terminology
 - Thus, you have to know how to look up words that you don't know
-- This will be helpful in understanding the codebase and make contributions
+- Once you can read code, you can write code. 
 
 # Files to read through. Repeated Line Up, Basic122, Mark?
-* Tips
+** Tips
 - I will teach you how to read using sublime
 - While you can do this using other text editors, it's pretty easy with sublime
 
-* Setting up
+** Setting up
 - On sublime, open robocup-software using the "open folder" option under file
 - This allows us to search through the entirety of robocup software using sublime tools
 
-* Search Tools
+** Search Tools
 - Control + Shift + F will search the entire project for the occurence of a term.
 - Control + P will search the entire project for the name of a file.
 - In the terminal, you can use git grep "<term>" to search the whole repository for the occurence of a term.
 
 * Let's read over some files together
+
+** For Reference
+- robocup-py.cpp
+	- This file contains the code that translates our C++ files to Python
+	- robocup._____ definitions will be in here
+- main._____ refers to elements in the game. 
+
+** Repeated Line Up generate_line method
+#+BEGIN_SRC python
+def generate_line(self, x_multiplier):
+        x = (constants.Field.Width / 2 - constants.Robot.Radius * 2
+             ) * x_multiplier
+        y_start = 1.2
+        line = robocup.Segment(
+            robocup.Point(x, constants.Robot.Radius + y_start),
+            robocup.Point(x,
+                          (constants.Robot.Radius * 2.3 + 0.1) * 6 + y_start))
+        return line
+#+END_SRC
+
+** Reading generate_line line 1
+- what is constants.Field.Width?
+	- ctrl + p to find constants.py where we find that the value of Field is robocup.Field_Dimensions.CurrentDimensions.
+		- We know that robocup._____ is defined in robocup-py.cpp
+	- ctrl + p to find robocup-py.cpp, then ctrl + f to find Field_Dimensions or CurrentDimensions
+		- We find that CurrentDimensions is defined as &Field_Dimensions::Current_Dimensions
+	- If we ctrl + shift + f for Field_Dimensions::Current_Dimensions, we find the definition in Field_Dimensions.cpp
+	- We find that the Current_Dimensions is equal to the Default_Dimensions, which is equal to the Double_Field_Dimensions.
+		- Double_Field_Dimensions is defined earlier in the Field_Dimensions.cpp file. 
+		- We can look in Field_Dimensions.hpp and find that the second number in the parameters for the initialization correspond to the Width
+			- Thus, the value of constants.Field.Width = 6. 
+- what is constants.Robot.Radius?
+
+** Reading generate_line line 3
+- What is a robocup.Segment? 
+- What is a robocup.Point?
 
 ** Some questions to ask yourself
 - Do you know what the variables represent?
