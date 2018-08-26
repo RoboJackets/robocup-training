@@ -183,25 +183,27 @@
 - Understand which points correspond to different locations on the field
 
 ** Assignments
-- Make a robot move to all of the locations marked by a red dot
-  - Add picture here
+- Make a robot move to the following locations
+  - All four corners
+  - The center of the field
 - Make a robot capture a ball
-- Make a robot shoot on their goal using a line kick
-- Make a robot shoot on their goal using a pivot kick
+- Make a robot shoot using a line kick
+- Make a robot shoot using a pivot kick
 
-** Tactics Extension
+** Tactics / Positions Extension
 - Make robots do a coordinated pass
+- Make a robot become a submissive defender (use tactics.submissivedefender)
+- Make a robot become a goalie
 
-** Extension
-- Tactics
-- Start State Machines
+- Plays extension
+  - Write Basic122 without state machines
+    - One robot pivot kicks, two robots mark, two robots are submissive defenders, one robot is a goalie
 
 ** Tips
 - The field coordinates start at 0, 0; Which is our Goal.
 - Field Size Docs: ([[http://bit.ly/2cLsUBL][http://bit.ly/2cLsUBL]])
 - Ball Position Docs: ([[http://bit.ly/2damxXA][http://bit.ly/2damxXA]])
-- Move the template starter from ~soccer/gameplay/plays/skel/which_half.py~ to ~soccer/gameplay/plays/testing~
-- Start by just printing the Y coordinate of the ball and work up from there
+- If you don't know how to use a skill or tactics, use ctrl + shift + p to see how other people use it. 
 ** Exercise Details                                                   :docs:
 - Ask on [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/plays/skel/which_half.py][gitter]] for help and answers!
 
