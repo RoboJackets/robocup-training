@@ -31,7 +31,7 @@
 - A state can transition to multiple other states
 - A state transition only occurs if a condition is fulfilled
 *** Examples                                                         :docs:
-- A washing machine is a state machine, going between different states to cycle between wash, dry, etc.
+- A washing machine is a state machine, going between different states to cycle between wash, dry, etc based on time.
 - School are state machines, where you transition to different classes at certain times. 
 - [[https://en.wikipedia.org/wiki/Finite-state_machine][Wikipedia Page on State Machines]]
 
@@ -41,80 +41,97 @@
 ** Robocup Statemachines
 - Skills, tactics, and plays all have internal states.
 - We define those states using enums.
-  - default to start, running, complete
+  - Behaviors has some default states that we can use called start, running, complete
 - Each state has an on_enter, execute, and on_exit.
   - on_enter and on_exit are run once at the beginning and end of the state respectively
   - execute is run repetitively while we are in a state 
 
-** Defining States in code layout
+* How do we implement state machines in our code?
+
+** Implementing State Machines
+- In our code, we have three distinct parts in implementing state machines
+    - Defining States
+    - Defining Transitions
+    - Defining state actions
+        - Specifically, what we do upon entering a state, while a state is running, and upon exiting a state
+- We have a play called WhichHalf, which prints information about the ball based on whether it is in the top half or in the bottom half of the field
+** Defining States 
 #+BEGIN_SRC python
   # First create a state Enum (An enum is just a group of names)
-  class OurState(enum.Enum):
-      start = 0
-      processing = 1
-      terminated = 2
+  # Define your states here.
+        # eg: some_state = 0
+        # -----------------------
+        tophalf = 0
+        bottomhalf = 1
 
-  # Then, register your states in our state machine class
+  # Register the states you defined using 'add_state'.
+  # eg: self.add_state(WhichHalf.State.<???>,
+  #                    behavior.Behavior.State.running)
+  # ----------------------------------------------------
+
   # You must be in a play/tactic/skill for this to work
-  self.add_state(PlayName.OurState.start,
-                 # This is the superclass of our state. Most of the time,
-                 # this is 'running' (see below)
-                 behavior.Behavior.State.start)
-
-  self.add_state(PlayName.OurState.processing,
-                 behavior.Behavior.State.running)
-
-  self.add_state(PlayName.OurState.terminated,
-                 behavior.Behavior.State.completed)
+  self.add_state(WhichHalf.State.tophalf,
+                behavior.Behavior.State.running)
+  self.add_state(WhichHalf.State.bottomhalf,
+                behavior.Behavior.State.running)
 #+END_SRC
 
-** Defining States in code example
+** Defining State Transitions 
 #+BEGIN_SRC python
-  # This code is from our current iteration of capture.
+  # Add your state transitions using 'add_transition'.
+  # eg: self.add_transition(behavior.Behavior.State.start,
+  #                         self.State.<???>, lambda: True,
+  #                         'immediately')
+  # eg: self.add_transition(self.State.<???>, self.State.<???>,
+  #                         lambda: <???>,
+  #                         'state change message')
+  # ------------------------------------------------------------
+  self.add_transition(behavior.Behavior.State.start,
+                    self.State.bottomhalf, lambda: True, 'immediately')
 
-  # First create a state Enum (An enum is just a group of names)
-  class State(Enum):
-    course_approach = 1
-    fine_approach = 2
-    delay = 3
+  self.add_transition(self.State.bottomhalf,
+                    self.State.tophalf, lambda: not in_bottom_half(),
+                    'detected top half')
 
-  # Then, register your states in our state machine class
-  # You must be in a play/tactic/skill for this to work
-  self.add_state(Capture.State.course_approach,
-                 behavior.Behavior.State.running)
-  self.add_state(Capture.State.fine_approach,
-                 behavior.Behavior.State.running)
-  self.add_state(Capture.State.delay,
-                 behavior.Behavior.State.running)
+  self.add_transition(self.State.tophalf, self.State.bottomhalf,
+                    in_bottom_half, 'detected bottom half')
+
 #+END_SRC
 
+** Defining State Actions
+#+BEGIN_SRC
+    # Define your own 'on_enter' and 'execute' functions here.
+    # eg: def on_enter_<???>(self):
+    #         print('Something?')
+    # eg: def execute_<???>(self):
+    #         print('Something?')
+    # eg: def on_exit_<???>(self):
+    #         print('Soemthing?')
+    # ---------------------------------------------------------
 
-** Defining Transitions Layout
-#+BEGIN_SRC python
-  self.add_transition(
-      Capture.State.course_approach,
-      Capture.State.fine_approach, lambda: (self.bot_in_front_of_ball(
-      ) or self.bot_near_ball(Capture.CourseApproachDist)) and main.ball(
-      ).valid, 'dist to ball < threshold')
+    def on_enter_tophalf(self):
+        print('Ball entered top half')
 
-  self.add_transition(
-      Capture.State.fine_approach,
-      Capture.State.delay, lambda: evaluation.ball.robot_has_ball(self.robot), 
-      'has ball')
+    def on_enter_bottomhalf(self):
+        print('Ball entered bottom half')    
 
-  self.add_transition(
-      Capture.State.delay, 
-      behavior.Behavior.State.completed, 
-      lambda: time.time() - self.start_time > Capture.DelayTime and 
-      evaluation.ball.robot_has_ball(self.robot),
-      'delay before finish')
+    def execute_tophalf(self):
+        print('Ball in top half')
+
+    def execute_bottomhalf(self):
+        print('Ball in bottom half')
+
+    def on_exit_bottomhalf(self):
+        print('Ball exited bottom half')
+
+    def on_exit_tophalf(self):
+        print('Ball exited top half')
 #+END_SRC
 
 * The lecture hall state machine
 - Let's say your lecture hall is a state 
 
 ** What would determine whether we transition into our lecture hall state?
-- 
 
 ** When would we take out our notes?
 - on_enter
