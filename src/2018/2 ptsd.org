@@ -195,7 +195,7 @@
 - Make a robot become a submissive defender (use tactics.submissivedefender)
 - Make a robot become a goalie
 
-- Plays extension
+** Plays extension
   - Write Basic122 without state machines
     - One robot pivot kicks, two robots mark, two robots are submissive defenders, one robot is a goalie
 
