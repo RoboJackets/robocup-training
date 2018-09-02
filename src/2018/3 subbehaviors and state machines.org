@@ -160,61 +160,6 @@
 - [[https://engineering.shopify.com/17488160-why-developers-should-be-force-fed-state-machines][You might be using state machines in a hacky way already...]]
 - [[https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/fsm.py][Our Current State Machine Implementation]]
 
-* Subbehaviors!
-- A behavior is a generic name for any skill, play, or tactic.
-- Last meeting we learned about Plays/Tactics/Skills
-  - How do we put them together?
-- Subbehaviors allow you to reuse our behaviors in many plays.
-  - Example: We have /one/ move play, used by kicker tactics, passing tactics, goalie, etc.
-** Examples of Subbehaviors
-- Offense Play contains Passing Tactics, and Move Skills
-- Passing Tactic Contains Move and Kick Skills
-** /Behavior/ Tree!
-#+BEGIN_SRC text
-Basic122::running
-    Mark::running[robot=4]
-        move(0.767296, 6.51286)
-        endVelocity(0, 0)
-        face(0.160718, 9.15305)
-    PivotKick::capturing
-        Capture::course_approach[robot=2]
-            face(0.160718, 9.15305)
-            avoidBall(-1)
-            move(0.176939, 9.114)
-            endVelocity(0, 0)
-    Mark::running[robot=1]
-        move(-0.829012, 6.03814)
-        endVelocity(0, 0)
-        face(0.160718, 9.15305)
-#+END_SRC
-
-*** Details                                                          :docs:
-- Here we have a tree of all the behaviors running
-- We have a basic122 play running
-- It is running 2 Marks, and a PivotKick in this frame
-- The marks are directly running robot commands, like move, and face.
-- The PivotKick is running a capture skill, which is running robot commands, like face, move, etc.
-** /Behavior/ Tree! (cont.)
-#+BEGIN_SRC text
-Basic122::running
-    Defense::defending
-        SubmissiveDefender::marking
-            Move::completed[robot=5]
-                face(0.160718, 9.15305)
-        SubmissiveDefender::marking
-            Move::completed[robot=3]
-                face(0.160718, 9.15305)
-        SubmissiveGoalie::block
-            Move::running[robot=0]
-                face(0.160718, 9.15305)
-                move(0.290916, 0.14)
-                endVelocity(0, 0)
-#+END_SRC
-
-*** Details                                                          :docs:
-- Pretty much same thing here
-- We've got a Defense tactic running, with SubmissiveDefender and Goalie Skills
-- These skills actually run robot commands.
 * How do I use subbehaviors?
 ** Adding Subbehaviors
 #+BEGIN_SRC python
@@ -239,49 +184,18 @@ self.remove_all_subbehaviors()
 #+BEGIN_SRC python
 a_subbheavior = self.subbehavior_with_name('string name')
 #+END_SRC
-* Real Examples
-** CoordinatedPass Tactic
-#+BEGIN_SRC python
-  def on_enter_running(self):
-      receiver = skills.pass_receive.PassReceive()
-      receiver.receive_point = self.receive_point
-      self.add_subbehavior(receiver,
-                           'receiver',
-                           required=self.receiver_required)
 
-  def on_exit_running(self):
-      self.remove_subbehavior('receiver')
-#+END_SRC
-** Line Up Tactic
-- First State Machine is set up, then:
-#+BEGIN_SRC python
-  # Triggered whenever the line changes
-  self.remove_all_subbehaviors()
-  for i in range(6):
-      pt = self._line.get_pt(0) + (self.diff * float(i))
-      self.add_subbehavior(
-          skills.move.Move(pt),
-          name="robot" + str(i),
-          required=False,
-          priority=6 - i)
-#+END_SRC
-
-#+BEGIN_SRC python
-  def execute_running(self):
-      for i in range(6):
-          pt = self._line.get_pt(0) + (self.diff * float(i))
-          self.subbehavior_with_name("robot" + str(i)).pos = pt
-#+END_SRC
 * RoboCup Pro Tip
 - Find some code doing something like what you want
 - Tweak it until it works
 - It's less effective than working everything out, but it's great for beginners!
 
 * Assignment
-- Create a Triangle Pass Play
-- Move 3 Robots into a triangle formation, and pass between them.
-- Starter code is in ~soccer/gameplay/plays/skel/triangle_pass.py~ (same as last time).
-- Move it to ~soccer/gameplay/plays/testing/triangle_pass.py~ to begin.
+- Write WhichHalf but vertical 
+
+** Extension 
+- Write Triangle Pass
+
 ** Tips
 1. Use Move Skills to move your robots to the triangle initially
 2. Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle

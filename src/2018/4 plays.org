@@ -51,6 +51,4 @@
 - What would dictate entering the first state? 
 - What would robots need to do upon entering each state, during each state, and upon exiting each state?
 
-
-
-** FIGHT
+* FIGHT
