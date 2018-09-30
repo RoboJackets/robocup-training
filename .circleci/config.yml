@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/robocup-training
     docker:
-      - image: silex/emacs:master-dev
+      - image: silex/emacs:26-dev
     steps:
         # Install cask
       - checkout
