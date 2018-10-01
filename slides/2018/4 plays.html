@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Plays</title>
+<meta name="author" content="(Jason Chan)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Plays</h1>
+</section>
+<section>
+<section id="slide-org92bf57a">
+<h2 id="org92bf57a">Let's write a play</h2>
+<div class="outline-text-2" id="text-org92bf57a">
+</div>
+</section>
+<section id="slide-org7f78160">
+<h3 id="org7f78160">Let's get started</h3>
+<ul>
+<li>Copy paste basic122 into a new file</li>
+<li>Do something</li>
+
+</ul>
+
+</section>
+<section id="slide-orgb1849cc">
+<h3 id="orgb1849cc">Here are some play ideas</h3>
+<ul>
+<li>The best defense &#x2026;
+<ul>
+<li>No robots on defense. Every robot tries to capture the ball and pivot kick it into the goal.</li>
+
+</ul></li>
+<li>Chicken
+<ul>
+<li>1 goalie. Every other robot is a submissive defender.</li>
+
+</ul></li>
+<li>Everybody loves Mark
+<ul>
+<li>Every robot marks an enemy robot</li>
+
+</ul></li>
+<li>or come up with your own!</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org8be252d">
+<h2 id="org8be252d">The best defense &#x2026;</h2>
+<div class="outline-text-2" id="text-org8be252d">
+</div>
+</section>
+<section id="slide-org887198c">
+<h3 id="org887198c">States</h3>
+<ul>
+<li>You would have two states
+<ul>
+<li>Every robot is trying to capture the ball</li>
+<li>The robot that has captured the ball will try to shoot it into the goal</li>
+
+</ul></li>
+<li>What would dictate entering the first state? the second state?</li>
+<li>What would robots need to do upon entering each state, during each state, and upon exiting each state?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org23bc26c">
+<h2 id="org23bc26c">Chicken</h2>
+<div class="outline-text-2" id="text-org23bc26c">
+</div>
+</section>
+<section id="slide-org363abe0">
+<h3 id="org363abe0">States</h3>
+<ul>
+<li>You would have one state where 
+<ul>
+<li>Every robot that is not a goalie is a submissive defender</li>
+
+</ul></li>
+<li>What would dictate entering the first state?</li>
+<li>What would robots need to do upon entering each state, during each state, and upon exiting each state?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org23250c3">
+<h2 id="org23250c3">Everybody loves Mark</h2>
+<div class="outline-text-2" id="text-org23250c3">
+</div>
+</section>
+<section id="slide-orgb209df1">
+<h3 id="orgb209df1">States</h3>
+<ul>
+<li>You would have one state
+<ul>
+<li>Every robot is marking</li>
+
+</ul></li>
+<li>What would dictate entering the first state?</li>
+<li>What would robots need to do upon entering each state, during each state, and upon exiting each state?</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org724ab13">
+<h2 id="org724ab13">FIGHT</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.22,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>

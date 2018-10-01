@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Robocup Fundamentals</title>
+<meta name="author" content="(Jason Chan)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/black.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Robocup Fundamentals</h1>
+</section>
+<section>
+<section id="slide-orgbbd3210">
+<h2 id="orgbbd3210">Folder Explanation</h2>
+<ul>
+<li><b>soccer</b>
+<ul>
+<li>The main directory that we're working with</li>
+
+</ul></li>
+<li>external
+<ul>
+<li>Contains other repositories that we're working with</li>
+<li>Ex. RRT (used for path planner)</li>
+
+</ul></li>
+<li>common
+<ul>
+<li>Code that is "common" to both the software and firware of our robots</li>
+<li>Contains Geometry2d code.</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orga486248">
+<h3 id="orga486248">Soccer Folders</h3>
+<ul>
+<li><b>Gameplay</b>
+<ul>
+<li>Contains our whole plays system</li>
+
+</ul></li>
+<li>Motion
+<ul>
+<li>Self-explanatory</li>
+<li>Important. Faster robots are winning robots</li>
+
+</ul></li>
+<li>Planning 
+<ul>
+<li>Python side of our path planner</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgba4a2d1">
+<h3 id="orgba4a2d1"></h3>
+<p>
+Most of the time we'll be in robocup-software/soccer/gameplay
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org93f2b83">
+<h2 id="org93f2b83">Literature Techniques</h2>
+<div class="outline-text-2" id="text-org93f2b83">
+</div>
+</section>
+<section id="slide-org3e4ceeb">
+<h3 id="org3e4ceeb">Purpose of Learning Literature Techniques</h3>
+<ul>
+<li>Computer science is a language.</li>
+<li>While you may be well-versed in this language, robocup-software is essentially a textbook that defines its own terminology</li>
+<li>Thus, you have to know how to look up words that you don't know</li>
+<li>Once you can read code, you can write code.</li>
+
+</ul>
+</section>
+<section id="slide-orgab19cc7">
+<h3 id="orgab19cc7">Tips</h3>
+<ul>
+<li>I will teach you how to read using sublime</li>
+<li>While you can do this using other text editors, it's pretty easy with sublime</li>
+
+</ul>
+
+</section>
+<section id="slide-orgc591c53">
+<h3 id="orgc591c53">Setting up</h3>
+<ul>
+<li>On sublime, open robocup-software using the "open folder" option under file</li>
+<li>This allows us to search through the entirety of robocup software using sublime tools</li>
+
+</ul>
+
+</section>
+<section id="slide-org407eb39">
+<h3 id="org407eb39">Search Tools</h3>
+<ul>
+<li>Control + Shift + F will search the entire project for the occurence of a term.</li>
+<li>Control + P will search the entire project for the name of a file.</li>
+<li>In the terminal, you can use git grep "&lt;term&gt;" to search the whole repository for the occurence of a term.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org7a65ad2">
+<h2 id="org7a65ad2">Let's read over some files together</h2>
+<div class="outline-text-2" id="text-org7a65ad2">
+</div>
+</section>
+<section id="slide-orgbf8fa60">
+<h3 id="orgbf8fa60">For Reference</h3>
+<ul>
+<li>robocup-py.cpp
+<ul>
+<li>This file contains the code that translates our C++ files to Python</li>
+<li>robocup._____ definitions will be in here</li>
+
+</ul></li>
+<li>main._____ refers to elements in the game.</li>
+
+</ul>
+
+</section>
+<section id="slide-orgbdda1d6">
+<h3 id="orgbdda1d6">Repeated Line Up generate<sub>line</sub> method</h3>
+<div class="org-src-container">
+
+<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">generate_line</span>(<span style="color: #598249;">self</span>, x_multiplier):
+        <span style="color: #2F7BDE;">x</span> = (constants.Field.Width / 2 - constants.Robot.Radius * 2
+             ) * x_multiplier
+        <span style="color: #2F7BDE;">y_start</span> = 1.2
+        <span style="color: #2F7BDE;">line</span> = robocup.Segment(
+            robocup.Point(x, constants.Robot.Radius + y_start),
+            robocup.Point(x,
+                          (constants.Robot.Radius * 2.3 + 0.1) * 6 + y_start))
+        <span style="color: #598249;">return</span> line
+</pre>
+</div>
+
+</section>
+<section id="slide-orge116a92">
+<h3 id="orge116a92">Reading generate<sub>line</sub> line 1</h3>
+<ul>
+<li>what is constants.Field.Width?
+<ul>
+<li>ctrl + p to find constants.py where we find that the value of Field is robocup.Field<sub>Dimensions.CurrentDimensions</sub>.
+<ul>
+<li>We know that robocup._____ is defined in robocup-py.cpp</li>
+
+</ul></li>
+<li>ctrl + p to find robocup-py.cpp, then ctrl + f to find Field<sub>Dimensions</sub> or CurrentDimensions
+<ul>
+<li>We find that CurrentDimensions is defined as &amp;Field<sub>Dimensions</sub>::Current<sub>Dimensions</sub></li>
+
+</ul></li>
+<li>If we ctrl + shift + f for Field<sub>Dimensions</sub>::Current<sub>Dimensions</sub>, we find the definition in Field<sub>Dimensions.cpp</sub></li>
+<li>We find that the Current<sub>Dimensions</sub> is equal to the Default<sub>Dimensions</sub>, which is equal to the Double<sub>Field</sub><sub>Dimensions</sub>.
+<ul>
+<li>Double<sub>Field</sub><sub>Dimensions</sub> is defined earlier in the Field<sub>Dimensions.cpp</sub> file.</li>
+<li>We can look in Field<sub>Dimensions.hpp</sub> and find that the second number in the parameters for the initialization correspond to the Width
+<ul>
+<li>Thus, the value of constants.Field.Width = 6.</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul></li>
+<li>what is constants.Robot.Radius?</li>
+
+</ul>
+
+</section>
+<section id="slide-orgee3076c">
+<h3 id="orgee3076c">Reading generate<sub>line</sub> line 3</h3>
+<ul>
+<li>What is a robocup.Segment?</li>
+<li>What is a robocup.Point?</li>
+
+</ul>
+
+</section>
+<section id="slide-orge5583e9">
+<h3 id="orge5583e9">Some questions to ask yourself</h3>
+<ul>
+<li>Do you know what the variables represent?
+<ul>
+<li>Doesn't have to be exact</li>
+<li>Conceptual understanding is more important</li>
+
+</ul></li>
+<li>Do you know what each method does?
+<ul>
+<li>Conceptual Understanding</li>
+
+</ul></li>
+<li>Do I understand everything that is language-specific?
+<ul>
+<li>Ex. Ternary statements in python.</li>
+<li>Will be more problematic with C++.</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+margin: 0.22,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'fast',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+]
+});
+</script>
+</body>
+</html>
