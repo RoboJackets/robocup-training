@@ -2,7 +2,7 @@
 There's a lot of vocabulary to remember. Here's a cheat sheet.
 
 ## Field Dimensions
- Field Dimensions Docs: ([[http://bit.ly/2cLsUBL][http://bit.ly/2cLsUBL]])
+ Field Dimensions Docs: [http://bit.ly/2cLsUBL](http://bit.ly/2cLsUBL)
 
 * constants.Field.Length - Vertical length of the field
 * constants.Field.Width - Horizontal width of the field
@@ -31,7 +31,7 @@ Basic Process
 add -> commit -> pull -> push
 
 * git add <files>
-* git commit -m "<commit message>"
+* git commit -m "<commit_message>"
 * git push origin <branch_name>
 
 ## Things don't work
