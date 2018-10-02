@@ -184,7 +184,8 @@
 - Understand which points correspond to different locations on the field
 
 ** File
-- Use SimpleBehaviors.py in the testing folder
+- Use SimpleBehaviors.py in the training folder
+- In Sim, check the SimpleBehaviors play and run
 - Replace skills.Move.move with different skills or change the point.
 
 ** Assignments
@@ -194,6 +195,11 @@
 - Make a robot capture a ball
 - Make a robot shoot using a line kick
 - Make a robot shoot using a pivot kick
+
+** Code you can use
+- constants.Field.Length
+- constants.Field.Width
+- skills.Capture.capture
 
 ** Tactics / Positions Extension
 - Make robots do a coordinated pass
