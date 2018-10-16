@@ -132,7 +132,7 @@
 : Our local var is: 2
 
 ** We can't teach a full year of programming in one hour. 
-- Take advantage of resources like [[https://www.codecademy.com/][codeacademy]] or [[https://www.lynda.com/]lynda](to which you have access using your Georgia Tech information.)
+- Take advantage of resources like [[https://www.codecademy.com/][codeacademy]] or [[https://www.lynda.com/][lynda]](to which you have access using your Georgia Tech information.)
 - Programming is a language, and like every language, it takes time to become familiar with the syntax and vocabulary. 
 
 ** Additional Python Resources                                         :docs:
@@ -141,7 +141,8 @@
 - [[https://learnxinyminutes.com/docs/python/][Python Syntax Overview]]
 - [[http://thepythonguru.com/][A intro to python]]
 
-* Plays, Tactics, Skills
+* Plays System
+** Plays, Tactics, Skills
 - A Basic Unit in our AI
 - Only one *Play* can run at a time
 - A *play* may utilize multiple *tactics*, which themselves may utilize multiple *skills*. 
@@ -182,6 +183,11 @@
 - Understand how to use skills 
 - Understand which points correspond to different locations on the field
 
+** File
+- Use SimpleBehaviors.py in the training folder
+- In Sim, check the SimpleBehaviors play and run
+- Replace skills.Move.move with different skills or change the point.
+
 ** Assignments
 - Make a robot move to the following locations
   - All four corners
@@ -189,6 +195,11 @@
 - Make a robot capture a ball
 - Make a robot shoot using a line kick
 - Make a robot shoot using a pivot kick
+
+** Code you can use
+- constants.Field.Length
+- constants.Field.Width
+- skills.Capture.capture
 
 ** Tactics / Positions Extension
 - Make robots do a coordinated pass
