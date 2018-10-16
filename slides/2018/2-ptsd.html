@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <title>Skills, Tactics, Plays - Intro</title>
-<meta name="author" content="(Jay Kamat)"/>
+<meta name="author" content="(Jay Kamat, Jason Chan)"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
 </style>
@@ -29,26 +29,26 @@
 <section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Intro</h1>
 </section>
 <section>
-<section id="slide-org1e9cf38">
-<h2 id="org1e9cf38">Python Overview</h2>
-<div class="outline-text-2" id="text-org1e9cf38">
+<section id="slide-orgcef064b">
+<h2 id="orgcef064b">Python Overview</h2>
+<div class="outline-text-2" id="text-orgcef064b">
 </div>
 </section>
-<section id="slide-org07703dc">
-<h3 id="org07703dc">Using Python</h3>
+<section id="slide-org869cc60">
+<h3 id="org869cc60">Using Python</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">$ python3
-Python 3.5.2+ (default, Sep 10 2016, 10:24:58)
-[GCC 6.2.0 20160901] on linux
+Python 3.5.3 (default, Jan 19 2017, 14:11:04)
+[GCC 6.3.0 20170118] on linux
 Type <span style="color: #15968D;">"help"</span>, <span style="color: #15968D;">"copyright"</span>, <span style="color: #15968D;">"credits"</span> or <span style="color: #15968D;">"license"</span> for more information.
 &gt;&gt;&gt; print(<span style="color: #15968D;">"Hello RoboCup!"</span>)
 Hello RoboCup!
 </pre>
 </div>
 </section>
-<section id="slide-orgdbf5720">
-<h3 id="orgdbf5720">Basic Syntax</h3>
+<section id="slide-org2d387a0">
+<h3 id="org2d387a0">Basic Syntax</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Hello world</span>
@@ -74,43 +74,45 @@ one
 </pre>
 
 </section>
-<section id="slide-orga85c4b4">
-<h3 id="orga85c4b4">IF Statements and Conditionals</h3>
+<section id="slide-org882ac28">
+<h3 id="org882ac28">IF Statements and Conditionals</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm going to print out"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is great!"</span>)
 <span style="color: #598249;">if</span> <span style="color: #15968D;">False</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"I'm never going to run =("</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"IGVC is great..."</span>)
 
 <span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is Great!"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is the best!"</span>)
+<span style="color: #598249;">elif</span> <span style="color: #15968D;">True</span>:
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboRacing is the best..."</span>)
 <span style="color: #598249;">else</span>:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup Sucks!!!!"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"IGVC is the best..."</span>)
 
 <span style="color: #2F7BDE;">a</span> = 5
 <span style="color: #598249;">if</span> a &gt; 2:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was greater than 2!"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 2!"</span>)
 <span style="color: #598249;">if</span> a &gt; 2 <span style="color: #598249;">and</span> a &lt; 10:
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"A was &gt; 2 and &lt; 5"</span>)
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 3"</span>)
-<span style="color: #598249;">print</span>(<span style="color: #15968D;">"A is greater than 9"</span> <span style="color: #598249;">if</span> a &lt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"A is less than 9"</span>)
+    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is &gt; 2 and &lt; 10"</span>)
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 3"</span>)
+<span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 9"</span> <span style="color: #598249;">if</span> a &gt; 9 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 9"</span>)
 </pre>
 </div>
 
 <pre class="example">
-I'm going to print out
-RoboCup is Great!
-A was greater than 2!
-A was &gt; 2 and &lt; 5
-A is greater than 3
-A is less than 9
+RoboCup is great!
+RoboCup is the best!
+a is greater than 2!
+a is &gt; 2 and &lt; 10
+a is greater than 3
+a is less than 9
 
 </pre>
 
 </section>
-<section id="slide-org13b7309">
-<h3 id="org13b7309">Loops and range()</h3>
+<section id="slide-org2f4ac2e">
+<h3 id="org2f4ac2e">Loops and range()</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #2F7BDE;">a</span> = 10
@@ -134,8 +136,8 @@ A is less than 9
 </pre>
 
 </section>
-<section id="slide-org6a6da08">
-<h3 id="org6a6da08">Functions</h3>
+<section id="slide-org35b5780">
+<h3 id="org35b5780">Functions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
@@ -164,8 +166,8 @@ Welcome to RoboJackets!
 </pre>
 
 </section>
-<section id="slide-org7bc1cc9">
-<h3 id="org7bc1cc9">Object Oriented Python</h3>
+<section id="slide-orgb1e212f">
+<h3 id="orgb1e212f">Object Oriented Python</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #598249;">BaseClass</span>():
@@ -173,13 +175,13 @@ Welcome to RoboJackets!
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Constructor</span>
     <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
         <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing a Base"</span>)
-        <span style="color: #598249;">self</span>.localVar = 2
+        <span style="color: #598249;">self</span>.local_var = 2
 
 <span style="color: #598249;">class</span> <span style="color: #598249;">ChildClass</span>(BaseClass):
     <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
         <span style="color: #598249;">super</span>().__init__() <span style="color: #5e6263;"># </span><span style="color: #5e6263;">call superclass constructor</span>
         <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Initializing Child"</span>)
-        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.localVar))
+        <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Our local var is: "</span> + <span style="color: #598249;">str</span>(<span style="color: #598249;">self</span>.local_var))
 
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">When defining class methods, pass 'self' as the first arg.</span>
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Self refers to the current class instance.</span>
@@ -197,60 +199,35 @@ Initializing Child
 Our local var is: 2
 
 </pre>
+
 </section>
-</section>
-<section>
-<section id="slide-org4f1e246">
-<h2 id="org4f1e246">State Machines</h2>
-<div class="outline-text-2" id="text-org4f1e246">
-</div>
-</section>
-<section id="slide-org41d5961">
-<h3 id="org41d5961">What are they?</h3>
+<section id="slide-org376870c">
+<h3 id="org376870c">We can't teach a full year of programming in one hour.</h3>
 <ul>
-<li>A state machine is a series of states</li>
-<li>You can transition between them</li>
-<li>A state could have multiple transition</li>
-<li>A state transition only occurs if a condition is fulfilled</li>
+<li>Take advantage of resources like <a href="https://www.codecademy.com/">codeacademy</a> or <a href="https://www.lynda.com/">lynda</a>(to which you have access using your Georgia Tech information.)</li>
+<li>Programming is a language, and like every language, it takes time to become familiar with the syntax and vocabulary.</li>
 
 </ul>
-</section>
-<section id="slide-orgbc7e32c">
-<h3 id="orgbc7e32c">Move</h3>
 
-<div class="figure">
-<p><img src="http://i.imgur.com/gmIcPGq.png" alt="gmIcPGq.png" />
-</p>
-</div>
-</section>
-<section id="slide-org90d4825">
-<h3 id="org90d4825">Pass Receive</h3>
-
-<div class="figure">
-<p><img src="http://i.imgur.com/HAhoMC1.png" alt="HAhoMC1.png" />
-</p>
-</div>
-</section>
-<section id="slide-org2ddadb8">
-<h3 id="org2ddadb8">Passing</h3>
-
-<div class="figure">
-<p><img src="http://i.imgur.com/OhWnSwT.png" alt="OhWnSwT.png" />
-</p>
-</div>
 </section>
 </section>
 <section>
-<section id="slide-org7b788ca">
-<h2 id="org7b788ca">Plays, Tactics, Skills</h2>
+<section id="slide-orga1d9a4d">
+<h2 id="orga1d9a4d">Plays System</h2>
+<div class="outline-text-2" id="text-orga1d9a4d">
+</div>
+</section>
+<section id="slide-org45ba76e">
+<h3 id="org45ba76e">Plays, Tactics, Skills</h3>
 <ul>
 <li>A Basic Unit in our AI</li>
-<li>Only one Play can run at a time</li>
+<li>Only one <b>Play</b> can run at a time</li>
+<li>A <b>play</b> may utilize multiple <b>tactics</b>, which themselves may utilize multiple <b>skills</b>.</li>
 
 </ul>
 </section>
-<section id="slide-org81f8582">
-<h3 id="org81f8582">Skill</h3>
+<section id="slide-org77bdd6e">
+<h3 id="org77bdd6e">Skill</h3>
 <ul>
 <li>Involves only <i>one</i> robot</li>
 <li>Extremely basic building blocks</li>
@@ -266,11 +243,11 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org70134e9">
-<h3 id="org70134e9">Tactics</h3>
+<section id="slide-org91843dd">
+<h3 id="org91843dd">Tactics</h3>
 <ul>
 <li>Involves multiple robots</li>
-<li>Contains skills</li>
+<li>Utilize skills</li>
 <li>Can contain unique behavior (but usually not)</li>
 <li>Examples
 <ul>
@@ -283,11 +260,11 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org82e35f7">
-<h3 id="org82e35f7">Plays</h3>
+<section id="slide-org683f0e9">
+<h3 id="org683f0e9">Plays</h3>
 <ul>
 <li>Only one can run</li>
-<li>Contains tactics</li>
+<li>Utilize tactics</li>
 <li>Examples
 <ul>
 <li>Basic122 (basic offense)</li>
@@ -300,113 +277,93 @@ Our local var is: 2
 <li>Located in <code>soccer/gameplay/plays/*/</code></li>
 
 </ul>
+
 </section>
 </section>
 <section>
-<section id="slide-org1409baf">
-<h2 id="org1409baf">Basic Plays and State Machines</h2>
+<section id="slide-orgcd4d81d">
+<h2 id="orgcd4d81d">Goals</h2>
 <ul>
-<li>Every Play is a State Machine as well!</li>
-<li>Plays use State Machines to tell them what to do</li>
-<li>This is a good thing, since we can have very complex behavior in a play</li>
+<li>Understand how to use skills</li>
+<li>Understand which points correspond to different locations on the field</li>
 
 </ul>
+
 </section>
-<section id="slide-org6322081">
-<h3 id="org6322081">Defining States</h3>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">First create a state Enum (An enum is just a group of names)</span>
-<span style="color: #598249;">class</span> <span style="color: #598249;">OurState</span>(enum.Enum):
-    <span style="color: #2F7BDE;">start</span> = 0
-    <span style="color: #2F7BDE;">processing</span> = 1
-    <span style="color: #2F7BDE;">terminated</span> = 2
-
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">Then, register your states in our state machine class</span>
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">You must be in a play/tactic/skill for this to work</span>
-<span style="color: #598249;">self</span>.add_state(PlayName.OurState.start,
-               <span style="color: #5e6263;"># </span><span style="color: #5e6263;">This is the superclass of our state. Most of the time,</span>
-               <span style="color: #5e6263;"># </span><span style="color: #5e6263;">this is 'running' (see below)</span>
-               behavior.Behavior.State.start)
-
-<span style="color: #598249;">self</span>.add_state(PlayName.OurState.processing,
-               behavior.Behavior.State.running)
-
-<span style="color: #598249;">self</span>.add_state(PlayName.OurState.terminated,
-               behavior.Behavior.State.completed)
-
-</pre>
-</div>
-</section>
-<section id="slide-org68a4e6e">
-<h3 id="org68a4e6e">Defining Transitions</h3>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #598249;">self</span>.add_transition(
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Start state for this transition</span>
-    behavior.Behavior.State.start,
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">End state for this transition</span>
-    PlayName.OurState.processing,
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Condition for this transition (Replace 'True' with a conditional)</span>
-    <span style="color: #598249;">lambda</span>: <span style="color: #15968D;">True</span>,
-    <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Documentation String</span>
-    <span style="color: #15968D;">'immediately'</span>)
-</pre>
-</div>
-</section>
-<section id="slide-orge55f162">
-<h3 id="orge55f162">Defining Actions to Take In A State</h3>
-<div class="org-src-container">
-
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Assuming we have the PlayName.OurState.processing state</span>
-
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">Action taken when entering this state</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_processing</span>(<span style="color: #598249;">self</span>):
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"We have begun our processing"</span>)
-
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">Action taken every frame we are in the processing state</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_processing</span>(<span style="color: #598249;">self</span>):
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Ongoing"</span>)
-
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">Action taken when we exit the processing state</span>
-<span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_processing</span>(<span style="color: #598249;">self</span>):
-    <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Completed!"</span>)
-</pre>
-</div>
-</section>
-</section>
-<section>
-<section id="slide-orgeea25c8">
-<h2 id="orgeea25c8">Your Assignment</h2>
+<section id="slide-org9d56bef">
+<h3 id="org9d56bef">File</h3>
 <ul>
-<li>Create a play that prints out which half of the field the ball is currently in</li>
-<li>EX: Print out "TopHalf" when in the top half of the field, and "BottomHalf" otherwise.</li>
-<li>Use state machines to print this out ONLY ON A TRANSITION. (Don't simply print out every frame)</li>
-<li>Extra Credit: Can you come up with another cool thing to do with state machines?</li>
+<li>Use SimpleBehaviors.py in the training folder</li>
+<li>In Sim, check the SimpleBehaviors play and run</li>
+<li>Replace skills.Move.move with different skills or change the point.</li>
 
 </ul>
+
 </section>
-<section id="slide-orgd8272fe">
-<h3 id="orgd8272fe">Tips</h3>
+<section id="slide-org54cb7b4">
+<h3 id="org54cb7b4">Assignments</h3>
+<ul>
+<li>Make a robot move to the following locations
+<ul>
+<li>All four corners</li>
+<li>The center of the field</li>
+
+</ul></li>
+<li>Make a robot capture a ball</li>
+<li>Make a robot shoot using a line kick</li>
+<li>Make a robot shoot using a pivot kick</li>
+
+</ul>
+
+</section>
+<section id="slide-orgbb82739">
+<h3 id="orgbb82739">Code you can use</h3>
+<ul>
+<li>constants.Field.Length</li>
+<li>constants.Field.Width</li>
+<li>skills.Capture.capture</li>
+
+</ul>
+
+</section>
+<section id="slide-orga5448c6">
+<h3 id="orga5448c6">Tactics / Positions Extension</h3>
+<ul>
+<li>Make robots do a coordinated pass</li>
+<li>Make a robot become a submissive defender (use tactics.submissivedefender)</li>
+<li>Make a robot become a goalie</li>
+
+</ul>
+
+</section>
+<section id="slide-org515eeb6">
+<h3 id="org515eeb6">Plays extension</h3>
+<ul>
+<li>Write Basic122 without state machines
+<ul>
+<li>One robot pivot kicks, two robots mark, two robots are submissive defenders, one robot is a goalie</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-org1049b11">
+<h3 id="org1049b11">Tips</h3>
 <ul>
 <li>The field coordinates start at 0, 0; Which is our Goal.</li>
 <li>Field Size Docs: (<a href="http://bit.ly/2cLsUBL">http://bit.ly/2cLsUBL</a>)</li>
 <li>Ball Position Docs: (<a href="http://bit.ly/2damxXA">http://bit.ly/2damxXA</a>)</li>
-<li>Move the template starter from <code>soccer/gameplay/plays/skel/which_half.py</code> to <code>soccer/gameplay/plays/testing</code></li>
-<li>Start by just printing the Y coordinate of the ball and work up from there</li>
+<li>If you don't know how to use a skill or tactics, use ctrl + shift + p to see how other people use it.</li>
 
 </ul>
 </section>
-<section id="slide-orgb72d385">
-<h3 id="orgb72d385">Useful Tools</h3>
-<div class="org-src-container">
+<section id="slide-orgba200cd">
+<h3 id="orgba200cd">Answers</h3>
+<ul>
+<li>Add something here</li>
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Gets the y position of the ball</span>
-main.ball().pos.y
-<span style="color: #5e6263;"># </span><span style="color: #5e6263;">Gets the field length in meters</span>
-constants.Field.Length
-</pre>
-</div>
+</ul>
 </section>
 </section>
 </div>
@@ -421,7 +378,7 @@ Reveal.initialize({
 
 controls: true,
 progress: true,
-history: true,
+history: false,
 center: true,
 slideNumber: 'c',
 rollingLinks: false,
