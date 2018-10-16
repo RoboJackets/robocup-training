@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Beginner Git</h1>
 </section>
 <section>
-<section id="slide-org30da097">
-<h2 id="org30da097"><code>git</code></h2>
+<section id="slide-org9523ada">
+<h2 id="org9523ada"><code>git</code></h2>
 <blockquote nil>
 <p>
 The Stupid Content Tracker
@@ -42,8 +42,8 @@ The Stupid Content Tracker
 
 </ul>
 </section>
-<section id="slide-orgbd23a00">
-<h3 id="orgbd23a00">Why <code>git</code> over another VCS?</h3>
+<section id="slide-org0d83865">
+<h3 id="org0d83865">Why <code>git</code> over another VCS?</h3>
 <ul>
 <li>Branching and Merging</li>
 <li><b><i>FAST</i></b></li>
@@ -52,8 +52,8 @@ The Stupid Content Tracker
 
 </ul>
 </section>
-<section id="slide-org56b2e6c">
-<h3 id="org56b2e6c">Why <code>git</code> over another client?</h3>
+<section id="slide-org86e5b56">
+<h3 id="org86e5b56">Why <code>git</code> over another client?</h3>
 <ul>
 <li><code>git</code> is the 1st party front-end</li>
 <li><code>git</code> is the way it was designed to be experienced.</li>
@@ -62,8 +62,8 @@ The Stupid Content Tracker
 
 </ul>
 </section>
-<section id="slide-org0cadc28">
-<h3 id="org0cadc28"><code>git</code> Vocabulary</h3>
+<section id="slide-org016c840">
+<h3 id="org016c840"><code>git</code> Vocabulary</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -108,15 +108,15 @@ The Stupid Content Tracker
 </section>
 </section>
 <section>
-<section id="slide-orgc00574f">
-<h2 id="orgc00574f">Basic <code>git</code> Commands</h2>
+<section id="slide-org35ea2cc">
+<h2 id="org35ea2cc">Basic <code>git</code> Commands</h2>
 <ul>
 <li>Follow along on your own computer!</li>
 
 </ul>
 </section>
-<section id="slide-orgee2aa97">
-<h3 id="orgee2aa97">Setting Up Git</h3>
+<section id="slide-org37dd2c9">
+<h3 id="org37dd2c9">Setting Up Git</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Let's git attribute your changes to you!</span>
@@ -125,8 +125,8 @@ git config --global user.email <span style="color: #15968D;">"yourname@example.c
 </pre>
 </div>
 </section>
-<section id="slide-org185bc82">
-<h3 id="org185bc82">Creating a <code>git</code> Repo</h3>
+<section id="slide-org343cdce">
+<h3 id="org343cdce">Creating a <code>git</code> Repo</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Create a folder named 'repo'</span>
@@ -147,8 +147,8 @@ git status
 </pre>
 </div>
 </section>
-<section id="slide-org2385d2f">
-<h3 id="org2385d2f">Adding <i>Content</i></h3>
+<section id="slide-org3c938c5">
+<h3 id="org3c938c5">Adding <i>Content</i></h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Create a file called file.txt with some text in it.</span>
@@ -168,16 +168,16 @@ git commit -m <span style="color: #15968D;">"Added a small amount of content"</s
 </pre>
 </div>
 </section>
-<section id="slide-orgc74c7e4">
-<h3 id="orgc74c7e4">Staging Area</h3>
+<section id="slide-org0e9a836">
+<h3 id="org0e9a836">Staging Area</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/4nql3LO.jpg" alt="4nql3LO.jpg" />
 </p>
 </div>
 </section>
-<section id="slide-org9ba69cc">
-<h3 id="org9ba69cc">Viewing History</h3>
+<section id="slide-org202a288">
+<h3 id="org202a288">Viewing History</h3>
 <ul>
 <li><code>git</code> versions are 'hashes'
 <ul>
@@ -201,8 +201,8 @@ git log
 </pre>
 </div>
 </section>
-<section id="slide-org12ba2f3">
-<h3 id="org12ba2f3"><code>git</code> History</h3>
+<section id="slide-org83d9d46">
+<h3 id="org83d9d46"><code>git</code> History</h3>
 <ul>
 <li>Every git version is linked to it's previous versions:</li>
 <li><code>v1 &lt;- v2 &lt;- v3 &lt;- v4</code></li>
@@ -216,8 +216,8 @@ git log
 </section>
 </section>
 <section>
-<section id="slide-org790dcd9">
-<h2 id="org790dcd9"><code>git</code> Branching</h2>
+<section id="slide-org03c9ba2">
+<h2 id="org03c9ba2"><code>git</code> Branching</h2>
 <ul>
 <li>We'll discuss what we're doing in a bit</li>
 <li>Let's create a new feature, but we know it's going to be buggy
@@ -228,8 +228,8 @@ git log
 
 </ul>
 </section>
-<section id="slide-org0da11d1">
-<h3 id="org0da11d1">Create a feature branch</h3>
+<section id="slide-orgf995c66">
+<h3 id="orgf995c66">Create a feature branch</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Create a myfeature branch</span>
@@ -244,8 +244,8 @@ git status
 </pre>
 </div>
 </section>
-<section id="slide-org384215a">
-<h3 id="org384215a">Add a new 'feature'</h3>
+<section id="slide-org70fd18b">
+<h3 id="org70fd18b">Add a new 'feature'</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #598249;">echo</span> <span style="color: #15968D;">"My new feature!"</span> &gt;&gt; file.txt
@@ -254,8 +254,8 @@ git commit -m <span style="color: #15968D;">'My new feature is very cool, but bu
 </pre>
 </div>
 </section>
-<section id="slide-org5e4dd85">
-<h3 id="org5e4dd85">There's a bug in the released version!</h3>
+<section id="slide-org566f835">
+<h3 id="org566f835">There's a bug in the released version!</h3>
 <ul>
 <li>Let's patch the version everyone is on, the master release!</li>
 
@@ -273,8 +273,8 @@ git commit -m <span style="color: #15968D;">"Critical bugfix number 1!"</span>
 </pre>
 </div>
 </section>
-<section id="slide-org3b6755f">
-<h3 id="org3b6755f">What just happened?</h3>
+<section id="slide-org9181668">
+<h3 id="org9181668">What just happened?</h3>
 <ul>
 <li>We first created our test file, which is our 'release version'</li>
 <li>Then we created a feature branch, and made some 'buggy changes'</li>
@@ -286,8 +286,8 @@ git commit -m <span style="color: #15968D;">"Critical bugfix number 1!"</span>
 
 </ul>
 </section>
-<section id="slide-org5d27ca8">
-<h3 id="org5d27ca8">Let's take a closer look</h3>
+<section id="slide-org643f6ba">
+<h3 id="org643f6ba">Let's take a closer look</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">A much nicer git log that will visualize our history</span>
@@ -297,8 +297,8 @@ git show &lt;commit hash&gt;
 </pre>
 </div>
 </section>
-<section id="slide-org85facc3">
-<h3 id="org85facc3">Merging</h3>
+<section id="slide-org84270d4">
+<h3 id="org84270d4">Merging</h3>
 <ul>
 <li>Brings divergent branches together</li>
 <li>Let's release our feature by putting it into the master branch</li>
@@ -327,16 +327,16 @@ git status
 </section>
 </section>
 <section>
-<section id="slide-orga6e428b">
-<h2 id="orga6e428b"><code>git</code> Remotes</h2>
+<section id="slide-org7e95cb1">
+<h2 id="org7e95cb1"><code>git</code> Remotes</h2>
 <ul>
 <li>How do we share our code with others?</li>
 <li>Branching is great for me, but what if I want to let my friends work on a branch?</li>
 
 </ul>
 </section>
-<section id="slide-orgd3a34ef">
-<h3 id="orgd3a34ef">Let's Play With Remotes</h3>
+<section id="slide-org2bcd435">
+<h3 id="org2bcd435">Let's Play With Remotes</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">let's start in a common state</span>
@@ -361,8 +361,8 @@ git log --oneline --abbrev --graph --all
 </pre>
 </div>
 </section>
-<section id="slide-orga87bd69">
-<h3 id="orga87bd69">Let's Make a Change On 'our computer'</h3>
+<section id="slide-org4004db8">
+<h3 id="org4004db8">Let's Make a Change On 'our computer'</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Move into 'our repo'</span>
@@ -377,8 +377,8 @@ git commit -m <span style="color: #15968D;">'Added files from my computer.'</spa
 </pre>
 </div>
 </section>
-<section id="slide-orgcdeb85b">
-<h3 id="orgcdeb85b">Let's Give This Change To Our Friend</h3>
+<section id="slide-org722dce0">
+<h3 id="org722dce0">Let's Give This Change To Our Friend</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Pull new changes from repo's master into repo2's master</span>
@@ -393,8 +393,8 @@ git pull ../repo master
 </pre>
 </div>
 </section>
-<section id="slide-org25f76ea">
-<h3 id="org25f76ea">Shortcuts to make remotes faster</h3>
+<section id="slide-org3a8a377">
+<h3 id="org3a8a377">Shortcuts to make remotes faster</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Add a shortcut to interact with ../repo2</span>
@@ -418,8 +418,8 @@ git remote -v
 </pre>
 </div>
 </section>
-<section id="slide-org723aa87">
-<h3 id="org723aa87">A note about <code>git fetch</code></h3>
+<section id="slide-org066105e">
+<h3 id="org066105e">A note about <code>git fetch</code></h3>
 <ul>
 <li><code>git fetch</code> updates what we see in a remote without changing our files.</li>
 <li><code>git pull</code> updates our files with changes</li>
@@ -429,8 +429,8 @@ git remote -v
 </section>
 </section>
 <section>
-<section id="slide-org1063a40">
-<h2 id="org1063a40"><code>git</code> refs</h2>
+<section id="slide-orgc218441">
+<h2 id="orgc218441"><code>git</code> refs</h2>
 <ul>
 <li><code>git</code> has a suite of commands for interacting with history.
 <ul>
@@ -441,8 +441,8 @@ git remote -v
 
 </ul>
 </section>
-<section id="slide-org74e615c">
-<h3 id="org74e615c">Examples of Refs</h3>
+<section id="slide-orge853053">
+<h3 id="orge853053">Examples of Refs</h3>
 <ol>
 <li>A Commit Hash (eg: <code>cbbd8d9a5e1c64f84</code>)
 <ul>
@@ -473,8 +473,8 @@ git remote -v
 
 </ol>
 </section>
-<section id="slide-org5ed3a28">
-<h3 id="org5ed3a28">Ref Modifiers</h3>
+<section id="slide-orgf0bf633">
+<h3 id="orgf0bf633">Ref Modifiers</h3>
 <ul>
 <li>Using <code>HEAD</code> as an example.</li>
 <li><code>HEAD~</code>; One commit before <code>HEAD</code></li>
@@ -484,8 +484,8 @@ git remote -v
 
 </ul>
 </section>
-<section id="slide-org5289c68">
-<h3 id="org5289c68">Using Refs</h3>
+<section id="slide-org0f368e3">
+<h3 id="org0f368e3">Using Refs</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Show's the current commit, same as git show</span>
@@ -499,8 +499,8 @@ git show repo2/master~~
 </pre>
 </div>
 </section>
-<section id="slide-org65b7765">
-<h3 id="org65b7765">Quickly See Files in a Ref</h3>
+<section id="slide-org67914a5">
+<h3 id="org67914a5">Quickly See Files in a Ref</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">
@@ -521,8 +521,8 @@ git checkout master
 </pre>
 </div>
 </section>
-<section id="slide-org4bc3b41">
-<h3 id="org4bc3b41">Change Where a Branch 'Points To'</h3>
+<section id="slide-org38f51bb">
+<h3 id="org38f51bb">Change Where a Branch 'Points To'</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Git reset has many uses</span>
@@ -551,8 +551,8 @@ git pull repo2 master
 </pre>
 </div>
 </section>
-<section id="slide-org7967ed1">
-<h3 id="org7967ed1">Find the Diff Between Two Commits</h3>
+<section id="slide-orgc67c0d2">
+<h3 id="orgc67c0d2">Find the Diff Between Two Commits</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Finds the difference between one commit ago and the current commit</span>
@@ -571,13 +571,13 @@ git diff --staged
 </section>
 </section>
 <section>
-<section id="slide-org3cbf6f1">
-<h2 id="org3cbf6f1">Neat Tricks</h2>
-<div class="outline-text-2" id="text-org3cbf6f1">
+<section id="slide-org3d34bc3">
+<h2 id="org3d34bc3">Neat Tricks</h2>
+<div class="outline-text-2" id="text-org3d34bc3">
 </div>
 </section>
-<section id="slide-org4328a72">
-<h3 id="org4328a72">Quickly Make a Branch</h3>
+<section id="slide-org43b2fa9">
+<h3 id="org43b2fa9">Quickly Make a Branch</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">git checkout -b mynewbranch
@@ -588,8 +588,8 @@ git checkout mynewbranch
 </pre>
 </div>
 </section>
-<section id="slide-org4405006">
-<h3 id="org4405006">Let Git Remember Your Remotes</h3>
+<section id="slide-org9c1f5f1">
+<h3 id="org9c1f5f1">Let Git Remember Your Remotes</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">git checkout master
@@ -608,8 +608,8 @@ git push
 </pre>
 </div>
 </section>
-<section id="slide-org354c4a7">
-<h3 id="org354c4a7">Git Aliases</h3>
+<section id="slide-org797b578">
+<h3 id="org797b578">Git Aliases</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">git config --global alias.s <span style="color: #15968D;">"status"</span>
@@ -620,8 +620,8 @@ git status
 </pre>
 </div>
 </section>
-<section id="slide-orgc1ad32e">
-<h3 id="orgc1ad32e">Tagging</h3>
+<section id="slide-orgd862219">
+<h3 id="orgd862219">Tagging</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">git tag myrelease
@@ -637,8 +637,8 @@ git diff myrelease
 </pre>
 </div>
 </section>
-<section id="slide-orgb5772c2">
-<h3 id="orgb5772c2"><code>git clean</code></h3>
+<section id="slide-orgfc5497c">
+<h3 id="orgfc5497c"><code>git clean</code></h3>
 <ul>
 <li>Use <code>git clean -f</code> to remove all <i>unstaged</i> files from your repo.
 <ul>
@@ -650,8 +650,8 @@ git diff myrelease
 </section>
 </section>
 <section>
-<section id="slide-orgd944e45">
-<h2 id="orgd944e45">We Only Scratched The Surface</h2>
+<section id="slide-org78a9e9c">
+<h2 id="org78a9e9c">We Only Scratched The Surface</h2>
 <ul>
 <li><code>git rebase</code></li>
 <li><code>git revert</code></li>
@@ -672,8 +672,8 @@ git diff myrelease
 </section>
 </section>
 <section>
-<section id="slide-orga1d0b1a">
-<h2 id="orga1d0b1a">Additional Resources</h2>
+<section id="slide-orgbd78caa">
+<h2 id="orgbd78caa">Additional Resources</h2>
 <ul>
 <li><code>man git</code></li>
 <li><code>man git-command</code>
@@ -687,13 +687,13 @@ git diff myrelease
 </section>
 </section>
 <section>
-<section id="slide-org180659c">
-<h2 id="org180659c">BONUS: GitHub</h2>
-<div class="outline-text-2" id="text-org180659c">
+<section id="slide-orgeacc8f4">
+<h2 id="orgeacc8f4">BONUS: GitHub</h2>
+<div class="outline-text-2" id="text-orgeacc8f4">
 </div>
 </section>
-<section id="slide-orgf702796">
-<h3 id="orgf702796">GitHub is just another remote!</h3>
+<section id="slide-org4fdcdb1">
+<h3 id="org4fdcdb1">GitHub is just another remote!</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell">git clone &lt;repo url&gt;
@@ -707,8 +707,8 @@ git show origin/master
 </pre>
 </div>
 </section>
-<section id="slide-org85f7706">
-<h3 id="org85f7706">Pull Request</h3>
+<section id="slide-orgf35baa7">
+<h3 id="orgf35baa7">Pull Request</h3>
 <ul>
 <li>A PR is a request for a maintainer to pull code into a repo you don't have access to</li>
 <li>First fork the repo (this is a clone from a github repo to a github repo you have write access to)</li>
@@ -718,8 +718,8 @@ git show origin/master
 
 </ul>
 </section>
-<section id="slide-org4808c14">
-<h3 id="org4808c14">(Advanced) Pull Requests</h3>
+<section id="slide-orgabdcdb3">
+<h3 id="orgabdcdb3">(Advanced) Pull Requests</h3>
 <ul>
 <li>When you make a PR, you can specify some advanced options, such as where you want the maintainer to pull to</li>
 <li>For example, you might want to have your code pulled into a feature branch, instead of master</li>
@@ -727,8 +727,8 @@ git show origin/master
 
 </ul>
 </section>
-<section id="slide-org8702c9d">
-<h3 id="org8702c9d">Example</h3>
+<section id="slide-org63b4556">
+<h3 id="org63b4556">Example</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/Ed8hRhA.png" alt="Ed8hRhA.png" />
@@ -737,13 +737,13 @@ git show origin/master
 </section>
 </section>
 <section>
-<section id="slide-org0bf181e">
-<h2 id="org0bf181e">BONUS: Commit Messages</h2>
-<div class="outline-text-2" id="text-org0bf181e">
+<section id="slide-org855c1d3">
+<h2 id="org855c1d3">BONUS: Commit Messages</h2>
+<div class="outline-text-2" id="text-org855c1d3">
 </div>
 </section>
-<section id="slide-orgc4b5e48">
-<h3 id="orgc4b5e48"><code>git</code> commit</h3>
+<section id="slide-org788560b">
+<h3 id="org788560b"><code>git</code> commit</h3>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">What we were using before</span>
@@ -756,16 +756,16 @@ git commit
 </pre>
 </div>
 </section>
-<section id="slide-orgfbfcf7c">
-<h3 id="orgfbfcf7c">Commit Message Conventions</h3>
+<section id="slide-org00891c5">
+<h3 id="org00891c5">Commit Message Conventions</h3>
 
 <div class="figure">
 <p><img src="https://imgs.xkcd.com/comics/git_commit.png" alt="git_commit.png" />
 </p>
 </div>
 </section>
-<section id="slide-org84e9696">
-<h3 id="org84e9696">Commit Message Conventions</h3>
+<section id="slide-orgdf0abfc">
+<h3 id="orgdf0abfc">Commit Message Conventions</h3>
 <ol>
 <li>Separate body and subject with a blank line</li>
 <li>Subject line should not be more than 50 chars</li>
@@ -782,8 +782,8 @@ git commit
 
 </ol>
 </section>
-<section id="slide-org7ff1c84">
-<h3 id="org7ff1c84">Commit Message Conventions</h3>
+<section id="slide-org11f7232">
+<h3 id="org11f7232">Commit Message Conventions</h3>
 <ul>
 <li>Following these guides help maintainers to find where things went wrong and why</li>
 <li>It makes the output of <code>git log --oneline</code> pretty!</li>

@@ -11,7 +11,18 @@
     -   If you got it, great
     -   If you didn't, great
         -   Please ask questions when you don't understand something because we can guarantee someone else has the same question.
--   And today, we're going into&#x2026;
+
+
+# Review
+
+-   How do we make a robot move to a point?
+    -   How do we initialize a point?
+    -   How do we create a move skill?
+    -   How do we tell the robot to do the skill?
+-   How do we do the same for &#x2026;
+    -   Pass
+    -   Pivot Kick
+    -   Coordinated Pass
 
 
 ## Additional Information
@@ -47,8 +58,8 @@
 -   Skills, tactics, and plays all have internal states.
 -   We define those states using enums.
     -   Behaviors has some default states that we can use called start, running, complete
--   Each state has an on<sub>enter</sub>, execute, and on<sub>exit</sub>.
-    -   on<sub>enter</sub> and on<sub>exit</sub> are run once at the beginning and end of the state respectively
+-   Each state has an `on_enter`, `execute`, and `on_exit`.
+    -   `on_enter` and `on_exit` are run once at the beginning and end of the state respectively
     -   execute is run repetitively while we are in a state
 
 
@@ -114,7 +125,7 @@ self.add_transition(self.State.tophalf, self.State.bottomhalf,
 
 ## Defining State Actions
 
-```
+```python
 # Define your own 'on_enter' and 'execute' functions here.
 # eg: def on_enter_<???>(self):
 #         print('Something?')
@@ -154,30 +165,30 @@ def on_exit_tophalf(self):
 
 ## When would we take out our notes?
 
--   on<sub>enter</sub>
--   execute
--   on<sub>exit</sub>
+-   `on_enter`
+-   `execute`
+-   `on_exit`
 
 
 ## When would we take notes?
 
--   on<sub>enter</sub>
--   execute
--   on<sub>exit</sub>
+-   `on_enter`
+-   `execute`
+-   `on_exit`
 
 
 ## When would we pack up?
 
--   on<sub>enter</sub>
--   execute
--   on<sub>exit</sub>
+-   `on_enter`
+-   `execute`
+-   `on_exit`
 
 
 ## Where would we take out our phone?
 
--   on<sub>enter</sub>
--   execute
--   on<sub>exit</sub>
+-   `on_enter`
+-   `execute`
+-   `on_exit`
 
 
 ## Additional Information on State Machines
@@ -231,7 +242,22 @@ a_subbheavior = self.subbehavior_with_name('string name')
 
 -   Find some code doing something like what you want
 -   Tweak it until it works
--   It's less effective than working everything out, but it's great for beginners!
+
+
+# Walk through WhichHalf
+
+-   Goal: print which half of the field the ball is in
+    -   Also, print when it enters or exits one half
+
+
+## States
+
+-   What states would be in this play?
+
+
+## State Transitions
+
+-   What would we do when we transition from state to state?
 
 
 # Assignment
