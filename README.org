@@ -3,12 +3,7 @@ RoboCup Software Training (Created in 2017)
 
 To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Press ~?~ for help!
 * Slides
-1. [[https://robojackets.github.io/robocup-training/slides/2017/intro][Training Meeting 1]]
-1. [[https://robojackets.github.io/robocup-training/slides/2017/ptsd][Plays, Tactics, Skills Design]]
-1. [[https://robojackets.github.io/robocup-training/slides/2017/subbehaviors][Subbehaviors]]
-1. [[https://robojackets.github.io/robocup-training/slides/2017/roleassign][Role Assignment]]
-1. [[https://robojackets.github.io/robocup-training/slides/2017/pathplanning][Path Planning]]
-1. [[https://robojackets.github.io/robocup-training/slides/2017/contributions][Contributions]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/3-subbehaviors-and-state-machines][Subbehaviors]]
 
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20171.html][Training Docs 1]]
