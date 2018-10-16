@@ -3,10 +3,9 @@ jobs:
   build:
     working_directory: ~/robocup-training
     docker:
-      - image: silex/emacs:25.1
+      - image: silex/emacs:26-dev
     steps:
         # Install cask
-      - run: curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
       - checkout
       - run: git config --global user.name "$GIT_USERNAME" && git config --global user.email "$GIT_EMAIL"
       - run: git clone "$CIRCLE_REPOSITORY_URL" html && cd html && git checkout gh-pages && cd ..

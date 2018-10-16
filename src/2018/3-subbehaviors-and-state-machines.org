@@ -19,7 +19,15 @@
   - If you got it, great
   - If you didn't, great
     - Please ask questions when you don't understand something because we can guarantee someone else has the same question. 
-- And today, we're going into...
+* Review
+- How do we make a robot move to a point?
+  - How do we initialize a point?
+  - How do we create a move skill?
+  - How do we tell the robot to do the skill?
+- How do we do the same for ...
+  - Pass
+  - Pivot Kick
+  - Coordinated Pass
 ** Additional Information                                             :docs:
 - See the previous slide deck and docs for more information, they should be a pretty comprehensive overview of our play system.
 
@@ -42,8 +50,8 @@
 - Skills, tactics, and plays all have internal states.
 - We define those states using enums.
   - Behaviors has some default states that we can use called start, running, complete
-- Each state has an on_enter, execute, and on_exit.
-  - on_enter and on_exit are run once at the beginning and end of the state respectively
+- Each state has an =on_enter=, =execute=, and =on_exit=.
+  - =on_enter= and =on_exit= are run once at the beginning and end of the state respectively
   - execute is run repetitively while we are in a state 
 
 * How do we implement state machines in our code?
@@ -99,7 +107,7 @@
 #+END_SRC
 
 ** Defining State Actions
-#+BEGIN_SRC
+#+BEGIN_SRC python
     # Define your own 'on_enter' and 'execute' functions here.
     # eg: def on_enter_<???>(self):
     #         print('Something?')
@@ -134,24 +142,24 @@
 ** What would determine whether we transition into our lecture hall state?
 
 ** When would we take out our notes?
-- on_enter
-- execute
-- on_exit
+- =on_enter=
+- =execute=
+- =on_exit=
 
 ** When would we take notes?
-- on_enter
-- execute
-- on_exit
+- =on_enter=
+- =execute=
+- =on_exit=
 
 ** When would we pack up?
-- on_enter
-- execute
-- on_exit
+- =on_enter=
+- =execute=
+- =on_exit=
 
 ** Where would we take out our phone?
-- on_enter
-- execute
-- on_exit
+- =on_enter=
+- =execute=
+- =on_exit=
 
 ** Additional Information on State Machines                           :docs:
 - While you /do not/ need to know advanced state machine ideas, you need to be comfortable working with and parsing existing state machines from a diagram or from our code.
@@ -188,7 +196,16 @@ a_subbheavior = self.subbehavior_with_name('string name')
 * RoboCup Pro Tip
 - Find some code doing something like what you want
 - Tweak it until it works
-- It's less effective than working everything out, but it's great for beginners!
+
+* Walk through WhichHalf
+- Goal: print which half of the field the ball is in
+  - Also, print when it enters or exits one half
+  
+** States
+- What states would be in this play?
+
+** State Transitions
+- What would we do when we transition from state to state?
 
 * Assignment
 - Write WhichHalf but vertical 
