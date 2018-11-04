@@ -3,15 +3,18 @@ RoboCup Software Training (Created in 2017)
 
 To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Press ~?~ for help!
 * Slides
-1. [[https://robojackets.github.io/robocup-training/slides/2018/3-subbehaviors-and-state-machines][Subbehaviors]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/1-intro][Training Meeting 1]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/2-ptsd][Plays, Tactics, Skills Design]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/3-subbehaviors-and-state-machines][Subbehaviors and State Machines]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/4-Plays][Plays]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/5-Contributions][Contributions]]
 
 * Docs
-1. [[https://robojackets.github.io/robocup-software/t20171.html][Training Docs 1]]
-1. [[https://robojackets.github.io/robocup-software/t20172.html][Plays, Tactics, Skills Design]]
-1. [[https://robojackets.github.io/robocup-software/t20173.html][Subbehaviors]]
-1. [[https://robojackets.github.io/robocup-software/t20174.html][Role Assignment]]
-1. [[https://robojackets.github.io/robocup-software/t20175.html][Path Planning]]
-1. [[https://robojackets.github.io/robocup-software/t20176.html][Contributions]]
+1. [[https://robojackets.github.io/robocup-software/t20181.html][Training Meeting 1]]
+1. [[https://robojackets.github.io/robocup-software/t20182.html][Plays, Tactics, Skills Design]]
+1. [[https://robojackets.github.io/robocup-software/t20183.html][Subbehaviors abd State Machines]]
+1. [[https://robojackets.github.io/robocup-software/t20184.html][Plays]]
+1. [[https://robojackets.github.io/robocup-software/t20185.html][Contributions]]
 
 * Building
 
