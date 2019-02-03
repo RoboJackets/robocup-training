@@ -6,8 +6,8 @@ To Navigate Slides, Press ~space~ for going forward and ~p~ for going back. Pres
 1. [[https://robojackets.github.io/robocup-training/slides/2018/1-intro][Training Meeting 1]]
 1. [[https://robojackets.github.io/robocup-training/slides/2018/2-ptsd][Plays, Tactics, Skills Design]]
 1. [[https://robojackets.github.io/robocup-training/slides/2018/3-subbehaviors-and-state-machines][Subbehaviors and State Machines]]
-1. [[https://robojackets.github.io/robocup-training/slides/2018/4-Plays][Plays]]
-1. [[https://robojackets.github.io/robocup-training/slides/2018/5-Contributions][Contributions]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/4-plays][Plays]]
+1. [[https://robojackets.github.io/robocup-training/slides/2018/5-contributions][Contributions]]
 
 * Docs
 1. [[https://robojackets.github.io/robocup-software/t20181.html][Training Meeting 1]]
