@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Role Assignment</h1>
 </section>
 <section>
-<section id="slide-org9cf16cd">
-<h2 id="org9cf16cd">Communications Recap</h2>
+<section id="slide-orgab59d0a">
+<h2 id="orgab59d0a">Communications Recap</h2>
 <ul>
 <li><a href="https://gitter.im/RoboJackets/robocup-software">Gitter</a></li>
 <li><a href="https://github.com/RoboJackets//robocup-training">RoboCup Training Repo</a>
@@ -45,8 +45,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgb9c3f6e">
-<h2 id="orgb9c3f6e">Questions about Plays?</h2>
+<section id="slide-org78db472">
+<h2 id="org78db472">Questions about Plays?</h2>
 <ul>
 <li>We're going to slow down a bit after last meeting
 <ul>
@@ -66,13 +66,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orgcf9bb22">
-<h2 id="orgcf9bb22">How do I get a specific robot?</h2>
-<div class="outline-text-2" id="text-orgcf9bb22">
+<section id="slide-org13e4bc2">
+<h2 id="org13e4bc2">How do I get a specific robot?</h2>
+<div class="outline-text-2" id="text-org13e4bc2">
 </div>
 </section>
-<section id="slide-org3e1d39d">
-<h3 id="org3e1d39d">Dynamic Assignment</h3>
+<section id="slide-orgf3f1775">
+<h3 id="orgf3f1775">Dynamic Assignment</h3>
 <ul>
 <li>Our role assignment system picks the best robot for the task</li>
 <li>You define your constraints, and we'll give you a robot if we can!</li>
@@ -81,8 +81,8 @@
 </ul>
 
 </section>
-<section id="slide-orgb80f3e9">
-<h3 id="orgb80f3e9">But I want Robot X!</h3>
+<section id="slide-orgac7f0a8">
+<h3 id="orgac7f0a8">But I want Robot X!</h3>
 <ul>
 <li>Override Role Requirements to add your constraints!</li>
 <li>This next section is a massive oversimplification</li>
@@ -91,8 +91,8 @@
 </ul>
 
 </section>
-<section id="slide-orge35057a">
-<h4 id="orge35057a">Get the closest robot</h4>
+<section id="slide-org98c3796">
+<h4 id="org98c3796">Get the closest robot</h4>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
@@ -106,8 +106,8 @@
 </div>
 
 </section>
-<section id="slide-orgde0ee28">
-<h4 id="orgde0ee28">Get the robot with all the hardware</h4>
+<section id="slide-org635b161">
+<h4 id="org635b161">Get the robot with all the hardware</h4>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
@@ -122,8 +122,8 @@
 </div>
 
 </section>
-<section id="slide-org88bf687">
-<h4 id="org88bf687">I really, really, want MY Robot!</h4>
+<section id="slide-orgafce7b1">
+<h4 id="orgafce7b1">I really, really, want MY Robot!</h4>
 <div class="org-src-container">
 
 <pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
@@ -142,8 +142,8 @@
 </div>
 
 </section>
-<section id="slide-org4861cf4">
-<h3 id="org4861cf4">But how does it choose the robot?</h3>
+<section id="slide-org74986c4">
+<h3 id="org74986c4">But how does it choose the robot?</h3>
 <ul>
 <li>Actually Black Magic</li>
 <li>A peek behind the curtain</li>
@@ -180,16 +180,16 @@
 </section>
 </section>
 <section>
-<section id="slide-org0298a36">
-<h2 id="org0298a36">Capture Overview</h2>
+<section id="slide-org1c69be7">
+<h2 id="org1c69be7">Capture Overview</h2>
 <ul>
 <li>Capture is a complicated behavior that utilizes role assignment</li>
 
 </ul>
 
 </section>
-<section id="slide-org7e0ca1b">
-<h3 id="org7e0ca1b">Let's Look at Code!</h3>
+<section id="slide-org053f2ef">
+<h3 id="org053f2ef">Let's Look at Code!</h3>
 <ul>
 <li><a href="https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py">https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py</a></li>
 
@@ -198,13 +198,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org69cbf7e">
-<h2 id="org69cbf7e">Wrapping Up</h2>
+<section id="slide-org41a73ce">
+<h2 id="org41a73ce">Wrapping Up</h2>
 </section>
 </section>
 <section>
-<section id="slide-org7e95784">
-<h2 id="org7e95784">Assignment</h2>
+<section id="slide-orge229081">
+<h2 id="orge229081">Assignment</h2>
 <ul>
 <li>Implement role assignment in Triangle Pass</li>
 <li>If you missed last meeting, just do Triangle Pass instead</li>
@@ -212,8 +212,8 @@
 </ul>
 
 </section>
-<section id="slide-orgd8ed7a5">
-<h3 id="orgd8ed7a5">Recomended Requirements</h3>
+<section id="slide-org486cd7f">
+<h3 id="org486cd7f">Recomended Requirements</h3>
 <ul>
 <li>Closest robots to center-field</li>
 <li>Closest robots to sideline</li>
@@ -222,8 +222,8 @@
 </ul>
 
 </section>
-<section id="slide-org75e0ef6">
-<h3 id="org75e0ef6">Tips</h3>
+<section id="slide-orgcb496ce">
+<h3 id="orgcb496ce">Tips</h3>
 <ul>
 <li>Check out the skills and tactics behaviors for more examples</li>
 

@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Path Planning</h1>
 </section>
 <section>
-<section id="slide-org7dfd3f3">
-<h2 id="org7dfd3f3">Plan for today</h2>
+<section id="slide-org4ade52e">
+<h2 id="org4ade52e">Plan for today</h2>
 <ul>
 <li>Learn about our path planning system, the Rapidly-Exploring Random Tree (RRT)</li>
 <li>Learn about other path planning algorithms</li>
@@ -41,8 +41,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org2b92091">
-<h2 id="org2b92091">High Level Overview</h2>
+<section id="slide-orge5cf79d">
+<h2 id="orge5cf79d">High Level Overview</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/4Y3wCJH.jpg" alt="4Y3wCJH.jpg" />
@@ -52,8 +52,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org57327c1">
-<h2 id="org57327c1">What is Path Planning</h2>
+<section id="slide-org2772e39">
+<h2 id="org2772e39">What is Path Planning</h2>
 <ul>
 <li>Our robots need to know how to get from a start point to an end point</li>
 <li>IGVC uses A*</li>
@@ -66,8 +66,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org7ce9f37">
-<h2 id="org7ce9f37">A*</h2>
+<section id="slide-orgd1310ce">
+<h2 id="orgd1310ce">A*</h2>
 <ul>
 <li>Search space
 <ul>
@@ -86,8 +86,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org4a72b3f">
-<h2 id="org4a72b3f">BFS</h2>
+<section id="slide-orga845893">
+<h2 id="orga845893">BFS</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/FYNyt8T.gif" alt="FYNyt8T.gif" />
@@ -97,8 +97,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org73f9470">
-<h2 id="org73f9470">Dijkstra's algorithm</h2>
+<section id="slide-orgeacb576">
+<h2 id="orgeacb576">Dijkstra's algorithm</h2>
 <ul>
 <li>Like BFS, but acknowledges costs with each edge</li>
 <li>Associates each edge with a distance cost, and assigns each node with a tentative distance cost</li>
@@ -115,8 +115,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org6a07d50">
-<h2 id="org6a07d50">A*</h2>
+<section id="slide-orgd923253">
+<h2 id="orgd923253">A*</h2>
 <ul>
 <li>Like Dijkstra's but with a heuristic function h(n)</li>
 <li>Cost function f(n) = g(n) + h(n)
@@ -132,8 +132,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org7b0c2f4">
-<h2 id="org7b0c2f4">RRT</h2>
+<section id="slide-org2a13c17">
+<h2 id="org2a13c17">RRT</h2>
 <ul>
 <li>Continuous search space</li>
 <li>Randomly extend a space-filling tree throughout the search space until we connect the start and goal states</li>
@@ -143,8 +143,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orga011300">
-<h2 id="orga011300">How the RRT works</h2>
+<section id="slide-org2b749c0">
+<h2 id="org2b749c0">How the RRT works</h2>
 <ol>
 <li>Start building our tree by placing a root node at the destination</li>
 <li>Randomly select some coordinate in the position space</li>
@@ -159,8 +159,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org5fb7757">
-<h2 id="org5fb7757">Sounds really inefficient</h2>
+<section id="slide-orgd33a31c">
+<h2 id="orgd33a31c">Sounds really inefficient</h2>
 <ul>
 <li>Why waste computation time branching out in random directions?</li>
 <li>What advantages could there be in random branching?</li>
@@ -169,8 +169,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-orge85aa13">
-<h3 id="orge85aa13">Advantages of RRT</h3>
+<section id="slide-org32a6253">
+<h3 id="org32a6253">Advantages of RRT</h3>
 <ul>
 <li>Specialized for continuous configuration spaces</li>
 <li>Can handle kinodynamic constraints</li>
@@ -181,13 +181,13 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org19d8ed2">
-<h2 id="org19d8ed2">How to construct a Bézier curve</h2>
-<div class="outline-text-2" id="text-org19d8ed2">
+<section id="slide-orge2ca0f2">
+<h2 id="orge2ca0f2">How to construct a Bézier curve</h2>
+<div class="outline-text-2" id="text-orge2ca0f2">
 </div>
 </section>
-<section id="slide-org489ed42">
-<h3 id="org489ed42">Linear curve</h3>
+<section id="slide-orgc1e42de">
+<h3 id="orgc1e42de">Linear curve</h3>
 <ul>
 <li>Bézier curve B(t)</li>
 <li>The t in the function for a linear Bézier curve can be thought of as describing how far B(t) is from P0 to P1</li>
@@ -201,8 +201,8 @@ The series of connected nodes from root to destination forms the path that the r
 </div>
 
 </section>
-<section id="slide-org493a5a3">
-<h3 id="org493a5a3">Quadratic curve</h3>
+<section id="slide-orgc6a9e6b">
+<h3 id="orgc6a9e6b">Quadratic curve</h3>
 <ul>
 <li>For quadratic Bézier curves one can construct intermediate points Q0 and Q1 such that as t increases from 0 to 1
 <ul>
@@ -222,8 +222,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org6719124">
-<h2 id="org6719124">Repository Code</h2>
+<section id="slide-org4dfcc46">
+<h2 id="org4dfcc46">Repository Code</h2>
 <ul>
 <li>rrt-viewer</li>
 <li>rrt</li>
@@ -231,8 +231,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-orgab19a71">
-<h3 id="orgab19a71">rrt-viewer</h3>
+<section id="slide-orgc0c5e2d">
+<h3 id="orgc0c5e2d">rrt-viewer</h3>
 <ul>
 <li>Displays window for running RRT</li>
 <li>Uses QT for graphics</li>
@@ -240,8 +240,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org3c55291">
-<h3 id="org3c55291">rrt</h3>
+<section id="slide-org001362f">
+<h3 id="org001362f">rrt</h3>
 <ul>
 <li>Contains RRT implementation</li>
 <li>Defines state space</li>
@@ -256,8 +256,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org84146da">
-<h2 id="org84146da">Download RRT</h2>
+<section id="slide-org2f45c41">
+<h2 id="org2f45c41">Download RRT</h2>
 <ul>
 <li>Our rrt repository is located at <a href="http://github.com/RoboJackets/rrt">http://github.com/RoboJackets/rrt</a></li>
 <li>On your terminal, type in:</li>
@@ -276,8 +276,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org3a00060">
-<h2 id="org3a00060">Compile and run RRT</h2>
+<section id="slide-orgcd3dcfe">
+<h2 id="orgcd3dcfe">Compile and run RRT</h2>
 <div class="org-src-container">
 
 <pre  class="src src-shell"><span style="color: #598249;">cd</span> rrt
@@ -290,8 +290,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-org1d68c1d">
-<h2 id="org1d68c1d">How to use RRT</h2>
+<section id="slide-org65f72a3">
+<h2 id="org65f72a3">How to use RRT</h2>
 <ul>
 <li>Drag start and end points to desired locations</li>
 <li>Drag around the plane space to draw and remove obstacles</li>
@@ -303,13 +303,13 @@ make
 </section>
 </section>
 <section>
-<section id="slide-org0f43674">
-<h2 id="org0f43674">Tweaking parameters</h2>
-<div class="outline-text-2" id="text-org0f43674">
+<section id="slide-orgfcee8e4">
+<h2 id="orgfcee8e4">Tweaking parameters</h2>
+<div class="outline-text-2" id="text-orgfcee8e4">
 </div>
 </section>
-<section id="slide-org7953883">
-<h3 id="org7953883">Biases</h3>
+<section id="slide-orgefcc6a6">
+<h3 id="orgefcc6a6">Biases</h3>
 <ul>
 <li>Increasing Goal Bias
 <ul>
@@ -326,8 +326,8 @@ make
 </ul>
 
 </section>
-<section id="slide-orge80c9a1">
-<h3 id="orge80c9a1">Adaptive Stepsize Control</h3>
+<section id="slide-org2b3dd13">
+<h3 id="org2b3dd13">Adaptive Stepsize Control</h3>
 <ul>
 <li>Stepsize now dynamically changes based on whether there are obstacles nearby</li>
 <li>Requires extra computation time to locate nearby obstacles</li>
@@ -339,8 +339,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-org8b57e02">
-<h2 id="org8b57e02">STOx's Planner</h2>
+<section id="slide-org0da0598">
+<h2 id="org0da0598">STOx's Planner</h2>
 <ul>
 <li>Generate a straight line from the start state to end state</li>
 <li>As long as the path intersects an obstacle:
@@ -354,8 +354,8 @@ make
 </ul>
 
 </section>
-<section id="slide-orge8c9841">
-<h3 id="orge8c9841">STOx's Planner</h3>
+<section id="slide-org2c2ea80">
+<h3 id="org2c2ea80">STOx's Planner</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/Ea040em.png" alt="Ea040em.png" />
@@ -363,8 +363,8 @@ make
 </div>
 
 </section>
-<section id="slide-orge01431e">
-<h3 id="orge01431e">STOx's Planner</h3>
+<section id="slide-org6032f4d">
+<h3 id="org6032f4d">STOx's Planner</h3>
 <ul>
 <li>Very fast when obstacle count is low</li>
 <li>Not very flexible</li>
@@ -374,8 +374,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-orgb8e874f">
-<h2 id="orgb8e874f">Path Network</h2>
+<section id="slide-orgc484b1e">
+<h2 id="orgc484b1e">Path Network</h2>
 <ul>
 <li>Transform continuous space into discrete space</li>
 <li>Invisible network of waypoints</li>
@@ -384,8 +384,8 @@ make
 </ul>
 
 </section>
-<section id="slide-org2481d3b">
-<h3 id="org2481d3b">Path Network</h3>
+<section id="slide-orgf4f2e03">
+<h3 id="orgf4f2e03">Path Network</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/lM67O8P.png" alt="lM67O8P.png" />
@@ -395,8 +395,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-orgcc71145">
-<h2 id="orgcc71145">Navigation Mesh</h2>
+<section id="slide-org045b380">
+<h2 id="org045b380">Navigation Mesh</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/uoD7ARv.png" alt="uoD7ARv.png" />
@@ -404,8 +404,8 @@ make
 </div>
 
 </section>
-<section id="slide-orgf3b9bb2">
-<h3 id="orgf3b9bb2">Navigation Mesh</h3>
+<section id="slide-orgcc04d59">
+<h3 id="orgcc04d59">Navigation Mesh</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/ADl3xa3.png" alt="ADl3xa3.png" />
@@ -413,8 +413,8 @@ make
 </div>
 
 </section>
-<section id="slide-org67e737a">
-<h3 id="org67e737a">Navigation Mesh</h3>
+<section id="slide-org71955ab">
+<h3 id="org71955ab">Navigation Mesh</h3>
 <ul>
 <li>For each point
 <ul>
@@ -428,8 +428,8 @@ make
 </ul>
 
 </section>
-<section id="slide-orgdd9d71b">
-<h3 id="orgdd9d71b">Navigation Mesh</h3>
+<section id="slide-orge338d1b">
+<h3 id="orge338d1b">Navigation Mesh</h3>
 <ul>
 <li>For any 2 triangles with a shared edge
 <ul>
@@ -443,8 +443,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-orgd49d292">
-<h2 id="orgd49d292">Generating a path network from a nav mesh</h2>
+<section id="slide-org24a7cc5">
+<h2 id="org24a7cc5">Generating a path network from a nav mesh</h2>
 <ul>
 <li>For each polygon in the nav mesh, place a path node in its center</li>
 
@@ -456,8 +456,8 @@ make
 </div>
 
 </section>
-<section id="slide-org248fa0f">
-<h3 id="org248fa0f">Generating a path network from a nav mesh</h3>
+<section id="slide-orgfb4da54">
+<h3 id="orgfb4da54">Generating a path network from a nav mesh</h3>
 <ul>
 <li>Alternatively, place a path node at midpoint of each edge between two adjacent polygons</li>
 
@@ -471,8 +471,8 @@ make
 </section>
 </section>
 <section>
-<section id="slide-org18a3da7">
-<h2 id="org18a3da7">Any questions?</h2>
+<section id="slide-org8be0d47">
+<h2 id="org8be0d47">Any questions?</h2>
 </section>
 </section>
 </div>
