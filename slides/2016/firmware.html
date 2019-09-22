@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Firmware Overview</h1>
 </section>
 <section>
-<section id="slide-orge4df104">
-<h2 id="orge4df104">Initialization</h2>
+<section id="slide-org69c98a6">
+<h2 id="org69c98a6">Initialization</h2>
 <ul>
 <li>Initialize Kicker(attiny) and FPGA using binary files stored on MBED
 <ul>
@@ -44,8 +44,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org0a7b78c">
-<h2 id="org0a7b78c">RTOS (Threads)</h2>
+<section id="slide-org1c492bf">
+<h2 id="org1c492bf">RTOS (Threads)</h2>
 <ul>
 <li>Threads allow us to run multiple segments of code in "parallel"</li>
 <li>MBED only has one core so only one thread executed at once</li>
@@ -59,8 +59,8 @@
 </p>
 </div>
 </section>
-<section id="slide-org5aa3501">
-<h3 id="org5aa3501">Main</h3>
+<section id="slide-orgd96ade1">
+<h3 id="orgd96ade1">Main</h3>
 <ul>
 <li>Watchdog (reset MBED if it doesn't go back to main in certain time)</li>
 <li>Control LEDs (neopixel &amp; LEDs connected to IO Expander)</li>
@@ -68,8 +68,8 @@
 
 </ul>
 </section>
-<section id="slide-org0d89f4e">
-<h3 id="org0d89f4e">Other threads</h3>
+<section id="slide-orgb9304aa">
+<h3 id="orgb9304aa">Other threads</h3>
 <ul>
 <li>Console
 <ul>
@@ -92,16 +92,16 @@
 </section>
 </section>
 <section>
-<section id="slide-orga9c6757">
-<h2 id="orga9c6757">Radio</h2>
+<section id="slide-org6fa586b">
+<h2 id="org6fa586b">Radio</h2>
 <ul>
 <li>How commands are sent to robot (motor speeds, kick, etc.)</li>
 <li>How information is sent back to the base station (various robot statuses)</li>
 
 </ul>
 </section>
-<section id="slide-orgde1abbc">
-<h3 id="orgde1abbc">CommLink</h3>
+<section id="slide-orga840fb3">
+<h3 id="orga840fb3">CommLink</h3>
 <ul>
 <li>Used as hardware abstraction layer to communicate from higher level firmware to radio hardware (through drivers)</li>
 <li>What we use to call functions to get/send data through radio</li>
@@ -110,8 +110,8 @@
 
 </ul>
 </section>
-<section id="slide-org500d2c5">
-<h3 id="org500d2c5">CommModule</h3>
+<section id="slide-org2414b6a">
+<h3 id="org2414b6a">CommModule</h3>
 <ul>
 <li>Used to handle packets being sent and received with radio</li>
 <li>RX/TX queues (as threads) waiting for other threads to put packets in the queue that are ready to be sent or have been received and need to be processed</li>
@@ -120,8 +120,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd6b8d2b">
-<h2 id="orgd6b8d2b">Shared SPI</h2>
+<section id="slide-orgb49eacf">
+<h2 id="orgb49eacf">Shared SPI</h2>
 <ul>
 <li>Allows MBED (master) to communicate with multiple devices through same pins</li>
 <li>Devices (slaves) currently used are radio, kicker (ATtiny), and FPGA</li>
@@ -131,8 +131,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orga1d8592">
-<h2 id="orga1d8592">Hardfault Handler</h2>
+<section id="slide-org98fab22">
+<h2 id="org98fab22">Hardfault Handler</h2>
 <ul>
 <li>Written in assembly to call function when the mbed hard faults (crashes)</li>
 <li>Used to print out information to console useful for debugging</li>
@@ -142,8 +142,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org9baa400">
-<h2 id="org9baa400">FPGA (verilog)</h2>
+<section id="slide-org538fae6">
+<h2 id="org538fae6">FPGA (verilog)</h2>
 <ul>
 <li>FPGA is programming logic gates which allows for many parallel operations</li>
 <li>Reads in hall sensors for motors
@@ -160,7 +160,7 @@
 
 </ul>
 </section>
-<section >
+<section id="slide-org538fae6-split">
 <ul>
 <li>Powers correct phases for motors (by sending signals to motor drivers)
 <ul>
@@ -179,8 +179,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgc54d0bf">
-<h2 id="orgc54d0bf">Base Station</h2>
+<section id="slide-orga1411e3">
+<h2 id="orga1411e3">Base Station</h2>
 <ul>
 <li>MBED with only radio connected</li>
 <li>Uses MBED serial lines to communicate with computer running soccer</li>
@@ -192,27 +192,12 @@
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: true,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server

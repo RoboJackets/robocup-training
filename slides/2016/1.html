@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">RoboCup 2016 Training 1</h1>
 </section>
 <section>
-<section id="slide-org73916f5">
-<h2 id="org73916f5">Download VM Image</h2>
+<section id="slide-org57dca07">
+<h2 id="org57dca07">Download VM Image</h2>
 <ul>
 <li><a href="https://mega.nz/#!kgFCyC5Y!lETW_2hufOsqxEOUrnjVFD538FvI3qXBLXWiBm9X_xI">Download Link</a> (<a href="http://bit.ly/2c61Fkx">http://bit.ly/2c61Fkx</a>)</li>
 <li>Today we will be setting you up to develop RoboCup Software</li>
@@ -39,8 +39,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org9b3aa6d">
-<h2 id="org9b3aa6d">Introductions</h2>
+<section id="slide-org8b1addb">
+<h2 id="org8b1addb">Introductions</h2>
 <ul>
 <li>Name</li>
 <li>Major/How Many Years at Tech</li>
@@ -50,8 +50,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org0922b9e">
-<h2 id="org0922b9e">Communication</h2>
+<section id="slide-org1913f63">
+<h2 id="org1913f63">Communication</h2>
 <ul>
 <li>Email List</li>
 <li>Gitter (badge on our repo)</li>
@@ -61,8 +61,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org483bfcd">
-<h2 id="org483bfcd">Developing RoboCup</h2>
+<section id="slide-org88dd466">
+<h2 id="org88dd466">Developing RoboCup</h2>
 <ul>
 <li>Running on Ubuntu 16.04</li>
 <li>Recommended:
@@ -87,8 +87,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd84bbe9">
-<h2 id="orgd84bbe9">Create a GitHub Account</h2>
+<section id="slide-orgf8442fe">
+<h2 id="orgf8442fe">Create a GitHub Account</h2>
 <ul>
 <li><a href="https://github.com/join%0A">https://github.com/join</a></li>
 <li>Please include <i>at least</i> your real first name on github</li>
@@ -103,8 +103,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org0611cfa">
-<h2 id="org0611cfa">Fork Our Repo</h2>
+<section id="slide-orge75e617">
+<h2 id="orge75e617">Fork Our Repo</h2>
 <ul>
 <li>RoboJackets/robocup-software (<a href="http://bit.ly/1L70JbB">http://bit.ly/1L70JbB</a>)</li>
 
@@ -119,8 +119,8 @@
 </section>
 </section>
 <section>
-<section id="slide-orgbac267f">
-<h2 id="orgbac267f">RoboCup VM Setup</h2>
+<section id="slide-org91ff4e5">
+<h2 id="org91ff4e5">RoboCup VM Setup</h2>
 <ul>
 <li><a href="https://github.com/RoboJackets/robojackets-images/blob/master/robocup/USAGE.org">Link to Guide</a> (<a href="http://bit.ly/2chLRLd">http://bit.ly/2chLRLd</a>)</li>
 
@@ -128,13 +128,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org68ce696">
-<h2 id="org68ce696">PostInstall Configuration</h2>
-<div class="outline-text-2" id="text-org68ce696">
+<section id="slide-org0bfcf1d">
+<h2 id="org0bfcf1d">PostInstall Configuration</h2>
+<div class="outline-text-2" id="text-org0bfcf1d">
 </div>
 </section>
-<section id="slide-org7f177c1">
-<h3 id="org7f177c1">Git Config</h3>
+<section id="slide-org3c03b26">
+<h3 id="org3c03b26">Git Config</h3>
 <ul>
 <li><p>
 These commands set up git to attribute your changes to you.
@@ -142,15 +142,15 @@ These commands set up git to attribute your changes to you.
 
 <div class="org-src-container">
 
-<pre  class="src src-shell">git config --global user.name <span style="color: #15968D;">"Your Name"</span>
+<pre  class="src src-shell"><code trim>git config --global user.name <span style="color: #15968D;">"Your Name"</span>
 git config --global user.email <span style="color: #15968D;">"your@email.here"</span>
-</pre>
+</code></pre>
 </div></li>
 
 </ul>
 </section>
-<section id="slide-org319ddc6">
-<h3 id="org319ddc6">Adding Remotes</h3>
+<section id="slide-org54741f1">
+<h3 id="org54741f1">Adding Remotes</h3>
 <ul>
 <li>These commands set you up to push to your fork by default, and still be able to receive updates.</li>
 
@@ -158,48 +158,48 @@ git config --global user.email <span style="color: #15968D;">"your@email.here"</
 
 <div class="org-src-container">
 
-<pre  class="src src-shell"><span style="color: #598249;">cd</span> ~/robocup-software
+<pre  class="src src-shell"><code trim><span style="color: #598249;">cd</span> ~/robocup-software
 git remote add rj https://github.com/RoboJackets/robocup-software.git
 git remote set-url origin https://github.com/&lt;YOUR_GH_USERNAME&gt;/robocup-software.git
 
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">You can find the link in the last command under the 'clone or download'</span>
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">green button on your FORK</span>
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-org46b860c">
-<h3 id="org46b860c">Build RoboCup Software</h3>
+<section id="slide-org0c9993e">
+<h3 id="org0c9993e">Build RoboCup Software</h3>
 <div class="org-src-container">
 
-<pre  class="src src-shell"><span style="color: #598249;">cd</span> ~/robocup-software
+<pre  class="src src-shell"><code trim><span style="color: #598249;">cd</span> ~/robocup-software
 make
 
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Try running robocup-software by running this:</span>
 make run-sim
-</pre>
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orga248607">
-<h3 id="orga248607">Staying Updated</h3>
+<section id="slide-orge2292dd">
+<h3 id="orge2292dd">Staying Updated</h3>
 <div class="org-src-container">
 
-<pre  class="src src-shell">git pull rj master
+<pre  class="src src-shell"><code trim>git pull rj master
 git push origin master
-</pre>
+</code></pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org2466e64">
-<h2 id="org2466e64">Soccer Tutorial</h2>
+<section id="slide-org007e5cf">
+<h2 id="org007e5cf">Soccer Tutorial</h2>
 <ul>
 <li>'Soccer' is our main program.</li>
 
 </ul>
 </section>
-<section id="slide-orgf67304c">
-<h3 id="orgf67304c">Helpful Build Commands</h3>
+<section id="slide-org8ab2930">
+<h3 id="org8ab2930">Helpful Build Commands</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -243,13 +243,13 @@ git push origin master
 </table>
 
 </section>
-<section id="slide-org65df4d9">
-<h3 id="org65df4d9">Let's Run Some Plays!</h3>
+<section id="slide-orgb46aca3">
+<h3 id="orgb46aca3">Let's Run Some Plays!</h3>
 </section>
 </section>
 <section>
-<section id="slide-org7392ead">
-<h2 id="org7392ead">Wrapping Up</h2>
+<section id="slide-org3131d43">
+<h2 id="org3131d43">Wrapping Up</h2>
 <ul>
 <li>Any Questions?</li>
 <li>What went well?</li>
@@ -257,8 +257,8 @@ git push origin master
 
 </ul>
 </section>
-<section id="slide-orge5287a6">
-<h3 id="orge5287a6">Contact Me!</h3>
+<section id="slide-orgb6f48cb">
+<h3 id="orgb6f48cb">Contact Me!</h3>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -302,8 +302,8 @@ git push origin master
 </table>
 
 </section>
-<section id="slide-org058cb03">
-<h3 id="org058cb03">Links</h3>
+<section id="slide-orgf749cfe">
+<h3 id="orgf749cfe">Links</h3>
 <ul>
 <li><a href="https://github.com/RoboJackets/robocup-software">https://github.com/RoboJackets/robocup-software</a></li>
 <li><a href="https://github.com/RoboJackets/robocup-firmware">https://github.com/RoboJackets/robocup-firmware</a></li>
@@ -317,27 +317,12 @@ git push origin master
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: true,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server

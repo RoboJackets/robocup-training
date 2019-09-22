@@ -29,29 +29,29 @@
 <section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Intro</h1>
 </section>
 <section>
-<section id="slide-org611fa82">
-<h2 id="org611fa82">Python Overview</h2>
-<div class="outline-text-2" id="text-org611fa82">
+<section id="slide-org1a29f5b">
+<h2 id="org1a29f5b">Python Overview</h2>
+<div class="outline-text-2" id="text-org1a29f5b">
 </div>
 </section>
-<section id="slide-org41227b2">
-<h3 id="org41227b2">Using Python</h3>
+<section id="slide-orgc2d2f71">
+<h3 id="orgc2d2f71">Using Python</h3>
 <div class="org-src-container">
 
-<pre  class="src src-shell">$ python3
+<pre  class="src src-shell"><code trim>$ python3
 Python 3.5.3 (default, Jan 19 2017, 14:11:04)
 [GCC 6.3.0 20170118] on linux
 Type <span style="color: #15968D;">"help"</span>, <span style="color: #15968D;">"copyright"</span>, <span style="color: #15968D;">"credits"</span> or <span style="color: #15968D;">"license"</span> for more information.
 &gt;&gt;&gt; print(<span style="color: #15968D;">"Hello RoboCup!"</span>)
 Hello RoboCup!
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-orgbbaf35a">
-<h3 id="orgbbaf35a">Basic Syntax</h3>
+<section id="slide-orgb3789e7">
+<h3 id="orgb3789e7">Basic Syntax</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Hello world</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Hello world</span>
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Hello World!"</span>)
 
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Set a variable</span>
@@ -62,7 +62,7 @@ Hello RoboCup!
 <span style="color: #598249;">print</span>(myinteger)
 <span style="color: #598249;">print</span>(mydouble)
 <span style="color: #598249;">print</span>(mystr)
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
@@ -70,14 +70,15 @@ Hello World!
 1
 1.0
 one
+
 </pre>
 
 </section>
-<section id="slide-org7e629ea">
-<h3 id="org7e629ea">IF Statements and Conditionals</h3>
+<section id="slide-orgf4281c0">
+<h3 id="orgf4281c0">IF Statements and Conditionals</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
+<pre  class="src src-python"><code trim><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
     <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is great!"</span>)
 <span style="color: #598249;">if</span> <span style="color: #15968D;">False</span>:
     <span style="color: #598249;">print</span>(<span style="color: #15968D;">"IGVC is great..."</span>)
@@ -96,7 +97,7 @@ one
     <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is &gt; 2 and &lt; 10"</span>)
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 3"</span>)
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 9"</span> <span style="color: #598249;">if</span> a &gt; 9 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 9"</span>)
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
@@ -106,14 +107,15 @@ a is greater than 2!
 a is &gt; 2 and &lt; 10
 a is greater than 3
 a is less than 9
+
 </pre>
 
 </section>
-<section id="slide-orgd21c3c9">
-<h3 id="orgd21c3c9">Loops and range()</h3>
+<section id="slide-orga24dd43">
+<h3 id="orga24dd43">Loops and range()</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #2F7BDE;">a</span> = 10
+<pre  class="src src-python"><code trim><span style="color: #2F7BDE;">a</span> = 10
 <span style="color: #598249;">while</span> a &gt; 0:
     <span style="color: #598249;">print</span>(a, end=<span style="color: #15968D;">" "</span>)
     <span style="color: #2F7BDE;">a</span> = a - 1
@@ -123,21 +125,22 @@ a is less than 9
 <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(10):
     <span style="color: #598249;">print</span>(i * i, end=<span style="color: #15968D;">" "</span>)
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
 10 9 8 7 6 5 4 3 2 1 
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 0 1 4 9 16 25 36 49 64 81 
+
 </pre>
 
 </section>
-<section id="slide-org550f1c5">
-<h3 id="org550f1c5">Functions</h3>
+<section id="slide-orgcaa8a3c">
+<h3 id="orgcaa8a3c">Functions</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
+<pre  class="src src-python"><code trim><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
     <span style="color: #598249;">return</span> a + b
 
 <span style="color: #598249;">print</span>(func1(2, 4))
@@ -152,21 +155,22 @@ a is less than 9
 <span style="color: #598249;">print</span>(welcome(<span style="color: #598249;">lambda</span>: <span style="color: #15968D;">"RoboJackets!"</span>))
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Lambda with arguments</span>
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">print(welcome(lambda arg1, arg2: "RoboJackets!"))</span>
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
 6
 Welcome to RoboCup!
 Welcome to RoboJackets!
+
 </pre>
 
 </section>
-<section id="slide-orgf53192a">
-<h3 id="orgf53192a">Object Oriented Python</h3>
+<section id="slide-org5ce367c">
+<h3 id="org5ce367c">Object Oriented Python</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #598249;">BaseClass</span>():
+<pre  class="src src-python"><code trim><span style="color: #598249;">class</span> <span style="color: #598249;">BaseClass</span>():
     <span style="color: #2F7BDE;">globalVar</span> = 1
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Constructor</span>
     <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
@@ -184,7 +188,7 @@ Welcome to RoboJackets!
 <span style="color: #2F7BDE;">a</span> = BaseClass()
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"---"</span>)
 <span style="color: #2F7BDE;">a</span> = ChildClass()
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
@@ -193,11 +197,12 @@ Initializing a Base
 Initializing a Base
 Initializing Child
 Our local var is: 2
+
 </pre>
 
 </section>
-<section id="slide-org17bc214">
-<h3 id="org17bc214">We can't teach a full year of programming in one hour.</h3>
+<section id="slide-org73c4e7e">
+<h3 id="org73c4e7e">We can't teach a full year of programming in one hour.</h3>
 <ul>
 <li>Take advantage of resources like <a href="https://www.codecademy.com/">codeacademy</a> or <a href="https://www.lynda.com/">lynda</a>(to which you have access using your Georgia Tech information.)</li>
 <li>Programming is a language, and like every language, it takes time to become familiar with the syntax and vocabulary.</li>
@@ -207,13 +212,13 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-org7138860">
-<h2 id="org7138860">Plays System</h2>
-<div class="outline-text-2" id="text-org7138860">
+<section id="slide-orgd3cfb1b">
+<h2 id="orgd3cfb1b">Plays System</h2>
+<div class="outline-text-2" id="text-orgd3cfb1b">
 </div>
 </section>
-<section id="slide-orgfb67af1">
-<h3 id="orgfb67af1">Plays, Tactics, Skills</h3>
+<section id="slide-org025bc2b">
+<h3 id="org025bc2b">Plays, Tactics, Skills</h3>
 <ul>
 <li>A Basic Unit in our AI</li>
 <li>Only one <b>Play</b> can run at a time</li>
@@ -221,8 +226,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgbb4bb0c">
-<h3 id="orgbb4bb0c">Skill</h3>
+<section id="slide-org57cab6e">
+<h3 id="org57cab6e">Skill</h3>
 <ul>
 <li>Involves only <i>one</i> robot</li>
 <li>Extremely basic building blocks</li>
@@ -238,8 +243,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgce53711">
-<h3 id="orgce53711">Tactics</h3>
+<section id="slide-org106d288">
+<h3 id="org106d288">Tactics</h3>
 <ul>
 <li>Involves multiple robots</li>
 <li>Utilize skills</li>
@@ -255,8 +260,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org4e164e4">
-<h3 id="org4e164e4">Plays</h3>
+<section id="slide-org99d8c47">
+<h3 id="org99d8c47">Plays</h3>
 <ul>
 <li>Only one can run</li>
 <li>Utilize tactics</li>
@@ -276,8 +281,8 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-org8b07f64">
-<h2 id="org8b07f64">Goals</h2>
+<section id="slide-org3088302">
+<h2 id="org3088302">Goals</h2>
 <ul>
 <li>Understand how to use skills</li>
 <li>Understand which points correspond to different locations on the field</li>
@@ -285,8 +290,8 @@ Our local var is: 2
 </ul>
 
 </section>
-<section id="slide-orgb1652a0">
-<h3 id="orgb1652a0">File</h3>
+<section id="slide-org59b1f5c">
+<h3 id="org59b1f5c">File</h3>
 <ul>
 <li>Use SimpleBehaviors.py in the training folder</li>
 <li>In Sim, check the SimpleBehaviors play and run</li>
@@ -295,8 +300,8 @@ Our local var is: 2
 </ul>
 
 </section>
-<section id="slide-org30308db">
-<h3 id="org30308db">Assignments</h3>
+<section id="slide-orgb92e98a">
+<h3 id="orgb92e98a">Assignments</h3>
 <ul>
 <li>Make a robot move to the following locations
 <ul>
@@ -311,8 +316,8 @@ Our local var is: 2
 </ul>
 
 </section>
-<section id="slide-org8febad9">
-<h3 id="org8febad9">Code you can use</h3>
+<section id="slide-org7ec92a7">
+<h3 id="org7ec92a7">Code you can use</h3>
 <ul>
 <li>constants.Field.Length</li>
 <li>constants.Field.Width</li>
@@ -321,8 +326,8 @@ Our local var is: 2
 </ul>
 
 </section>
-<section id="slide-org436befa">
-<h3 id="org436befa">Tactics / Positions Extension</h3>
+<section id="slide-org4e34ecc">
+<h3 id="org4e34ecc">Tactics / Positions Extension</h3>
 <ul>
 <li>Make robots do a coordinated pass</li>
 <li>Make a robot become a submissive defender (use tactics.submissivedefender)</li>
@@ -331,8 +336,8 @@ Our local var is: 2
 </ul>
 
 </section>
-<section id="slide-org6dd4421">
-<h3 id="org6dd4421">Plays extension</h3>
+<section id="slide-org26097f4">
+<h3 id="org26097f4">Plays extension</h3>
 <ul>
 <li>Write Basic122 without state machines
 <ul>
@@ -343,8 +348,8 @@ Our local var is: 2
 </ul>
 
 </section>
-<section id="slide-org6e96d40">
-<h3 id="org6e96d40">Tips</h3>
+<section id="slide-org141b5eb">
+<h3 id="org141b5eb">Tips</h3>
 <ul>
 <li>The field coordinates start at 0, 0; Which is our Goal.</li>
 <li>Field Size Docs: (<a href="http://bit.ly/2cLsUBL">http://bit.ly/2cLsUBL</a>)</li>
@@ -353,8 +358,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-orgc93880c">
-<h3 id="orgc93880c">Answers</h3>
+<section id="slide-org6146e01">
+<h3 id="org6146e01">Answers</h3>
 <ul>
 <li>Add something here</li>
 
@@ -363,27 +368,12 @@ Our local var is: 2
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: false,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server

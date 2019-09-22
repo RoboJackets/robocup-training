@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Subbehaviors</h1>
 </section>
 <section>
-<section id="slide-org0967b6b">
-<h2 id="org0967b6b">Questions about Plays?</h2>
+<section id="slide-org0f332a0">
+<h2 id="org0f332a0">Questions about Plays?</h2>
 <ul>
 <li>Topics Covered:
 <ul>
@@ -56,8 +56,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org86e50ff">
-<h2 id="org86e50ff">Subbehaviors!</h2>
+<section id="slide-org2dfd360">
+<h2 id="org2dfd360">Subbehaviors!</h2>
 <ul>
 <li>A behavior is a generic name for any skill, play, or tactic.</li>
 <li>Last meeting we learned about Plays/Tactics/Skills
@@ -73,19 +73,19 @@
 
 </ul>
 </section>
-<section id="slide-orgf14ad12">
-<h3 id="orgf14ad12">Examples of Subbehaviors</h3>
+<section id="slide-org683b0d4">
+<h3 id="org683b0d4">Examples of Subbehaviors</h3>
 <ul>
 <li>Offense Play contains Passing Tactics, and Move Skills</li>
 <li>Passing Tactic Contains Move and Kick Skills</li>
 
 </ul>
 </section>
-<section id="slide-org519cc40">
-<h3 id="org519cc40"><i>Behavior</i> Tree!</h3>
+<section id="slide-org797f0ab">
+<h3 id="org797f0ab"><i>Behavior</i> Tree!</h3>
 <div class="org-src-container">
 
-<pre  class="src src-text">Basic122::running
+<pre  class="src src-text"><code trim>Basic122::running
     Mark::running[robot=4]
         move(0.767296, 6.51286)
         endVelocity(0, 0)
@@ -100,14 +100,14 @@
         move(-0.829012, 6.03814)
         endVelocity(0, 0)
         face(0.160718, 9.15305)
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-orgbb67d48">
-<h3 id="orgbb67d48"><i>Behavior</i> Tree! (cont.)</h3>
+<section id="slide-orgccb7f63">
+<h3 id="orgccb7f63"><i>Behavior</i> Tree! (cont.)</h3>
 <div class="org-src-container">
 
-<pre  class="src src-text">Basic122::running
+<pre  class="src src-text"><code trim>Basic122::running
     Defense::defending
         SubmissiveDefender::marking
             Move::completed[robot=5]
@@ -120,61 +120,61 @@
                 face(0.160718, 9.15305)
                 move(0.290916, 0.14)
                 endVelocity(0, 0)
-</pre>
+</code></pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org243277f">
-<h2 id="org243277f">How do I use subbehaviors?</h2>
-<div class="outline-text-2" id="text-org243277f">
+<section id="slide-orgadfbe14">
+<h2 id="orgadfbe14">How do I use subbehaviors?</h2>
+<div class="outline-text-2" id="text-orgadfbe14">
 </div>
 </section>
-<section id="slide-org074d4f2">
-<h3 id="org074d4f2">Adding Subbehaviors</h3>
+<section id="slide-org1b476e7">
+<h3 id="org1b476e7">Adding Subbehaviors</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">self</span>.add_subbehavior(skill_object,
+<pre  class="src src-python"><code trim><span style="color: #598249;">self</span>.add_subbehavior(skill_object,
                      <span style="color: #15968D;">"Name of Subbehavior"</span>,
                      required=<span style="color: #15968D;">False</span> <span style="color: #598249;">or</span> <span style="color: #15968D;">True</span>
                      priority=10) <span style="color: #5e6263;"># </span><span style="color: #5e6263;">A higher number is higher priority</span>
-</pre>
+</code></pre>
 </div>
 <ul>
 <li>If adding a <code>complex behavior</code> or <code>single robot complex behavior</code>, don't pass in values for <code>required</code> or <code>priority</code></li>
 
 </ul>
 </section>
-<section id="slide-orga5d3ecf">
-<h3 id="orga5d3ecf">Removing Subbehaviors</h3>
+<section id="slide-org3a59f22">
+<h3 id="org3a59f22">Removing Subbehaviors</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
+<pre  class="src src-python"><code trim><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
 
 <span style="color: #598249;">self</span>.remove_all_subbehaviors()
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-org49d9610">
-<h3 id="org49d9610">Getting Subbehavior Plays</h3>
+<section id="slide-org0bf07d2">
+<h3 id="org0bf07d2">Getting Subbehavior Plays</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
-</pre>
+<pre  class="src src-python"><code trim><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
+</code></pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org1902056">
-<h2 id="org1902056">Real Examples</h2>
-<div class="outline-text-2" id="text-org1902056">
+<section id="slide-org99b2b38">
+<h2 id="org99b2b38">Real Examples</h2>
+<div class="outline-text-2" id="text-org99b2b38">
 </div>
 </section>
-<section id="slide-org0586f15">
-<h3 id="org0586f15">CoordinatedPass Tactic</h3>
+<section id="slide-org9be0942">
+<h3 id="org9be0942">CoordinatedPass Tactic</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
+<pre  class="src src-python"><code trim><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_running</span>(<span style="color: #598249;">self</span>):
     <span style="color: #2F7BDE;">receiver</span> = skills.pass_receive.PassReceive()
     <span style="color: #2F7BDE;">receiver.receive_point</span> = <span style="color: #598249;">self</span>.receive_point
     <span style="color: #598249;">self</span>.add_subbehavior(receiver,
@@ -183,18 +183,18 @@
 
 <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_running</span>(<span style="color: #598249;">self</span>):
     <span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'receiver'</span>)
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-orga215d9a">
-<h3 id="orga215d9a">Line Up Tactic</h3>
+<section id="slide-org1e95bef">
+<h3 id="org1e95bef">Line Up Tactic</h3>
 <ul>
 <li>First State Machine is set up, then:</li>
 
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Triggered whenever the line changes</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Triggered whenever the line changes</span>
 <span style="color: #598249;">self</span>.remove_all_subbehaviors()
 <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
     <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
@@ -203,22 +203,22 @@
         name=<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i),
         required=<span style="color: #15968D;">False</span>,
         priority=6 - i)
-</pre>
+</code></pre>
 </div>
 
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_running</span>(<span style="color: #598249;">self</span>):
+<pre  class="src src-python"><code trim><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">execute_running</span>(<span style="color: #598249;">self</span>):
     <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(6):
         <span style="color: #2F7BDE;">pt</span> = <span style="color: #598249;">self</span>._line.get_pt(0) + (<span style="color: #598249;">self</span>.diff * <span style="color: #598249;">float</span>(i))
         <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">"robot"</span> + <span style="color: #598249;">str</span>(i))<span style="color: #2F7BDE;">.pos</span> = pt
-</pre>
+</code></pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org1b4bd54">
-<h2 id="org1b4bd54">RoboCup Pro Tip</h2>
+<section id="slide-orgb114bca">
+<h2 id="orgb114bca">RoboCup Pro Tip</h2>
 <ul>
 <li>Find some code doing something like what you want</li>
 <li>Tweak it until it works</li>
@@ -229,8 +229,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org69993f1">
-<h2 id="org69993f1">Assignment</h2>
+<section id="slide-org5557bb3">
+<h2 id="org5557bb3">Assignment</h2>
 <ul>
 <li>Create a Triangle Pass Play</li>
 <li>Move 3 Robots into a triangle formation, and pass between them.</li>
@@ -239,8 +239,8 @@
 
 </ul>
 </section>
-<section id="slide-org973d437">
-<h3 id="org973d437">Tips</h3>
+<section id="slide-org92e4d97">
+<h3 id="org92e4d97">Tips</h3>
 <ol>
 <li>Use Move Skills to move your robots to the triangle initially</li>
 <li>Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle</li>
@@ -251,27 +251,12 @@
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: true,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server

@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Role Assignment</h1>
 </section>
 <section>
-<section id="slide-org3799c58">
-<h2 id="org3799c58">Communications Recap</h2>
+<section id="slide-orgdafbbc8">
+<h2 id="orgdafbbc8">Communications Recap</h2>
 <ul>
 <li><a href="https://gitter.im/RoboJackets/robocup-software">Gitter</a></li>
 <li><a href="https://github.com/RoboJackets//robocup-training">RoboCup Training Repo</a>
@@ -45,8 +45,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org1c5ec2a">
-<h2 id="org1c5ec2a">Questions about Plays?</h2>
+<section id="slide-org8968034">
+<h2 id="org8968034">Questions about Plays?</h2>
 <ul>
 <li>We're going to slow down a bit after last meeting
 <ul>
@@ -66,13 +66,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org9bf7c2e">
-<h2 id="org9bf7c2e">How do I get a specific robot?</h2>
-<div class="outline-text-2" id="text-org9bf7c2e">
+<section id="slide-orgba4459e">
+<h2 id="orgba4459e">How do I get a specific robot?</h2>
+<div class="outline-text-2" id="text-orgba4459e">
 </div>
 </section>
-<section id="slide-org64d5f8f">
-<h3 id="org64d5f8f">Dynamic Assignment</h3>
+<section id="slide-orgdea68c2">
+<h3 id="orgdea68c2">Dynamic Assignment</h3>
 <ul>
 <li>Our role assignment system picks the best robot for the task</li>
 <li>You define your constraints, and we'll give you a robot if we can!</li>
@@ -81,8 +81,8 @@
 </ul>
 
 </section>
-<section id="slide-orga4163aa">
-<h3 id="orga4163aa">But I want Robot X!</h3>
+<section id="slide-orgbd7ecc3">
+<h3 id="orgbd7ecc3">But I want Robot X!</h3>
 <ul>
 <li>Override Role Requirements to add your constraints!</li>
 <li>This next section is a massive oversimplification</li>
@@ -91,26 +91,26 @@
 </ul>
 
 </section>
-<section id="slide-org619d343">
-<h4 id="org619d343">Get the closest robot</h4>
+<section id="slide-org78d3a99">
+<h4 id="org78d3a99">Get the closest robot</h4>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Move</span>
 <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
     <span style="color: #5e6263;">#</span><span style="color: #5e6263;">Always call super first, otherwise parents might override your constraints!</span>
     <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Destination Shape is used for distances to points or segments</span>
     <span style="color: #2F7BDE;">reqs.destination_shape</span> = <span style="color: #598249;">self</span>.pos
     <span style="color: #598249;">return</span> reqs
-</pre>
+</code></pre>
 </div>
 
 </section>
-<section id="slide-org2b9b903">
-<h4 id="org2b9b903">Get the robot with all the hardware</h4>
+<section id="slide-org90ddbd3">
+<h4 id="org90ddbd3">Get the robot with all the hardware</h4>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
+<pre  class="src src-python"><code trim><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
     <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
     <span style="color: #2F7BDE;">reqs.require_kicking</span> = <span style="color: #15968D;">True</span>
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">try to be near the ball</span>
@@ -118,15 +118,15 @@
         <span style="color: #2F7BDE;">reqs.destination_shape</span> = main.ball().pos
     <span style="color: #598249;">return</span> reqs
 
-</pre>
+</code></pre>
 </div>
 
 </section>
-<section id="slide-org57a91cc">
-<h4 id="org57a91cc">I really, really, want MY Robot!</h4>
+<section id="slide-orge47b411">
+<h4 id="orge47b411">I really, really, want MY Robot!</h4>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">From Goalie</span>
 <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">role_requirements</span>(<span style="color: #598249;">self</span>):
     <span style="color: #2F7BDE;">reqs</span> = <span style="color: #598249;">super</span>().role_requirements()
 
@@ -138,12 +138,12 @@
         req.required_shell_id \
             = <span style="color: #598249;">self</span>.shell_id <span style="color: #598249;">if</span> <span style="color: #598249;">self</span>.shell_id != <span style="color: #15968D;">None</span> <span style="color: #598249;">else</span> -1
     <span style="color: #598249;">return</span> reqs
-</pre>
+</code></pre>
 </div>
 
 </section>
-<section id="slide-orge198983">
-<h3 id="orge198983">But how does it choose the robot?</h3>
+<section id="slide-org45dcc62">
+<h3 id="org45dcc62">But how does it choose the robot?</h3>
 <ul>
 <li>Actually Black Magic</li>
 <li>A peek behind the curtain</li>
@@ -151,7 +151,7 @@
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #598249;">RoleRequirements</span>:
+<pre  class="src src-python"><code trim><span style="color: #598249;">class</span> <span style="color: #598249;">RoleRequirements</span>:
     <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
         <span style="color: #598249;">self</span>.destination_shape = <span style="color: #15968D;">None</span>      <span style="color: #5e6263;">#</span><span style="color: #5e6263;">Distance from destination</span>
         <span style="color: #598249;">self</span>.has_ball = <span style="color: #15968D;">False</span>
@@ -162,7 +162,7 @@
         <span style="color: #598249;">self</span>.priority = 0                  <span style="color: #5e6263;">#</span><span style="color: #5e6263;">Higher is more important</span>
         <span style="color: #598249;">self</span>.require_kicking = <span style="color: #15968D;">False</span>
         <span style="color: #598249;">self</span>.robot_change_cost = 1.0
-</pre>
+</code></pre>
 </div>
 <ul>
 <li>Every behavior adds one of these</li>
@@ -172,24 +172,24 @@
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">if</span> req.destination_shape != <span style="color: #15968D;">None</span>:
+<pre  class="src src-python"><code trim><span style="color: #598249;">if</span> req.destination_shape != <span style="color: #15968D;">None</span>:
    <span style="color: #2F7BDE;">cost</span> += req.position_cost_multiplier * req.destination_shape.dist_to(robot.pos)
-</pre>
+</code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org0e3eea6">
-<h2 id="org0e3eea6">Capture Overview</h2>
+<section id="slide-org92738d7">
+<h2 id="org92738d7">Capture Overview</h2>
 <ul>
 <li>Capture is a complicated behavior that utilizes role assignment</li>
 
 </ul>
 
 </section>
-<section id="slide-orge42d46c">
-<h3 id="orge42d46c">Let's Look at Code!</h3>
+<section id="slide-org2bb1834">
+<h3 id="org2bb1834">Let's Look at Code!</h3>
 <ul>
 <li><a href="https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py">https://github.com/RoboJackets/robocup-software/blob/master/soccer/gameplay/skills/capture.py</a></li>
 
@@ -198,13 +198,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org8e3d26b">
-<h2 id="org8e3d26b">Wrapping Up</h2>
+<section id="slide-org7b34dae">
+<h2 id="org7b34dae">Wrapping Up</h2>
 </section>
 </section>
 <section>
-<section id="slide-org9232932">
-<h2 id="org9232932">Assignment</h2>
+<section id="slide-org2c3fc5a">
+<h2 id="org2c3fc5a">Assignment</h2>
 <ul>
 <li>Implement role assignment in Triangle Pass</li>
 <li>If you missed last meeting, just do Triangle Pass instead</li>
@@ -212,8 +212,8 @@
 </ul>
 
 </section>
-<section id="slide-orgc926beb">
-<h3 id="orgc926beb">Recomended Requirements</h3>
+<section id="slide-orgbd62f99">
+<h3 id="orgbd62f99">Recomended Requirements</h3>
 <ul>
 <li>Closest robots to center-field</li>
 <li>Closest robots to sideline</li>
@@ -222,8 +222,8 @@
 </ul>
 
 </section>
-<section id="slide-org28d59fe">
-<h3 id="org28d59fe">Tips</h3>
+<section id="slide-orgd2de161">
+<h3 id="orgd2de161">Tips</h3>
 <ul>
 <li>Check out the skills and tactics behaviors for more examples</li>
 
@@ -232,27 +232,12 @@
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: true,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server

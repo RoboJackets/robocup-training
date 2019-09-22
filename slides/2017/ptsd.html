@@ -29,29 +29,29 @@
 <section id="sec-title-slide"><h1 class="title">Skills, Tactics, Plays - Intro</h1>
 </section>
 <section>
-<section id="slide-org3d0a9ba">
-<h2 id="org3d0a9ba">Python Overview</h2>
-<div class="outline-text-2" id="text-org3d0a9ba">
+<section id="slide-org16d27d9">
+<h2 id="org16d27d9">Python Overview</h2>
+<div class="outline-text-2" id="text-org16d27d9">
 </div>
 </section>
-<section id="slide-orgb10563b">
-<h3 id="orgb10563b">Using Python</h3>
+<section id="slide-org29aa606">
+<h3 id="org29aa606">Using Python</h3>
 <div class="org-src-container">
 
-<pre  class="src src-shell">$ python3
+<pre  class="src src-shell"><code trim>$ python3
 Python 3.5.3 (default, Jan 19 2017, 14:11:04)
 [GCC 6.3.0 20170118] on linux
 Type <span style="color: #15968D;">"help"</span>, <span style="color: #15968D;">"copyright"</span>, <span style="color: #15968D;">"credits"</span> or <span style="color: #15968D;">"license"</span> for more information.
 &gt;&gt;&gt; print(<span style="color: #15968D;">"Hello RoboCup!"</span>)
 Hello RoboCup!
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-orgc96422d">
-<h3 id="orgc96422d">Basic Syntax</h3>
+<section id="slide-org3358445">
+<h3 id="org3358445">Basic Syntax</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Hello world</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Hello world</span>
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Hello World!"</span>)
 
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Set a variable</span>
@@ -62,7 +62,7 @@ Hello RoboCup!
 <span style="color: #598249;">print</span>(myinteger)
 <span style="color: #598249;">print</span>(mydouble)
 <span style="color: #598249;">print</span>(mystr)
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
@@ -70,14 +70,15 @@ Hello World!
 1
 1.0
 one
+
 </pre>
 
 </section>
-<section id="slide-orgc01bdb8">
-<h3 id="orgc01bdb8">IF Statements and Conditionals</h3>
+<section id="slide-org2d9d16c">
+<h3 id="org2d9d16c">IF Statements and Conditionals</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
+<pre  class="src src-python"><code trim><span style="color: #598249;">if</span> <span style="color: #15968D;">True</span>:
     <span style="color: #598249;">print</span>(<span style="color: #15968D;">"RoboCup is great!"</span>)
 <span style="color: #598249;">if</span> <span style="color: #15968D;">False</span>:
     <span style="color: #598249;">print</span>(<span style="color: #15968D;">"IGVC is great..."</span>)
@@ -96,7 +97,7 @@ one
     <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is &gt; 2 and &lt; 10"</span>)
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 3"</span> <span style="color: #598249;">if</span> a &gt; 3 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 3"</span>)
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"a is greater than 9"</span> <span style="color: #598249;">if</span> a &gt; 9 <span style="color: #598249;">else</span> <span style="color: #15968D;">"a is less than 9"</span>)
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
@@ -106,14 +107,15 @@ a is greater than 2!
 a is &gt; 2 and &lt; 10
 a is greater than 3
 a is less than 9
+
 </pre>
 
 </section>
-<section id="slide-orgb3a8808">
-<h3 id="orgb3a8808">Loops and range()</h3>
+<section id="slide-org67ea25d">
+<h3 id="org67ea25d">Loops and range()</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #2F7BDE;">a</span> = 10
+<pre  class="src src-python"><code trim><span style="color: #2F7BDE;">a</span> = 10
 <span style="color: #598249;">while</span> a &gt; 0:
     <span style="color: #598249;">print</span>(a, end=<span style="color: #15968D;">" "</span>)
     <span style="color: #2F7BDE;">a</span> = a - 1
@@ -123,21 +125,22 @@ a is less than 9
 <span style="color: #598249;">for</span> i <span style="color: #598249;">in</span> <span style="color: #598249;">range</span>(10):
     <span style="color: #598249;">print</span>(i * i, end=<span style="color: #15968D;">" "</span>)
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">""</span>)
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
 10 9 8 7 6 5 4 3 2 1 
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 0 1 4 9 16 25 36 49 64 81 
+
 </pre>
 
 </section>
-<section id="slide-orgabb7ffa">
-<h3 id="orgabb7ffa">Functions</h3>
+<section id="slide-orgd6e8c91">
+<h3 id="orgd6e8c91">Functions</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
+<pre  class="src src-python"><code trim><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">func1</span>(a, b):
     <span style="color: #598249;">return</span> a + b
 
 <span style="color: #598249;">print</span>(func1(2, 4))
@@ -152,21 +155,22 @@ a is less than 9
 <span style="color: #598249;">print</span>(welcome(<span style="color: #598249;">lambda</span>: <span style="color: #15968D;">"RoboJackets!"</span>))
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Lambda with arguments</span>
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">print(welcome(lambda arg1, arg2: "RoboJackets!"))</span>
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
 6
 Welcome to RoboCup!
 Welcome to RoboJackets!
+
 </pre>
 
 </section>
-<section id="slide-org4e14f16">
-<h3 id="org4e14f16">Object Oriented Python</h3>
+<section id="slide-org9403d1d">
+<h3 id="org9403d1d">Object Oriented Python</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">class</span> <span style="color: #598249;">BaseClass</span>():
+<pre  class="src src-python"><code trim><span style="color: #598249;">class</span> <span style="color: #598249;">BaseClass</span>():
     <span style="color: #2F7BDE;">globalVar</span> = 1
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Constructor</span>
     <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">__init__</span>(<span style="color: #598249;">self</span>):
@@ -184,7 +188,7 @@ Welcome to RoboJackets!
 <span style="color: #2F7BDE;">a</span> = BaseClass()
 <span style="color: #598249;">print</span>(<span style="color: #15968D;">"---"</span>)
 <span style="color: #2F7BDE;">a</span> = ChildClass()
-</pre>
+</code></pre>
 </div>
 
 <pre class="example">
@@ -193,18 +197,19 @@ Initializing a Base
 Initializing a Base
 Initializing Child
 Our local var is: 2
+
 </pre>
 
 </section>
 </section>
 <section>
-<section id="slide-org57f2139">
-<h2 id="org57f2139">State Machines</h2>
-<div class="outline-text-2" id="text-org57f2139">
+<section id="slide-orgd8d1778">
+<h2 id="orgd8d1778">State Machines</h2>
+<div class="outline-text-2" id="text-orgd8d1778">
 </div>
 </section>
-<section id="slide-orgeeee16d">
-<h3 id="orgeeee16d">What are they?</h3>
+<section id="slide-org58be1b7">
+<h3 id="org58be1b7">What are they?</h3>
 <ul>
 <li>A state machine is a series of states</li>
 <li>You can transition between them</li>
@@ -214,8 +219,8 @@ Our local var is: 2
 </ul>
 
 </section>
-<section id="slide-org4af791a">
-<h3 id="org4af791a">Elevator</h3>
+<section id="slide-orgd338842">
+<h3 id="orgd338842">Elevator</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/KPv5sSk.png" alt="KPv5sSk.png" />
@@ -223,24 +228,24 @@ Our local var is: 2
 </div>
 
 </section>
-<section id="slide-orgaa44b8b">
-<h3 id="orgaa44b8b">Move</h3>
+<section id="slide-org3de4aad">
+<h3 id="org3de4aad">Move</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/gmIcPGq.png" alt="gmIcPGq.png" />
 </p>
 </div>
 </section>
-<section id="slide-orge528ff2">
-<h3 id="orge528ff2">Pass Receive</h3>
+<section id="slide-org1196682">
+<h3 id="org1196682">Pass Receive</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/HAhoMC1.png" alt="HAhoMC1.png" />
 </p>
 </div>
 </section>
-<section id="slide-org9ecada3">
-<h3 id="org9ecada3">Passing</h3>
+<section id="slide-org97a69c9">
+<h3 id="org97a69c9">Passing</h3>
 
 <div class="figure">
 <p><img src="http://i.imgur.com/OhWnSwT.png" alt="OhWnSwT.png" />
@@ -249,16 +254,16 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-orgad44542">
-<h2 id="orgad44542">Plays, Tactics, Skills</h2>
+<section id="slide-org2dbc331">
+<h2 id="org2dbc331">Plays, Tactics, Skills</h2>
 <ul>
 <li>A Basic Unit in our AI</li>
 <li>Only one Play can run at a time</li>
 
 </ul>
 </section>
-<section id="slide-org1a5969b">
-<h3 id="org1a5969b">Skill</h3>
+<section id="slide-orgb424755">
+<h3 id="orgb424755">Skill</h3>
 <ul>
 <li>Involves only <i>one</i> robot</li>
 <li>Extremely basic building blocks</li>
@@ -274,8 +279,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org6f2b076">
-<h3 id="org6f2b076">Tactics</h3>
+<section id="slide-org4de59c4">
+<h3 id="org4de59c4">Tactics</h3>
 <ul>
 <li>Involves multiple robots</li>
 <li>Contains skills</li>
@@ -291,8 +296,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org1df4e67">
-<h3 id="org1df4e67">Plays</h3>
+<section id="slide-org90f0836">
+<h3 id="org90f0836">Plays</h3>
 <ul>
 <li>Only one can run</li>
 <li>Contains tactics</li>
@@ -311,8 +316,8 @@ Our local var is: 2
 </section>
 </section>
 <section>
-<section id="slide-org96dfefb">
-<h2 id="org96dfefb">Basic Plays and State Machines</h2>
+<section id="slide-org723b441">
+<h2 id="org723b441">Basic Plays and State Machines</h2>
 <ul>
 <li>Every Play is a State Machine as well!</li>
 <li>Plays use State Machines to tell them what to do</li>
@@ -320,11 +325,11 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org93e315b">
-<h3 id="org93e315b">Defining States</h3>
+<section id="slide-org4a8c214">
+<h3 id="org4a8c214">Defining States</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">First create a state Enum (An enum is just a group of names)</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">First create a state Enum (An enum is just a group of names)</span>
 <span style="color: #598249;">class</span> <span style="color: #598249;">OurState</span>(enum.Enum):
     <span style="color: #2F7BDE;">start</span> = 0
     <span style="color: #2F7BDE;">processing</span> = 1
@@ -343,14 +348,14 @@ Our local var is: 2
 <span style="color: #598249;">self</span>.add_state(PlayName.OurState.terminated,
                behavior.Behavior.State.completed)
 
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-org1c3da19">
-<h3 id="org1c3da19">Defining Transitions</h3>
+<section id="slide-org323631a">
+<h3 id="org323631a">Defining Transitions</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">self</span>.add_transition(
+<pre  class="src src-python"><code trim><span style="color: #598249;">self</span>.add_transition(
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Start state for this transition</span>
     behavior.Behavior.State.start,
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">End state for this transition</span>
@@ -359,14 +364,14 @@ Our local var is: 2
     <span style="color: #598249;">lambda</span>: <span style="color: #15968D;">True</span>,
     <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Documentation String</span>
     <span style="color: #15968D;">'immediately'</span>)
-</pre>
+</code></pre>
 </div>
 </section>
-<section id="slide-org1426654">
-<h3 id="org1426654">Defining Actions to Take In A State</h3>
+<section id="slide-org7dcf05b">
+<h3 id="org7dcf05b">Defining Actions to Take In A State</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Assuming we have the PlayName.OurState.processing state</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Assuming we have the PlayName.OurState.processing state</span>
 
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Action taken when entering this state</span>
 <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_enter_processing</span>(<span style="color: #598249;">self</span>):
@@ -379,13 +384,13 @@ Our local var is: 2
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Action taken when we exit the processing state</span>
 <span style="color: #598249;">def</span> <span style="color: #2F7BDE;">on_exit_processing</span>(<span style="color: #598249;">self</span>):
     <span style="color: #598249;">print</span>(<span style="color: #15968D;">"Processing is Completed!"</span>)
-</pre>
+</code></pre>
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org454d6aa">
-<h2 id="org454d6aa">Your Assignment</h2>
+<section id="slide-org6247983">
+<h2 id="org6247983">Your Assignment</h2>
 <ul>
 <li>Create a play that prints out which half of the field the ball is currently in</li>
 <li>EX: Print out "TopHalf" when in the top half of the field, and "BottomHalf" otherwise.</li>
@@ -394,8 +399,8 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org20a42b6">
-<h3 id="org20a42b6">Tips</h3>
+<section id="slide-orgd20258d">
+<h3 id="orgd20258d">Tips</h3>
 <ul>
 <li>The field coordinates start at 0, 0; Which is our Goal.</li>
 <li>Field Size Docs: (<a href="http://bit.ly/2cLsUBL">http://bit.ly/2cLsUBL</a>)</li>
@@ -405,41 +410,26 @@ Our local var is: 2
 
 </ul>
 </section>
-<section id="slide-org6d64cc8">
-<h3 id="org6d64cc8">Useful Tools</h3>
+<section id="slide-org9e2d526">
+<h3 id="org9e2d526">Useful Tools</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Gets the y position of the ball</span>
+<pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Gets the y position of the ball</span>
 main.ball().pos.y
 <span style="color: #5e6263;"># </span><span style="color: #5e6263;">Gets the field length in meters</span>
 constants.Field.Length
-</pre>
+</code></pre>
 </div>
 </section>
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: false,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server

@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Robocup Fundamentals</h1>
 </section>
 <section>
-<section id="slide-org6cb11a7">
-<h2 id="org6cb11a7">Folder Explanation</h2>
+<section id="slide-org40abbd9">
+<h2 id="org40abbd9">Folder Explanation</h2>
 <ul>
 <li><b>soccer</b>
 <ul>
@@ -53,8 +53,8 @@
 </ul>
 
 </section>
-<section id="slide-orgc757eb9">
-<h3 id="orgc757eb9">Soccer Folders</h3>
+<section id="slide-org1ba4d9e">
+<h3 id="org1ba4d9e">Soccer Folders</h3>
 <ul>
 <li><b>Gameplay</b>
 <ul>
@@ -76,8 +76,8 @@
 </ul>
 
 </section>
-<section id="slide-org9ed85db">
-<h3 id="org9ed85db"></h3>
+<section id="slide-org6906f24">
+<h3 id="org6906f24"></h3>
 <p>
 Most of the time we'll be in robocup-software/soccer/gameplay
 </p>
@@ -85,13 +85,13 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </section>
 </section>
 <section>
-<section id="slide-orgb8deb07">
-<h2 id="orgb8deb07">Literature Techniques</h2>
-<div class="outline-text-2" id="text-orgb8deb07">
+<section id="slide-orgcb5bf75">
+<h2 id="orgcb5bf75">Literature Techniques</h2>
+<div class="outline-text-2" id="text-orgcb5bf75">
 </div>
 </section>
-<section id="slide-org31ef9bb">
-<h3 id="org31ef9bb">Purpose of Learning Literature Techniques</h3>
+<section id="slide-org29a1ddb">
+<h3 id="org29a1ddb">Purpose of Learning Literature Techniques</h3>
 <ul>
 <li>Computer science is a language.</li>
 <li>While you may be well-versed in this language, robocup-software is essentially a textbook that defines its own terminology</li>
@@ -100,8 +100,8 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 
 </ul>
 </section>
-<section id="slide-org1f5f35b">
-<h3 id="org1f5f35b">Tips</h3>
+<section id="slide-org0d30c08">
+<h3 id="org0d30c08">Tips</h3>
 <ul>
 <li>I will teach you how to read using sublime</li>
 <li>While you can do this using other text editors, it's pretty easy with sublime</li>
@@ -109,8 +109,8 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </ul>
 
 </section>
-<section id="slide-org67557d0">
-<h3 id="org67557d0">Setting up</h3>
+<section id="slide-orgf002a7f">
+<h3 id="orgf002a7f">Setting up</h3>
 <ul>
 <li>On sublime, open robocup-software using the "open folder" option under file</li>
 <li>This allows us to search through the entirety of robocup software using sublime tools</li>
@@ -118,8 +118,8 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </ul>
 
 </section>
-<section id="slide-orgac6c9e1">
-<h3 id="orgac6c9e1">Search Tools</h3>
+<section id="slide-org0afd778">
+<h3 id="org0afd778">Search Tools</h3>
 <ul>
 <li>Control + Shift + F will search the entire project for the occurence of a term.</li>
 <li>Control + P will search the entire project for the name of a file.</li>
@@ -130,13 +130,13 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </section>
 </section>
 <section>
-<section id="slide-org219031e">
-<h2 id="org219031e">Let's read over some files together</h2>
-<div class="outline-text-2" id="text-org219031e">
+<section id="slide-orgf89fba1">
+<h2 id="orgf89fba1">Let's read over some files together</h2>
+<div class="outline-text-2" id="text-orgf89fba1">
 </div>
 </section>
-<section id="slide-org685a6ec">
-<h3 id="org685a6ec">For Reference</h3>
+<section id="slide-org429b36f">
+<h3 id="org429b36f">For Reference</h3>
 <ul>
 <li>robocup-py.cpp
 <ul>
@@ -149,11 +149,11 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </ul>
 
 </section>
-<section id="slide-orgc18ee93">
-<h3 id="orgc18ee93">Repeated Line Up generate<sub>line</sub> method</h3>
+<section id="slide-org6212366">
+<h3 id="org6212366">Repeated Line Up generate<sub>line</sub> method</h3>
 <div class="org-src-container">
 
-<pre  class="src src-python"><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">generate_line</span>(<span style="color: #598249;">self</span>, x_multiplier):
+<pre  class="src src-python"><code trim><span style="color: #598249;">def</span> <span style="color: #2F7BDE;">generate_line</span>(<span style="color: #598249;">self</span>, x_multiplier):
         <span style="color: #2F7BDE;">x</span> = (constants.Field.Width / 2 - constants.Robot.Radius * 2
              ) * x_multiplier
         <span style="color: #2F7BDE;">y_start</span> = 1.2
@@ -162,12 +162,12 @@ Most of the time we'll be in robocup-software/soccer/gameplay
             robocup.Point(x,
                           (constants.Robot.Radius * 2.3 + 0.1) * 6 + y_start))
         <span style="color: #598249;">return</span> line
-</pre>
+</code></pre>
 </div>
 
 </section>
-<section id="slide-org44fd04f">
-<h3 id="org44fd04f">Reading generate<sub>line</sub> line 1</h3>
+<section id="slide-org645321f">
+<h3 id="org645321f">Reading generate<sub>line</sub> line 1</h3>
 <ul>
 <li>what is constants.Field.Width?
 <ul>
@@ -199,8 +199,8 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </ul>
 
 </section>
-<section id="slide-org26a81d7">
-<h3 id="org26a81d7">Reading generate<sub>line</sub> line 3</h3>
+<section id="slide-org8528c46">
+<h3 id="org8528c46">Reading generate<sub>line</sub> line 3</h3>
 <ul>
 <li>What is a robocup.Segment?</li>
 <li>What is a robocup.Point?</li>
@@ -208,8 +208,8 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </ul>
 
 </section>
-<section id="slide-org1fdfc2c">
-<h3 id="org1fdfc2c">Some questions to ask yourself</h3>
+<section id="slide-orgbb6f54c">
+<h3 id="orgbb6f54c">Some questions to ask yourself</h3>
 <ul>
 <li>Do you know what the variables represent?
 <ul>
@@ -234,27 +234,12 @@ Most of the time we'll be in robocup-software/soccer/gameplay
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: true,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server

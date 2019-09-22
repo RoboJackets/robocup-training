@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Path Planning</h1>
 </section>
 <section>
-<section id="slide-org1de0e9e">
-<h2 id="org1de0e9e">Plan for today</h2>
+<section id="slide-org9af9f5e">
+<h2 id="org9af9f5e">Plan for today</h2>
 <ul>
 <li>Learn about our path planning system</li>
 <li>Download, compile, and run our RRT repository</li>
@@ -40,8 +40,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org876f259">
-<h2 id="org876f259">High Level Overview</h2>
+<section id="slide-orgeeca518">
+<h2 id="orgeeca518">High Level Overview</h2>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/4Y3wCJH.jpg" alt="4Y3wCJH.jpg" />
@@ -51,8 +51,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org0c8549c">
-<h2 id="org0c8549c">What is Path Planning</h2>
+<section id="slide-orgce59a93">
+<h2 id="orgce59a93">What is Path Planning</h2>
 <ul>
 <li>Our robots need to know how to get from a start point to an end point</li>
 <li>Our path-planning algorithm of choice is the RRT (Rapidly-Exploring Random Tree)</li>
@@ -62,8 +62,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org4d321b5">
-<h2 id="org4d321b5">How the RRT works</h2>
+<section id="slide-orgd6abd4e">
+<h2 id="orgd6abd4e">How the RRT works</h2>
 <ol>
 <li>Start building our tree by placing a root node at the destination</li>
 <li>Randomly select some coordinate in the position space</li>
@@ -78,8 +78,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org06dd2e1">
-<h2 id="org06dd2e1">Sounds really inefficient</h2>
+<section id="slide-org082fc84">
+<h2 id="org082fc84">Sounds really inefficient</h2>
 <ul>
 <li>Why waste computation time branching out in random directions?</li>
 <li>What advantages could there be in random branching?</li>
@@ -88,8 +88,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-orgf226429">
-<h3 id="orgf226429">Advantages of RRT</h3>
+<section id="slide-orgd347d7e">
+<h3 id="orgd347d7e">Advantages of RRT</h3>
 <ul>
 <li>Specialized for continuous configuration spaces</li>
 <li>Can handle kinodynamic constraints</li>
@@ -100,8 +100,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgd930734">
-<h2 id="orgd930734">Repository Code</h2>
+<section id="slide-org2c7c533">
+<h2 id="org2c7c533">Repository Code</h2>
 <ul>
 <li>rrt-viewer</li>
 <li>rrt</li>
@@ -109,8 +109,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org458832e">
-<h3 id="org458832e">rrt-viewer</h3>
+<section id="slide-org1dfc3ab">
+<h3 id="org1dfc3ab">rrt-viewer</h3>
 <ul>
 <li>Displays window for running RRT</li>
 <li>Uses QT for graphics</li>
@@ -118,8 +118,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 
 </section>
-<section id="slide-org0990729">
-<h3 id="org0990729">rrt</h3>
+<section id="slide-orgfdf2767">
+<h3 id="orgfdf2767">rrt</h3>
 <ul>
 <li>Contains RRT implementation</li>
 <li>Defines state space</li>
@@ -134,8 +134,8 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-orgfe1f084">
-<h2 id="orgfe1f084">Download RRT</h2>
+<section id="slide-org007e90a">
+<h2 id="org007e90a">Download RRT</h2>
 <ul>
 <li>Our rrt repository is located at <a href="http://github.com/RoboJackets/rrt">http://github.com/RoboJackets/rrt</a></li>
 <li>On your terminal, type in:</li>
@@ -143,8 +143,8 @@ The series of connected nodes from root to destination forms the path that the r
 </ul>
 <div class="org-src-container">
 
-<pre  class="src src-shell">git clone http://github.com/RoboJackets/rrt rrt
-</pre>
+<pre  class="src src-shell"><code trim>git clone http://github.com/RoboJackets/rrt rrt
+</code></pre>
 </div>
 <ul>
 <li>DO NOT execute this command in your robocup repository</li>
@@ -154,22 +154,22 @@ The series of connected nodes from root to destination forms the path that the r
 </section>
 </section>
 <section>
-<section id="slide-org77c8e0d">
-<h2 id="org77c8e0d">Compile and run RRT</h2>
+<section id="slide-org9404261">
+<h2 id="org9404261">Compile and run RRT</h2>
 <div class="org-src-container">
 
-<pre  class="src src-shell"><span style="color: #598249;">cd</span> rrt
+<pre  class="src src-shell"><code trim><span style="color: #598249;">cd</span> rrt
 git clone http://github.com/RoboJackets/rrt rrt
 make
 ./build/rrt-viewer
-</pre>
+</code></pre>
 </div>
 
 </section>
 </section>
 <section>
-<section id="slide-org4e853e6">
-<h2 id="org4e853e6">How to use RRT</h2>
+<section id="slide-orgfe21b93">
+<h2 id="orgfe21b93">How to use RRT</h2>
 <ul>
 <li>Drag start and end points to desired locations</li>
 <li>Drag around the plane space to draw and remove obstacles</li>
@@ -181,13 +181,13 @@ make
 </section>
 </section>
 <section>
-<section id="slide-org3a2b371">
-<h2 id="org3a2b371">Tweaking parameters</h2>
-<div class="outline-text-2" id="text-org3a2b371">
+<section id="slide-org7e980d9">
+<h2 id="org7e980d9">Tweaking parameters</h2>
+<div class="outline-text-2" id="text-org7e980d9">
 </div>
 </section>
-<section id="slide-org31d3f9d">
-<h3 id="org31d3f9d">Biases</h3>
+<section id="slide-org1e8897d">
+<h3 id="org1e8897d">Biases</h3>
 <ul>
 <li>Increasing Goal Bias
 <ul>
@@ -204,8 +204,8 @@ make
 </ul>
 
 </section>
-<section id="slide-orgb19e10b">
-<h3 id="orgb19e10b">Adaptive Stepsize Control</h3>
+<section id="slide-org87e0ebc">
+<h3 id="org87e0ebc">Adaptive Stepsize Control</h3>
 <ul>
 <li>Stepsize now dynamically changes based on whether there are obstacles nearby</li>
 <li>Requires extra computation time to locate nearby obstacles</li>
@@ -217,33 +217,18 @@ make
 </section>
 </section>
 <section>
-<section id="slide-orgdeec15a">
-<h2 id="orgdeec15a">Any questions?</h2>
+<section id="slide-org1d61f19">
+<h2 id="org1d61f19">Any questions?</h2>
 </section>
 </section>
 </div>
 </div>
-<script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
 <script src="https://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-
-controls: true,
-progress: true,
-history: true,
-center: true,
-slideNumber: 'c',
-rollingLinks: false,
-keyboard: true,
-overview: true,
-margin: 0.22,
-
-theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
-transitionSpeed: 'fast',
 multiplex: {
     secret: '', // null if client
     id: '', // id, obtained from socket.io server
