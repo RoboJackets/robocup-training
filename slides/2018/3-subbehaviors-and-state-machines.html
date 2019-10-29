@@ -29,8 +29,8 @@
 <section id="sec-title-slide"><h1 class="title">Subbehaviors</h1>
 </section>
 <section>
-<section id="slide-org4dbdf9c">
-<h2 id="org4dbdf9c">Questions about Plays?</h2>
+<section id="slide-org75d0967">
+<h2 id="org75d0967">Questions about Plays?</h2>
 <ul>
 <li>Topics Covered:
 <ul>
@@ -54,8 +54,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org5193bfa">
-<h2 id="org5193bfa">Review</h2>
+<section id="slide-orgee095a0">
+<h2 id="orgee095a0">Review</h2>
 <ul>
 <li>How do we make a robot move to a point?
 <ul>
@@ -77,13 +77,13 @@
 </section>
 </section>
 <section>
-<section id="slide-org0f60fa6">
-<h2 id="org0f60fa6">State Machines</h2>
-<div class="outline-text-2" id="text-org0f60fa6">
+<section id="slide-orgf004187">
+<h2 id="orgf004187">State Machines</h2>
+<div class="outline-text-2" id="text-orgf004187">
 </div>
 </section>
-<section id="slide-org7113cb0">
-<h3 id="org7113cb0">What are they?</h3>
+<section id="slide-org411869d">
+<h3 id="org411869d">What are they?</h3>
 <ul>
 <li>A state machine is a series of states</li>
 <li>You can transition between them</li>
@@ -93,8 +93,8 @@
 </ul>
 
 </section>
-<section id="slide-org438179d">
-<h3 id="org438179d">Elevator</h3>
+<section id="slide-orgd8a4d7c">
+<h3 id="orgd8a4d7c">Elevator</h3>
 
 <div class="figure">
 <p><img src="https://i.imgur.com/KPv5sSk.png" alt="KPv5sSk.png" />
@@ -102,8 +102,8 @@
 </div>
 
 </section>
-<section id="slide-org42a3f86">
-<h3 id="org42a3f86">Robocup Statemachines</h3>
+<section id="slide-org49771c8">
+<h3 id="org49771c8">Robocup Statemachines</h3>
 <ul>
 <li>Skills, tactics, and plays all have internal states.</li>
 <li>We define those states using enums.
@@ -123,13 +123,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orgd1cfa4c">
-<h2 id="orgd1cfa4c">How do we implement state machines in our code?</h2>
-<div class="outline-text-2" id="text-orgd1cfa4c">
+<section id="slide-org95120f0">
+<h2 id="org95120f0">How do we implement state machines in our code?</h2>
+<div class="outline-text-2" id="text-org95120f0">
 </div>
 </section>
-<section id="slide-org674bd7a">
-<h3 id="org674bd7a">Implementing State Machines</h3>
+<section id="slide-org75367d7">
+<h3 id="org75367d7">Implementing State Machines</h3>
 <ul>
 <li>In our code, we have three distinct parts in implementing state machines
 <ul>
@@ -146,8 +146,8 @@
 
 </ul>
 </section>
-<section id="slide-org0afdfae">
-<h3 id="org0afdfae">Defining States</h3>
+<section id="slide-org637c632">
+<h3 id="org637c632">Defining States</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">First create a state Enum (An enum is just a group of names)</span>
@@ -171,8 +171,8 @@
 </div>
 
 </section>
-<section id="slide-orga9462ab">
-<h3 id="orga9462ab">Defining State Transitions</h3>
+<section id="slide-org7299514">
+<h3 id="org7299514">Defining State Transitions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Add your state transitions using 'add_transition'.</span>
@@ -197,8 +197,8 @@
 </div>
 
 </section>
-<section id="slide-orgc6398d8">
-<h3 id="orgc6398d8">Defining State Actions</h3>
+<section id="slide-org07d41a4">
+<h3 id="org07d41a4">Defining State Actions</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><code trim><span style="color: #5e6263;"># </span><span style="color: #5e6263;">Define your own 'on_enter' and 'execute' functions here.</span>
@@ -233,20 +233,20 @@
 </section>
 </section>
 <section>
-<section id="slide-org084f399">
-<h2 id="org084f399">The lecture hall state machine</h2>
+<section id="slide-orgad91c84">
+<h2 id="orgad91c84">The lecture hall state machine</h2>
 <ul>
 <li>Let's say your lecture hall is a state</li>
 
 </ul>
 
 </section>
-<section id="slide-orgb8224ca">
-<h3 id="orgb8224ca">What would determine whether we transition into our lecture hall state?</h3>
+<section id="slide-org366c570">
+<h3 id="org366c570">What would determine whether we transition into our lecture hall state?</h3>
 
 </section>
-<section id="slide-orgb19e7ca">
-<h3 id="orgb19e7ca">When would we take out our notes?</h3>
+<section id="slide-orgc0ad5bc">
+<h3 id="orgc0ad5bc">When would we take out our notes?</h3>
 <ul>
 <li><code>on_enter</code></li>
 <li><code>execute</code></li>
@@ -255,8 +255,8 @@
 </ul>
 
 </section>
-<section id="slide-org2887314">
-<h3 id="org2887314">When would we take notes?</h3>
+<section id="slide-orgadb328e">
+<h3 id="orgadb328e">When would we take notes?</h3>
 <ul>
 <li><code>on_enter</code></li>
 <li><code>execute</code></li>
@@ -265,8 +265,8 @@
 </ul>
 
 </section>
-<section id="slide-org06f8bb1">
-<h3 id="org06f8bb1">When would we pack up?</h3>
+<section id="slide-org88964d5">
+<h3 id="org88964d5">When would we pack up?</h3>
 <ul>
 <li><code>on_enter</code></li>
 <li><code>execute</code></li>
@@ -275,8 +275,8 @@
 </ul>
 
 </section>
-<section id="slide-orgeab80f7">
-<h3 id="orgeab80f7">Where would we take out our phone?</h3>
+<section id="slide-orgf4def72">
+<h3 id="orgf4def72">Where would we take out our phone?</h3>
 <ul>
 <li><code>on_enter</code></li>
 <li><code>execute</code></li>
@@ -287,13 +287,13 @@
 </section>
 </section>
 <section>
-<section id="slide-orge2defa8">
-<h2 id="orge2defa8">How do I use subbehaviors?</h2>
-<div class="outline-text-2" id="text-orge2defa8">
+<section id="slide-org1a97f3d">
+<h2 id="org1a97f3d">How do I use subbehaviors?</h2>
+<div class="outline-text-2" id="text-org1a97f3d">
 </div>
 </section>
-<section id="slide-org9e69947">
-<h3 id="org9e69947">Adding Subbehaviors</h3>
+<section id="slide-orgb39470a">
+<h3 id="orgb39470a">Adding Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><code trim><span style="color: #598249;">self</span>.add_subbehavior(skill_object,
@@ -307,8 +307,8 @@
 
 </ul>
 </section>
-<section id="slide-orgbc15e37">
-<h3 id="orgbc15e37">Removing Subbehaviors</h3>
+<section id="slide-org611aa8c">
+<h3 id="org611aa8c">Removing Subbehaviors</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><code trim><span style="color: #598249;">self</span>.remove_subbehavior(<span style="color: #15968D;">'string name'</span>)
@@ -317,8 +317,8 @@
 </code></pre>
 </div>
 </section>
-<section id="slide-orgc61c169">
-<h3 id="orgc61c169">Getting Subbehavior Plays</h3>
+<section id="slide-org5a8ebaf">
+<h3 id="org5a8ebaf">Getting Subbehavior Plays</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python"><code trim><span style="color: #2F7BDE;">a_subbheavior</span> = <span style="color: #598249;">self</span>.subbehavior_with_name(<span style="color: #15968D;">'string name'</span>)
@@ -328,8 +328,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org1f13571">
-<h2 id="org1f13571">RoboCup Pro Tip</h2>
+<section id="slide-org67bc564">
+<h2 id="org67bc564">RoboCup Pro Tip</h2>
 <ul>
 <li>Find some code doing something like what you want</li>
 <li>Tweak it until it works</li>
@@ -339,8 +339,8 @@
 </section>
 </section>
 <section>
-<section id="slide-org05ecde1">
-<h2 id="org05ecde1">Walk through WhichHalf</h2>
+<section id="slide-orgbe37694">
+<h2 id="orgbe37694">Walk through WhichHalf</h2>
 <ul>
 <li>Goal: print which half of the field the ball is in
 <ul>
@@ -351,16 +351,16 @@
 </ul>
 
 </section>
-<section id="slide-org5e4c4d1">
-<h3 id="org5e4c4d1">States</h3>
+<section id="slide-org070ca3b">
+<h3 id="org070ca3b">States</h3>
 <ul>
 <li>What states would be in this play?</li>
 
 </ul>
 
 </section>
-<section id="slide-org1bd0c49">
-<h3 id="org1bd0c49">State Transitions</h3>
+<section id="slide-org631c157">
+<h3 id="org631c157">State Transitions</h3>
 <ul>
 <li>What would we do when we transition from state to state?</li>
 
@@ -369,24 +369,24 @@
 </section>
 </section>
 <section>
-<section id="slide-org9ea218c">
-<h2 id="org9ea218c">Assignment</h2>
+<section id="slide-org0f3c981">
+<h2 id="org0f3c981">Assignment</h2>
 <ul>
 <li>Write WhichHalf but vertical</li>
 
 </ul>
 
 </section>
-<section id="slide-org3be743b">
-<h3 id="org3be743b">Extension</h3>
+<section id="slide-orgbac6d6a">
+<h3 id="orgbac6d6a">Extension</h3>
 <ul>
 <li>Write Triangle Pass</li>
 
 </ul>
 
 </section>
-<section id="slide-org04a76e2">
-<h3 id="org04a76e2">Tips</h3>
+<section id="slide-orgc0b20ab">
+<h3 id="orgc0b20ab">Tips</h3>
 <ol>
 <li>Use Move Skills to move your robots to the triangle initially</li>
 <li>Use the CoordinatedPass Tactic to pass between, setting receive points as sides of the triangle</li>
